@@ -86,7 +86,7 @@ namespace Tools
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Margin = new System.Windows.Forms.Padding(2);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(1138, 8);
+            this.pnlTop.Size = new System.Drawing.Size(1143, 8);
             this.pnlTop.TabIndex = 0;
             // 
             // pnlButton
@@ -96,7 +96,7 @@ namespace Tools
             this.pnlButton.Location = new System.Drawing.Point(0, 570);
             this.pnlButton.Margin = new System.Windows.Forms.Padding(2);
             this.pnlButton.Name = "pnlButton";
-            this.pnlButton.Size = new System.Drawing.Size(1138, 8);
+            this.pnlButton.Size = new System.Drawing.Size(1143, 8);
             this.pnlButton.TabIndex = 1;
             // 
             // pnlLeft
@@ -113,7 +113,7 @@ namespace Tools
             // 
             this.pnlRight.BackColor = System.Drawing.Color.White;
             this.pnlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlRight.Location = new System.Drawing.Point(1130, 8);
+            this.pnlRight.Location = new System.Drawing.Point(1135, 8);
             this.pnlRight.Margin = new System.Windows.Forms.Padding(2);
             this.pnlRight.Name = "pnlRight";
             this.pnlRight.Size = new System.Drawing.Size(8, 562);
@@ -557,7 +557,7 @@ namespace Tools
             this.pnlTop2.Location = new System.Drawing.Point(143, 8);
             this.pnlTop2.Margin = new System.Windows.Forms.Padding(2);
             this.pnlTop2.Name = "pnlTop2";
-            this.pnlTop2.Size = new System.Drawing.Size(987, 37);
+            this.pnlTop2.Size = new System.Drawing.Size(992, 37);
             this.pnlTop2.TabIndex = 5;
             this.pnlTop2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTop2_MouseDown);
             // 
@@ -572,7 +572,7 @@ namespace Tools
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(511, 37);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(516, 37);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // lblSeccion
@@ -582,7 +582,7 @@ namespace Tools
             this.lblSeccion.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSeccion.Location = new System.Drawing.Point(3, 0);
             this.lblSeccion.Name = "lblSeccion";
-            this.lblSeccion.Size = new System.Drawing.Size(505, 37);
+            this.lblSeccion.Size = new System.Drawing.Size(510, 37);
             this.lblSeccion.TabIndex = 4;
             this.lblSeccion.Text = "Sección";
             this.lblSeccion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -601,7 +601,7 @@ namespace Tools
             this.tableLayoutPanel5.Controls.Add(this.btnMinimizar, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel1, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(511, 0);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(516, 0);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
@@ -719,14 +719,14 @@ namespace Tools
             this.pnlForm.Location = new System.Drawing.Point(143, 45);
             this.pnlForm.Margin = new System.Windows.Forms.Padding(2);
             this.pnlForm.Name = "pnlForm";
-            this.pnlForm.Size = new System.Drawing.Size(987, 525);
+            this.pnlForm.Size = new System.Drawing.Size(992, 525);
             this.pnlForm.TabIndex = 7;
             // 
             // Index
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1138, 578);
+            this.ClientSize = new System.Drawing.Size(1143, 578);
             this.Controls.Add(this.pnlForm);
             this.Controls.Add(this.pnlTop2);
             this.Controls.Add(this.pnlMenu);
