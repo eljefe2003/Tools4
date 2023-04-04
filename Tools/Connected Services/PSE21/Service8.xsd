@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/LibraryOBJDAE" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/LibraryOBJDAE" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://int.thefactoryhka.com.pe/Service.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/LibraryOBJDAE.BASE" />
+  <xs:complexType name="Documento">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/LibraryOBJDAE.BASE" minOccurs="0" name="ADQ" nillable="true" type="q1:ArrayOfAdquirienteSistemaPago" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/LibraryOBJDAE.BASE" minOccurs="0" name="COM" nillable="true" type="q2:Comprobante" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/LibraryOBJDAE.BASE" minOccurs="0" name="EMI" nillable="true" type="q3:Emisor" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/LibraryOBJDAE.BASE" minOccurs="0" name="LEY" nillable="true" type="q4:ArrayOfLeyenda" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/LibraryOBJDAE.BASE" minOccurs="0" name="PAR" nillable="true" type="q5:ArrayOfDatoCadaParticipe" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/LibraryOBJDAE.BASE" minOccurs="0" name="REC" nillable="true" type="q6:Receptor" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/LibraryOBJDAE.BASE" minOccurs="0" name="REL" nillable="true" type="q7:ArrayOfDocumentoRelacionado" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/LibraryOBJDAE.BASE" minOccurs="0" name="RES" nillable="true" type="q8:ArrayOfEntidadFinanciera" />
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/LibraryOBJDAE.BASE" minOccurs="0" name="TOTALES" nillable="true" type="q9:Totales" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Documento" nillable="true" type="tns:Documento" />
+</xs:schema>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AppTools" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://tools.thefactoryhka.com.pe/AppTools.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://tools.thefactoryhka.com.pe/AppTools.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://tools.thefactoryhka.com.pe/AppTools.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Tools" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAppTools_dailyTasks21_InputMessage">
+    <wsdl:part name="parameters" element="tns:dailyTasks21" />
+  </wsdl:message>
+  <wsdl:message name="IAppTools_dailyTasks21_OutputMessage">
+    <wsdl:part name="parameters" element="tns:dailyTasks21Response" />
+  </wsdl:message>
+  <wsdl:message name="IAppTools_blacklist_InputMessage">
+    <wsdl:part name="parameters" element="tns:blacklist" />
+  </wsdl:message>
+  <wsdl:message name="IAppTools_blacklist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:blacklistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppTools_reenvio_InputMessage">
+    <wsdl:part name="parameters" element="tns:reenvio" />
+  </wsdl:message>
+  <wsdl:message name="IAppTools_reenvio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:reenvioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppTools_storageTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:storageTask" />
+  </wsdl:message>
+  <wsdl:message name="IAppTools_storageTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:storageTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppTools_receptor_InputMessage">
+    <wsdl:part name="parameters" element="tns:receptor" />
+  </wsdl:message>
+  <wsdl:message name="IAppTools_receptor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:receptorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppTools_dailyTasksOSE_InputMessage">
+    <wsdl:part name="parameters" element="tns:dailyTasksOSE" />
+  </wsdl:message>
+  <wsdl:message name="IAppTools_dailyTasksOSE_OutputMessage">
+    <wsdl:part name="parameters" element="tns:dailyTasksOSEResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAppTools">
+    <wsdl:operation name="dailyTasks21">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppTools/dailyTasks21" message="tns:IAppTools_dailyTasks21_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppTools/dailyTasks21Response" message="tns:IAppTools_dailyTasks21_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="blacklist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppTools/blacklist" message="tns:IAppTools_blacklist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppTools/blacklistResponse" message="tns:IAppTools_blacklist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="reenvio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppTools/reenvio" message="tns:IAppTools_reenvio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppTools/reenvioResponse" message="tns:IAppTools_reenvio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="storageTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppTools/storageTask" message="tns:IAppTools_storageTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppTools/storageTaskResponse" message="tns:IAppTools_storageTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="receptor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppTools/receptor" message="tns:IAppTools_receptor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppTools/receptorResponse" message="tns:IAppTools_receptor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="dailyTasksOSE">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppTools/dailyTasksOSE" message="tns:IAppTools_dailyTasksOSE_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppTools/dailyTasksOSEResponse" message="tns:IAppTools_dailyTasksOSE_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IAppTools" type="tns:IAppTools">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="dailyTasks21">
+      <soap:operation soapAction="http://tempuri.org/IAppTools/dailyTasks21" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="blacklist">
+      <soap:operation soapAction="http://tempuri.org/IAppTools/blacklist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reenvio">
+      <soap:operation soapAction="http://tempuri.org/IAppTools/reenvio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="storageTask">
+      <soap:operation soapAction="http://tempuri.org/IAppTools/storageTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="receptor">
+      <soap:operation soapAction="http://tempuri.org/IAppTools/receptor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dailyTasksOSE">
+      <soap:operation soapAction="http://tempuri.org/IAppTools/dailyTasksOSE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AppTools">
+    <wsdl:port name="BasicHttpBinding_IAppTools" binding="tns:BasicHttpBinding_IAppTools">
+      <soap:address location="http://tools.thefactoryhka.com.pe/AppTools.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

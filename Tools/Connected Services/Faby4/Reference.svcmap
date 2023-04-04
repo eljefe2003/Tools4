@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="33acb720-fbf7-48d8-bf3d-875a6f2fafe4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://tools.thefactoryhka.com.pe/AppTools.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AppTools.xsd" MetadataType="Schema" ID="8e523a54-a3e0-4296-960f-208a23f43e46" SourceId="1" SourceUrl="https://tools.thefactoryhka.com.pe/AppTools.svc?xsd=xsd2" />
+    <MetadataFile FileName="AppTools1.xsd" MetadataType="Schema" ID="a708c03c-e307-4db6-b6ad-4cf997e4c530" SourceId="1" SourceUrl="https://tools.thefactoryhka.com.pe/AppTools.svc?xsd=xsd1" />
+    <MetadataFile FileName="AppTools.wsdl" MetadataType="Wsdl" ID="9f948441-e56d-4e9b-be98-306c9fe88605" SourceId="1" SourceUrl="https://tools.thefactoryhka.com.pe/AppTools.svc?wsdl" />
+    <MetadataFile FileName="AppTools2.xsd" MetadataType="Schema" ID="cb196a2c-1897-46e5-8921-81de9978ad4e" SourceId="1" SourceUrl="https://tools.thefactoryhka.com.pe/AppTools.svc?xsd=xsd0" />
+    <MetadataFile FileName="AppTools.disco" MetadataType="Disco" ID="ea3704b6-dda2-4465-a382-705ca7e81115" SourceId="1" SourceUrl="https://tools.thefactoryhka.com.pe/AppTools.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
