@@ -103,7 +103,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 78.03468F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.71676F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(617, 340);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(620, 340);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
             // lblSeccion
@@ -113,7 +113,7 @@
             this.lblSeccion.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSeccion.Location = new System.Drawing.Point(3, 0);
             this.lblSeccion.Name = "lblSeccion";
-            this.lblSeccion.Size = new System.Drawing.Size(611, 32);
+            this.lblSeccion.Size = new System.Drawing.Size(614, 32);
             this.lblSeccion.TabIndex = 10;
             this.lblSeccion.Text = "Anuncios";
             this.lblSeccion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -144,7 +144,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(611, 38);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(614, 38);
             this.tableLayoutPanel3.TabIndex = 9;
             // 
             // btnMarcarTodosLeidos
@@ -159,7 +159,7 @@
             this.btnMarcarTodosLeidos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMarcarTodosLeidos.Location = new System.Drawing.Point(3, 3);
             this.btnMarcarTodosLeidos.Name = "btnMarcarTodosLeidos";
-            this.btnMarcarTodosLeidos.Size = new System.Drawing.Size(310, 32);
+            this.btnMarcarTodosLeidos.Size = new System.Drawing.Size(311, 32);
             this.btnMarcarTodosLeidos.TabIndex = 1;
             this.btnMarcarTodosLeidos.Text = "Marcar Todos como leidos";
             this.btnMarcarTodosLeidos.UseVisualStyleBackColor = false;
@@ -175,9 +175,9 @@
             this.btnCerrar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnCerrar.IconColor = System.Drawing.Color.Black;
             this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCerrar.Location = new System.Drawing.Point(319, 3);
+            this.btnCerrar.Location = new System.Drawing.Point(320, 3);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(289, 32);
+            this.btnCerrar.Size = new System.Drawing.Size(291, 32);
             this.btnCerrar.TabIndex = 0;
             this.btnCerrar.Text = "Cerrar Ventana";
             this.btnCerrar.UseVisualStyleBackColor = false;
@@ -187,7 +187,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 340);
+            this.ClientSize = new System.Drawing.Size(620, 340);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Anuncios";

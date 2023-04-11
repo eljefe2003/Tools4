@@ -884,13 +884,11 @@ namespace Tools
             {
                 QBasico = "select CONCAT('Reversiones: ', count(DISTINCT c.ruc, vs.identificador, vs.status)) from peprodpse.reversions as vs, peprodpse.companies " +
                     "as c" + " where vs.company_id = c.id " + "and c.ruc in ('" + ruc + "') ";
-                if (creacion)
+
+                QFecha = " and SUBSTRING(vs.created_at, 1,10) BETWEEN '" + desde + "' AND '" + hasta + "'";
+                if (horaDesde != "")
                 {
-                    QFecha = " and SUBSTRING(vs.created_at, 1,10) BETWEEN '" + desde + "' AND '" + hasta + "'";
-                    if (horaDesde != "")
-                    {
-                        QFecha += " and SUBSTRING(vs.created_at,12,19) BETWEEN '" + horaDesde + "' AND '" + horaHasta + "'";
-                    }
+                    QFecha += " and SUBSTRING(vs.created_at,12,19) BETWEEN '" + horaDesde + "' AND '" + horaHasta + "'";
                 }
                 if (activo)
                 {
