@@ -175,6 +175,11 @@ namespace Tools
 
                     }
                 }
+                if (File.Exists(".\\" + Path.GetDirectoryName(rutaZip) + ".zip"))
+                {
+                    File.Delete(".\\" + Path.GetDirectoryName(rutaZip) + ".zip");
+                    //Log("Se elimina ruta: " + rutaZip, true, false);
+                }
                 ZipFile.CreateFromDirectory(rutaZip, ".\\" + Path.GetDirectoryName(rutaZip) + ".zip");
                 Log("Proceso culminado, creado el Zip a enviar a Sunat en ruta " + rutaZip + Environment.NewLine, true, false);
                 System.Diagnostics.Process.Start(".\\");
@@ -187,7 +192,9 @@ namespace Tools
             string corregido = nombre;
             if (nombre.StartsWith("R-"))
             {
-                corregido = nombre.Replace("R-", "");
+                corregido = nombre.Replace("RR-", "RR#");
+                corregido = corregido.Replace("R-", "");
+                corregido = corregido.Replace("RR#", "RR-");
                 nombre = corregido;
             }
             if (nombre.IndexOf("_cdr") > 0)
