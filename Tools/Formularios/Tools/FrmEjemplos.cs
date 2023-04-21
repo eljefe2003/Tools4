@@ -36,7 +36,6 @@ namespace Tools
         public FrmEjemplos(Color color1, Color color2, Color color3, Color color4)
         {
             InitializeComponent();
-
             tlpLog.BackColor = color1;
             rtb_Log.BackColor = color1;
             rtb_Log.ForeColor = color2;

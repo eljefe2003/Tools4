@@ -100,15 +100,22 @@ namespace Tools
                             }
                             else if (clave == "ClaveBdPse20")
                             {
-                                if (lines[i].Split('=')[2] != null)
+                                try
                                 {
-                                    clavePSE20 = valor + "=";
-                                }
-                                else
+                                    if (lines[i].Split('=')[2] != null)
+                                    {
+                                        clavePSE20 = valor + "=";
+                                    }
+                                    else
+                                    {
+                                        clavePSE20 = valor;
+
+                                    }
+                                }catch(Exception ee)
                                 {
                                     clavePSE20 = valor;
-
                                 }
+
                             }
                             else if (clave == "HostBdOse")
                             {
@@ -124,15 +131,21 @@ namespace Tools
                             }
                             else if (clave == "ClaveBdOse")
                             {
-                                if(lines[i].Split('=')[2] != null)
+                                try
                                 {
-                                    claveOSE = valor + "=";
-                                }
-                                else
+                                    if (lines[i].Split('=')[2] != null)
+                                    {
+                                        claveOSE = valor + "=";
+                                    }
+                                    else
+                                    {
+                                        claveOSE = valor;
+                                    }
+                                }catch(Exception ex)
                                 {
                                     claveOSE = valor;
-
                                 }
+
                             }
                             else if (clave == "HostBdAdmin")
                             {
