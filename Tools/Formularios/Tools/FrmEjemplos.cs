@@ -26,6 +26,7 @@ namespace Tools
         bool ambienteDemo = true, pruebaDocEjemploActivo = false;
         CancellationToken token;
         DLL_Online.Metodos.Facturacion DllG1 = new DLL_Online.Metodos.Facturacion();
+        DLL_Online.Metodos.Dae_DinersClub DllG2 = new Dae_DinersClub();
         LeerConfigPersonal ConfigPerso = new LeerConfigPersonal();
         LeerConfig ConfigGlobal = new LeerConfig();
         bool aceptadoEdicionGlobal;
@@ -225,8 +226,18 @@ namespace Tools
                         resp.Codigo = 9;
                         resp.Mensaje = "";
                         resp.Documento = "";
-                        string Iniciales = ArchivoAEnviar.Split('-')[1];
-                        if (Iniciales != "RA" && Iniciales != "RC" && Iniciales != "09" && Iniciales != "31" && Iniciales != "20" && Iniciales != "40")
+                        string[] respDae = null;
+                        string Iniciales = "";
+                        if (NombreArchivo.StartsWith("DAE") || NombreArchivo.StartsWith("NCE"))
+                        {
+                            Iniciales = "DAE";
+                        }
+                        else
+                        {
+                            Iniciales = NombreArchivo.Split('-')[1];
+                        }
+                         
+                        if (Iniciales != "RA" && Iniciales != "RC" && Iniciales != "09" && Iniciales != "31" && Iniciales != "20" && Iniciales != "40" && Iniciales != "42" && Iniciales != "DAE" && Iniciales != "NCE")
                         {
                             resp = DllG1.Enviar(ConfigGlobal.Ruc, ConfigGlobal.UserRuc, ConfigGlobal.PassRuc, ArchivoAEnviar);
                         }
@@ -245,22 +256,57 @@ namespace Tools
                                 resp = DllG1.EnviarGuiaRemision(ConfigGlobal.Ruc, ConfigGlobal.UserRuc, ConfigGlobal.PassRuc, ArchivoAEnviar);
                             }
                         }
-                        if (resp.Codigo == 0)
+                        else if (Iniciales == "42")
                         {
-                            Log("Enviado: " + NombreArchivo + " --> " + resp.Mensaje + " --> Doc real (" + resp.Documento + ")", true, false);
-                            aceptadoEdicionGlobal = true;
-                            nombreEjemplosGlobal = NombreArchivo;
-                            nombreRealEjemplosGlobal = resp.Documento;
-                            Task t1 = Task.Run(() => ProcesaIndividual(resp.Documento.ToString(), e.RowIndex), token);
+                            resp = DllG1.EnviarDaeg1(ConfigGlobal.Ruc, ConfigGlobal.UserRuc, ConfigGlobal.PassRuc, ArchivoAEnviar);
+                        }
+                        else if (Iniciales == "DAE" || Iniciales == "NCE")
+                        {
+                            List<string> lstArch = new List<string>();
+                            lstArch.Add(ArchivoAEnviar);
+                            string[] arrayOfArch = lstArch.ToArray();
+                            respDae = DllG2.EnviosDCH(ConfigGlobal.Ruc, ConfigGlobal.UserRuc, ConfigGlobal.PassRuc, arrayOfArch);
+                        }
+
+
+                        if (Iniciales == "DAE")
+                        {
+                            if (respDae[0].Split('|')[0] == "0")
+                            {
+                                Log("Enviado: " + respDae[0].Split('|')[3] + " --> " + respDae[0].Split('|')[1] + " --> Doc real (" + respDae[0].Split('|')[2] + ")", true, false);
+                                aceptadoEdicionGlobal = true;
+                                nombreEjemplosGlobal = NombreArchivo;
+                                nombreRealEjemplosGlobal = resp.Documento;
+                                Task t1 = Task.Run(() => ProcesaIndividual(NombreArchivo.Split('_')[1] + "-" + respDae[0].Split('|')[2], e.RowIndex), token);
+                            }
+                            else
+                            {
+                                Log(respDae[0].Split('|')[3] + " --> " + respDae[0].Split('|')[1] + " --> Doc real (" + respDae[0].Split('|')[2] + ")", false, false);
+                                dtgEjemplos.Rows[e.RowIndex].Cells[2].Value = resp.Codigo + "|" + resp.Mensaje;
+                                dtgEjemplos.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Red;
+                                aceptadoEdicionGlobal = false;
+                                pruebaDocEjemploActivo = false;
+                            }
                         }
                         else
                         {
-                            Log(NombreArchivo + " --> " + resp.Mensaje + " --> Doc real (" + resp.Documento + ")", false, false);
-                            dtgEjemplos.Rows[e.RowIndex].Cells[2].Value = resp.Codigo + "|" + resp.Mensaje;
-                            dtgEjemplos.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Red;
-                            aceptadoEdicionGlobal = false;
-                            pruebaDocEjemploActivo = false;
-                        }
+                            if (resp.Codigo == 0)
+                            {
+                                Log("Enviado: " + NombreArchivo + " --> " + resp.Mensaje + " --> Doc real (" + resp.Documento + ")", true, false);
+                                aceptadoEdicionGlobal = true;
+                                nombreEjemplosGlobal = NombreArchivo;
+                                nombreRealEjemplosGlobal = resp.Documento;
+                                Task t1 = Task.Run(() => ProcesaIndividual(resp.Documento.ToString(), e.RowIndex), token);
+                            }
+                            else
+                            {
+                                Log(NombreArchivo + " --> " + resp.Mensaje + " --> Doc real (" + resp.Documento + ")", false, false);
+                                dtgEjemplos.Rows[e.RowIndex].Cells[2].Value = resp.Codigo + "|" + resp.Mensaje;
+                                dtgEjemplos.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Red;
+                                aceptadoEdicionGlobal = false;
+                                pruebaDocEjemploActivo = false;
+                            }
+                        }                           
                         Log("--------- Fin Envío a PSE " + AmbienteGlobal + "---------", true, false);
                     }
                     else
@@ -344,7 +390,14 @@ namespace Tools
                 if (entries[i].IndexOf('_') > 0)
                 {
                     DataRow row7 = dt7.NewRow();
-                    row7["DETALLE"] = entries[i].Split('_')[1];
+                    if(entries[i].Contains("DAE"))
+                    {
+                        row7["DETALLE"] = entries[i].Split('_')[2];
+                    }
+                    else
+                    {
+                        row7["DETALLE"] = entries[i].Split('_')[1];
+                    }
                     row7["NOMBRE"] = Path.GetFileName(entries[i]);
                     row7["ESTADO"] = "-";
                     dt7.Rows.Add(row7);
@@ -528,7 +581,14 @@ namespace Tools
             }
             else
             {
-                tipoTxt = "DAE";
+                if (!nombreArchivo.Substring(0, 3).Equals("DAE"))
+                {
+                    tipoTxt = "NCE";
+                }
+                else
+                {
+                    tipoTxt = "DAE";
+                }
             }
 
             //primeraLetra = nombreArchivo.Split('-')[2].Substring(0,1);
@@ -680,7 +740,7 @@ namespace Tools
                         //}
 
                     }
-                    else if (!tipoTxt.Equals("DAE"))
+                    else if (!tipoTxt.Equals("DAE") && !tipoTxt.Equals("NCE"))
                     {
                         if (camposLine[0].Equals("EMI"))
                         {
@@ -759,8 +819,9 @@ namespace Tools
                             else if (tipoTxt.Equals("42"))
                             {
                                 arrayLine[3] = ConfigGlobal.SerieDae + "-" + numeroConDosCotas;
+                                arrayLine[1] = fecha;
                             }
-                                                    
+
 
 
                             for (int t = 0; t < arrayLine.Length - 1; t++)//Envio 1x1 de documentos ubicados en ruta TXTUbicacion
@@ -795,20 +856,17 @@ namespace Tools
                         string newLine = "";
                         string oldLine = line;
                         string[] arrayLine = oldLine.Split('|');
-                        if (ambiente.Equals("PRD"))
+                        arrayLine[0] = fecha; //Fecha 1
+                        if (tipoTxt.Equals("DAE"))
                         {
-                            arrayLine[0] = fecha; //Fecha 1
                             arrayLine[5] = ConfigGlobal.SerieDae + "-" + numeroConDosCotas;
-                            arrayLine[11] = "55555555555";
-                            arrayLine[14] = "55555555555";
                         }
                         else
                         {
-                            arrayLine[0] = fecha; //Fecha 1
-                            arrayLine[5] = ConfigGlobal.SerieDae + "-" + numeroConDosCotas;
-                            arrayLine[11] = "55555555555";
-                            arrayLine[14] = "55555555555";
+                            arrayLine[5] = ConfigGlobal.SerieNC + "-" + numeroConDosCotas;
                         }
+                        arrayLine[11] = "66666666666";
+                        arrayLine[14] = "66666666666";                       
                         for (int t = 0; t < arrayLine.Length - 1; t++)//Envio 1x1 de documentos ubicados en ruta TXTUbicacion
                         {
                             newLine += arrayLine[t] + "|";

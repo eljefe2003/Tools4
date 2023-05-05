@@ -24,6 +24,7 @@ namespace Tools
     {
         LeerConfig ConfigGlobal = new LeerConfig();
         LeerConfigPersonal ConfigPerso = new LeerConfigPersonal();
+        DLL_Online.Metodos.Dae_DinersClub DllG2 = new Dae_DinersClub();
 
         DLL_Online.Metodos.Facturacion DLL = new DLL_Online.Metodos.Facturacion();
         DLL_Online.Metodos.Request request = new DLL_Online.Metodos.Request();
@@ -350,6 +351,8 @@ namespace Tools
                             resp.Docmumento = "";
                             resp.Codigo = 9;
                             (int Codigo, string Mensaje, string Docmumento, string Numeracion) respBaja;
+                            string[] respDae = null;
+
                             NombreArchivo = Path.GetFileName(lst_archivo.Items[i].ToString());
                             string ArchivoAEnviar = lst_archivo.Items[i].ToString();
                             if (chckEdicion.Checked)
@@ -366,7 +369,16 @@ namespace Tools
 
                                         if (nombreArchivoTxt.Split('-')[0] != ruc)
                                         {
-                                            string rucAReemplazar = nombreArchivoTxt.Split('-')[0];
+                                            string rucAReemplazar = "";
+                                            if (nombreArchivoTxt.StartsWith("DAE"))
+                                            {
+                                                rucAReemplazar = nombreArchivoTxt.Split('_')[1];
+                                            }
+                                            else
+                                            {
+                                                rucAReemplazar = nombreArchivoTxt.Split('-')[0];
+                                            }
+                                             
                                             if (File.Exists(lst_archivo.Items[i].ToString().Replace(rucAReemplazar, ruc)))
                                             {
                                                 File.Delete(lst_archivo.Items[i].ToString().Replace(rucAReemplazar, ruc));
@@ -397,10 +409,17 @@ namespace Tools
                                     Log("Error: " + ex.Message, true, false);
                                 }
                             }
-                            Iniciales = NombreArchivo.Split('-')[1];
+                            if (NombreArchivo.StartsWith("DAE"))
+                            {
+                                Iniciales = "DAE";
+                            }
+                            else
+                            {
+                                Iniciales = NombreArchivo.Split('-')[1];
+                            }
                             ts_ProgressBar1.PerformStep();
                             var uno = lst_archivo.Items[i].ToString();
-                            if (Iniciales != "RA" && Iniciales != "RC" && Iniciales != "09" && Iniciales != "31" && Iniciales != "20" && Iniciales != "40" && Iniciales != "42")
+                            if (Iniciales != "RA" && Iniciales != "RC" && Iniciales != "09" && Iniciales != "31" && Iniciales != "20" && Iniciales != "40" && Iniciales != "42" && Iniciales != "DAE")
                             {
                                 resp = DLL.Enviar(txt_RucEmision.Text, txt_UsuarioEmision.Text, txt_ClaveEmision.Text, ArchivoAEnviar);
                                 if (resp.Codigo == 0)
@@ -504,12 +523,39 @@ namespace Tools
                                 Log(NombreArchivo + " --> " + resp.Mensaje + " ---> Doc real (" + resp.Docmumento + ")", aceptadoEdicionGlobal, false);
                                 lblDocEdicion.Text = resp.Docmumento;
                             }
-
-                            if (resp.Codigo == 0)
+                            else if (Iniciales == "DAE")
                             {
-                                Task t1 = Task.Run(() => ProcesaIndividual(resp.Docmumento.ToString()), token);
-                                //gb_PostAceptacion.Enabled = true;
+                                List<string> lstArch = new List<string>();
+                                lstArch.Add(ArchivoAEnviar);
+                                string[] arrayOfArch = lstArch.ToArray();
+                                respDae = DllG2.EnviosDCH(ConfigGlobal.Ruc, ConfigGlobal.UserRuc, ConfigGlobal.PassRuc, arrayOfArch);
+                                if (respDae[0].Split('|')[0] == "0")
+                                {
+                                    aceptadoEdicionGlobal = true;
+                                }
+                                Log(respDae[0].Split('|')[3] + " --> " + respDae[0].Split('|')[1] + " --> Doc real (" + NombreArchivo.Split('_')[1] + "-" + respDae[0].Split('|')[2] + ")", aceptadoEdicionGlobal, false);
+                                lblDocEdicion.Text = resp.Docmumento;
+                               
                             }
+
+                            if (Iniciales == "DAE")
+                            {
+                                if (respDae[0].Split('|')[0] == "0")
+                                {
+                                    string numeracion = NombreArchivo.Split('_')[1] + "-" + respDae[0].Split('|')[2];
+                                    Task t1 = Task.Run(() => ProcesaIndividual(numeracion));
+                                    //gb_PostAceptacion.Enabled = true;
+                                }
+                            }
+                            else
+                            {
+                                if (resp.Codigo == 0)
+                                {
+                                    Task t1 = Task.Run(() => ProcesaIndividual(resp.Docmumento.ToString()), token);
+                                    //gb_PostAceptacion.Enabled = true;
+                                }
+                            }
+                                
                             //else
                             //{
                             //    gb_PostAceptacion.Enabled = false;
@@ -1574,9 +1620,8 @@ namespace Tools
                             else if (tipoTxt.Equals("42"))
                             {
                                 arrayLine[3] = ConfigGlobal.SerieDae + "-" + numeroConDosCotas;
+                                arrayLine[1] = fecha;
                             }
-
-
 
                             for (int t = 0; t < arrayLine.Length - 1; t++)//Envio 1x1 de documentos ubicados en ruta TXTUbicacion
                             {
@@ -1610,20 +1655,11 @@ namespace Tools
                         string newLine = "";
                         string oldLine = line;
                         string[] arrayLine = oldLine.Split('|');
-                        if (ambiente.Equals("PRD"))
-                        {
-                            arrayLine[0] = fecha; //Fecha 1
-                            arrayLine[5] = ConfigGlobal.SerieDae + "-" + numeroConDosCotas;
-                            arrayLine[11] = "55555555555";
-                            arrayLine[14] = "55555555555";
-                        }
-                        else
-                        {
-                            arrayLine[0] = fecha; //Fecha 1
-                            arrayLine[5] = ConfigGlobal.SerieDae + "-" + numeroConDosCotas;
-                            arrayLine[11] = "55555555555";
-                            arrayLine[14] = "55555555555";
-                        }
+                        arrayLine[0] = fecha; //Fecha 1
+                        arrayLine[5] = ConfigGlobal.SerieDae + "-" + numeroConDosCotas;
+                        arrayLine[11] = "66666666666";
+                        arrayLine[14] = "66666666666";
+                       
                         for (int t = 0; t < arrayLine.Length - 1; t++)//Envio 1x1 de documentos ubicados en ruta TXTUbicacion
                         {
                             newLine += arrayLine[t] + "|";
