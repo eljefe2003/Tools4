@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
@@ -21,7 +22,9 @@ namespace Tools
 
         Thread hiloPrimario, hiloSecundario;
         ThreadStart threadPrimario, threadSecundario;
-        string[] arrayOfEmpresas;
+        string[] arrayOfEmpresas, arrayOfEmpresas2;
+        DataTable dtCarga;
+
         public FrmEmpresas(Color color1, Color color2, Color color3, Color color4)
         {
             InitializeComponent();
@@ -30,7 +33,6 @@ namespace Tools
             btnProcesar.BackColor = color1;
             tlpLog.BackColor = color1;
             rtb_Log.BackColor = color1;
-            gbAmbiente.ForeColor = color1;
             gbFiltros.ForeColor = color1;
             rtb_Log.ForeColor = color2;
             lbl_Log.ForeColor = color2;
@@ -39,6 +41,7 @@ namespace Tools
 
         private void FrmEmpresas_Load(object sender, EventArgs e)
         {
+            CheckForIllegalCrossThreadCalls = false;
             HiloSecundario();
         }
 
@@ -50,7 +53,12 @@ namespace Tools
             ProgressBar.Step = 1;
             ProgressBar.Value = 0;
             ProgressBar.PerformStep();
-            Task.Factory.StartNew(() => method1());
+            string Ambiente = dtgEmpresas.CurrentRow.Cells[2].Value.ToString();
+            if(Ambiente == "PSE")
+                Task.Factory.StartNew(() => method1());
+            else
+                Task.Factory.StartNew(() => method2());
+
 
             //var arraytotal = Calculo(recorrer);
             //for (int i = 0; i < arraytotal.Length; i++)
@@ -58,32 +66,63 @@ namespace Tools
             //    int temp = i;
             //    Task.Factory.StartNew(() => method1(arraytotal[temp]));
             //}         
-  
+
 
         }
 
         private void method1()
         {
             Conexion conex = new Conexion();
-            string usuario = conex.getEmpresaUserPortal(txt_RucPse.Text, ObtieneCadenaConexion());
+            string Ruc = dtgEmpresas.CurrentRow.Cells[0].Value.ToString();
+            string usuario = conex.getEmpresaUserPortal(Ruc, ObtieneCadenaConexion());
             ProgressBar.PerformStep();
-            string firmado = conex.getEmpresaFirmado(txt_RucPse.Text, ObtieneCadenaConexion());
+            string firmado = conex.getEmpresaFirmado(Ruc, ObtieneCadenaConexion());
             ProgressBar.PerformStep();
-            string Envio = conex.getEmpresaEnvia(txt_RucPse.Text, ObtieneCadenaConexion());
+            string Envio = conex.getEmpresaEnvia(Ruc, ObtieneCadenaConexion());
             ProgressBar.PerformStep();
-            string folios = conex.getEmpresaFolios(txt_RucPse.Text, ObtieneCadenaConexion2());
+            string folios = conex.getEmpresaFolios(Ruc, ObtieneCadenaConexion2());
             ProgressBar.PerformStep();
-            Log("---------------------------", true, false);
-            Log("Ruc: " + txt_RucPse.Text, true, false);
-            Log("Razon S.: " + txt_RazonS.Text, true, false);
-            Log("Usuario Portal Administrador: " + usuario, true, false);
+            string VigenciaFolios = conex.getEmpresaFoliosVigencia(Ruc, ObtieneCadenaConexion2());
+            ProgressBar.PerformStep();
+            string Emitio2Meses = conex.getEmpresaEmitio2Meses(Ruc, ObtieneCadenaConexion2());
+            ProgressBar.PerformStep();
+            Log("---------- PSE -----------", true, false);
+            Log("Ruc: " + Ruc, true, false);
+            Log("Razon S.: " + dtgEmpresas.CurrentRow.Cells[1].Value.ToString(), true, false);
+            Log("Usuario Portal: " + usuario, true, false);
             Log("Firmado XML: " + firmado, true, false);
             Log("Envia a: " + Envio, true, false);
             Log("Folios disponibles: " + folios, true, false);
-            //Log("¡Se ha copiado el usuario secundario en el portapapeles!", true, false);
-            Log("---------------------------", true, false);
+            Log("Vigencia fin de folios (dd/MM/aaaa): " + VigenciaFolios.Split(' ')[0], true, false);
+            Log("---------- PSE -----------", true, false);
             ProgressBar.PerformStep();
-            //Clipboard.SetDataObject(usuario, true);
+        }
+
+        private void method2()
+        {
+            Conexion conex = new Conexion();
+            string Ruc = dtgEmpresas.CurrentRow.Cells[0].Value.ToString();
+            ProgressBar.PerformStep();
+            string TipoPlan = conex.getEmpresaOSETipoPlan(Ruc, ObtieneCadenaConexion3());
+            ProgressBar.PerformStep();
+            string Pse = conex.getEmpresaOSEPSE(Ruc,ObtieneCadenaConexion3());
+            ProgressBar.PerformStep();
+            string folios = conex.getEmpresaFoliosOSE(Ruc, ObtieneCadenaConexion3());
+            ProgressBar.PerformStep();
+            string VigenciaFolios = conex.getEmpresaOSEFoliosVigencia(Ruc, ObtieneCadenaConexion3());
+            ProgressBar.PerformStep();
+
+            Log("---------- OSE -----------", true, false);
+            Log("Ruc: " + Ruc, true, false);
+            Log("Razon S.: " + dtgEmpresas.CurrentRow.Cells[1].Value.ToString(), true, false);
+            Log("Usuario Portal: " + Ruc, true, false);
+            Log("Cliente tiene asociado otros Rucs (PSE): " + Pse, true, false);
+            Log("Folios disponibles: " + folios, true, false);
+            Log("Vigencia fin de folios (dd/MM/aaaa): " + VigenciaFolios.Split(' ')[0], true, false);
+            Log("Tipo de Asignación de Folios: " + TipoPlan, true, false);
+
+            Log("---------- OSE -----------", true, false);
+            ProgressBar.PerformStep();
 
         }
 
@@ -111,6 +150,18 @@ namespace Tools
             return connectionString;
         }
 
+        private string ObtieneCadenaConexion3()
+        {
+            LeerConfigPersonal config = new LeerConfigPersonal();
+            string connectionString = "";
+            connectionString =
+             "datasource=" + config.HostOSE +
+             ";port=" + config.PortOSE +
+             ";username=" + config.UserOSE +
+             ";password=" + config.ClaveOSE;
+            return connectionString;
+        }
+
         public void HiloSecundario()
         {
             if (hiloSecundario != null)
@@ -125,22 +176,19 @@ namespace Tools
 
         private void txt_RucPse_TextChanged(object sender, EventArgs e)
         {
+            txt_RazonS.Text = "";
             if (txt_RucPse.Text != "")
             {
-                for (int i = 0; i < arrayOfEmpresas.Length; i++)
-                {
-                    if (txt_RucPse.Text == arrayOfEmpresas[i].Split('|')[0])
-                    {
-                        txt_RazonS.Text = arrayOfEmpresas[i].Split('|')[1];
-                        btnProcesar.Enabled = true;
-                        return;
-                    }
-                    else
-                    {
-                        txt_RazonS.Text = "";
-                        btnProcesar.Enabled = false;
-                    }
-                }
+                dtCarga.DefaultView.RowFilter = $"RUC LIKE '%{txt_RucPse.Text}%'";
+            }
+        }
+
+        private void txt_RazonS_TextChanged(object sender, EventArgs e)
+        {
+            txt_RucPse.Text = "";
+            if (txt_RazonS.Text != "")
+            {
+                dtCarga.DefaultView.RowFilter = $"NOMBRE LIKE '%{txt_RazonS.Text}%'";
             }
         }
 
@@ -149,22 +197,120 @@ namespace Tools
             try
             {
                 Conexion conex = new Conexion();
-                Log("Cargando empresas... Espera unos segundos por favor", true, false);
                 gbFiltros.Enabled = false;
-                btnProcesar.Enabled = false;
+                //btnProcesar.Enabled = false;
+                Log("Cargando empresas PSE... Espera unos segundos por favor", true, false);
                 List<String> listClientes = conex.getClientesAdmin("PSE", ObtieneCadenaConexion());
-                //ts_ProgressBar1.Minimum = 1;
-                //ts_ProgressBar1.Maximum = listClientes.Count;
-                //ts_ProgressBar1.Value = 1;
-                //ts_ProgressBar1.Step = 1;
+                Log("Cargando empresas OSE... Espera unos segundos por favor", true, false);
+                List<String> listClientes2 = conex.getClientesAdmin("OSE", ObtieneCadenaConexion3());
+
+                ProgressBar.Minimum = 0;
+                ProgressBar.Maximum = listClientes.Count + listClientes2.Count;
+                ProgressBar.Value = 1;
+                ProgressBar.Step = 1;
                 arrayOfEmpresas = listClientes.ToArray();
+                arrayOfEmpresas2 = listClientes2.ToArray();
+
+                dtCarga = new DataTable();
+                dtCarga.Columns.Add("RUC");
+                dtCarga.Columns.Add("NOMBRE");
+                dtCarga.Columns.Add("SERV.");
+                ProgressBar.PerformStep();
+
                 for (int i = 0; i < arrayOfEmpresas.Length; i++)
                 {
-                    //string uno = arrayOfEmpresas[i].Split('|')[1];
-                    //MessageBox.Show(uno);
-                    //txt_RazonS.AutoCompleteCustomSource.Add(uno);
+                    DataRow row7 = dtCarga.NewRow();
+                    row7["RUC"] = arrayOfEmpresas[i].Split('|')[0];
+                    row7["NOMBRE"] = arrayOfEmpresas[i].Split('|')[1];
+                    row7["SERV."] = "PSE";
+                    dtCarga.Rows.Add(row7);
+                    ProgressBar.PerformStep();
                 }
+
+                for (int i = 0; i < arrayOfEmpresas2.Length; i++)
+                {
+                    DataRow row7 = dtCarga.NewRow();
+                    row7["RUC"] = arrayOfEmpresas2[i].Split('|')[0];
+                    row7["NOMBRE"] = arrayOfEmpresas2[i].Split('|')[1];
+                    row7["SERV."] = "OSE";
+                    dtCarga.Rows.Add(row7);
+                    ProgressBar.PerformStep();
+                }
+                dtgEmpresas.DataSource = dtCarga;
+                var num = dtgEmpresas.Size.Width / 20;
+                dtgEmpresas.Columns["RUC"].Width = num * 4;
+                dtgEmpresas.Columns["NOMBRE"].Width = num * 12;
+                //dtgDocumento.Columns["FECHA"].Width = num;
+                dtgEmpresas.Columns["SERV."].Width = num *3;
+
+                //for (int i = 0; i < arrayOfEmpresas.Length; i++)
+                //{
+                //    string uno = arrayOfEmpresas[i].Split('|')[1];
+                //    //MessageBox.Show(uno);
+                //    txt_RazonS.AutoCompleteCustomSource.Add(uno);
+                //}
+                //txt_RazonS.AutoCompleteCustomSource.Add("UNO");
+                //txt_RazonS.AutoCompleteCustomSource.Add("DOS");
+                //txt_RazonS.AutoCompleteCustomSource.Add("TRES");
+
                 Log("Cargado con éxito!", true, false);
+                gbFiltros.Enabled = true;
+                //cargaEmpresasOSE();
+                //btnProcesar.Enabled = true;
+            }
+            catch (Exception ez)
+            {
+                MessageBox.Show("Error en la carga de empresas PSE 21: " + ez.Message);
+            }
+        }
+
+        private void cargaEmpresasOSE()
+        {
+            try
+            {
+                Conexion conex = new Conexion();
+                Log("Cargando empresas OSE... Espera unos segundos por favor", true, false);
+                gbFiltros.Enabled = false;
+                //btnProcesar.Enabled = false;
+                List<String> listClientes = conex.getClientesAdmin("OSE", ObtieneCadenaConexion3());
+                ProgressBar.Minimum = 0;
+                ProgressBar.Maximum = listClientes.Count;
+                ProgressBar.Value = 1;
+                ProgressBar.Step = 1;
+                arrayOfEmpresas = listClientes.ToArray();
+                dtCarga = new DataTable();
+                dtCarga.Columns.Add("RUC");
+                dtCarga.Columns.Add("NOMBRE");
+                dtCarga.Columns.Add("SERV.");
+                ProgressBar.PerformStep();
+
+                for (int i = 0; i < arrayOfEmpresas.Length; i++)
+                {
+                    DataRow row7 = dtCarga.NewRow();
+                    row7["RUC"] = arrayOfEmpresas[i].Split('|')[0];
+                    row7["NOMBRE"] = arrayOfEmpresas[i].Split('|')[1];
+                    row7["SERV."] = "OSE";
+                    dtCarga.Rows.Add(row7);
+                    ProgressBar.PerformStep();
+                }
+                dtgEmpresas.DataSource = dtCarga;
+                var num = dtgEmpresas.Size.Width / 20;
+                dtgEmpresas.Columns["RUC"].Width = num * 4;
+                dtgEmpresas.Columns["NOMBRE"].Width = num * 12;
+                //dtgDocumento.Columns["FECHA"].Width = num;
+                dtgEmpresas.Columns["SERV."].Width = num * 3;
+
+                //for (int i = 0; i < arrayOfEmpresas.Length; i++)
+                //{
+                //    string uno = arrayOfEmpresas[i].Split('|')[1];
+                //    //MessageBox.Show(uno);
+                //    txt_RazonS.AutoCompleteCustomSource.Add(uno);
+                //}
+                //txt_RazonS.AutoCompleteCustomSource.Add("UNO");
+                //txt_RazonS.AutoCompleteCustomSource.Add("DOS");
+                //txt_RazonS.AutoCompleteCustomSource.Add("TRES");
+
+                Log("Cargado OSE con éxito!", true, false);
                 gbFiltros.Enabled = true;
                 //btnProcesar.Enabled = true;
             }

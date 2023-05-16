@@ -573,6 +573,27 @@ namespace Tools
             lblSeccion.Text = childForm.Text;
         }
 
+        private void btnServicio_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Próximamente...!");
+            //ActivateButton2(sender);
+            //FrmServicio childForm = new FrmServicio();
+            //if (FormHijoActual != null)
+            //{
+            //    FormHijoActual.Close();
+            //}
+            //FormHijoActual = childForm;
+            ////End
+            //childForm.TopLevel = false;
+            //childForm.FormBorderStyle = FormBorderStyle.None;
+            //childForm.Dock = DockStyle.Fill;
+            //pnlForm.Controls.Add(childForm);
+            //pnlForm.Tag = childForm;
+            //childForm.BringToFront();
+            //childForm.Show();
+            //lblSeccion.Text = childForm.Text;
+        }
+
         private void DisableButton()
         {
             if (currentBtn != null)

@@ -244,7 +244,6 @@ namespace Tools
             }
         }
 
-
         private string QueryFactura(string ruc, string ambiente, string desde, string hasta,
             bool activo, bool emision, bool creacion, bool aceptado, string horaDesde, string horaHasta)
         {
@@ -371,7 +370,6 @@ namespace Tools
             return QBasico;
         }
 
-
         private string QueryClientesOSE()
         {
             string QBasico = "";
@@ -379,8 +377,10 @@ namespace Tools
             return QBasico;
         }
 
+        #region Conteo Folios
+
         private string QueryBoleta(string ruc, string ambiente, string desde, string hasta,
-            bool activo, bool emision, bool creacion, bool aceptado, string horaDesde, string horaHasta)
+           bool activo, bool emision, bool creacion, bool aceptado, string horaDesde, string horaHasta)
         {
             string QBasico = "", QFecha = "", QActivo = "", QAceptado = "";
             if (ambiente.Equals("PSE"))
@@ -463,7 +463,7 @@ namespace Tools
         private string QueryNota(string ruc, string ambiente, string desde, string hasta,
             bool activo, bool emision, bool creacion, bool aceptado, string horaDesde, string horaHasta)
         {
-            string QBasico = "", QFecha = "", QActivo = "", QAceptado = "";         
+            string QBasico = "", QFecha = "", QActivo = "", QAceptado = "";
 
 
             if (ambiente.Equals("PSE"))
@@ -547,7 +547,7 @@ namespace Tools
         private string QueryBajas(string ruc, string ambiente, string desde, string hasta,
             bool activo, bool emision, bool creacion, bool aceptado, string horaDesde, string horaHasta)
         {
-            string QFecha = "", QActivo = "", QBasico = "", QAceptado = "";        
+            string QFecha = "", QActivo = "", QBasico = "", QAceptado = "";
 
             if (ambiente.Equals("PSE"))
             {
@@ -620,7 +620,7 @@ namespace Tools
             bool activo, bool emision, bool creacion, bool aceptado, string horaDesde, string horaHasta)
         {
             string QFecha = "", QActivo = "", QBasico = "", QAceptado = "";
-          
+
             if (ambiente.Equals("PSE"))
             {
                 QBasico = "select CONCAT('Resumenes de boletas: ', count(DISTINCT c.ruc, vs.identificador_resumen, vs.status)) from peprodpse.summary_documents as vs, peprodpse.companies " +
@@ -740,7 +740,7 @@ namespace Tools
         private string QueryGuias(string ruc, string ambiente, string desde, string hasta,
             bool activo, bool emision, bool creacion, bool aceptado, string horaDesde, string horaHasta)
         {
-            string QFecha = "", QActivo = "", QBasico = "", QAceptado = "";        
+            string QFecha = "", QActivo = "", QBasico = "", QAceptado = "";
 
             if (ambiente.Equals("PSE"))
             {
@@ -798,7 +798,7 @@ namespace Tools
             bool activo, bool emision, bool creacion, bool aceptado, string horaDesde, string horaHasta)
         {
             string QFecha = "", QActivo = "", QBasico = "", QAceptado = "";
-         
+
             if (ambiente.Equals("PSE"))
             {
                 QBasico = "select CONCAT('Ret/Perc: ', count(DISTINCT ruc, serie, tipoDocumento, correlativo, status)) from peprodpse.comprobantes where ruc in ('" + ruc + "')";
@@ -879,7 +879,7 @@ namespace Tools
             bool activo, bool emision, bool creacion, bool aceptado, string horaDesde, string horaHasta)
         {
             string QFecha = "", QActivo = "", QBasico = "", QAceptado = "";
-          
+
             if (ambiente.Equals("PSE"))
             {
                 QBasico = "select CONCAT('Reversiones: ', count(DISTINCT c.ruc, vs.identificador, vs.status)) from peprodpse.reversions as vs, peprodpse.companies " +
@@ -951,6 +951,10 @@ namespace Tools
             }
             return QBasico + QFecha + QActivo + QAceptado;
         }
+
+        #endregion       
+
+        #region PSE Consulta Empresas
 
         public String getEmpresaUserPortal(string ruc, string cadenaConexion)
         {
@@ -1092,7 +1096,7 @@ namespace Tools
                             if (reader2.HasRows)
                             {
                                 while (reader2.Read())
-                                {   
+                                {
                                     Comprados = reader2.GetInt32(0);
                                     folios21 = reader2.GetInt32(1);
                                     folios20 = reader2.GetInt32(2);
@@ -1107,7 +1111,7 @@ namespace Tools
                             return null;
                         }
                     }
-                }                
+                }
                 closeCon();
                 return resultado1;
             }
@@ -1117,5 +1121,257 @@ namespace Tools
                 return null;
             }
         }
+
+        public string getEmpresaFoliosVigencia(string ruc, string cadenaConexion)
+        {
+            string query1 = "select id from peprodpse.companies c where ruc = " + ruc;
+            string id = "";
+            string resultado1 = "";
+            //string resul = 0;
+            int folios21 = 0;
+            int folios20 = 0;
+            List<String> listDoc = new List<string>();
+            conection(cadenaConexion);
+            MySqlCommand commandDatabase = new MySqlCommand(query1, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            MySqlDataReader reader;
+            try
+            {
+                reader = commandDatabase.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        id = reader.GetString(0);
+                        string query2 = "select vigencia_fin from peprodpse.configurations c2 where  company_id =" + id;
+                        string resultado2 = "";
+                        //closeCon();
+                        conection(cadenaConexion);
+                        MySqlCommand commandDatabase2 = new MySqlCommand(query2, databaseConnection);
+                        commandDatabase2.CommandTimeout = 60;
+                        MySqlDataReader reader2;
+                        try
+                        {
+                            reader2 = commandDatabase2.ExecuteReader();
+                            if (reader2.HasRows)
+                            {
+                                while (reader2.Read())
+                                {
+                                    resultado1 = reader2.GetString(0);
+                                }
+                            }
+                            closeCon();
+                            return resultado1;
+                        }
+                        catch (Exception ex)
+                        {
+                            closeCon();
+                            return null;
+                        }
+                    }
+                }
+                closeCon();
+                return resultado1;
+            }
+            catch (Exception ex)
+            {
+                closeCon();
+                return null;
+            }
+        }
+
+        public string getEmpresaEmitio2Meses(string ruc, string cadenaConexion)
+        {
+            string query1 = "select id from peprodpse.companies c where ruc = " + ruc;
+            string id = "";
+            string resultado1 = "";
+            //string resul = 0;
+            int folios21 = 0;
+            int folios20 = 0;
+            List<String> listDoc = new List<string>();
+            conection(cadenaConexion);
+            MySqlCommand commandDatabase = new MySqlCommand(query1, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            MySqlDataReader reader;
+            try
+            {
+                reader = commandDatabase.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        id = reader.GetString(0);
+                        string query2 = "select vigencia_fin from peprodpse.configurations c2 where  company_id =" + id;
+                        string resultado2 = "";
+                        //closeCon();
+                        conection(cadenaConexion);
+                        MySqlCommand commandDatabase2 = new MySqlCommand(query2, databaseConnection);
+                        commandDatabase2.CommandTimeout = 60;
+                        MySqlDataReader reader2;
+                        try
+                        {
+                            reader2 = commandDatabase2.ExecuteReader();
+                            if (reader2.HasRows)
+                            {
+                                while (reader2.Read())
+                                {
+                                    resultado1 = reader2.GetString(0);
+                                }
+                            }
+                            closeCon();
+                            return resultado1;
+                        }
+                        catch (Exception ex)
+                        {
+                            closeCon();
+                            return null;
+                        }
+                    }
+                }
+                closeCon();
+                return resultado1;
+            }
+            catch (Exception ex)
+            {
+                closeCon();
+                return null;
+            }
+        }
+
+        #endregion
+
+        #region OSE Consulta Empresas
+
+        public String getEmpresaOSETipoPlan(string ruc, string cadenaConexion)
+        {
+            string query = " select t.tipoplan from peproduccionose.taxpayers t where t.ruc = '" + ruc + "' limit 1";
+            string resultado = "";
+            List<String> listDoc = new List<string>();
+            conection(cadenaConexion);
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            MySqlDataReader reader;
+            try
+            {
+                reader = commandDatabase.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        resultado = reader.GetString(0);
+                    }
+                }
+                else
+                {
+                    resultado = "No se encontraron datos.";
+                }
+                closeCon();
+                return resultado;
+            }
+            catch (Exception ex)
+            {
+                closeCon();
+                return null;
+            }
+        }
+
+        public String getEmpresaOSEPSE(string ruc, string cadenaConexion)
+        {
+            string query = " select t.pse from peproduccionose.taxpayers t where t.ruc = '" + ruc + "' limit 1";
+            string resultado = "NO";
+            List<String> listDoc = new List<string>();
+            conection(cadenaConexion);
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            MySqlDataReader reader;
+            try
+            {
+                reader = commandDatabase.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        if(reader.GetInt32(0) == 1)
+                            resultado = "SI";
+                    }
+                }
+                else
+                {
+                    resultado = "No se encontraron datos.";
+                }
+                closeCon();
+                return resultado;
+            }
+            catch (Exception ex)
+            {
+                closeCon();
+                return null;
+            }
+        }
+
+        public string getEmpresaFoliosOSE(string ruc, string cadenaConexion)
+        {
+            string query1 = " select t.folios_purchased, t.folios_assigned from peproduccionose.taxpayers t where t.ruc = '" + ruc + "' limit 1";
+            string resultado1 = "";
+            int Comprados = 0;
+            int folios21 = 0;
+            List<String> listDoc = new List<string>();
+            conection(cadenaConexion);
+            MySqlCommand commandDatabase = new MySqlCommand(query1, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            MySqlDataReader reader;
+            try
+            {
+                reader = commandDatabase.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        Comprados = reader.GetInt32(0);
+                        folios21 = reader.GetInt32(1);
+                    }
+                }
+                closeCon();
+                return (Comprados - folios21).ToString();
+            }
+            catch (Exception ex)
+            {
+                closeCon();
+                return null;
+            }
+        }
+
+        public string getEmpresaOSEFoliosVigencia(string ruc, string cadenaConexion)
+        {
+            string query1 = " select t.validity_end from peproduccionose.taxpayers t where t.ruc = '" + ruc + "' limit 1";
+            string resultado1 = "";
+            conection(cadenaConexion);
+            MySqlCommand commandDatabase = new MySqlCommand(query1, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            MySqlDataReader reader;
+            try
+            {
+                reader = commandDatabase.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        resultado1 = reader.GetString(0);
+                    }
+                }
+                closeCon();
+                return resultado1;
+            }
+            catch (Exception ex)
+            {
+                closeCon();
+                return null;
+            }
+        }
+
+
+        #endregion
+
+
     }
 }

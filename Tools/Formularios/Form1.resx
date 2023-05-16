@@ -117,44 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btn_BuscarEmision.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-        2HKkVqst/A9Qyg4crli1UwAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>118, 17</value>
-  </metadata>
   <data name="label41.Text" xml:space="preserve">
     <value>* Automaticamente se cargara la fecha de hoy
 ** En caso de no cargar ningun valor, se tomara la serie correspondiente al tipo de documento,
@@ -165,6 +127,7 @@ del archivo TXT.
 Nota 2: Las NC y ND se cambiara su Rel-N por un documento fisico.
 </value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="button11.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
@@ -225,10 +188,47 @@ Nota 2: Las NC y ND se cambiara su Rel-N por un documento fisico.
         cQgXX3836R2JQA6uAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="btn_BuscarEmision.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        2HKkVqst/A9Qyg4crli1UwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>118, 17</value>
+  </metadata>
   <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        wgAAAMIBT4kc1wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGbSURBVFhH7dfB
+        vwAAAL8BYqQFcwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGbSURBVFhH7dfB
         KwRhGMfx0V64IAeUUuQgpZSL8g8oDo5u3PkD3BxclJRycFhJuSrcHAnFBRci5YSzSElqfJ/pnfXM7Gy9
         3plZTXnq084+O/POb/fN+xrP9/2aqEbzegs5SOMOpap7xBshqgVH5jiLACL4QpH7xBtB0/M6cCkXmff1
         C0D14N5cQCvo1ScANYhnc3LA9PMPQLVjF4fKOprwAj2Qq+QA8gE6E/RjA3qQNGoGmFIn5ek/gHWATcwY
@@ -253,6 +253,9 @@ Nota 2: Las NC y ND se cambiara su Rel-N por un documento fisico.
   </data>
   <metadata name="Footer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
+  </metadata>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>118, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>

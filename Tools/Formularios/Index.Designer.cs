@@ -305,6 +305,7 @@ namespace Tools
             this.btnServicio.Text = "Servicio";
             this.btnServicio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnServicio.UseVisualStyleBackColor = true;
+            this.btnServicio.Click += new System.EventHandler(this.btnServicio_Click);
             // 
             // btnEmpresas
             // 

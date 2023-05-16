@@ -2143,7 +2143,7 @@
             this.tableLayoutPanel52.ColumnCount = 3;
             this.tableLayoutPanel52.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 91.09375F));
             this.tableLayoutPanel52.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.90625F));
-            this.tableLayoutPanel52.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 73F));
+            this.tableLayoutPanel52.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76F));
             this.tableLayoutPanel52.Controls.Add(this.btnConsultaSunatOSE, 2, 0);
             this.tableLayoutPanel52.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel52.Controls.Add(this.btnConsultaSunatPSE, 1, 0);
@@ -2164,7 +2164,7 @@
             this.btnConsultaSunatOSE.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnConsultaSunatOSE.IconSize = 40;
             this.btnConsultaSunatOSE.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnConsultaSunatOSE.Location = new System.Drawing.Point(454, 2);
+            this.btnConsultaSunatOSE.Location = new System.Drawing.Point(451, 2);
             this.btnConsultaSunatOSE.Margin = new System.Windows.Forms.Padding(2);
             this.btnConsultaSunatOSE.Name = "btnConsultaSunatOSE";
             this.btnConsultaSunatOSE.Size = new System.Drawing.Size(38, 57);
@@ -2181,7 +2181,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(406, 65);
+            this.label1.Size = new System.Drawing.Size(403, 65);
             this.label1.TabIndex = 5;
             this.label1.Text = "Formato:\r\nEmisor|TipoDoc|Serie|Correlativo|TipoDocRecep|NumDocRecep|FechaEmision|" +
     "Importe\r\nEmisor|TipoDoc|Serie|Correlativo|TipoDocRecep|NumDocRecep|FechaEmision|" +
@@ -2196,7 +2196,7 @@
             this.btnConsultaSunatPSE.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnConsultaSunatPSE.IconSize = 40;
             this.btnConsultaSunatPSE.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnConsultaSunatPSE.Location = new System.Drawing.Point(414, 2);
+            this.btnConsultaSunatPSE.Location = new System.Drawing.Point(411, 2);
             this.btnConsultaSunatPSE.Margin = new System.Windows.Forms.Padding(2);
             this.btnConsultaSunatPSE.Name = "btnConsultaSunatPSE";
             this.btnConsultaSunatPSE.Size = new System.Drawing.Size(35, 57);
@@ -2266,7 +2266,7 @@
             this.tableLayoutPanel31.ColumnCount = 3;
             this.tableLayoutPanel31.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.85714F));
             this.tableLayoutPanel31.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.14286F));
-            this.tableLayoutPanel31.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 139F));
+            this.tableLayoutPanel31.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 142F));
             this.tableLayoutPanel31.Controls.Add(this.radioButton5, 0, 0);
             this.tableLayoutPanel31.Controls.Add(this.radioButton4, 0, 0);
             this.tableLayoutPanel31.Controls.Add(this.radioButton3, 0, 0);
@@ -2280,7 +2280,7 @@
             // radioButton5
             // 
             this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(79, 3);
+            this.radioButton5.Location = new System.Drawing.Point(76, 3);
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(64, 17);
             this.radioButton5.TabIndex = 13;
@@ -2292,9 +2292,9 @@
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(45, 3);
+            this.radioButton4.Location = new System.Drawing.Point(43, 3);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(28, 17);
+            this.radioButton4.Size = new System.Drawing.Size(27, 17);
             this.radioButton4.TabIndex = 12;
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "OSE";
@@ -2306,7 +2306,7 @@
             this.radioButton3.AutoSize = true;
             this.radioButton3.Location = new System.Drawing.Point(3, 3);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(36, 17);
+            this.radioButton3.Size = new System.Drawing.Size(34, 17);
             this.radioButton3.TabIndex = 11;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "PSE 2.1";
@@ -4162,7 +4162,7 @@
             this.tableLayoutPanel21.ColumnCount = 3;
             this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 87.98077F));
             this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.01923F));
-            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 97F));
+            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel21.Controls.Add(this.button2, 2, 0);
             this.tableLayoutPanel21.Controls.Add(this.lbl_Log, 0, 0);
             this.tableLayoutPanel21.Controls.Add(this.cmd_BorrarLog, 1, 0);
@@ -4179,9 +4179,9 @@
             this.button2.BackColor = System.Drawing.Color.White;
             this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(475, 3);
+            this.button2.Location = new System.Drawing.Point(472, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(92, 55);
+            this.button2.Size = new System.Drawing.Size(95, 55);
             this.button2.TabIndex = 12;
             this.toolTip1.SetToolTip(this.button2, "Descargar Log");
             this.button2.UseVisualStyleBackColor = false;
@@ -4194,7 +4194,7 @@
             this.lbl_Log.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Log.Location = new System.Drawing.Point(3, 0);
             this.lbl_Log.Name = "lbl_Log";
-            this.lbl_Log.Size = new System.Drawing.Size(410, 61);
+            this.lbl_Log.Size = new System.Drawing.Size(407, 61);
             this.lbl_Log.TabIndex = 2;
             this.lbl_Log.Text = "Log";
             this.lbl_Log.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4205,7 +4205,7 @@
             this.cmd_BorrarLog.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmd_BorrarLog.ForeColor = System.Drawing.Color.Black;
             this.cmd_BorrarLog.Image = ((System.Drawing.Image)(resources.GetObject("cmd_BorrarLog.Image")));
-            this.cmd_BorrarLog.Location = new System.Drawing.Point(419, 3);
+            this.cmd_BorrarLog.Location = new System.Drawing.Point(416, 3);
             this.cmd_BorrarLog.Name = "cmd_BorrarLog";
             this.cmd_BorrarLog.Size = new System.Drawing.Size(50, 55);
             this.cmd_BorrarLog.TabIndex = 3;
