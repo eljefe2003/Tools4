@@ -17,11 +17,11 @@ namespace Tools
     public partial class FrmConsultasBD : Form
     {
         string[] arrayOfEmpresas;
-
-        public FrmConsultasBD(Color color1, Color color2, Color color3, Color color4)
+        List<String> listClientesPSE = null;
+        List<String> listClientesOSE = null;
+        public FrmConsultasBD(Color color1, Color color2, Color color3, Color color4, List<String> lisCliPSE, List<String> listCliOSE)
         {
             InitializeComponent();
-
             tlpForm.BackColor = Color.White;
             btnProcesar.BackColor = color1;
             tlpLog.BackColor = color1;
@@ -30,7 +30,8 @@ namespace Tools
             gbFiltros.ForeColor = color1;
             rtb_Log.ForeColor = color2;
             lbl_Log.ForeColor = color2;
-
+            listClientesPSE = lisCliPSE;
+            listClientesOSE = listCliOSE;
         }
         Thread hiloPrimario, hiloSecundario;
         ThreadStart threadPrimario, threadSecundario;
@@ -592,6 +593,11 @@ namespace Tools
             {
                 pnl5.Visible = true;
             }
+        }
+
+        private void btnBorrarLog_Click(object sender, EventArgs e)
+        {
+            rtb_Log.Clear();
         }
 
         private void slideButton1_Click(object sender, EventArgs e)

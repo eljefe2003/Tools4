@@ -24,11 +24,13 @@ namespace Tools
         ThreadStart threadPrimario, threadSecundario;
         string[] arrayOfEmpresas, arrayOfEmpresas2;
         DataTable dtCarga;
+        List<String> listClientes = null;
+        //Log("Cargando empresas OSE... Espera unos segundos por favor", true, false);
+        List<String> listClientes2 = null;
 
-        public FrmEmpresas(Color color1, Color color2, Color color3, Color color4)
+        public FrmEmpresas(Color color1, Color color2, Color color3, Color color4, List<String> lisCli1, List<String> listCli2)
         {
             InitializeComponent();
-
             tlpForm.BackColor = Color.White;
             btnProcesar.BackColor = color1;
             tlpLog.BackColor = color1;
@@ -36,7 +38,8 @@ namespace Tools
             gbFiltros.ForeColor = color1;
             rtb_Log.ForeColor = color2;
             lbl_Log.ForeColor = color2;
-
+            listClientes = lisCli1;
+            listClientes2 = listCli2;
         }
 
         private void FrmEmpresas_Load(object sender, EventArgs e)
@@ -192,6 +195,11 @@ namespace Tools
             }
         }
 
+        private void btnBorrarLog_Click(object sender, EventArgs e)
+        {
+            rtb_Log.Clear();
+        }
+
         private void cargaEmpresasPSE21()
         {
             try
@@ -199,10 +207,10 @@ namespace Tools
                 Conexion conex = new Conexion();
                 gbFiltros.Enabled = false;
                 //btnProcesar.Enabled = false;
-                Log("Cargando empresas PSE... Espera unos segundos por favor", true, false);
-                List<String> listClientes = conex.getClientesAdmin("PSE", ObtieneCadenaConexion());
-                Log("Cargando empresas OSE... Espera unos segundos por favor", true, false);
-                List<String> listClientes2 = conex.getClientesAdmin("OSE", ObtieneCadenaConexion3());
+                //Log("Cargando empresas PSE... Espera unos segundos por favor", true, false);
+                //List<String> listClientes = conex.getClientesAdmin("PSE", ObtieneCadenaConexion());
+                //Log("Cargando empresas OSE... Espera unos segundos por favor", true, false);
+                //List<String> listClientes2 = conex.getClientesAdmin("OSE", ObtieneCadenaConexion3());
 
                 ProgressBar.Minimum = 0;
                 ProgressBar.Maximum = listClientes.Count + listClientes2.Count;

@@ -85,15 +85,15 @@ namespace Tools
             this.tlpForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tlpForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tlpForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tlpForm.Size = new System.Drawing.Size(378, 220);
+            this.tlpForm.Size = new System.Drawing.Size(400, 252);
             this.tlpForm.TabIndex = 1;
             // 
             // txtClaveCertificado
             // 
             this.txtClaveCertificado.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtClaveCertificado.Location = new System.Drawing.Point(135, 158);
+            this.txtClaveCertificado.Location = new System.Drawing.Point(142, 183);
             this.txtClaveCertificado.Name = "txtClaveCertificado";
-            this.txtClaveCertificado.Size = new System.Drawing.Size(240, 23);
+            this.txtClaveCertificado.Size = new System.Drawing.Size(255, 23);
             this.txtClaveCertificado.TabIndex = 10;
             // 
             // tlp3
@@ -104,12 +104,12 @@ namespace Tools
             this.tlp3.Controls.Add(this.btnRutaCertificado, 1, 0);
             this.tlp3.Controls.Add(this.txtRutaCertificado, 0, 0);
             this.tlp3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlp3.Location = new System.Drawing.Point(134, 126);
+            this.tlp3.Location = new System.Drawing.Point(141, 146);
             this.tlp3.Margin = new System.Windows.Forms.Padding(2);
             this.tlp3.Name = "tlp3";
             this.tlp3.RowCount = 1;
             this.tlp3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlp3.Size = new System.Drawing.Size(242, 27);
+            this.tlp3.Size = new System.Drawing.Size(257, 32);
             this.tlp3.TabIndex = 17;
             // 
             // btnRutaCertificado
@@ -122,10 +122,10 @@ namespace Tools
             this.btnRutaCertificado.IconColor = System.Drawing.Color.Black;
             this.btnRutaCertificado.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnRutaCertificado.IconSize = 20;
-            this.btnRutaCertificado.Location = new System.Drawing.Point(215, 2);
+            this.btnRutaCertificado.Location = new System.Drawing.Point(229, 2);
             this.btnRutaCertificado.Margin = new System.Windows.Forms.Padding(2);
             this.btnRutaCertificado.Name = "btnRutaCertificado";
-            this.btnRutaCertificado.Size = new System.Drawing.Size(25, 23);
+            this.btnRutaCertificado.Size = new System.Drawing.Size(26, 28);
             this.btnRutaCertificado.TabIndex = 22;
             this.btnRutaCertificado.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnRutaCertificado.UseVisualStyleBackColor = false;
@@ -137,7 +137,7 @@ namespace Tools
             this.txtRutaCertificado.Enabled = false;
             this.txtRutaCertificado.Location = new System.Drawing.Point(3, 3);
             this.txtRutaCertificado.Name = "txtRutaCertificado";
-            this.txtRutaCertificado.Size = new System.Drawing.Size(207, 23);
+            this.txtRutaCertificado.Size = new System.Drawing.Size(221, 23);
             this.txtRutaCertificado.TabIndex = 10;
             // 
             // label22
@@ -146,9 +146,9 @@ namespace Tools
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(3, 155);
+            this.label22.Location = new System.Drawing.Point(3, 180);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(126, 31);
+            this.label22.Size = new System.Drawing.Size(133, 36);
             this.label22.TabIndex = 15;
             this.label22.Text = "Clave Cert. Dig.";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -161,12 +161,12 @@ namespace Tools
             this.tlp2.Controls.Add(this.btnBuscarRutaProcesados, 1, 0);
             this.tlp2.Controls.Add(this.txtRutaProcesados, 0, 0);
             this.tlp2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlp2.Location = new System.Drawing.Point(134, 95);
+            this.tlp2.Location = new System.Drawing.Point(141, 110);
             this.tlp2.Margin = new System.Windows.Forms.Padding(2);
             this.tlp2.Name = "tlp2";
             this.tlp2.RowCount = 1;
             this.tlp2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlp2.Size = new System.Drawing.Size(242, 27);
+            this.tlp2.Size = new System.Drawing.Size(257, 32);
             this.tlp2.TabIndex = 13;
             // 
             // btnBuscarRutaProcesados
@@ -179,10 +179,10 @@ namespace Tools
             this.btnBuscarRutaProcesados.IconColor = System.Drawing.Color.Black;
             this.btnBuscarRutaProcesados.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscarRutaProcesados.IconSize = 20;
-            this.btnBuscarRutaProcesados.Location = new System.Drawing.Point(215, 2);
+            this.btnBuscarRutaProcesados.Location = new System.Drawing.Point(229, 2);
             this.btnBuscarRutaProcesados.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscarRutaProcesados.Name = "btnBuscarRutaProcesados";
-            this.btnBuscarRutaProcesados.Size = new System.Drawing.Size(25, 23);
+            this.btnBuscarRutaProcesados.Size = new System.Drawing.Size(26, 28);
             this.btnBuscarRutaProcesados.TabIndex = 22;
             this.btnBuscarRutaProcesados.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnBuscarRutaProcesados.UseVisualStyleBackColor = false;
@@ -194,7 +194,7 @@ namespace Tools
             this.txtRutaProcesados.Enabled = false;
             this.txtRutaProcesados.Location = new System.Drawing.Point(3, 3);
             this.txtRutaProcesados.Name = "txtRutaProcesados";
-            this.txtRutaProcesados.Size = new System.Drawing.Size(207, 23);
+            this.txtRutaProcesados.Size = new System.Drawing.Size(221, 23);
             this.txtRutaProcesados.TabIndex = 10;
             // 
             // label20
@@ -203,9 +203,9 @@ namespace Tools
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(3, 93);
+            this.label20.Location = new System.Drawing.Point(3, 108);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(126, 31);
+            this.label20.Size = new System.Drawing.Size(133, 36);
             this.label20.TabIndex = 12;
             this.label20.Text = "Ruta Procesados";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -216,9 +216,9 @@ namespace Tools
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(3, 62);
+            this.label19.Location = new System.Drawing.Point(3, 72);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(126, 31);
+            this.label19.Size = new System.Drawing.Size(133, 36);
             this.label19.TabIndex = 5;
             this.label19.Text = "Ruta de Ejemplos";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -231,7 +231,7 @@ namespace Tools
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(3, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(126, 31);
+            this.label17.Size = new System.Drawing.Size(133, 36);
             this.label17.TabIndex = 3;
             this.label17.Text = "Token";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -244,12 +244,12 @@ namespace Tools
             this.tlp1.Controls.Add(this.btnBuscarRutaEjemplos, 1, 0);
             this.tlp1.Controls.Add(this.txt_RutaEjemplos, 0, 0);
             this.tlp1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlp1.Location = new System.Drawing.Point(134, 64);
+            this.tlp1.Location = new System.Drawing.Point(141, 74);
             this.tlp1.Margin = new System.Windows.Forms.Padding(2);
             this.tlp1.Name = "tlp1";
             this.tlp1.RowCount = 1;
             this.tlp1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlp1.Size = new System.Drawing.Size(242, 27);
+            this.tlp1.Size = new System.Drawing.Size(257, 32);
             this.tlp1.TabIndex = 11;
             // 
             // btnBuscarRutaEjemplos
@@ -263,10 +263,10 @@ namespace Tools
             this.btnBuscarRutaEjemplos.IconColor = System.Drawing.Color.Black;
             this.btnBuscarRutaEjemplos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscarRutaEjemplos.IconSize = 20;
-            this.btnBuscarRutaEjemplos.Location = new System.Drawing.Point(215, 2);
+            this.btnBuscarRutaEjemplos.Location = new System.Drawing.Point(229, 2);
             this.btnBuscarRutaEjemplos.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscarRutaEjemplos.Name = "btnBuscarRutaEjemplos";
-            this.btnBuscarRutaEjemplos.Size = new System.Drawing.Size(25, 23);
+            this.btnBuscarRutaEjemplos.Size = new System.Drawing.Size(26, 28);
             this.btnBuscarRutaEjemplos.TabIndex = 22;
             this.btnBuscarRutaEjemplos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnBuscarRutaEjemplos.UseVisualStyleBackColor = false;
@@ -278,16 +278,16 @@ namespace Tools
             this.txt_RutaEjemplos.Enabled = false;
             this.txt_RutaEjemplos.Location = new System.Drawing.Point(3, 3);
             this.txt_RutaEjemplos.Name = "txt_RutaEjemplos";
-            this.txt_RutaEjemplos.Size = new System.Drawing.Size(207, 23);
+            this.txt_RutaEjemplos.Size = new System.Drawing.Size(221, 23);
             this.txt_RutaEjemplos.TabIndex = 10;
             // 
             // txt_TokenConfig
             // 
             this.txt_TokenConfig.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txt_TokenConfig.Enabled = false;
-            this.txt_TokenConfig.Location = new System.Drawing.Point(135, 3);
+            this.txt_TokenConfig.Location = new System.Drawing.Point(142, 3);
             this.txt_TokenConfig.Name = "txt_TokenConfig";
-            this.txt_TokenConfig.Size = new System.Drawing.Size(240, 23);
+            this.txt_TokenConfig.Size = new System.Drawing.Size(255, 23);
             this.txt_TokenConfig.TabIndex = 9;
             // 
             // label18
@@ -296,9 +296,9 @@ namespace Tools
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(3, 31);
+            this.label18.Location = new System.Drawing.Point(3, 36);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(126, 31);
+            this.label18.Size = new System.Drawing.Size(133, 36);
             this.label18.TabIndex = 4;
             this.label18.Text = "Log con Fecha/Hora";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -310,9 +310,9 @@ namespace Tools
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chk_LogHora.AutoSize = true;
             this.chk_LogHora.Enabled = false;
-            this.chk_LogHora.Location = new System.Drawing.Point(135, 34);
+            this.chk_LogHora.Location = new System.Drawing.Point(142, 39);
             this.chk_LogHora.Name = "chk_LogHora";
-            this.chk_LogHora.Size = new System.Drawing.Size(240, 25);
+            this.chk_LogHora.Size = new System.Drawing.Size(255, 30);
             this.chk_LogHora.TabIndex = 10;
             this.chk_LogHora.Text = "SI";
             this.chk_LogHora.UseVisualStyleBackColor = true;
@@ -323,9 +323,9 @@ namespace Tools
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(3, 124);
+            this.label21.Location = new System.Drawing.Point(3, 144);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(126, 31);
+            this.label21.Size = new System.Drawing.Size(133, 36);
             this.label21.TabIndex = 14;
             this.label21.Text = "Ruta Cert. Dig.";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -341,9 +341,9 @@ namespace Tools
             this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnGuardar.IconColor = System.Drawing.Color.Black;
             this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnGuardar.Location = new System.Drawing.Point(135, 189);
+            this.btnGuardar.Location = new System.Drawing.Point(142, 219);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(240, 28);
+            this.btnGuardar.Size = new System.Drawing.Size(255, 30);
             this.btnGuardar.TabIndex = 18;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -354,7 +354,7 @@ namespace Tools
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(378, 220);
+            this.ClientSize = new System.Drawing.Size(400, 252);
             this.Controls.Add(this.tlpForm);
             this.Name = "FrmConfigOtros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

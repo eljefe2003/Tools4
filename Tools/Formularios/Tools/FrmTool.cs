@@ -454,5 +454,10 @@ namespace Tools
         {
             Process.Start(txtDetalle.Text);
         }
+
+        private void btnBorrarLog_Click(object sender, EventArgs e)
+        {
+            rtb_Log.Clear();
+        }
     }
 }

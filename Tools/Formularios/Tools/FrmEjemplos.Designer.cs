@@ -29,12 +29,14 @@ namespace Tools
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tlpGeneral = new System.Windows.Forms.TableLayoutPanel();
             this.tlpLog = new System.Windows.Forms.TableLayoutPanel();
-            this.lbl_Log = new System.Windows.Forms.Label();
             this.rtb_Log = new System.Windows.Forms.RichTextBox();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.lbl_Log = new System.Windows.Forms.Label();
+            this.btnBorrarLog = new FontAwesome.Sharp.IconButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel56 = new System.Windows.Forms.TableLayoutPanel();
             this.dtgEjemplos = new System.Windows.Forms.DataGridView();
@@ -63,6 +65,7 @@ namespace Tools
             this.txtBusquedaEjemplo = new MetroFramework.Controls.MetroTextBox();
             this.tlpGeneral.SuspendLayout();
             this.tlpLog.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel56.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgEjemplos)).BeginInit();
@@ -97,17 +100,45 @@ namespace Tools
             this.tlpLog.BackColor = System.Drawing.Color.Transparent;
             this.tlpLog.ColumnCount = 1;
             this.tlpLog.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpLog.Controls.Add(this.lbl_Log, 0, 0);
             this.tlpLog.Controls.Add(this.rtb_Log, 0, 1);
+            this.tlpLog.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tlpLog.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpLog.Location = new System.Drawing.Point(561, 2);
-            this.tlpLog.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpLog.Margin = new System.Windows.Forms.Padding(2);
             this.tlpLog.Name = "tlpLog";
             this.tlpLog.RowCount = 2;
-            this.tlpLog.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.732484F));
-            this.tlpLog.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 94.26752F));
+            this.tlpLog.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.070707F));
+            this.tlpLog.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.92929F));
             this.tlpLog.Size = new System.Drawing.Size(349, 495);
             this.tlpLog.TabIndex = 23;
+            // 
+            // rtb_Log
+            // 
+            this.rtb_Log.BackColor = System.Drawing.SystemColors.Window;
+            this.rtb_Log.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtb_Log.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtb_Log.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtb_Log.ForeColor = System.Drawing.Color.White;
+            this.rtb_Log.Location = new System.Drawing.Point(3, 38);
+            this.rtb_Log.Name = "rtb_Log";
+            this.rtb_Log.Size = new System.Drawing.Size(343, 454);
+            this.rtb_Log.TabIndex = 4;
+            this.rtb_Log.Text = "";
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.45454F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.54545F));
+            this.tableLayoutPanel4.Controls.Add(this.lbl_Log, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.btnBorrarLog, 1, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(343, 29);
+            this.tableLayoutPanel4.TabIndex = 6;
             // 
             // lbl_Log
             // 
@@ -118,23 +149,27 @@ namespace Tools
             this.lbl_Log.ForeColor = System.Drawing.Color.White;
             this.lbl_Log.Location = new System.Drawing.Point(3, 0);
             this.lbl_Log.Name = "lbl_Log";
-            this.lbl_Log.Size = new System.Drawing.Size(343, 28);
+            this.lbl_Log.Size = new System.Drawing.Size(287, 29);
             this.lbl_Log.TabIndex = 3;
             this.lbl_Log.Text = "Log";
             this.lbl_Log.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // rtb_Log
+            // btnBorrarLog
             // 
-            this.rtb_Log.BackColor = System.Drawing.SystemColors.Window;
-            this.rtb_Log.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtb_Log.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtb_Log.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtb_Log.ForeColor = System.Drawing.Color.White;
-            this.rtb_Log.Location = new System.Drawing.Point(3, 31);
-            this.rtb_Log.Name = "rtb_Log";
-            this.rtb_Log.Size = new System.Drawing.Size(343, 461);
-            this.rtb_Log.TabIndex = 4;
-            this.rtb_Log.Text = "";
+            this.btnBorrarLog.BackColor = System.Drawing.Color.Transparent;
+            this.btnBorrarLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnBorrarLog.FlatAppearance.BorderSize = 0;
+            this.btnBorrarLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorrarLog.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            this.btnBorrarLog.IconColor = System.Drawing.Color.Black;
+            this.btnBorrarLog.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBorrarLog.IconSize = 20;
+            this.btnBorrarLog.Location = new System.Drawing.Point(296, 3);
+            this.btnBorrarLog.Name = "btnBorrarLog";
+            this.btnBorrarLog.Size = new System.Drawing.Size(44, 23);
+            this.btnBorrarLog.TabIndex = 0;
+            this.btnBorrarLog.UseVisualStyleBackColor = false;
+            this.btnBorrarLog.Click += new System.EventHandler(this.btnBorrarLog_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -159,7 +194,7 @@ namespace Tools
             this.tableLayoutPanel56.Controls.Add(this.tableLayoutPanel57, 0, 0);
             this.tableLayoutPanel56.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel56.Location = new System.Drawing.Point(2, 2);
-            this.tableLayoutPanel56.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel56.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel56.Name = "tableLayoutPanel56";
             this.tableLayoutPanel56.RowCount = 3;
             this.tableLayoutPanel56.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.38356F));
@@ -172,29 +207,29 @@ namespace Tools
             // 
             this.dtgEjemplos.AllowUserToResizeColumns = false;
             this.dtgEjemplos.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgEjemplos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgEjemplos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgEjemplos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgEjemplos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgEjemplos.Location = new System.Drawing.Point(2, 36);
-            this.dtgEjemplos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgEjemplos.Margin = new System.Windows.Forms.Padding(2);
             this.dtgEjemplos.MultiSelect = false;
             this.dtgEjemplos.Name = "dtgEjemplos";
             this.dtgEjemplos.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgEjemplos.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgEjemplos.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtgEjemplos.RowHeadersVisible = false;
             this.dtgEjemplos.RowHeadersWidth = 51;
             this.dtgEjemplos.RowTemplate.Height = 24;
@@ -210,7 +245,7 @@ namespace Tools
             this.tableLayoutPanel14.Controls.Add(this.panel3, 0, 0);
             this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel14.Location = new System.Drawing.Point(2, 239);
-            this.tableLayoutPanel14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel14.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
             this.tableLayoutPanel14.RowCount = 1;
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -252,7 +287,7 @@ namespace Tools
             this.btnProbarTodos.IconSize = 25;
             this.btnProbarTodos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProbarTodos.Location = new System.Drawing.Point(0, 0);
-            this.btnProbarTodos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnProbarTodos.Margin = new System.Windows.Forms.Padding(2);
             this.btnProbarTodos.Name = "btnProbarTodos";
             this.btnProbarTodos.Size = new System.Drawing.Size(270, 29);
             this.btnProbarTodos.TabIndex = 4;
@@ -286,7 +321,7 @@ namespace Tools
             this.tlp_archivos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlp_archivos.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlp_archivos.Location = new System.Drawing.Point(0, 0);
-            this.tlp_archivos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlp_archivos.Margin = new System.Windows.Forms.Padding(2);
             this.tlp_archivos.Name = "tlp_archivos";
             this.tlp_archivos.RowCount = 8;
             this.tlp_archivos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
@@ -308,7 +343,7 @@ namespace Tools
             this.chckSpeech.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chckSpeech.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chckSpeech.Location = new System.Drawing.Point(2, 145);
-            this.chckSpeech.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chckSpeech.Margin = new System.Windows.Forms.Padding(2);
             this.chckSpeech.Name = "chckSpeech";
             this.chckSpeech.Size = new System.Drawing.Size(117, 17);
             this.chckSpeech.TabIndex = 9;
@@ -322,7 +357,7 @@ namespace Tools
             this.chckTodo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chckTodo.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chckTodo.Location = new System.Drawing.Point(2, 2);
-            this.chckTodo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chckTodo.Margin = new System.Windows.Forms.Padding(2);
             this.chckTodo.Name = "chckTodo";
             this.chckTodo.Size = new System.Drawing.Size(70, 19);
             this.chckTodo.TabIndex = 8;
@@ -337,7 +372,7 @@ namespace Tools
             this.chckTxtEjemplos.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chckTxtEjemplos.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chckTxtEjemplos.Location = new System.Drawing.Point(2, 121);
-            this.chckTxtEjemplos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chckTxtEjemplos.Margin = new System.Windows.Forms.Padding(2);
             this.chckTxtEjemplos.Name = "chckTxtEjemplos";
             this.chckTxtEjemplos.Size = new System.Drawing.Size(49, 20);
             this.chckTxtEjemplos.TabIndex = 8;
@@ -351,7 +386,7 @@ namespace Tools
             this.chckRequestEjemplos.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chckRequestEjemplos.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chckRequestEjemplos.Location = new System.Drawing.Point(2, 97);
-            this.chckRequestEjemplos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chckRequestEjemplos.Margin = new System.Windows.Forms.Padding(2);
             this.chckRequestEjemplos.Name = "chckRequestEjemplos";
             this.chckRequestEjemplos.Size = new System.Drawing.Size(82, 20);
             this.chckRequestEjemplos.TabIndex = 8;
@@ -365,7 +400,7 @@ namespace Tools
             this.chckCdrEjemplos.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chckCdrEjemplos.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chckCdrEjemplos.Location = new System.Drawing.Point(2, 73);
-            this.chckCdrEjemplos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chckCdrEjemplos.Margin = new System.Windows.Forms.Padding(2);
             this.chckCdrEjemplos.Name = "chckCdrEjemplos";
             this.chckCdrEjemplos.Size = new System.Drawing.Size(52, 20);
             this.chckCdrEjemplos.TabIndex = 8;
@@ -379,7 +414,7 @@ namespace Tools
             this.chckXmlEjemplos.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chckXmlEjemplos.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chckXmlEjemplos.Location = new System.Drawing.Point(2, 49);
-            this.chckXmlEjemplos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chckXmlEjemplos.Margin = new System.Windows.Forms.Padding(2);
             this.chckXmlEjemplos.Name = "chckXmlEjemplos";
             this.chckXmlEjemplos.Size = new System.Drawing.Size(53, 20);
             this.chckXmlEjemplos.TabIndex = 8;
@@ -393,7 +428,7 @@ namespace Tools
             this.chckPdfEjemplos.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chckPdfEjemplos.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chckPdfEjemplos.Location = new System.Drawing.Point(2, 25);
-            this.chckPdfEjemplos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chckPdfEjemplos.Margin = new System.Windows.Forms.Padding(2);
             this.chckPdfEjemplos.Name = "chckPdfEjemplos";
             this.chckPdfEjemplos.Size = new System.Drawing.Size(51, 20);
             this.chckPdfEjemplos.TabIndex = 7;
@@ -477,7 +512,7 @@ namespace Tools
             this.tableLayoutPanel57.Controls.Add(this.txtBusquedaEjemplo, 1, 0);
             this.tableLayoutPanel57.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel57.Location = new System.Drawing.Point(2, 2);
-            this.tableLayoutPanel57.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel57.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel57.Name = "tableLayoutPanel57";
             this.tableLayoutPanel57.RowCount = 1;
             this.tableLayoutPanel57.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -545,7 +580,7 @@ namespace Tools
             // 
             this.txtBusquedaEjemplo.CustomButton.Image = null;
             this.txtBusquedaEjemplo.CustomButton.Location = new System.Drawing.Point(153, 2);
-            this.txtBusquedaEjemplo.CustomButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBusquedaEjemplo.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.txtBusquedaEjemplo.CustomButton.Name = "";
             this.txtBusquedaEjemplo.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtBusquedaEjemplo.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -557,7 +592,7 @@ namespace Tools
             this.txtBusquedaEjemplo.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtBusquedaEjemplo.Lines = new string[0];
             this.txtBusquedaEjemplo.Location = new System.Drawing.Point(183, 2);
-            this.txtBusquedaEjemplo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBusquedaEjemplo.Margin = new System.Windows.Forms.Padding(2);
             this.txtBusquedaEjemplo.MaxLength = 32767;
             this.txtBusquedaEjemplo.Name = "txtBusquedaEjemplo";
             this.txtBusquedaEjemplo.PasswordChar = '\0';
@@ -586,7 +621,8 @@ namespace Tools
             this.Load += new System.EventHandler(this.FrmEjemplos_Load);
             this.tlpGeneral.ResumeLayout(false);
             this.tlpLog.ResumeLayout(false);
-            this.tlpLog.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel56.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgEjemplos)).EndInit();
@@ -609,7 +645,6 @@ namespace Tools
 
         private System.Windows.Forms.TableLayoutPanel tlpGeneral;
         private System.Windows.Forms.TableLayoutPanel tlpLog;
-        private System.Windows.Forms.Label lbl_Log;
         public System.Windows.Forms.RichTextBox rtb_Log;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel56;
@@ -637,5 +672,8 @@ namespace Tools
         private AltoControls.SlideButton chckDemo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox chckSpeech;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Label lbl_Log;
+        private FontAwesome.Sharp.IconButton btnBorrarLog;
     }
 }

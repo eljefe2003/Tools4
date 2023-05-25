@@ -21,7 +21,7 @@ namespace Tools
             }
             catch (Exception e)
             {
-                MessageBox.Show("Revisa tus parametros de conexión a la BD: " + connectionString);
+                //MessageBox.Show("Revisa tus parametros de conexión a la BD: " + connectionString);
                 e.GetBaseException();                
             }
         }
@@ -1372,6 +1372,125 @@ namespace Tools
 
         #endregion
 
+        #region Consulta Servicio
+
+        public int getFact95(string desde, string hasta, string cadenaConexion)
+        {
+            string query = "select COUNT(*) from peprodpse.invoices i where status = 95 and activo = 1 and created_at BETWEEN '" + desde + "' and '" + hasta + "'";
+            int resultado = 0;
+            List<String> listDoc = new List<string>();
+            conection(cadenaConexion);
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            MySqlDataReader reader;
+            try
+            {
+                reader = commandDatabase.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        resultado = reader.GetInt32(0);
+                    }
+                }
+                closeCon();
+                return resultado;
+            }
+            catch (Exception ex)
+            {
+                closeCon();
+                return 0;
+            }
+        }
+
+        public int getNotes95(string desde, string hasta, string cadenaConexion)
+        {
+            string query = "select COUNT(*) from peprodpse.notes n where status = 95 and activo = 1 and created_at BETWEEN '" + desde + "' and '" + hasta + "'";
+            int resultado = 0;
+            List<String> listDoc = new List<string>();
+            conection(cadenaConexion);
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            MySqlDataReader reader;
+            try
+            {
+                reader = commandDatabase.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        resultado = reader.GetInt32(0);
+                    }
+                }
+                closeCon();
+                return resultado;
+            }
+            catch (Exception ex)
+            {
+                closeCon();
+                return 0;
+            }
+        }
+
+        public int getGR95(string desde, string hasta, string cadenaConexion)
+        {
+            string query = "select COUNT(*) from peprodpse.despatch_advice where status = 95 and activo = 1 and created_at BETWEEN '" + desde + "' and '" + hasta + "'";
+            int resultado = 0;
+            List<String> listDoc = new List<string>();
+            conection(cadenaConexion);
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            MySqlDataReader reader;
+            try
+            {
+                reader = commandDatabase.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        resultado = reader.GetInt32(0);
+                    }
+                }
+                closeCon();
+                return resultado;
+            }
+            catch (Exception ex)
+            {
+                closeCon();
+                return 0;
+            }
+        }
+
+        public int getGR98(string desde, string hasta, string cadenaConexion)
+        {
+            string query = "select COUNT(*) from peprodpse.despatch_advice where status = 98 and activo = 1 and created_at BETWEEN '" + desde + "' and '" + hasta + "'";
+            int resultado = 0;
+            List<String> listDoc = new List<string>();
+            conection(cadenaConexion);
+            MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
+            commandDatabase.CommandTimeout = 60;
+            MySqlDataReader reader;
+            try
+            {
+                reader = commandDatabase.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        resultado = reader.GetInt32(0);
+                    }
+                }
+                closeCon();
+                return resultado;
+            }
+            catch (Exception ex)
+            {
+                closeCon();
+                return 0;
+            }
+        }
+
+        #endregion
 
     }
 }

@@ -240,5 +240,10 @@ namespace Tools
             }
             return corregido;
         }
+
+        private void btnBorrarLog_Click(object sender, EventArgs e)
+        {
+            rtb_Log.Clear();
+        }
     }
 }

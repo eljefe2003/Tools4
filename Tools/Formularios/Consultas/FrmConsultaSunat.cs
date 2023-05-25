@@ -16,6 +16,12 @@ namespace Tools
         Thread hiloPrimario, hiloSecundario;
         ThreadStart threadPrimario, threadSecundario;
         List<string> lista1, lista2, lista3, lista4, lista5, lista6, lista7, lista8, lista9, lista10, lista11, lista12, lista13, lista14, lista15, lista16;
+
+        private void btnBorrarLog_Click(object sender, EventArgs e)
+        {
+            rtb_Log.Clear();
+        }
+
         int contador = 0;
 
         public FrmConsultaSunat(Color color1, Color color2, Color color3, Color color4)

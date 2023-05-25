@@ -12,6 +12,7 @@ namespace Tools
         string rutaEjemplos, rutaEjemplosProcesados, rutaDrive, rutaZip;
         string hostPSE21, hostPSE20, hostOSE, portPSE21, portPSE20, portOSE, clavePSE21, clavePSE20, claveOSE, userPSE20, userPSE21, userOSE;
         string hostAdmin, portAdmin, claveAdmin, userAdmin;
+        string color;
 
         public string RutaEjemplos { get => rutaEjemplos; set => rutaEjemplos = value; }
         public string RutaEjemplosProcesados { get => rutaEjemplosProcesados; set => rutaEjemplosProcesados = value; }
@@ -33,6 +34,7 @@ namespace Tools
         public string ClaveAdmin { get => claveAdmin; set => claveAdmin = value; }
         public string UserAdmin { get => userAdmin; set => userAdmin = value; }
         public string RutaZip { get => rutaZip; set => rutaZip = value; }
+        public string Color { get => color; set => color = value; }
 
         public LeerConfigPersonal()
         {
@@ -162,6 +164,10 @@ namespace Tools
                             else if (clave == "ClaveBdAdmin")
                             {
                                 claveAdmin = valor;
+                            }
+                            else if (clave == "Color")
+                            {
+                                color = valor;
                             }
                         }
                     }

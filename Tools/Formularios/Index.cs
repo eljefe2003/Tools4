@@ -29,9 +29,13 @@ namespace Tools
         private IconButton currentBtn;
         private IconButton currentBtn2;
         string color;
+        List<string> listPSE = null;
+        List<string> listOSE = null;
 
-        public Index()
+        public Index(List<string> listPse, List<string> listOse)
         {
+            listPSE = listPse;
+            listOSE = listOse;
             InitializeComponent();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 25);
@@ -48,9 +52,13 @@ namespace Tools
 
             if (Tema == "Rosado")
             {
-                Color1 = Color.FromArgb(107, 35, 88);
+                //Color1 = Color.FromArgb(107, 35, 88);
+                //Color2 = Color.FromArgb(238, 150, 215);
+                //Color3 = Color.FromArgb(235, 77, 193);
+                //Color4 = Color.FromArgb(107, 67, 97);
+                Color1 = Color.FromArgb(150, 35, 88);
                 Color2 = Color.FromArgb(238, 150, 215);
-                Color3 = Color.FromArgb(235, 77, 193);
+                Color3 = Color.FromArgb(250, 139, 241);
                 Color4 = Color.FromArgb(107, 67, 97);
             }
             else if (Tema == "Azul")
@@ -78,19 +86,16 @@ namespace Tools
             pnlTop.BackColor = Color1;
             pnlLeft.BackColor = Color1;
             pnlButton.BackColor = Color1;
-            pnlRight.BackColor = Color1;
-
-      
-          
-         
+            pnlRight.BackColor = Color1;   
             pnlForm.BackColor = Color4;
-
             pnlEmision.BackColor = Color2;
             pnlConsultas.BackColor = Color2;
             pnlConfiguracion.BackColor = Color2;
-
             pnlTop2.BackColor = Color3;
             pnlMenu.BackColor = Color3;
+            //btnMinimizar.IconColor = Color1;
+            //btnMaximizar.IconColor = Color1;
+            //btnCerrar.IconColor = Color1;
         }
 
         private void AbrirFormHijo(Form childForm)
@@ -332,6 +337,22 @@ namespace Tools
         private void btnAyuda_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, Color1);
+            ActivateButton2(sender);
+            TestColor childForm = new TestColor();
+            if (FormHijoActual != null)
+            {
+                FormHijoActual.Close();
+            }
+            FormHijoActual = childForm;
+            //End
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            pnlForm.Controls.Add(childForm);
+            pnlForm.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            lblSeccion.Text = childForm.Text;
         }
 
         private void pnlTop2_MouseDown(object sender, MouseEventArgs e)
@@ -453,7 +474,7 @@ namespace Tools
         {
             ActivateButton2(sender);
             //AbrirFormHijo(new FrmVentas());
-            FrmConsultasBD childForm = new FrmConsultasBD(Color1, Color2, Color3, Color4);
+            FrmConsultasBD childForm = new FrmConsultasBD(Color1, Color2, Color3, Color4, listPSE, listOSE);
             if (FormHijoActual != null)
             {
                 FormHijoActual.Close();
@@ -535,7 +556,7 @@ namespace Tools
         {
             ActivateButton2(sender);
             //AbrirFormHijo(new FrmVentas());
-            FrmEmpresas childForm = new FrmEmpresas(Color1, Color2, Color3, Color4);
+            FrmEmpresas childForm = new FrmEmpresas(Color1, Color2, Color3, Color4, listPSE, listOSE);
             if (FormHijoActual != null)
             {
                 FormHijoActual.Close();
@@ -575,23 +596,43 @@ namespace Tools
 
         private void btnServicio_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Próximamente...!");
-            //ActivateButton2(sender);
-            //FrmServicio childForm = new FrmServicio();
-            //if (FormHijoActual != null)
-            //{
-            //    FormHijoActual.Close();
-            //}
-            //FormHijoActual = childForm;
-            ////End
-            //childForm.TopLevel = false;
-            //childForm.FormBorderStyle = FormBorderStyle.None;
-            //childForm.Dock = DockStyle.Fill;
-            //pnlForm.Controls.Add(childForm);
-            //pnlForm.Tag = childForm;
-            //childForm.BringToFront();
-            //childForm.Show();
-            //lblSeccion.Text = childForm.Text;
+            //MessageBox.Show("Próximamente...!");
+            ActivateButton2(sender);
+            FrmServicio childForm = new FrmServicio();
+            if (FormHijoActual != null)
+            {
+                FormHijoActual.Close();
+            }
+            FormHijoActual = childForm;
+            //End
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            pnlForm.Controls.Add(childForm);
+            pnlForm.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            lblSeccion.Text = childForm.Text;
+        }
+
+        private void btnJson_Click(object sender, EventArgs e)
+        {
+            ActivateButton2(sender);
+            FrmJson childForm = new FrmJson(Color1, Color2, Color3, Color4);
+            if (FormHijoActual != null)
+            {
+                FormHijoActual.Close();
+            }
+            FormHijoActual = childForm;
+            //End
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            pnlForm.Controls.Add(childForm);
+            pnlForm.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            lblSeccion.Text = childForm.Text;
         }
 
         private void DisableButton()

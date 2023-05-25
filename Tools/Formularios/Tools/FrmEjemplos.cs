@@ -93,7 +93,7 @@ namespace Tools
             CheckForIllegalCrossThreadCalls = false;
             pnlDescargas.Visible = false;
             //leerConfigPersonal();
-            cargaDrive();
+            //cargaDrive();
             //LeerConfig();
             cargaCmbDoc();
             LeerDll();
@@ -1193,6 +1193,11 @@ namespace Tools
             //}
             //catch (Exception ex) { result = ex.ToString(); }
             //ConfigGlobal = new LeerConfig();
+        }
+
+        private void btnBorrarLog_Click(object sender, EventArgs e)
+        {
+            rtb_Log.Clear();
         }
 
         public void EnvioPSE()

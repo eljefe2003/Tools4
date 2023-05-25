@@ -411,5 +411,10 @@ namespace Tools
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnBorrarLog_Click(object sender, EventArgs e)
+        {
+            rtb_Log.Clear();
+        }
     }
 }

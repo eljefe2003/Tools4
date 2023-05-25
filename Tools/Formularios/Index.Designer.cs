@@ -48,6 +48,7 @@ namespace Tools
             this.btnSunat = new FontAwesome.Sharp.IconButton();
             this.btnConsultas = new FontAwesome.Sharp.IconButton();
             this.pnlEmision = new System.Windows.Forms.Panel();
+            this.btnJson = new FontAwesome.Sharp.IconButton();
             this.btnZip = new FontAwesome.Sharp.IconButton();
             this.btnEjemplos = new FontAwesome.Sharp.IconButton();
             this.btnDescargas = new FontAwesome.Sharp.IconButton();
@@ -61,7 +62,7 @@ namespace Tools
             this.lblSeccion = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.btnCerrar = new FontAwesome.Sharp.IconButton();
-            this.iconButton18 = new FontAwesome.Sharp.IconButton();
+            this.btnMaximizar = new FontAwesome.Sharp.IconButton();
             this.btnMinimizar = new FontAwesome.Sharp.IconButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.cmbTema = new MetroFramework.Controls.MetroComboBox();
@@ -167,7 +168,7 @@ namespace Tools
             this.btnAyuda.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAyuda.IconSize = 12;
             this.btnAyuda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAyuda.Location = new System.Drawing.Point(0, 472);
+            this.btnAyuda.Location = new System.Drawing.Point(0, 497);
             this.btnAyuda.Margin = new System.Windows.Forms.Padding(2);
             this.btnAyuda.Name = "btnAyuda";
             this.btnAyuda.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
@@ -184,7 +185,7 @@ namespace Tools
             this.pnlConfiguracion.Controls.Add(this.btnPSE);
             this.pnlConfiguracion.Controls.Add(this.btnConfigBD);
             this.pnlConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlConfiguracion.Location = new System.Drawing.Point(0, 396);
+            this.pnlConfiguracion.Location = new System.Drawing.Point(0, 421);
             this.pnlConfiguracion.Margin = new System.Windows.Forms.Padding(2);
             this.pnlConfiguracion.Name = "pnlConfiguracion";
             this.pnlConfiguracion.Size = new System.Drawing.Size(135, 76);
@@ -262,7 +263,7 @@ namespace Tools
             this.btnConfiguracion.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnConfiguracion.IconSize = 12;
             this.btnConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfiguracion.Location = new System.Drawing.Point(0, 371);
+            this.btnConfiguracion.Location = new System.Drawing.Point(0, 396);
             this.btnConfiguracion.Margin = new System.Windows.Forms.Padding(2);
             this.btnConfiguracion.Name = "btnConfiguracion";
             this.btnConfiguracion.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
@@ -280,7 +281,7 @@ namespace Tools
             this.pnlConsultas.Controls.Add(this.btnBD);
             this.pnlConsultas.Controls.Add(this.btnSunat);
             this.pnlConsultas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlConsultas.Location = new System.Drawing.Point(0, 270);
+            this.pnlConsultas.Location = new System.Drawing.Point(0, 295);
             this.pnlConsultas.Margin = new System.Windows.Forms.Padding(2);
             this.pnlConsultas.Name = "pnlConsultas";
             this.pnlConsultas.Size = new System.Drawing.Size(135, 101);
@@ -342,7 +343,7 @@ namespace Tools
             this.btnBD.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
             this.btnBD.Size = new System.Drawing.Size(135, 25);
             this.btnBD.TabIndex = 8;
-            this.btnBD.Text = "BD";
+            this.btnBD.Text = "Consumos";
             this.btnBD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBD.UseVisualStyleBackColor = true;
             this.btnBD.Click += new System.EventHandler(this.btnBD_Click);
@@ -378,7 +379,7 @@ namespace Tools
             this.btnConsultas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnConsultas.IconSize = 12;
             this.btnConsultas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConsultas.Location = new System.Drawing.Point(0, 245);
+            this.btnConsultas.Location = new System.Drawing.Point(0, 270);
             this.btnConsultas.Margin = new System.Windows.Forms.Padding(2);
             this.btnConsultas.Name = "btnConsultas";
             this.btnConsultas.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
@@ -391,6 +392,7 @@ namespace Tools
             // 
             // pnlEmision
             // 
+            this.pnlEmision.Controls.Add(this.btnJson);
             this.pnlEmision.Controls.Add(this.btnZip);
             this.pnlEmision.Controls.Add(this.btnEjemplos);
             this.pnlEmision.Controls.Add(this.btnDescargas);
@@ -399,9 +401,29 @@ namespace Tools
             this.pnlEmision.Location = new System.Drawing.Point(0, 141);
             this.pnlEmision.Margin = new System.Windows.Forms.Padding(2);
             this.pnlEmision.Name = "pnlEmision";
-            this.pnlEmision.Size = new System.Drawing.Size(135, 104);
+            this.pnlEmision.Size = new System.Drawing.Size(135, 129);
             this.pnlEmision.TabIndex = 6;
             this.pnlEmision.Visible = false;
+            // 
+            // btnJson
+            // 
+            this.btnJson.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnJson.FlatAppearance.BorderSize = 0;
+            this.btnJson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnJson.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnJson.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnJson.IconColor = System.Drawing.Color.Black;
+            this.btnJson.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnJson.Location = new System.Drawing.Point(0, 100);
+            this.btnJson.Margin = new System.Windows.Forms.Padding(2);
+            this.btnJson.Name = "btnJson";
+            this.btnJson.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
+            this.btnJson.Size = new System.Drawing.Size(135, 25);
+            this.btnJson.TabIndex = 12;
+            this.btnJson.Text = "Json";
+            this.btnJson.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnJson.UseVisualStyleBackColor = true;
+            this.btnJson.Click += new System.EventHandler(this.btnJson_Click);
             // 
             // btnZip
             // 
@@ -598,7 +620,7 @@ namespace Tools
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.61313F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.61313F));
             this.tableLayoutPanel5.Controls.Add(this.btnCerrar, 3, 0);
-            this.tableLayoutPanel5.Controls.Add(this.iconButton18, 2, 0);
+            this.tableLayoutPanel5.Controls.Add(this.btnMaximizar, 2, 0);
             this.tableLayoutPanel5.Controls.Add(this.btnMinimizar, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel1, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Right;
@@ -630,25 +652,25 @@ namespace Tools
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // iconButton18
+            // btnMaximizar
             // 
-            this.iconButton18.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton18.FlatAppearance.BorderSize = 0;
-            this.iconButton18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton18.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(105)))), ((int)(((byte)(189)))));
-            this.iconButton18.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
-            this.iconButton18.IconColor = System.Drawing.Color.Black;
-            this.iconButton18.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton18.IconSize = 25;
-            this.iconButton18.Location = new System.Drawing.Point(376, 2);
-            this.iconButton18.Margin = new System.Windows.Forms.Padding(2);
-            this.iconButton18.Name = "iconButton18";
-            this.iconButton18.Size = new System.Drawing.Size(46, 33);
-            this.iconButton18.TabIndex = 5;
-            this.iconButton18.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton18.UseVisualStyleBackColor = false;
-            this.iconButton18.Click += new System.EventHandler(this.iconButton18_Click);
+            this.btnMaximizar.BackColor = System.Drawing.Color.Transparent;
+            this.btnMaximizar.FlatAppearance.BorderSize = 0;
+            this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximizar.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaximizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(105)))), ((int)(((byte)(189)))));
+            this.btnMaximizar.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
+            this.btnMaximizar.IconColor = System.Drawing.Color.Black;
+            this.btnMaximizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMaximizar.IconSize = 25;
+            this.btnMaximizar.Location = new System.Drawing.Point(376, 2);
+            this.btnMaximizar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMaximizar.Name = "btnMaximizar";
+            this.btnMaximizar.Size = new System.Drawing.Size(46, 33);
+            this.btnMaximizar.TabIndex = 5;
+            this.btnMaximizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMaximizar.UseVisualStyleBackColor = false;
+            this.btnMaximizar.Click += new System.EventHandler(this.iconButton18_Click);
             // 
             // btnMinimizar
             // 
@@ -687,6 +709,7 @@ namespace Tools
             // 
             // cmbTema
             // 
+            this.cmbTema.BackColor = System.Drawing.Color.Transparent;
             this.cmbTema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbTema.FormattingEnabled = true;
             this.cmbTema.ItemHeight = 23;
@@ -700,6 +723,7 @@ namespace Tools
             this.cmbTema.Name = "cmbTema";
             this.cmbTema.Size = new System.Drawing.Size(122, 29);
             this.cmbTema.TabIndex = 0;
+            this.cmbTema.UseCustomBackColor = true;
             this.cmbTema.UseSelectable = true;
             this.cmbTema.SelectedIndexChanged += new System.EventHandler(this.cmbTema_SelectedIndexChanged);
             // 
@@ -785,7 +809,7 @@ namespace Tools
         private System.Windows.Forms.Panel pnlForm;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private FontAwesome.Sharp.IconButton btnCerrar;
-        private FontAwesome.Sharp.IconButton iconButton18;
+        private FontAwesome.Sharp.IconButton btnMaximizar;
         private FontAwesome.Sharp.IconButton btnMinimizar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
@@ -796,5 +820,6 @@ namespace Tools
         private FontAwesome.Sharp.IconButton btnEmpresas;
         private FontAwesome.Sharp.IconButton btnZip;
         private FontAwesome.Sharp.IconButton btnServicio;
+        private FontAwesome.Sharp.IconButton btnJson;
     }
 }

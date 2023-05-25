@@ -188,8 +188,8 @@ namespace Tools
                 else
                 {
                     this.rtb_Log.SelectionStart = this.rtb_Log.Text.Length;
-                    rtb_Log.SelectionColor = Color.FromArgb(204, 0, 56);
-                    //rtb_Log.SelectionColor = Color.Black;
+                    //rtb_Log.SelectionColor = Color.FromArgb(204, 0, 56);
+                    rtb_Log.SelectionColor = Color.Red;
                     rtb_Log.AppendText("[" + DateTime.Now.Day.ToString("d2") + "-" + DateTime.Now.Month.ToString("d2") + "-" + DateTime.Now.Year + " " +
                     DateTime.Now.Hour.ToString("d2") + ":" + DateTime.Now.Minute.ToString("d2") + ":" + DateTime.Now.Second.ToString("d2") + "] " + msg + Environment.NewLine);
                     //msj = true;
@@ -207,7 +207,8 @@ namespace Tools
                 else
                 {
                     this.rtb_Log.SelectionStart = this.rtb_Log.Text.Length;
-                    rtb_Log.SelectionColor = Color.FromArgb(204, 0, 56);
+                    //rtb_Log.SelectionColor = Color.FromArgb(204, 0, 56);
+                    rtb_Log.SelectionColor = Color.Red;
                     rtb_Log.AppendText(msg + Environment.NewLine);
                     //msj = true;
                 }
@@ -1908,6 +1909,11 @@ namespace Tools
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnBorrarLog_Click(object sender, EventArgs e)
+        {
+            rtb_Log.Clear();
         }
 
         public string DescomprimirArchivo(string RutaComprimido)
