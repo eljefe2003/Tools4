@@ -165,7 +165,7 @@ namespace Tools
                             {
                                 claveAdmin = valor;
                             }
-                            else if (clave == "Color")
+                            else if (clave == "Tema")
                             {
                                 color = valor;
                             }

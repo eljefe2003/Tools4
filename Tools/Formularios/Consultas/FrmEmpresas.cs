@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 
 namespace Tools
 {
@@ -33,9 +34,11 @@ namespace Tools
             InitializeComponent();
             tlpForm.BackColor = Color.White;
             btnProcesar.BackColor = color1;
+            btnConsumoFolios.BackColor = color1;
             tlpLog.BackColor = color1;
             rtb_Log.BackColor = color1;
             gbFiltros.ForeColor = color1;
+            gbFiltroConsumo.ForeColor = color1;
             rtb_Log.ForeColor = color2;
             lbl_Log.ForeColor = color2;
             listClientes = lisCli1;
@@ -77,17 +80,17 @@ namespace Tools
         {
             Conexion conex = new Conexion();
             string Ruc = dtgEmpresas.CurrentRow.Cells[0].Value.ToString();
-            string usuario = conex.getEmpresaUserPortal(Ruc, ObtieneCadenaConexion());
+            string usuario = conex.getEmpresaUserPortal(Ruc, ObtieneCadenaConexionAdmin());
             ProgressBar.PerformStep();
-            string firmado = conex.getEmpresaFirmado(Ruc, ObtieneCadenaConexion());
+            string firmado = conex.getEmpresaFirmado(Ruc, ObtieneCadenaConexionAdmin());
             ProgressBar.PerformStep();
-            string Envio = conex.getEmpresaEnvia(Ruc, ObtieneCadenaConexion());
+            string Envio = conex.getEmpresaEnvia(Ruc, ObtieneCadenaConexionAdmin());
             ProgressBar.PerformStep();
-            string folios = conex.getEmpresaFolios(Ruc, ObtieneCadenaConexion2());
+            string folios = conex.getEmpresaFolios(Ruc, ObtieneCadenaConexionPSE21());
             ProgressBar.PerformStep();
-            string VigenciaFolios = conex.getEmpresaFoliosVigencia(Ruc, ObtieneCadenaConexion2());
+            string VigenciaFolios = conex.getEmpresaFoliosVigencia(Ruc, ObtieneCadenaConexionPSE21());
             ProgressBar.PerformStep();
-            string Emitio2Meses = conex.getEmpresaEmitio2Meses(Ruc, ObtieneCadenaConexion2());
+            string Emitio2Meses = conex.getEmpresaEmitio2Meses(Ruc, ObtieneCadenaConexionPSE21());
             ProgressBar.PerformStep();
             Log("---------- PSE -----------", true, false);
             Log("Ruc: " + Ruc, true, false);
@@ -106,13 +109,13 @@ namespace Tools
             Conexion conex = new Conexion();
             string Ruc = dtgEmpresas.CurrentRow.Cells[0].Value.ToString();
             ProgressBar.PerformStep();
-            string TipoPlan = conex.getEmpresaOSETipoPlan(Ruc, ObtieneCadenaConexion3());
+            string TipoPlan = conex.getEmpresaOSETipoPlan(Ruc, ObtieneCadenaConexionOSE());
             ProgressBar.PerformStep();
-            string Pse = conex.getEmpresaOSEPSE(Ruc,ObtieneCadenaConexion3());
+            string Pse = conex.getEmpresaOSEPSE(Ruc, ObtieneCadenaConexionOSE());
             ProgressBar.PerformStep();
-            string folios = conex.getEmpresaFoliosOSE(Ruc, ObtieneCadenaConexion3());
+            string folios = conex.getEmpresaFoliosOSE(Ruc, ObtieneCadenaConexionOSE());
             ProgressBar.PerformStep();
-            string VigenciaFolios = conex.getEmpresaOSEFoliosVigencia(Ruc, ObtieneCadenaConexion3());
+            string VigenciaFolios = conex.getEmpresaOSEFoliosVigencia(Ruc, ObtieneCadenaConexionOSE());
             ProgressBar.PerformStep();
 
             Log("---------- OSE -----------", true, false);
@@ -129,7 +132,7 @@ namespace Tools
 
         }
 
-        private string ObtieneCadenaConexion()
+        private string ObtieneCadenaConexionAdmin()
         {
             LeerConfigPersonal config = new LeerConfigPersonal();
             string connectionString = "";
@@ -141,7 +144,7 @@ namespace Tools
             return connectionString;
         }
 
-        private string ObtieneCadenaConexion2()
+        private string ObtieneCadenaConexionPSE21()
         {
             LeerConfigPersonal config = new LeerConfigPersonal();
             string connectionString = "";
@@ -153,7 +156,7 @@ namespace Tools
             return connectionString;
         }
 
-        private string ObtieneCadenaConexion3()
+        private string ObtieneCadenaConexionOSE()
         {
             LeerConfigPersonal config = new LeerConfigPersonal();
             string connectionString = "";
@@ -162,6 +165,18 @@ namespace Tools
              ";port=" + config.PortOSE +
              ";username=" + config.UserOSE +
              ";password=" + config.ClaveOSE;
+            return connectionString;
+        }
+
+        private string ObtieneCadenaConexionPSE20()
+        {
+            LeerConfigPersonal config = new LeerConfigPersonal();
+            string connectionString = "";
+            connectionString =
+             "datasource=" + config.HostPSE20 +
+             ";port=" + config.PortPSE20 +
+             ";username=" + config.UserPSE20 +
+             ";password=" + config.ClavePSE20;
             return connectionString;
         }
 
@@ -198,6 +213,146 @@ namespace Tools
         private void btnBorrarLog_Click(object sender, EventArgs e)
         {
             rtb_Log.Clear();
+        }
+
+        private void btnConsumoFolios_Click(object sender, EventArgs e)
+        {
+            Log("Cargando resultados, espera por favor unos segundos (Si el rango de fechas es elevado, el tiempo de espera tambien lo sera!)", true, false);
+            HiloPrincipal();
+        }
+
+        public void HiloPrincipal()
+        {
+            if (hiloPrimario != null)
+            {
+                hiloPrimario.Abort();
+            }
+            CheckForIllegalCrossThreadCalls = false;
+            threadPrimario = new ThreadStart(ProcesaBD);
+            hiloPrimario = new Thread(threadPrimario);
+            hiloPrimario.Start();
+        }
+
+        private string ObtieneDesde()
+        {
+            string dia = dtpDesde.Value.Day.ToString();
+            string mes = dtpDesde.Value.Month.ToString();
+            string año = dtpDesde.Value.Year.ToString();
+            if (dia.Length == 1)
+            {
+                dia = "0" + dia;
+            }
+            if (mes.Length == 1)
+            {
+                mes = "0" + mes;
+            }
+            string desde = año + "-" + mes + "-" + dia;
+            return desde;
+        }
+
+        private string ObtieneHasta()
+        {
+            string dia2 = dtpHasta.Value.Day.ToString();
+            string mes2 = dtpHasta.Value.Month.ToString();
+            string año2 = dtpHasta.Value.Year.ToString();
+            if (dia2.Length == 1)
+            {
+                dia2 = "0" + dia2;
+            }
+            if (mes2.Length == 1)
+            {
+                mes2 = "0" + mes2;
+            }
+            string hasta = año2 + "-" + mes2 + "-" + dia2;
+            return hasta;
+        }
+
+        private string ObtieneAmbiente()
+        {
+            string Ambiente = dtgEmpresas.CurrentRow.Cells[2].Value.ToString();
+            if (Ambiente == "PSE" && rb20.Checked)
+                Ambiente = "PSE20";
+            return Ambiente;
+        }
+
+        private void ProcesaBD()
+        {
+            string desde = ObtieneDesde(), hasta = ObtieneHasta(), ruc = dtgEmpresas.CurrentRow.Cells[0].Value.ToString(), QueryLog = "", Ambiente = ObtieneAmbiente();
+            bool aceptado = false, emision = false, creacion = false, activo = false;
+            Conexion conex = new Conexion();
+            //MessageBox.Show("Espera mientras se procesa tu petición, esto puede demorar unos minutos!");
+            //ts_ProgressBar1.Minimum = 1;
+            //ts_ProgressBar1.Maximum = 3;
+            //ts_ProgressBar1.Value = 1;
+            //ts_ProgressBar1.Step = 1;
+            //Log("----------------------------", true, false);
+            //ts_ProgressBar1.PerformStep();
+            QueryLog += "Ruc(s): " + ruc + Environment.NewLine;
+            QueryLog += "Razon social: " + dtgEmpresas.CurrentRow.Cells[1].Value.ToString() + Environment.NewLine;
+            if (Ambiente.Equals("PSE"))
+            {
+                QueryLog += "Servicio PSE 2.1" + Environment.NewLine;
+            }
+            else if (Ambiente.Equals("PSE20"))
+            {
+                QueryLog += "Servicio PSE 2.0" + Environment.NewLine;
+            }
+            else
+            {
+                QueryLog += "Servicio OSE" + Environment.NewLine;
+            }
+
+            if (rbCreacion.Checked)
+            {
+                QueryLog += "Fecha Desde: " + desde + " Hasta: " + hasta + Environment.NewLine;              
+                QueryLog += "Filtrado por fecha de creación" + Environment.NewLine;
+                creacion = true;
+            }
+            else if (rbEmision.Checked)
+            {
+                QueryLog += "Fecha Desde: " + desde + " Hasta: " + hasta + Environment.NewLine;
+                QueryLog += "Filtrado por fecha de emisión" + Environment.NewLine;
+                emision = true;
+            }
+
+            if (chckActivo.Checked)
+            {
+                activo = true;
+                QueryLog += "Filtrado por documentos activos" + Environment.NewLine;
+            }
+
+            if (chckAceptado.Checked)
+            {
+                aceptado = true;
+                QueryLog += "Filtrado por documentos aceptados" + Environment.NewLine;
+            }
+
+            conex = new Conexion();
+            //conex.conection(ObtieneCadenaConexion());
+            Ambiente = ObtieneAmbiente();
+            List<String> listDocumentos = null;
+            if (Ambiente == "PSE")
+                listDocumentos = conex.getDocumentos(ruc, Ambiente,
+                desde, hasta, "", "", activo, emision, creacion, aceptado, ObtieneCadenaConexionPSE21());
+            else if(Ambiente == "PSE20")
+                listDocumentos = conex.getDocumentos(ruc, Ambiente,
+                desde, hasta, "", "", activo, emision, creacion, aceptado, ObtieneCadenaConexionPSE20());
+            else
+                listDocumentos = conex.getDocumentos(ruc, Ambiente,
+                desde, hasta, "", "", activo, emision, creacion, aceptado, ObtieneCadenaConexionOSE());
+
+            if (listDocumentos != null)
+            {
+                var arrayDocumentos = listDocumentos.ToArray();
+                for (int i = 0; i < arrayDocumentos.Length; i++)
+                {
+                    string linea = arrayDocumentos[i];
+                    QueryLog += linea + Environment.NewLine;
+                }
+                //ts_ProgressBar1.PerformStep();
+                Log("Resultados cargados con Exito!", true, false);
+                Log(QueryLog, true, false);
+            }
         }
 
         private void cargaEmpresasPSE21()
@@ -280,7 +435,7 @@ namespace Tools
                 Log("Cargando empresas OSE... Espera unos segundos por favor", true, false);
                 gbFiltros.Enabled = false;
                 //btnProcesar.Enabled = false;
-                List<String> listClientes = conex.getClientesAdmin("OSE", ObtieneCadenaConexion3());
+                List<String> listClientes = conex.getClientesAdmin("OSE", ObtieneCadenaConexionOSE());
                 ProgressBar.Minimum = 0;
                 ProgressBar.Maximum = listClientes.Count;
                 ProgressBar.Value = 1;

@@ -35,6 +35,43 @@ namespace Tools
             }
         }
 
+        public void saveVersion(Version ver, bool inserta)
+        {
+            string sql = "";
+            bool upt = false;
+            try
+            {
+                if (inserta)
+                {
+                    upt = true;
+                    sql = "INSERT INTO version (version_num, asunto, estado, leido) VALUES (@p1,@p2,@p3,@p4)";
+                }
+                else
+                {
+                    sql = "UPDATE version set version_num=@p1, asunto=@p2, estado=@p3, leido=@p4 WHERE id=@p5";
+                }
+                conection();
+                SQLiteCommand cmd = new SQLiteCommand(sql, con);
+                cmd.Parameters.Add(new SQLiteParameter("@p1", ver.VersionNum));
+                cmd.Parameters.Add(new SQLiteParameter("@p2", ver.Asunto));
+                cmd.Parameters.Add(new SQLiteParameter("@p3", ver.Estado));
+                cmd.Parameters.Add(new SQLiteParameter("@p4", ver.Leido));
+                if (!upt)
+                {
+                    cmd.Parameters.Add(new SQLiteParameter("@p5", ver.Id));
+                }
+
+                int y = cmd.ExecuteNonQuery();
+                Console.WriteLine("Result: {0}", y);
+                closeCon();
+            }
+            catch (Exception ex)
+            {
+                closeCon();
+                throw new Exception(ex.Message);
+            }
+        }
+
         public void saveAnuncio(Anuncio anun, bool inserta)
         {
             string sql = "";
@@ -78,7 +115,7 @@ namespace Tools
             string sql = "";
             try
             {
-                sql = "UPDATE Mensajes set leido=1";
+                sql = "UPDATE version set leido=1";
                 conection();
                 SQLiteCommand cmd = new SQLiteCommand(sql, con);    
                 int y = cmd.ExecuteNonQuery();
@@ -92,40 +129,39 @@ namespace Tools
             }
         }
 
+        //public List<Anuncio> getAllVersion()
+        //{
+        //    List<Anuncio> lst = new List<Anuncio>();
+        //    Anuncio anun;
+        //    try
+        //    {
+        //        conection();
+        //        string query = "";
+        //        query = "select * from version WHERE estado=1";
+        //        SQLiteCommand cmd = new SQLiteCommand(query, con);
+        //        SQLiteDataReader reader = cmd.ExecuteReader();
 
-        public List<Anuncio> getAllAnuncios()
-        {
-            List<Anuncio> lst = new List<Anuncio>();
-            Anuncio anun;
-            try
-            {
-                conection();
-                string query = "";
-                query = "select * from mensajes WHERE status=1";
-                SQLiteCommand cmd = new SQLiteCommand(query, con);
-                SQLiteDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    anun = new Anuncio();
-                    anun.Id = Convert.ToString(reader[0]);
-                    anun.Mensaje = Convert.ToString(reader.GetString(1));
-                    anun.Leido = Convert.ToString(reader[2]);
-                    anun.Version = Convert.ToString(reader.GetString(3));
-                    anun.Status = Convert.ToString(reader[4]);
-                    anun.Asunto = Convert.ToString(reader.GetString(5));                 
-                    lst.Add(anun);
-                }
-                closeCon();
-                return lst;
-            }
-            catch (Exception ex)
-            {
-                closeCon();
-                return lst;
-                throw new Exception(ex.Message);
-            }
-        }
+        //        while (reader.Read())
+        //        {
+        //            anun = new Anuncio();
+        //            anun.Id = Convert.ToString(reader[0]);
+        //            anun.Mensaje = Convert.ToString(reader.GetString(1));
+        //            anun.Leido = Convert.ToString(reader[2]);
+        //            anun.Version = Convert.ToString(reader.GetString(3));
+        //            anun.Status = Convert.ToString(reader[4]);
+        //            anun.Asunto = Convert.ToString(reader.GetString(5));                 
+        //            lst.Add(anun);
+        //        }
+        //        closeCon();
+        //        return lst;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        closeCon();
+        //        return lst;
+        //        throw new Exception(ex.Message);
+        //    }
+        //}
 
         public int getAllAnunciosSinLeer()
         {
@@ -134,7 +170,7 @@ namespace Tools
             {
                 conection();
                 string query = "";
-                query = "select * from mensajes WHERE status=1 and leido=0";
+                query = "select * from version WHERE estado=1 and leido=0";
                 SQLiteCommand cmd = new SQLiteCommand(query, con);
                 SQLiteDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -151,7 +187,6 @@ namespace Tools
                 throw new Exception(ex.Message);
             }
         }
-
 
         public Anuncio getAnuncio(string id)
         {
@@ -184,6 +219,109 @@ namespace Tools
                 throw new Exception(ex.Message);
             }
         }
+
+        public List<Version> getAllVersion()
+        {
+            List<Version> lst = new List<Version>();
+            Version ver;
+            try
+            {
+                conection();
+                string query = "";
+                query = "select * from version WHERE estado=1";
+                SQLiteCommand cmd = new SQLiteCommand(query, con);
+                SQLiteDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    ver = new Version();
+                    ver.Id = Convert.ToInt32(reader[0]);
+                    ver.VersionNum = Convert.ToString(reader[1]);
+                    ver.Asunto = Convert.ToString(reader[2]);
+                    ver.Estado = Convert.ToInt32(reader[3]);
+                    ver.Leido = Convert.ToInt32(reader[4]);
+                    lst.Add(ver);
+                }
+                closeCon();
+                return lst;
+            }
+            catch (Exception ex)
+            {
+                closeCon();
+                return lst;
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public Version getVersion(string version)
+        {
+            Version ver = null;
+            try
+            {
+                conection();
+                string query = "";
+                query = "select * from version WHERE estado=1 and version_num =" + version;
+                SQLiteCommand cmd = new SQLiteCommand(query, con);
+                SQLiteDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    ver = new Version();
+                    ver.Id = Convert.ToInt32(reader[0]);
+                    ver.VersionNum = Convert.ToString(reader[1]);
+                    ver.Asunto = Convert.ToString(reader[2]);
+                    ver.Estado = Convert.ToInt32(reader[3]);
+                    ver.Leido = Convert.ToInt32(reader[4]);
+                }
+                closeCon();
+                return ver;
+            }
+            catch (Exception ex)
+            {
+                closeCon();
+                return ver;
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void saveMensaje(Comentario com, bool inserta)
+        {
+            string sql = "";
+            bool upt = false;
+            try
+            {
+                if (inserta)
+                {
+                    upt = true;
+                    sql = "INSERT INTO mensaje (mensaje, version, status, tipo) VALUES (@p1,@p2,@p3,@p4)";
+                }
+                else
+                {
+                    sql = "UPDATE mensaje set mensaje=@p1, version=@p2, status=@p3, tipo=@p4 WHERE id=@p5";
+                }
+                conection();
+                SQLiteCommand cmd = new SQLiteCommand(sql, con);
+                cmd.Parameters.Add(new SQLiteParameter("@p1", com.Mensaje));
+                cmd.Parameters.Add(new SQLiteParameter("@p2", com.VersionClase.Id));
+                cmd.Parameters.Add(new SQLiteParameter("@p3", com.Status));
+                cmd.Parameters.Add(new SQLiteParameter("@p4", com.Tipo));
+
+                if (!upt)
+                {
+                    cmd.Parameters.Add(new SQLiteParameter("@p5", com.Id));
+                }
+
+                int y = cmd.ExecuteNonQuery();
+                Console.WriteLine("Result: {0}", y);
+                closeCon();
+            }
+            catch (Exception ex)
+            {
+                closeCon();
+                throw new Exception(ex.Message);
+            }
+        }
+
 
         //public Documento getDocument(string serie_correlativo)
         //{

@@ -221,7 +221,22 @@ namespace Tools
         private void cmbTema_SelectedIndexChanged(object sender, EventArgs e)
         {
             ModificaColor(cmbTema.Text);           
-            InicializarColores(cmbTema.Text);         
+            InicializarColores(cmbTema.Text);
+            //FrmToolDaily childForm = new FrmToolDaily(Color1, Color2, Color3, Color4);
+            if (FormHijoActual != null)
+            {
+                FormHijoActual.Close();
+            }
+            //FormHijoActual = childForm;
+            ////End
+            //childForm.TopLevel = false;
+            //childForm.FormBorderStyle = FormBorderStyle.None;
+            //childForm.Dock = DockStyle.Fill;
+            //pnlForm.Controls.Add(null);
+            //pnlForm.Tag = childForm;
+            //childForm.BringToFront();
+            //childForm.Show();
+            //lblSeccion.Text = childForm.Text;
 
         }
 
@@ -254,10 +269,10 @@ namespace Tools
             if(comparacion != "Tema=" + colorCombo)
             {
                 System.IO.File.WriteAllText(@"C:\ConfigTool\Config.txt", dataTxt);
-                DialogResult result;
-                result = MessageBox.Show("Los cambios se harán notables al reiniciar el programa. ¿Desea reiniciarlo ahora?", Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
-                    Application.Restart();
+                //DialogResult result;
+                //result = MessageBox.Show("Los cambios se harán notables al reiniciar el programa. ¿Desea reiniciarlo ahora?", Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                //if (result == DialogResult.Yes)
+                //    Application.Restart();
             }
           
         }

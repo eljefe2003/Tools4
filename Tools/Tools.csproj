@@ -183,6 +183,7 @@
     <Compile Include="Clases varias\EnviaXmlSunat.cs" />
     <Compile Include="Clases varias\EnviaXmlOse.cs" />
     <Compile Include="Clases varias\Firma.cs" />
+    <Compile Include="Comentario.cs" />
     <Compile Include="Connected Services\Faby4\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -323,6 +324,7 @@
     <Compile Include="TestColor.Designer.cs">
       <DependentUpon>TestColor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clases varias\Version.cs" />
     <Compile Include="Web References\Faby3\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
