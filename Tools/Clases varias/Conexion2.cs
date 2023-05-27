@@ -228,7 +228,7 @@ namespace Tools
             {
                 conection();
                 string query = "";
-                query = "select * from version WHERE estado=1";
+                query = "select * from version WHERE estado=1 order by id desc";
                 SQLiteCommand cmd = new SQLiteCommand(query, con);
                 SQLiteDataReader reader = cmd.ExecuteReader();
 
@@ -261,6 +261,37 @@ namespace Tools
                 conection();
                 string query = "";
                 query = "select * from version WHERE estado=1 and version_num =" + version;
+                SQLiteCommand cmd = new SQLiteCommand(query, con);
+                SQLiteDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    ver = new Version();
+                    ver.Id = Convert.ToInt32(reader[0]);
+                    ver.VersionNum = Convert.ToString(reader[1]);
+                    ver.Asunto = Convert.ToString(reader[2]);
+                    ver.Estado = Convert.ToInt32(reader[3]);
+                    ver.Leido = Convert.ToInt32(reader[4]);
+                }
+                closeCon();
+                return ver;
+            }
+            catch (Exception ex)
+            {
+                closeCon();
+                return ver;
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public Version getVersionID(string id)
+        {
+            Version ver = null;
+            try
+            {
+                conection();
+                string query = "";
+                query = "select * from version WHERE estado=1 and id =" + id;
                 SQLiteCommand cmd = new SQLiteCommand(query, con);
                 SQLiteDataReader reader = cmd.ExecuteReader();
 
@@ -321,6 +352,41 @@ namespace Tools
                 throw new Exception(ex.Message);
             }
         }
+
+        public List<Comentario> getAllComentarios(int idVersion)
+        {
+            List<Comentario> lst = new List<Comentario>();
+            Comentario com;
+            try
+            {
+                conection();
+                string query = "";
+                query = "select * from mensaje WHERE status=1 and version="+ idVersion;
+                SQLiteCommand cmd = new SQLiteCommand(query, con);
+                SQLiteDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    com = new Comentario();
+                    com.Id = Convert.ToInt32(reader[0]);
+                    com.Mensaje = Convert.ToString(reader[1]);
+                    com.VersionClase = getVersionID(Convert.ToString(reader[2]));
+                    com.Status = Convert.ToInt32(reader[3]);
+                    com.Tipo = Convert.ToString(reader[4]);
+
+                    lst.Add(com);
+                }
+                closeCon();
+                return lst;
+            }
+            catch (Exception ex)
+            {
+                closeCon();
+                return lst;
+                throw new Exception(ex.Message);
+            }
+        }
+
 
 
         //public Documento getDocument(string serie_correlativo)

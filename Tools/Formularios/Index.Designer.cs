@@ -34,6 +34,7 @@ namespace Tools
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.pnlRight = new System.Windows.Forms.Panel();
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.cmbTema = new MetroFramework.Controls.MetroComboBox();
             this.iconButton16 = new FontAwesome.Sharp.IconButton();
             this.btnAyuda = new FontAwesome.Sharp.IconButton();
             this.pnlConfiguracion = new System.Windows.Forms.Panel();
@@ -64,7 +65,6 @@ namespace Tools
             this.btnMaximizar = new FontAwesome.Sharp.IconButton();
             this.btnMinimizar = new FontAwesome.Sharp.IconButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.cmbTema = new MetroFramework.Controls.MetroComboBox();
             this.lblAnuncio = new AltoControls.AltoSlidingLabel();
             this.pnlForm = new System.Windows.Forms.Panel();
             this.pnlMenu.SuspendLayout();
@@ -139,6 +139,27 @@ namespace Tools
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(135, 562);
             this.pnlMenu.TabIndex = 4;
+            // 
+            // cmbTema
+            // 
+            this.cmbTema.BackColor = System.Drawing.Color.Transparent;
+            this.cmbTema.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cmbTema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbTema.FormattingEnabled = true;
+            this.cmbTema.ItemHeight = 23;
+            this.cmbTema.Items.AddRange(new object[] {
+            "Azul",
+            "Rosado",
+            "Verde",
+            "Amarillo"});
+            this.cmbTema.Location = new System.Drawing.Point(0, 508);
+            this.cmbTema.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbTema.Name = "cmbTema";
+            this.cmbTema.Size = new System.Drawing.Size(135, 29);
+            this.cmbTema.TabIndex = 0;
+            this.cmbTema.UseCustomBackColor = true;
+            this.cmbTema.UseSelectable = true;
+            this.cmbTema.SelectedIndexChanged += new System.EventHandler(this.cmbTema_SelectedIndexChanged);
             // 
             // iconButton16
             // 
@@ -574,7 +595,7 @@ namespace Tools
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(615, 37);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(644, 37);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // lblSeccion
@@ -584,7 +605,7 @@ namespace Tools
             this.lblSeccion.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSeccion.Location = new System.Drawing.Point(3, 0);
             this.lblSeccion.Name = "lblSeccion";
-            this.lblSeccion.Size = new System.Drawing.Size(609, 37);
+            this.lblSeccion.Size = new System.Drawing.Size(638, 37);
             this.lblSeccion.TabIndex = 4;
             this.lblSeccion.Text = "Sección";
             this.lblSeccion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -594,21 +615,21 @@ namespace Tools
             // 
             this.tableLayoutPanel5.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel5.ColumnCount = 4;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.00671F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.11409F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.10738F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.43624F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.23342F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.11936F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.58886F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.7931F));
             this.tableLayoutPanel5.Controls.Add(this.btnCerrar, 3, 0);
             this.tableLayoutPanel5.Controls.Add(this.btnMaximizar, 2, 0);
             this.tableLayoutPanel5.Controls.Add(this.btnMinimizar, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel1, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(615, 0);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(644, 0);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(377, 37);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(348, 37);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
             // btnCerrar
@@ -623,10 +644,10 @@ namespace Tools
             this.btnCerrar.IconColor = System.Drawing.Color.Black;
             this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrar.IconSize = 25;
-            this.btnCerrar.Location = new System.Drawing.Point(318, 2);
+            this.btnCerrar.Location = new System.Drawing.Point(300, 2);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(57, 33);
+            this.btnCerrar.Size = new System.Drawing.Size(46, 33);
             this.btnCerrar.TabIndex = 6;
             this.btnCerrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCerrar.UseVisualStyleBackColor = false;
@@ -644,10 +665,10 @@ namespace Tools
             this.btnMaximizar.IconColor = System.Drawing.Color.Black;
             this.btnMaximizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMaximizar.IconSize = 25;
-            this.btnMaximizar.Location = new System.Drawing.Point(258, 2);
+            this.btnMaximizar.Location = new System.Drawing.Point(250, 2);
             this.btnMaximizar.Margin = new System.Windows.Forms.Padding(2);
             this.btnMaximizar.Name = "btnMaximizar";
-            this.btnMaximizar.Size = new System.Drawing.Size(56, 33);
+            this.btnMaximizar.Size = new System.Drawing.Size(46, 33);
             this.btnMaximizar.TabIndex = 5;
             this.btnMaximizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMaximizar.UseVisualStyleBackColor = false;
@@ -665,10 +686,10 @@ namespace Tools
             this.btnMinimizar.IconColor = System.Drawing.Color.Black;
             this.btnMinimizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMinimizar.IconSize = 25;
-            this.btnMinimizar.Location = new System.Drawing.Point(194, 2);
+            this.btnMinimizar.Location = new System.Drawing.Point(198, 2);
             this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(60, 33);
+            this.btnMinimizar.Size = new System.Drawing.Size(48, 33);
             this.btnMinimizar.TabIndex = 4;
             this.btnMinimizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMinimizar.UseVisualStyleBackColor = false;
@@ -684,36 +705,15 @@ namespace Tools
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(186, 31);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(190, 31);
             this.tableLayoutPanel1.TabIndex = 7;
-            // 
-            // cmbTema
-            // 
-            this.cmbTema.BackColor = System.Drawing.Color.Transparent;
-            this.cmbTema.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.cmbTema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbTema.FormattingEnabled = true;
-            this.cmbTema.ItemHeight = 23;
-            this.cmbTema.Items.AddRange(new object[] {
-            "Azul",
-            "Rosado",
-            "Verde",
-            "Amarillo"});
-            this.cmbTema.Location = new System.Drawing.Point(0, 508);
-            this.cmbTema.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbTema.Name = "cmbTema";
-            this.cmbTema.Size = new System.Drawing.Size(135, 29);
-            this.cmbTema.TabIndex = 0;
-            this.cmbTema.UseCustomBackColor = true;
-            this.cmbTema.UseSelectable = true;
-            this.cmbTema.SelectedIndexChanged += new System.EventHandler(this.cmbTema_SelectedIndexChanged);
             // 
             // lblAnuncio
             // 
             this.lblAnuncio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblAnuncio.Location = new System.Drawing.Point(3, 3);
             this.lblAnuncio.Name = "lblAnuncio";
-            this.lblAnuncio.Size = new System.Drawing.Size(180, 25);
+            this.lblAnuncio.Size = new System.Drawing.Size(184, 25);
             this.lblAnuncio.Slide = false;
             this.lblAnuncio.TabIndex = 1;
             this.lblAnuncio.Text = "Nuevas Mejoras, Click aca para leerlas!";

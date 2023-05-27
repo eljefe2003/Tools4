@@ -52,7 +52,6 @@ namespace Tools
         {
             dtgAnuncios.Columns.Clear();
             dt7 = new DataTable();
-            dt7.Columns.Add("ID");
             dt7.Columns.Add("ASUNTO");
             dt7.Columns.Add("VERSION");
             dt7.Columns.Add("LEIDO", typeof(bool));
@@ -63,7 +62,6 @@ namespace Tools
             for (int i = 0; i < anunciosArray.Length; i++)
             {
                 DataRow row7 = dt7.NewRow();
-                row7["ID"] = anunciosArray[i].Id;
                 row7["ASUNTO"] = anunciosArray[i].Asunto;
                 row7["VERSION"] = anunciosArray[i].VersionNum;
                 if (anunciosArray[i].Leido == 1)
@@ -78,10 +76,9 @@ namespace Tools
             }
             dtgAnuncios.DataSource = dt7;
             var num = dtgAnuncios.Size.Width / 11;
-            dtgAnuncios.Columns[0].Width = num;
-            dtgAnuncios.Columns[1].Width = num * 7;
+            dtgAnuncios.Columns[0].Width = num*8 ;
+            dtgAnuncios.Columns[1].Width = num;
             dtgAnuncios.Columns[2].Width = num;
-            dtgAnuncios.Columns[3].Width = num;
             //this.dtgEjemplos.Columns["NOMBRE"].Visible = false;
 
             //dtgEjemplos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -94,7 +91,7 @@ namespace Tools
             {
                 if (row.Index >= 0 && row.Index + 1 < dtgAnuncios.RowCount)
                 {
-                    string id = dtgAnuncios.Rows[row.Index].Cells[3].Value.ToString();
+                    string id = dtgAnuncios.Rows[row.Index].Cells[2].Value.ToString();
                     if (id != "True")
                     {
                         foreach (DataGridViewCell cell in row.Cells)
@@ -119,7 +116,7 @@ namespace Tools
         {
             if (e.RowIndex >= 0 && e.RowIndex + 1 < dtgAnuncios.RowCount)
             {
-                string vers = dtgAnuncios.Rows[e.RowIndex].Cells[2].Value.ToString();
+                string vers = dtgAnuncios.Rows[e.RowIndex].Cells[1].Value.ToString();
                 Version anun = new Version();
                 anun = conex.getVersion(vers);
                 if (dtgAnuncios.Columns[e.ColumnIndex].Name == "LEIDO") // Eliminar
@@ -149,12 +146,13 @@ namespace Tools
         {
             if (e.RowIndex >= 0 && e.RowIndex + 1 < dtgAnuncios.RowCount)
             {
-                string id = dtgAnuncios.Rows[e.RowIndex].Cells[0].Value.ToString();
-                Anuncio anun = new Anuncio();
-                anun = conex.getAnuncio(id);
+                string id = dtgAnuncios.Rows[e.RowIndex].Cells[1].Value.ToString();
+                Version ver = new Version();
+                ver = conex.getVersion(id);
+                var list = conex.getAllComentarios(ver.Id);
+                var arrayOfComentarios = list.ToArray();
                 if (dtgAnuncios.Columns[e.ColumnIndex].Name == "LEIDO") // Eliminar
                 {
-
                     //string leido = anun.Leido;
                     //if (leido == "1")
                     //{
@@ -169,7 +167,12 @@ namespace Tools
                 }
                 else
                 {
-                    rtbAnuncios.Text = anun.Mensaje.Replace("**", "" + Environment.NewLine);
+                    string Comentarios = "---------------------------- " + id + "----------------------------" + Environment.NewLine + Environment.NewLine;
+                    for (int i = 0; i < arrayOfComentarios.Length; i++)
+                    {
+                        Comentarios += "- " + arrayOfComentarios[i].Mensaje + " (" + arrayOfComentarios[i].Tipo + ")" + Environment.NewLine;
+                    }
+                    rtbAnuncios.Text = Comentarios;
                 }
             }
         }
@@ -327,7 +330,7 @@ namespace Tools
                     conex.saveMensaje(com, true);
 
                     System.Windows.MessageBox.Show("Comentario procesado con éxito!");
-                    CargaDtgVersion();
+                    //CargaDtgVersion();
                     Limpiar();
                 }
                 catch (Exception ex)
