@@ -45,9 +45,9 @@ namespace Tools
 
         private void InicializarColores(string Tema)
         {
-            Color1 = Color.FromArgb(107, 35, 88);
-            Color2 = Color.FromArgb(238, 150, 215);
-            Color3 = Color.FromArgb(235, 77, 193);
+            Color1 = Color.FromArgb(150, 35, 88);
+            Color2 = Color.FromArgb(247, 102, 174);
+            Color3 = Color.FromArgb(250, 139, 241);
             Color4 = Color.FromArgb(107, 67, 97);
 
             if (Tema == "Rosado")
@@ -57,8 +57,8 @@ namespace Tools
                 //Color3 = Color.FromArgb(235, 77, 193);
                 //Color4 = Color.FromArgb(107, 67, 97);
                 Color1 = Color.FromArgb(150, 35, 88);
-                Color2 = Color.FromArgb(238, 150, 215);
-                Color3 = Color.FromArgb(250, 139, 241);
+                Color2 = Color.FromArgb(246, 153, 190);
+                Color3 = Color.FromArgb(247, 102, 174);
                 Color4 = Color.FromArgb(107, 67, 97);
             }
             else if (Tema == "Azul")
