@@ -351,6 +351,8 @@ namespace Tools
 
         private void btnAyuda_Click(object sender, EventArgs e)
         {
+            //string userName = Environment.UserName;
+            //MessageBox.Show(userName);
             ActivateButton(sender, Color1);
             ActivateButton2(sender);
             TestColor childForm = new TestColor();

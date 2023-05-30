@@ -59,6 +59,7 @@
             this.txtAsunto = new MetroFramework.Controls.MetroTextBox();
             this.dtgVersion = new System.Windows.Forms.DataGridView();
             this.btnAñadirVersion = new FontAwesome.Sharp.IconButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dtgAnuncios)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -74,6 +75,7 @@
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgVersion)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // rtbAnuncios
@@ -205,10 +207,11 @@
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabControl1.Location = new System.Drawing.Point(0, 0);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
-            this.metroTabControl1.Size = new System.Drawing.Size(617, 457);
+            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.Size = new System.Drawing.Size(563, 463);
             this.metroTabControl1.TabIndex = 8;
             this.metroTabControl1.UseSelectable = true;
+            this.metroTabControl1.SelectedIndexChanged += new System.EventHandler(this.metroTabControl1_SelectedIndexChanged);
             // 
             // tabPublico
             // 
@@ -218,7 +221,7 @@
             this.tabPublico.HorizontalScrollbarSize = 10;
             this.tabPublico.Location = new System.Drawing.Point(4, 38);
             this.tabPublico.Name = "tabPublico";
-            this.tabPublico.Size = new System.Drawing.Size(609, 415);
+            this.tabPublico.Size = new System.Drawing.Size(555, 421);
             this.tabPublico.TabIndex = 0;
             this.tabPublico.Text = "Público";
             this.tabPublico.VerticalScrollbarBarColor = true;
@@ -554,12 +557,23 @@
             this.btnAñadirVersion.UseVisualStyleBackColor = true;
             this.btnAñadirVersion.Click += new System.EventHandler(this.btnAñadirVersion_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.metroTabControl1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(565, 465);
+            this.panel1.TabIndex = 9;
+            // 
             // Anuncios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 457);
-            this.Controls.Add(this.metroTabControl1);
+            this.ClientSize = new System.Drawing.Size(565, 465);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Anuncios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -583,6 +597,7 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgVersion)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -620,5 +635,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.DataGridView dtgVersion;
         private FontAwesome.Sharp.IconButton btnAñadirVersion;
+        private System.Windows.Forms.Panel panel1;
     }
 }

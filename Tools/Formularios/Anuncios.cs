@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
 using Tools.Clases_varias;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Tools
 {
@@ -41,6 +42,7 @@ namespace Tools
 
         private void Anuncios_Load(object sender, EventArgs e)
         {
+            metroTabControl1.SelectTab(0);
             CargaDtgVersionPublica();
             CargaDtgVersion();
             btnCerrar.DialogResult = DialogResult.OK;
@@ -364,6 +366,13 @@ namespace Tools
             else
                 System.Windows.MessageBox.Show("Revisa los parametros asignados a tu comentario!");
             return false;
+        }
+
+        private void metroTabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (metroTabControl1.SelectedIndex == 1)
+                if (Environment.UserName != "guevarae")
+                    metroTabControl1.SelectTab(0);
         }
 
         #endregion
