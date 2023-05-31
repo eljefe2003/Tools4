@@ -53,16 +53,14 @@ namespace Tools
             btnProcesar.BackColor = color1;
             btnDescargar.BackColor = color1;
             btnProbarCredenciales.ForeColor = Color.White;
-            btnProcesar.ForeColor = Color.White; ;
-            btnDescargar.ForeColor = Color.White; ;
+            btnProcesar.ForeColor = Color.White;
+            btnDescargar.ForeColor = Color.White;
+
 
             //tlpForm.BackColor = Color.White;
-
             //rtbDaily.BackColor = color2;
             //gbFiltros.ForeColor = color1;
             //lblFormato.ForeColor = color1;
-
-
             //rtb_Log.ForeColor = color2;
             //lbl_Log.ForeColor = color2;
             //tlpLog.BackColor = color1;

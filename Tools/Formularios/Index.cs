@@ -351,25 +351,25 @@ namespace Tools
 
         private void btnAyuda_Click(object sender, EventArgs e)
         {
-            //string userName = Environment.UserName;
-            //MessageBox.Show(userName);
-            ActivateButton(sender, Color1);
-            ActivateButton2(sender);
-            TestColor childForm = new TestColor();
-            if (FormHijoActual != null)
-            {
-                FormHijoActual.Close();
-            }
-            FormHijoActual = childForm;
-            //End
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            pnlForm.Controls.Add(childForm);
-            pnlForm.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
-            lblSeccion.Text = childForm.Text;
+            ////string userName = Environment.UserName;
+            ////MessageBox.Show(userName);
+            //ActivateButton(sender, Color1);
+            //ActivateButton2(sender);
+            //TestColor childForm = new TestColor();
+            //if (FormHijoActual != null)
+            //{
+            //    FormHijoActual.Close();
+            //}
+            //FormHijoActual = childForm;
+            ////End
+            //childForm.TopLevel = false;
+            //childForm.FormBorderStyle = FormBorderStyle.None;
+            //childForm.Dock = DockStyle.Fill;
+            //pnlForm.Controls.Add(childForm);
+            //pnlForm.Tag = childForm;
+            //childForm.BringToFront();
+            //childForm.Show();
+            //lblSeccion.Text = childForm.Text;
         }
 
         private void pnlTop2_MouseDown(object sender, MouseEventArgs e)
@@ -615,7 +615,7 @@ namespace Tools
         {
             //MessageBox.Show("Próximamente...!");
             ActivateButton2(sender);
-            FrmServicio childForm = new FrmServicio();
+            FrmServicio childForm = new FrmServicio(Color1, Color2, Color3, Color4);
             if (FormHijoActual != null)
             {
                 FormHijoActual.Close();

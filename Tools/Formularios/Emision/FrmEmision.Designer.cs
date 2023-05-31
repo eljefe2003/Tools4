@@ -157,7 +157,7 @@
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.41706F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.19905F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.38389F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 135F));
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel2, 3, 0);
             this.tableLayoutPanel9.Controls.Add(this.cmb_TipoEmision, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.chckEdicion, 2, 0);
@@ -179,11 +179,11 @@
             this.tableLayoutPanel2.Controls.Add(this.chckDemo, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(394, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(392, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(129, 26);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(131, 26);
             this.tableLayoutPanel2.TabIndex = 15;
             // 
             // chckDemo
@@ -192,7 +192,7 @@
             this.chckDemo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chckDemo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chckDemo.IsOn = true;
-            this.chckDemo.Location = new System.Drawing.Point(74, 3);
+            this.chckDemo.Location = new System.Drawing.Point(75, 3);
             this.chckDemo.Name = "chckDemo";
             this.chckDemo.Size = new System.Drawing.Size(36, 20);
             this.chckDemo.TabIndex = 0;
@@ -208,7 +208,7 @@
             this.label2.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 26);
+            this.label2.Size = new System.Drawing.Size(66, 26);
             this.label2.TabIndex = 1;
             this.label2.Text = "Demo";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -229,7 +229,7 @@
             this.cmb_TipoEmision.Location = new System.Drawing.Point(2, 5);
             this.cmb_TipoEmision.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_TipoEmision.Name = "cmb_TipoEmision";
-            this.cmb_TipoEmision.Size = new System.Drawing.Size(162, 21);
+            this.cmb_TipoEmision.Size = new System.Drawing.Size(161, 21);
             this.cmb_TipoEmision.TabIndex = 14;
             this.cmb_TipoEmision.SelectedIndexChanged += new System.EventHandler(this.cmb_TipoEmision_SelectedIndexChanged);
             // 
@@ -238,10 +238,10 @@
             this.chckEdicion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chckEdicion.AutoSize = true;
             this.chckEdicion.Enabled = false;
-            this.chckEdicion.Location = new System.Drawing.Point(278, 7);
+            this.chckEdicion.Location = new System.Drawing.Point(277, 7);
             this.chckEdicion.Margin = new System.Windows.Forms.Padding(2);
             this.chckEdicion.Name = "chckEdicion";
-            this.chckEdicion.Size = new System.Drawing.Size(111, 17);
+            this.chckEdicion.Size = new System.Drawing.Size(110, 17);
             this.chckEdicion.TabIndex = 14;
             this.chckEdicion.Text = "Edición Automática";
             this.chckEdicion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -252,7 +252,7 @@
             this.chckRequestPre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chckRequestPre.AutoSize = true;
             this.chckRequestPre.Enabled = false;
-            this.chckRequestPre.Location = new System.Drawing.Point(169, 7);
+            this.chckRequestPre.Location = new System.Drawing.Point(168, 7);
             this.chckRequestPre.Name = "chckRequestPre";
             this.chckRequestPre.Size = new System.Drawing.Size(104, 17);
             this.chckRequestPre.TabIndex = 13;

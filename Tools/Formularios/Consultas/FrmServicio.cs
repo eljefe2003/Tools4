@@ -15,9 +15,22 @@ namespace Tools
     {
         bool Encendido = false;
 
-        public FrmServicio()
+        public FrmServicio(Color color1, Color color2, Color color3, Color color4)
         {
             InitializeComponent();
+            tlpLog.BackColor = color1;
+            rtb_Log.BackColor = color1;
+            rtb_Log.ForeColor = color2;
+            lbl_Log.ForeColor = color2;
+            btnTarea.BackColor = color1;
+            btnForzarEjecucion.BackColor = color1;
+            btnDetalleFact95.BackColor = color1;
+            btnDetalleNC95.BackColor = color1;
+            btnDetalleGR95.BackColor = color1;
+            btnDetalleGR98.BackColor = color1;
+            gbFiltros.ForeColor = color1;
+            gbAcciones.ForeColor = color1;
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -165,8 +178,6 @@ namespace Tools
             return hora + ":" + minuto + ":" + segundo;
         }
 
-
-
         private void FrmServicio_Load(object sender, EventArgs e)
         {
             //EjecutaTarea();
@@ -195,7 +206,18 @@ namespace Tools
                 if (chckGR.IsOn)
                     lblStatus98GR.Text = conex.getGR98(ObtieneDesde(), ObtieneHasta(), ObtieneCadenaConexion()).ToString();
 
-                Thread.Sleep(ObtieneFrecuenciaMilisegundos());
+                lblUltHoraEjec.Text = ObtieneHoraActual();
+                lblProxHoraEjec.Text = ObtieneHoraProxima();
+                string Mensaje = "-------------------" + Environment.NewLine;
+                Mensaje += "Fact 95: " + lblStatus95Facts.Text;
+                Mensaje += ", NC/ND 95: " + lblStatus95NCND.Text;
+                Mensaje += ", GR 95: " + lblStatus95GR.Text;
+                Mensaje += ", GR 98: " + lblStatus98GR.Text + Environment.NewLine;
+                Mensaje += "Hora: " + lblUltHoraEjec.Text + Environment.NewLine;
+                Mensaje += "-------------------";
+                Log(Mensaje, true, false);
+
+                Thread.Sleep(ObtieneFrecuenciaMilisegundos());               
             }
         }
 
@@ -203,15 +225,18 @@ namespace Tools
         {
             if (btnTarea.Text == "Iniciar tarea")
             {
+                Log("-------- Tarea iniciada -------- ", true, false);
                 lblEstadoTarea.Text = "Encendida";
                 Encendido = true;
                 btnTarea.Text = "Detener tarea";
-                EjecutaTarea();
-                lblUltHoraEjec.Text = ObtieneHoraActual();
-                lblProxHoraEjec.Text = ObtieneHoraProxima();
+                //lblUltHoraEjec.Text = ObtieneHoraActual();
+                //lblProxHoraEjec.Text = ObtieneHoraProxima();
+                EjecutaTarea();              
             }
             else
             {
+                Log("-------- Tarea detenida -------- ", true, false);
+
                 lblEstadoTarea.Text = "Apagada";
                 btnTarea.Text = "Iniciar tarea";
                 lblProxHoraEjec.Text = "00:00:00";
@@ -223,5 +248,54 @@ namespace Tools
             }
 
         }
+
+        private void btnForzarEjecucion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void Log(string msg, bool msj, bool fecha)
+        {
+            if (fecha)
+            {
+                if (msj)
+                {
+                    this.rtb_Log.SelectionStart = this.rtb_Log.Text.Length;
+                    //rtb_Log.SelectionColor = Color.Black;
+                    rtb_Log.AppendText("[" + DateTime.Now.Day.ToString("d2") + "-" + DateTime.Now.Month.ToString("d2") + "-" + DateTime.Now.Year + " " +
+                    DateTime.Now.Hour.ToString("d2") + ":" + DateTime.Now.Minute.ToString("d2") + ":" + DateTime.Now.Second.ToString("d2") + "] " + msg + Environment.NewLine);
+                }
+                else
+                {
+                    this.rtb_Log.SelectionStart = this.rtb_Log.Text.Length;
+                    //rtb_Log.SelectionColor = Color.FromArgb(204, 0, 56);
+                    rtb_Log.SelectionColor = Color.Red;
+                    rtb_Log.AppendText("[" + DateTime.Now.Day.ToString("d2") + "-" + DateTime.Now.Month.ToString("d2") + "-" + DateTime.Now.Year + " " +
+                    DateTime.Now.Hour.ToString("d2") + ":" + DateTime.Now.Minute.ToString("d2") + ":" + DateTime.Now.Second.ToString("d2") + "] " + msg + Environment.NewLine);
+                    //msj = true;
+                }
+                this.rtb_Log.ScrollToCaret();
+            }
+            else
+            {
+                if (msj)
+                {
+                    this.rtb_Log.SelectionStart = this.rtb_Log.Text.Length;
+                    //rtb_Log.SelectionColor = Color.Black;
+                    rtb_Log.AppendText(msg + Environment.NewLine);
+                }
+                else
+                {
+                    this.rtb_Log.SelectionStart = this.rtb_Log.Text.Length;
+                    //rtb_Log.SelectionColor = Color.FromArgb(204, 0, 56);
+                    rtb_Log.SelectionColor = Color.Red;
+                    rtb_Log.AppendText(msg + Environment.NewLine);
+                    //msj = true;
+                }
+                this.rtb_Log.ScrollToCaret();
+            }
+
+        }
+
     }
 }
