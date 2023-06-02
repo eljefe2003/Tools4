@@ -562,6 +562,32 @@ namespace Tools
             return año + "-" +  mes + "-" + dia;
         }
 
+        private string obtieneFechaMañana()
+        {
+            DateTime fecha = DateTime.Now.AddDays(1);
+            string año = fecha.Year.ToString();
+            string mes1 = fecha.Month.ToString(), mes = "";
+            string dia1 = fecha.Day.ToString(), dia = "";
+            if (mes1.Length == 1)
+            {
+                mes = "0" + mes1;
+            }
+            else
+            {
+                mes = mes1;
+            }
+
+            if (dia1.Length == 1)
+            {
+                dia = "0" + dia1;
+            }
+            else
+            {
+                dia = dia1;
+            }
+            return año + "-" + mes + "-" + dia;
+        }
+
         private string CambiaContenidoTxt(string nombreArchivo, string rutaArchivo, string ambiente, string rutaSalida)
         {
             //fhfhfhfgh
@@ -844,6 +870,19 @@ namespace Tools
                             {
                                 arrayLine[1] = "01/0001-1234";
                             }
+                            for (int t = 0; t < arrayLine.Length - 1; t++)//Envio 1x1 de documentos ubicados en ruta TXTUbicacion
+                            {
+                                newLine += arrayLine[t] + "|";
+                            }
+                            line = newLine;
+                        }
+
+                        if (camposLine[0].Equals("CUO"))
+                        {
+                            string newLine = "";
+                            string oldLine = line;
+                            string[] arrayLine = oldLine.Split('|');
+                            arrayLine[3] = obtieneFechaMañana();                           
                             for (int t = 0; t < arrayLine.Length - 1; t++)//Envio 1x1 de documentos ubicados en ruta TXTUbicacion
                             {
                                 newLine += arrayLine[t] + "|";

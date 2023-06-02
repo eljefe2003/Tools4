@@ -231,6 +231,7 @@ namespace Tools
         private void EliminarPDF()
         {
             rtb_Log.AppendText("___________________________________" + Environment.NewLine);
+            ToolFaby2.AppToolsClient ToolFabt2 = new ToolFaby2.AppToolsClient();
             Faby3.AppTools ToolFaby = new Faby3.AppTools();
             var recorrer = leerArchivoDaily();
             //MessageBox.Show("Espera mientras se procesa tu petición, esto puede demorar unos minutos!");
@@ -246,7 +247,7 @@ namespace Tools
                     string fecha = campo[1];
                     string metodo = cmbMetodo.Text;
 
-                    var resp = ToolFaby.dailyTasks21(txtToken.Text, ruc, ruc + "-" + numeracion, fecha, "Mantis-" + txtMantis.Text, metodo, null);
+                    var resp = ToolFabt2.dailyTasks21(txtToken.Text, ruc, ruc + "-" + numeracion, fecha, "Mantis-" + txtMantis.Text, metodo, null);
                     //MessageBox.Show(resp.errorMessage);
                     Log("¡Petición procesada con Éxito!", true, true);
                     Log(resp.errorCode + "|" + resp.errorMessage, true, true);
@@ -302,7 +303,6 @@ namespace Tools
             }
             rtb_Log.AppendText("___________________________________" + Environment.NewLine);
         }
-
 
         private string[] leerArchivoDaily()
         {
@@ -407,7 +407,6 @@ namespace Tools
             }
 
         }
-
 
         private void FrmToolDaily_Load(object sender, EventArgs e)
         {

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://tools.thefactoryhka.com.pe/AppTools.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Tools" />
+  <xs:element name="dailyTasks21">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ruc" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="documento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fecha" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mantis" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="opcion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="archivo" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dailyTasks21Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Tools" minOccurs="0" name="dailyTasks21Result" nillable="true" type="q1:serviceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="blacklist">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="correo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="opcion" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="blacklistResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Tools" minOccurs="0" name="blacklistResult" nillable="true" type="q2:serviceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="reenvio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="documento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ubl" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="reenviar" type="xs:boolean" />
+        <xs:element minOccurs="0" name="renombrarxml" type="xs:boolean" />
+        <xs:element minOccurs="0" name="renombrarcdr" type="xs:boolean" />
+        <xs:element minOccurs="0" name="regenerar" type="xs:boolean" />
+        <xs:element minOccurs="0" name="mantis" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="firmar" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="reenvioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Tools" minOccurs="0" name="reenvioResult" nillable="true" type="q3:serviceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="storageTask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="file" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="mantis" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="option" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="storageTaskResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Tools" minOccurs="0" name="storageTaskResult" nillable="true" type="q4:serviceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="receptor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="documento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fechaEmision" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="receptorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Tools" minOccurs="0" name="receptorResult" nillable="true" type="q5:serviceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dailyTasksOSE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="token" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mantis" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="opcion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ruc" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="rucsupplier" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tipoDocumento" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="numeracion_identificador" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dailyTasksOSEResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Tools" minOccurs="0" name="dailyTasksOSEResult" nillable="true" type="q6:serviceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

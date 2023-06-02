@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtRutaJson = new System.Windows.Forms.TextBox();
             this.btnBuscarJson2 = new FontAwesome.Sharp.IconButton();
+            this.txtRutaJson = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tlpLog = new System.Windows.Forms.TableLayoutPanel();
             this.rtbJson = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.lbl_Log = new System.Windows.Forms.Label();
-            this.btnBorrarLog = new FontAwesome.Sharp.IconButton();
             this.btnGuardarLog = new FontAwesome.Sharp.IconButton();
+            this.lbl_Log = new System.Windows.Forms.Label();
             this.btnCopiarLog = new FontAwesome.Sharp.IconButton();
+            this.btnBorrarLog = new FontAwesome.Sharp.IconButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.tlpLog.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -62,14 +62,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(884, 24);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
-            // txtRutaJson
-            // 
-            this.txtRutaJson.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtRutaJson.Location = new System.Drawing.Point(3, 3);
-            this.txtRutaJson.Name = "txtRutaJson";
-            this.txtRutaJson.Size = new System.Drawing.Size(840, 20);
-            this.txtRutaJson.TabIndex = 1;
-            // 
             // btnBuscarJson2
             // 
             this.btnBuscarJson2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -86,6 +78,14 @@
             this.btnBuscarJson2.UseVisualStyleBackColor = true;
             this.btnBuscarJson2.Click += new System.EventHandler(this.btnBuscarJson2_Click);
             // 
+            // txtRutaJson
+            // 
+            this.txtRutaJson.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtRutaJson.Location = new System.Drawing.Point(3, 3);
+            this.txtRutaJson.Name = "txtRutaJson";
+            this.txtRutaJson.Size = new System.Drawing.Size(840, 20);
+            this.txtRutaJson.TabIndex = 1;
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
@@ -100,17 +100,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.6836F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(896, 433);
             this.tableLayoutPanel2.TabIndex = 3;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.tableLayoutPanel1);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(890, 43);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Archivo";
             // 
             // tlpLog
             // 
@@ -161,36 +150,6 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(886, 25);
             this.tableLayoutPanel3.TabIndex = 6;
             // 
-            // lbl_Log
-            // 
-            this.lbl_Log.AutoSize = true;
-            this.lbl_Log.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Log.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl_Log.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Log.ForeColor = System.Drawing.Color.White;
-            this.lbl_Log.Location = new System.Drawing.Point(3, 0);
-            this.lbl_Log.Name = "lbl_Log";
-            this.lbl_Log.Size = new System.Drawing.Size(754, 25);
-            this.lbl_Log.TabIndex = 3;
-            this.lbl_Log.Text = "Log";
-            this.lbl_Log.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnBorrarLog
-            // 
-            this.btnBorrarLog.BackColor = System.Drawing.Color.Transparent;
-            this.btnBorrarLog.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnBorrarLog.FlatAppearance.BorderSize = 0;
-            this.btnBorrarLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBorrarLog.IconChar = FontAwesome.Sharp.IconChar.Eraser;
-            this.btnBorrarLog.IconColor = System.Drawing.Color.White;
-            this.btnBorrarLog.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBorrarLog.IconSize = 20;
-            this.btnBorrarLog.Location = new System.Drawing.Point(847, 3);
-            this.btnBorrarLog.Name = "btnBorrarLog";
-            this.btnBorrarLog.Size = new System.Drawing.Size(36, 19);
-            this.btnBorrarLog.TabIndex = 0;
-            this.btnBorrarLog.UseVisualStyleBackColor = false;
-            // 
             // btnGuardarLog
             // 
             this.btnGuardarLog.BackColor = System.Drawing.Color.Transparent;
@@ -207,6 +166,20 @@
             this.btnGuardarLog.TabIndex = 4;
             this.btnGuardarLog.UseVisualStyleBackColor = false;
             this.btnGuardarLog.Click += new System.EventHandler(this.btnGuardarLog_Click);
+            // 
+            // lbl_Log
+            // 
+            this.lbl_Log.AutoSize = true;
+            this.lbl_Log.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Log.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_Log.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Log.ForeColor = System.Drawing.Color.White;
+            this.lbl_Log.Location = new System.Drawing.Point(3, 0);
+            this.lbl_Log.Name = "lbl_Log";
+            this.lbl_Log.Size = new System.Drawing.Size(754, 25);
+            this.lbl_Log.TabIndex = 3;
+            this.lbl_Log.Text = "Log";
+            this.lbl_Log.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnCopiarLog
             // 
@@ -225,6 +198,33 @@
             this.btnCopiarLog.UseVisualStyleBackColor = false;
             this.btnCopiarLog.Click += new System.EventHandler(this.btnCopiarLog_Click);
             // 
+            // btnBorrarLog
+            // 
+            this.btnBorrarLog.BackColor = System.Drawing.Color.Transparent;
+            this.btnBorrarLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnBorrarLog.FlatAppearance.BorderSize = 0;
+            this.btnBorrarLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorrarLog.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            this.btnBorrarLog.IconColor = System.Drawing.Color.White;
+            this.btnBorrarLog.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBorrarLog.IconSize = 20;
+            this.btnBorrarLog.Location = new System.Drawing.Point(847, 3);
+            this.btnBorrarLog.Name = "btnBorrarLog";
+            this.btnBorrarLog.Size = new System.Drawing.Size(36, 19);
+            this.btnBorrarLog.TabIndex = 0;
+            this.btnBorrarLog.UseVisualStyleBackColor = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.tableLayoutPanel1);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(890, 43);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Archivo";
+            // 
             // FrmJson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,10 +238,10 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
             this.tlpLog.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

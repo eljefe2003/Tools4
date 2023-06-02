@@ -55,7 +55,10 @@ namespace Tools
             btnProbarCredenciales.ForeColor = Color.White;
             btnProcesar.ForeColor = Color.White;
             btnDescargar.ForeColor = Color.White;
-
+            gbAcciones.ForeColor = color1;
+            gbCredenciales.ForeColor = color1;
+            gb_Archivos.ForeColor = color1;
+            gb_PostAceptacion.ForeColor = color1;
 
             //tlpForm.BackColor = Color.White;
             //rtbDaily.BackColor = color2;
@@ -221,7 +224,7 @@ namespace Tools
             gb_PostAceptacion.Enabled = false;
             if(cmb_TipoEmision.Text == "PSE 2.1")
             {
-                gb_Credenciales.Enabled = true;
+                gbCredenciales.Enabled = true;
                 lblLeyenda.Text = "** Para las bajas el contenido del TXT debe ser Tipo-Numeracion|Motivo + Salto de linea";
                 chckRequest.Enabled = true;
                 chckEdicion.Enabled = true;
@@ -230,13 +233,13 @@ namespace Tools
             else if(cmb_TipoEmision.Text != "SUNAT (PARA FIRMAR)")
             {
                 lblLeyenda.Text = "** Selecciona solo él/los XML/Zip";
-                gb_Credenciales.Enabled = true;
+                gbCredenciales.Enabled = true;
                 btnProbarCredenciales.Enabled = false;
             }
             else
             {
                 lblLeyenda.Text = "** Selecciona solo él/los XML";
-                gb_Credenciales.Enabled = true;
+                gbCredenciales.Enabled = true;
                 btnProbarCredenciales.Enabled = false;
             }
             
@@ -1648,6 +1651,19 @@ namespace Tools
                             }
                             line = newLine;
                         }
+
+                        if (camposLine[0].Equals("CUO"))
+                        {
+                            string newLine = "";
+                            string oldLine = line;
+                            string[] arrayLine = oldLine.Split('|');
+                            arrayLine[3] = obtieneFechaMañana();
+                            for (int t = 0; t < arrayLine.Length - 1; t++)//Envio 1x1 de documentos ubicados en ruta TXTUbicacion
+                            {
+                                newLine += arrayLine[t] + "|";
+                            }
+                            line = newLine;
+                        }
                     }
                     else
                     {
@@ -1681,6 +1697,33 @@ namespace Tools
                 return rutaSalida + nombreArchivo + "-Test" + ".txt";
             }
         }
+
+        private string obtieneFechaMañana()
+        {
+            DateTime fecha = DateTime.Now.AddDays(1);
+            string año = fecha.Year.ToString();
+            string mes1 = fecha.Month.ToString(), mes = "";
+            string dia1 = fecha.Day.ToString(), dia = "";
+            if (mes1.Length == 1)
+            {
+                mes = "0" + mes1;
+            }
+            else
+            {
+                mes = mes1;
+            }
+
+            if (dia1.Length == 1)
+            {
+                dia = "0" + dia1;
+            }
+            else
+            {
+                dia = dia1;
+            }
+            return año + "-" + mes + "-" + dia;
+        }
+
 
         private string obtieneFecha()
         {

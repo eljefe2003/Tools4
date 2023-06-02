@@ -134,7 +134,7 @@
             this.chckFact.BorderColor = System.Drawing.Color.LightGray;
             this.chckFact.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chckFact.IsOn = true;
-            this.chckFact.Location = new System.Drawing.Point(64, 6);
+            this.chckFact.Location = new System.Drawing.Point(65, 5);
             this.chckFact.Name = "chckFact";
             this.chckFact.Size = new System.Drawing.Size(30, 17);
             this.chckFact.TabIndex = 0;
@@ -148,7 +148,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 29);
+            this.label1.Size = new System.Drawing.Size(56, 27);
             this.label1.TabIndex = 1;
             this.label1.Text = "Facturas";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -158,9 +158,9 @@
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 0);
+            this.label4.Location = new System.Drawing.Point(4, 1);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 39);
+            this.label4.Size = new System.Drawing.Size(48, 37);
             this.label4.TabIndex = 6;
             this.label4.Text = "Desde:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -173,7 +173,7 @@
             this.rbDesde1hora.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbDesde1hora.Location = new System.Drawing.Point(3, 3);
             this.rbDesde1hora.Name = "rbDesde1hora";
-            this.rbDesde1hora.Size = new System.Drawing.Size(71, 27);
+            this.rbDesde1hora.Size = new System.Drawing.Size(71, 25);
             this.rbDesde1hora.TabIndex = 7;
             this.rbDesde1hora.TabStop = true;
             this.rbDesde1hora.Text = "1 hora";
@@ -186,7 +186,7 @@
             this.rbDesde2horas.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbDesde2horas.Location = new System.Drawing.Point(80, 3);
             this.rbDesde2horas.Name = "rbDesde2horas";
-            this.rbDesde2horas.Size = new System.Drawing.Size(65, 27);
+            this.rbDesde2horas.Size = new System.Drawing.Size(65, 25);
             this.rbDesde2horas.TabIndex = 8;
             this.rbDesde2horas.Text = "2 horas";
             this.rbDesde2horas.UseVisualStyleBackColor = true;
@@ -198,7 +198,7 @@
             this.rbDesde6horas.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbDesde6horas.Location = new System.Drawing.Point(151, 3);
             this.rbDesde6horas.Name = "rbDesde6horas";
-            this.rbDesde6horas.Size = new System.Drawing.Size(70, 27);
+            this.rbDesde6horas.Size = new System.Drawing.Size(69, 25);
             this.rbDesde6horas.TabIndex = 9;
             this.rbDesde6horas.Text = "6 horas";
             this.rbDesde6horas.UseVisualStyleBackColor = true;
@@ -208,9 +208,9 @@
             this.rbDesdeDia.AutoSize = true;
             this.rbDesdeDia.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rbDesdeDia.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbDesdeDia.Location = new System.Drawing.Point(227, 3);
+            this.rbDesdeDia.Location = new System.Drawing.Point(226, 3);
             this.rbDesdeDia.Name = "rbDesdeDia";
-            this.rbDesdeDia.Size = new System.Drawing.Size(78, 27);
+            this.rbDesdeDia.Size = new System.Drawing.Size(77, 25);
             this.rbDesdeDia.TabIndex = 10;
             this.rbDesdeDia.Text = "24 horas";
             this.rbDesdeDia.UseVisualStyleBackColor = true;
@@ -220,9 +220,9 @@
             this.rbHastaDia.AutoSize = true;
             this.rbHastaDia.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rbHastaDia.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbHastaDia.Location = new System.Drawing.Point(157, 3);
+            this.rbHastaDia.Location = new System.Drawing.Point(156, 3);
             this.rbHastaDia.Name = "rbHastaDia";
-            this.rbHastaDia.Size = new System.Drawing.Size(148, 30);
+            this.rbHastaDia.Size = new System.Drawing.Size(147, 28);
             this.rbHastaDia.TabIndex = 15;
             this.rbHastaDia.Text = "Hora actual";
             this.rbHastaDia.UseVisualStyleBackColor = true;
@@ -235,7 +235,7 @@
             this.rbHasta15min.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbHasta15min.Location = new System.Drawing.Point(3, 3);
             this.rbHasta15min.Name = "rbHasta15min";
-            this.rbHasta15min.Size = new System.Drawing.Size(148, 30);
+            this.rbHasta15min.Size = new System.Drawing.Size(147, 28);
             this.rbHasta15min.TabIndex = 12;
             this.rbHasta15min.TabStop = true;
             this.rbHasta15min.Text = "Hace 15 min";
@@ -246,9 +246,9 @@
             this.label5.AutoSize = true;
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 0);
+            this.label5.Location = new System.Drawing.Point(4, 1);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 42);
+            this.label5.Size = new System.Drawing.Size(48, 40);
             this.label5.TabIndex = 11;
             this.label5.Text = "Hasta:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -262,7 +262,7 @@
             this.lblTextoUltHoraEjec.Name = "lblTextoUltHoraEjec";
             this.lblTextoUltHoraEjec.Size = new System.Drawing.Size(185, 22);
             this.lblTextoUltHoraEjec.TabIndex = 17;
-            this.lblTextoUltHoraEjec.Text = "Ultima Hora ejecucion:";
+            this.lblTextoUltHoraEjec.Text = "Ultima Hora ejecución:";
             this.lblTextoUltHoraEjec.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblTextoPorxEjec
@@ -272,9 +272,9 @@
             this.lblTextoPorxEjec.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTextoPorxEjec.Location = new System.Drawing.Point(3, 0);
             this.lblTextoPorxEjec.Name = "lblTextoPorxEjec";
-            this.lblTextoPorxEjec.Size = new System.Drawing.Size(188, 24);
+            this.lblTextoPorxEjec.Size = new System.Drawing.Size(187, 24);
             this.lblTextoPorxEjec.TabIndex = 18;
-            this.lblTextoPorxEjec.Text = "Proxima Hora ejecucion:";
+            this.lblTextoPorxEjec.Text = "Proxima Hora ejecución:";
             this.lblTextoPorxEjec.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblStatus95Facts
@@ -306,9 +306,9 @@
             this.rbFrec30min.AutoSize = true;
             this.rbFrec30min.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rbFrec30min.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbFrec30min.Location = new System.Drawing.Point(189, 3);
+            this.rbFrec30min.Location = new System.Drawing.Point(187, 3);
             this.rbFrec30min.Name = "rbFrec30min";
-            this.rbFrec30min.Size = new System.Drawing.Size(88, 25);
+            this.rbFrec30min.Size = new System.Drawing.Size(88, 23);
             this.rbFrec30min.TabIndex = 24;
             this.rbFrec30min.Text = "30 min";
             this.rbFrec30min.UseVisualStyleBackColor = true;
@@ -319,9 +319,9 @@
             this.rbFrec20min.Checked = true;
             this.rbFrec20min.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rbFrec20min.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbFrec20min.Location = new System.Drawing.Point(96, 3);
+            this.rbFrec20min.Location = new System.Drawing.Point(95, 3);
             this.rbFrec20min.Name = "rbFrec20min";
-            this.rbFrec20min.Size = new System.Drawing.Size(87, 25);
+            this.rbFrec20min.Size = new System.Drawing.Size(86, 23);
             this.rbFrec20min.TabIndex = 23;
             this.rbFrec20min.TabStop = true;
             this.rbFrec20min.Text = "20 min";
@@ -334,7 +334,7 @@
             this.rbFrec10min.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbFrec10min.Location = new System.Drawing.Point(3, 3);
             this.rbFrec10min.Name = "rbFrec10min";
-            this.rbFrec10min.Size = new System.Drawing.Size(87, 25);
+            this.rbFrec10min.Size = new System.Drawing.Size(86, 23);
             this.rbFrec10min.TabIndex = 22;
             this.rbFrec10min.Text = "10 min";
             this.rbFrec10min.UseVisualStyleBackColor = true;
@@ -344,9 +344,9 @@
             this.label10.AutoSize = true;
             this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label10.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(3, 0);
+            this.label10.Location = new System.Drawing.Point(4, 1);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(77, 37);
+            this.label10.Size = new System.Drawing.Size(76, 35);
             this.label10.TabIndex = 21;
             this.label10.Text = "Frecuencia:";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -389,11 +389,11 @@
             this.tableLayoutPanel1.Controls.Add(this.rbFrec20min, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.rbFrec30min, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(86, 3);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(87, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(280, 31);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(278, 29);
             this.tableLayoutPanel1.TabIndex = 27;
             // 
             // tableLayoutPanel2
@@ -408,11 +408,11 @@
             this.tableLayoutPanel2.Controls.Add(this.rbDesde6horas, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.rbDesdeDia, 3, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(58, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(59, 4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(308, 33);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(306, 31);
             this.tableLayoutPanel2.TabIndex = 28;
             // 
             // tableLayoutPanel3
@@ -423,11 +423,11 @@
             this.tableLayoutPanel3.Controls.Add(this.rbHastaDia, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.rbHasta15min, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(58, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(59, 4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(308, 36);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(306, 34);
             this.tableLayoutPanel3.TabIndex = 29;
             // 
             // lblUltHoraEjec
@@ -447,9 +447,9 @@
             this.lblProxHoraEjec.AutoSize = true;
             this.lblProxHoraEjec.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblProxHoraEjec.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProxHoraEjec.Location = new System.Drawing.Point(197, 0);
+            this.lblProxHoraEjec.Location = new System.Drawing.Point(196, 0);
             this.lblProxHoraEjec.Name = "lblProxHoraEjec";
-            this.lblProxHoraEjec.Size = new System.Drawing.Size(169, 24);
+            this.lblProxHoraEjec.Size = new System.Drawing.Size(170, 24);
             this.lblProxHoraEjec.TabIndex = 31;
             this.lblProxHoraEjec.Text = "00:00:00";
             this.lblProxHoraEjec.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -609,7 +609,7 @@
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(3, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(45, 29);
+            this.label13.Size = new System.Drawing.Size(49, 27);
             this.label13.TabIndex = 45;
             this.label13.Text = "NC/ND";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -620,7 +620,7 @@
             this.chckNCND.BorderColor = System.Drawing.Color.LightGray;
             this.chckNCND.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chckNCND.IsOn = true;
-            this.chckNCND.Location = new System.Drawing.Point(54, 6);
+            this.chckNCND.Location = new System.Drawing.Point(58, 5);
             this.chckNCND.Name = "chckNCND";
             this.chckNCND.Size = new System.Drawing.Size(30, 17);
             this.chckNCND.TabIndex = 44;
@@ -634,7 +634,7 @@
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(3, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(36, 29);
+            this.label14.Size = new System.Drawing.Size(36, 27);
             this.label14.TabIndex = 47;
             this.label14.Text = "G.R.";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -645,7 +645,7 @@
             this.chckGR.BorderColor = System.Drawing.Color.LightGray;
             this.chckGR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chckGR.IsOn = true;
-            this.chckGR.Location = new System.Drawing.Point(45, 6);
+            this.chckGR.Location = new System.Drawing.Point(45, 5);
             this.chckGR.Name = "chckGR";
             this.chckGR.Size = new System.Drawing.Size(30, 17);
             this.chckGR.TabIndex = 46;
@@ -971,6 +971,7 @@
             // 
             // tableLayoutPanel16
             // 
+            this.tableLayoutPanel16.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel16.ColumnCount = 2;
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.90515F));
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.09485F));
@@ -986,9 +987,10 @@
             // 
             // tableLayoutPanel17
             // 
+            this.tableLayoutPanel17.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel17.ColumnCount = 2;
-            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.8739F));
-            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.1261F));
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.92391F));
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.07609F));
             this.tableLayoutPanel17.Controls.Add(this.label6, 0, 0);
             this.tableLayoutPanel17.Controls.Add(this.tableLayoutPanel6, 1, 0);
             this.tableLayoutPanel17.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1004,9 +1006,9 @@
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 0);
+            this.label6.Location = new System.Drawing.Point(4, 1);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(78, 41);
+            this.label6.Size = new System.Drawing.Size(70, 39);
             this.label6.TabIndex = 57;
             this.label6.Text = "Tipos Docs:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1021,11 +1023,11 @@
             this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel13, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel11, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(87, 3);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(81, 4);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(279, 35);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(284, 33);
             this.tableLayoutPanel6.TabIndex = 56;
             // 
             // tableLayoutPanel12
@@ -1036,11 +1038,11 @@
             this.tableLayoutPanel12.Controls.Add(this.label14, 0, 0);
             this.tableLayoutPanel12.Controls.Add(this.chckGR, 1, 0);
             this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(198, 3);
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(202, 3);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 1;
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(78, 29);
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(79, 27);
             this.tableLayoutPanel12.TabIndex = 58;
             // 
             // tableLayoutPanel13
@@ -1055,26 +1057,27 @@
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 1;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(95, 29);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(97, 27);
             this.tableLayoutPanel13.TabIndex = 59;
             // 
             // tableLayoutPanel11
             // 
             this.tableLayoutPanel11.ColumnCount = 2;
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.95454F));
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.04546F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.11111F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.88889F));
             this.tableLayoutPanel11.Controls.Add(this.label13, 0, 0);
             this.tableLayoutPanel11.Controls.Add(this.chckNCND, 1, 0);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(104, 3);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(106, 3);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 1;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(88, 29);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(90, 27);
             this.tableLayoutPanel11.TabIndex = 57;
             // 
             // tableLayoutPanel15
             // 
+            this.tableLayoutPanel15.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel15.ColumnCount = 2;
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.90515F));
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.09485F));
@@ -1090,6 +1093,7 @@
             // 
             // tableLayoutPanel14
             // 
+            this.tableLayoutPanel14.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel14.ColumnCount = 2;
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.58064F));
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.41936F));

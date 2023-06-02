@@ -211,6 +211,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\ToolFaby2\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Anuncios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -513,6 +518,19 @@
     <None Include="Connected Services\Sunat\Tools.Sunat.statusResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ToolFaby2\AppTools.wsdl" />
+    <None Include="Connected Services\ToolFaby2\AppTools.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ToolFaby2\AppTools1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ToolFaby2\AppTools2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ToolFaby2\Tools.ToolFaby2.serviceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -550,6 +568,7 @@
     <WCFMetadataStorage Include="Connected Services\PSE21\" />
     <WCFMetadataStorage Include="Connected Services\SunatBeta\" />
     <WCFMetadataStorage Include="Connected Services\Sunat\" />
+    <WCFMetadataStorage Include="Connected Services\ToolFaby2\" />
   </ItemGroup>
   <ItemGroup>
     <WebReferences Include="Web References\" />
@@ -632,6 +651,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\OseBeta\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ToolFaby2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ToolFaby2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ToolFaby2\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
