@@ -162,7 +162,7 @@ namespace Tools
         private void Bajas()
         {
             rtb_Log.AppendText("___________________________________" + Environment.NewLine);
-            Faby3.AppTools ToolFaby = new Faby3.AppTools();
+            Faby4.AppToolsClient ToolFaby = new Faby4.AppToolsClient();
             var recorrer = leerArchivoDaily();
             //MessageBox.Show("Espera mientras se procesa tu petición, esto puede demorar unos minutos!");
             for (int i = 0; i < recorrer.Length; i++)
@@ -196,7 +196,7 @@ namespace Tools
         private void Desactivar()
         {
             rtb_Log.AppendText("___________________________________" + Environment.NewLine);
-            Faby3.AppTools ToolFaby = new Faby3.AppTools();
+            Faby4.AppToolsClient ToolFaby = new Faby4.AppToolsClient();
             var recorrer = leerArchivoDaily();
             //MessageBox.Show("Espera mientras se procesa tu petición, esto puede demorar unos minutos!");
             for (int i = 0; i < recorrer.Length; i++)
@@ -231,8 +231,9 @@ namespace Tools
         private void EliminarPDF()
         {
             rtb_Log.AppendText("___________________________________" + Environment.NewLine);
-            ToolFaby2.AppToolsClient ToolFabt2 = new ToolFaby2.AppToolsClient();
-            Faby3.AppTools ToolFaby = new Faby3.AppTools();
+            Faby4.AppToolsClient appToolsClient = new Faby4.AppToolsClient();
+            //ToolFaby2.AppToolsClient ToolFabt2 = new ToolFaby2.AppToolsClient();
+            //Faby3.AppTools ToolFaby = new Faby3.AppTools();
             var recorrer = leerArchivoDaily();
             //MessageBox.Show("Espera mientras se procesa tu petición, esto puede demorar unos minutos!");
             for (int i = 0; i < recorrer.Length; i++)
@@ -247,7 +248,7 @@ namespace Tools
                     string fecha = campo[1];
                     string metodo = cmbMetodo.Text;
 
-                    var resp = ToolFabt2.dailyTasks21(txtToken.Text, ruc, ruc + "-" + numeracion, fecha, "Mantis-" + txtMantis.Text, metodo, null);
+                    var resp = appToolsClient.dailyTasks21(txtToken.Text, ruc, ruc + "-" + numeracion, fecha, "Mantis-" + txtMantis.Text, metodo, null);
                     //MessageBox.Show(resp.errorMessage);
                     Log("¡Petición procesada con Éxito!", true, true);
                     Log(resp.errorCode + "|" + resp.errorMessage, true, true);
@@ -273,7 +274,7 @@ namespace Tools
         private void DesactivarOSE()
         {
             rtb_Log.AppendText("___________________________________" + Environment.NewLine);
-            Faby3.AppTools ToolFaby = new Faby3.AppTools();
+            Faby4.AppToolsClient ToolFaby = new Faby4.AppToolsClient();
             var recorrer = leerArchivoDaily();
             //MessageBox.Show("Espera mientras se procesa tu petición, esto puede demorar unos minutos!");
             for (int i = 0; i < recorrer.Length; i++)
