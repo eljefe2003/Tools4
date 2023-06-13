@@ -27,6 +27,8 @@ namespace Tools
             btnBuscarJson2.BackColor = color1;
             btnGuardarLog.BackColor = color1;
             btnCopiarLog.BackColor = color1;
+            btnPlay.BackColor = color1;
+
         }
 
         private void btnBuscarJson_Click(object sender, EventArgs e)
@@ -62,6 +64,7 @@ namespace Tools
 
         private void btnBuscarJson2_Click(object sender, EventArgs e)
         {
+            rtbJson.Clear();
             OpenFileDialog fichero = new OpenFileDialog();
             fichero.Multiselect = false;
             //fichero.Filter = "Text (*.txt)|*.TXT|XML (*.xml)|*.XML|ZIP (*.zip)|*.ZIP";
@@ -71,29 +74,8 @@ namespace Tools
             //open.Filter = "ZIP files (*.zip)|*.zip";
             if (fichero.ShowDialog() == DialogResult.OK)
             {
-                txtRutaJson.Text = fichero.FileName;
-                string rutaArchivo = fichero.FileName;
-                string line = null;
-                using (StreamReader file = new StreamReader(rutaArchivo))
-                {
-                    while ((line = file.ReadLine()) != null)
-                    {
-                        ContenidoJson = line;
-                    }
-                }
-            }
-            try
-            {
-                dynamic jsonObject = JsonConvert.DeserializeObject(ContenidoJson);
-                // Serializar el objeto dinámico con formato indentado
-                string formattedJson = JsonConvert.SerializeObject(jsonObject, Newtonsoft.Json.Formatting.Indented);
-                // Imprimir el JSON formateado
-                rtbJson.Text = formattedJson;
-            }
-            catch
-            {
-                MessageBox.Show("Error, asegurate de seleccionar un Json válido!");
-            }
+                txtRutaJson.Text = fichero.FileName;                
+            }          
 
         }
 
@@ -123,6 +105,48 @@ namespace Tools
         private void FrmJson_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnPlay_Click(object sender, EventArgs e)
+        {
+            string ContenidoJson = "";
+
+            if (txtRutaJson.Text != "")
+            {
+                string rutaArchivo = txtRutaJson.Text;
+                string line = null;
+
+                using (StreamReader file = new StreamReader(rutaArchivo))
+                {
+                    while ((line = file.ReadLine()) != null)
+                    {
+                        ContenidoJson = line;
+                    }
+                }
+            }
+            else
+            {
+                ContenidoJson = rtbJson.Text;
+            }
+          
+
+            try
+            {
+                dynamic jsonObject = JsonConvert.DeserializeObject(ContenidoJson);
+                // Serializar el objeto dinámico con formato indentado
+                string formattedJson = JsonConvert.SerializeObject(jsonObject, Newtonsoft.Json.Formatting.Indented);
+                // Imprimir el JSON formateado
+                rtbJson.Text = formattedJson;
+            }
+            catch
+            {
+                MessageBox.Show("Error, asegurate de seleccionar un Json válido!");
+            }
+        }
+
+        private void btnBorrarLog_Click(object sender, EventArgs e)
+        {
+            rtbJson.Clear();
         }
     }
 }

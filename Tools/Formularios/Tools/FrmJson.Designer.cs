@@ -40,6 +40,7 @@
             this.btnCopiarLog = new FontAwesome.Sharp.IconButton();
             this.btnBorrarLog = new FontAwesome.Sharp.IconButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnPlay = new FontAwesome.Sharp.IconButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tlpLog.SuspendLayout();
@@ -49,16 +50,18 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 95.74015F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.259851F));
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90.95023F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.524887F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.524887F));
             this.tableLayoutPanel1.Controls.Add(this.btnBuscarJson2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtRutaJson, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnPlay, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(884, 24);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
@@ -71,9 +74,9 @@
             this.btnBuscarJson2.IconColor = System.Drawing.Color.White;
             this.btnBuscarJson2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscarJson2.IconSize = 17;
-            this.btnBuscarJson2.Location = new System.Drawing.Point(849, 3);
+            this.btnBuscarJson2.Location = new System.Drawing.Point(807, 3);
             this.btnBuscarJson2.Name = "btnBuscarJson2";
-            this.btnBuscarJson2.Size = new System.Drawing.Size(32, 18);
+            this.btnBuscarJson2.Size = new System.Drawing.Size(34, 18);
             this.btnBuscarJson2.TabIndex = 3;
             this.btnBuscarJson2.UseVisualStyleBackColor = true;
             this.btnBuscarJson2.Click += new System.EventHandler(this.btnBuscarJson2_Click);
@@ -83,7 +86,7 @@
             this.txtRutaJson.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtRutaJson.Location = new System.Drawing.Point(3, 3);
             this.txtRutaJson.Name = "txtRutaJson";
-            this.txtRutaJson.Size = new System.Drawing.Size(840, 20);
+            this.txtRutaJson.Size = new System.Drawing.Size(798, 20);
             this.txtRutaJson.TabIndex = 1;
             // 
             // tableLayoutPanel2
@@ -213,6 +216,7 @@
             this.btnBorrarLog.Size = new System.Drawing.Size(36, 19);
             this.btnBorrarLog.TabIndex = 0;
             this.btnBorrarLog.UseVisualStyleBackColor = false;
+            this.btnBorrarLog.Click += new System.EventHandler(this.btnBorrarLog_Click);
             // 
             // groupBox1
             // 
@@ -224,6 +228,22 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Archivo";
+            // 
+            // btnPlay
+            // 
+            this.btnPlay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPlay.FlatAppearance.BorderSize = 0;
+            this.btnPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlay.IconChar = FontAwesome.Sharp.IconChar.Play;
+            this.btnPlay.IconColor = System.Drawing.Color.White;
+            this.btnPlay.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnPlay.IconSize = 15;
+            this.btnPlay.Location = new System.Drawing.Point(847, 3);
+            this.btnPlay.Name = "btnPlay";
+            this.btnPlay.Size = new System.Drawing.Size(34, 18);
+            this.btnPlay.TabIndex = 4;
+            this.btnPlay.UseVisualStyleBackColor = true;
+            this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
             // 
             // FrmJson
             // 
@@ -259,5 +279,6 @@
         private FontAwesome.Sharp.IconButton btnBorrarLog;
         private FontAwesome.Sharp.IconButton btnGuardarLog;
         private FontAwesome.Sharp.IconButton btnCopiarLog;
+        private FontAwesome.Sharp.IconButton btnPlay;
     }
 }
