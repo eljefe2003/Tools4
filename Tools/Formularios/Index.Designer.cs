@@ -48,6 +48,7 @@ namespace Tools
             this.btnSunat = new FontAwesome.Sharp.IconButton();
             this.btnConsultas = new FontAwesome.Sharp.IconButton();
             this.pnlEmision = new System.Windows.Forms.Panel();
+            this.btnFirma = new FontAwesome.Sharp.IconButton();
             this.btnJson = new FontAwesome.Sharp.IconButton();
             this.btnZip = new FontAwesome.Sharp.IconButton();
             this.btnEjemplos = new FontAwesome.Sharp.IconButton();
@@ -93,7 +94,7 @@ namespace Tools
             // 
             this.pnlButton.BackColor = System.Drawing.Color.White;
             this.pnlButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlButton.Location = new System.Drawing.Point(0, 570);
+            this.pnlButton.Location = new System.Drawing.Point(0, 601);
             this.pnlButton.Margin = new System.Windows.Forms.Padding(2);
             this.pnlButton.Name = "pnlButton";
             this.pnlButton.Size = new System.Drawing.Size(1143, 8);
@@ -106,7 +107,7 @@ namespace Tools
             this.pnlLeft.Location = new System.Drawing.Point(0, 8);
             this.pnlLeft.Margin = new System.Windows.Forms.Padding(2);
             this.pnlLeft.Name = "pnlLeft";
-            this.pnlLeft.Size = new System.Drawing.Size(8, 562);
+            this.pnlLeft.Size = new System.Drawing.Size(8, 593);
             this.pnlLeft.TabIndex = 2;
             // 
             // pnlRight
@@ -116,7 +117,7 @@ namespace Tools
             this.pnlRight.Location = new System.Drawing.Point(1135, 8);
             this.pnlRight.Margin = new System.Windows.Forms.Padding(2);
             this.pnlRight.Name = "pnlRight";
-            this.pnlRight.Size = new System.Drawing.Size(8, 562);
+            this.pnlRight.Size = new System.Drawing.Size(8, 593);
             this.pnlRight.TabIndex = 3;
             // 
             // pnlMenu
@@ -137,7 +138,7 @@ namespace Tools
             this.pnlMenu.Location = new System.Drawing.Point(8, 8);
             this.pnlMenu.Margin = new System.Windows.Forms.Padding(2);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(135, 562);
+            this.pnlMenu.Size = new System.Drawing.Size(135, 593);
             this.pnlMenu.TabIndex = 4;
             // 
             // cmbTema
@@ -152,7 +153,7 @@ namespace Tools
             "Rosado",
             "Verde",
             "Amarillo"});
-            this.cmbTema.Location = new System.Drawing.Point(0, 508);
+            this.cmbTema.Location = new System.Drawing.Point(0, 539);
             this.cmbTema.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTema.Name = "cmbTema";
             this.cmbTema.Size = new System.Drawing.Size(135, 29);
@@ -170,12 +171,12 @@ namespace Tools
             this.iconButton16.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconButton16.IconColor = System.Drawing.Color.Black;
             this.iconButton16.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton16.Location = new System.Drawing.Point(0, 537);
+            this.iconButton16.Location = new System.Drawing.Point(0, 568);
             this.iconButton16.Margin = new System.Windows.Forms.Padding(2);
             this.iconButton16.Name = "iconButton16";
             this.iconButton16.Size = new System.Drawing.Size(135, 25);
             this.iconButton16.TabIndex = 13;
-            this.iconButton16.Text = "Version: 3.5";
+            this.iconButton16.Text = "Version: 3.6";
             this.iconButton16.UseVisualStyleBackColor = true;
             // 
             // btnAyuda
@@ -189,7 +190,7 @@ namespace Tools
             this.btnAyuda.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAyuda.IconSize = 12;
             this.btnAyuda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAyuda.Location = new System.Drawing.Point(0, 476);
+            this.btnAyuda.Location = new System.Drawing.Point(0, 501);
             this.btnAyuda.Margin = new System.Windows.Forms.Padding(2);
             this.btnAyuda.Name = "btnAyuda";
             this.btnAyuda.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
@@ -206,7 +207,7 @@ namespace Tools
             this.pnlConfiguracion.Controls.Add(this.btnPSE);
             this.pnlConfiguracion.Controls.Add(this.btnConfigBD);
             this.pnlConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlConfiguracion.Location = new System.Drawing.Point(0, 400);
+            this.pnlConfiguracion.Location = new System.Drawing.Point(0, 425);
             this.pnlConfiguracion.Margin = new System.Windows.Forms.Padding(2);
             this.pnlConfiguracion.Name = "pnlConfiguracion";
             this.pnlConfiguracion.Size = new System.Drawing.Size(135, 76);
@@ -284,7 +285,7 @@ namespace Tools
             this.btnConfiguracion.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnConfiguracion.IconSize = 12;
             this.btnConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfiguracion.Location = new System.Drawing.Point(0, 375);
+            this.btnConfiguracion.Location = new System.Drawing.Point(0, 400);
             this.btnConfiguracion.Margin = new System.Windows.Forms.Padding(2);
             this.btnConfiguracion.Name = "btnConfiguracion";
             this.btnConfiguracion.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
@@ -301,7 +302,7 @@ namespace Tools
             this.pnlConsultas.Controls.Add(this.btnEmpresas);
             this.pnlConsultas.Controls.Add(this.btnSunat);
             this.pnlConsultas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlConsultas.Location = new System.Drawing.Point(0, 295);
+            this.pnlConsultas.Location = new System.Drawing.Point(0, 320);
             this.pnlConsultas.Margin = new System.Windows.Forms.Padding(2);
             this.pnlConsultas.Name = "pnlConsultas";
             this.pnlConsultas.Size = new System.Drawing.Size(135, 80);
@@ -379,7 +380,7 @@ namespace Tools
             this.btnConsultas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnConsultas.IconSize = 12;
             this.btnConsultas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConsultas.Location = new System.Drawing.Point(0, 270);
+            this.btnConsultas.Location = new System.Drawing.Point(0, 295);
             this.btnConsultas.Margin = new System.Windows.Forms.Padding(2);
             this.btnConsultas.Name = "btnConsultas";
             this.btnConsultas.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
@@ -392,6 +393,7 @@ namespace Tools
             // 
             // pnlEmision
             // 
+            this.pnlEmision.Controls.Add(this.btnFirma);
             this.pnlEmision.Controls.Add(this.btnJson);
             this.pnlEmision.Controls.Add(this.btnZip);
             this.pnlEmision.Controls.Add(this.btnEjemplos);
@@ -401,9 +403,28 @@ namespace Tools
             this.pnlEmision.Location = new System.Drawing.Point(0, 141);
             this.pnlEmision.Margin = new System.Windows.Forms.Padding(2);
             this.pnlEmision.Name = "pnlEmision";
-            this.pnlEmision.Size = new System.Drawing.Size(135, 129);
+            this.pnlEmision.Size = new System.Drawing.Size(135, 154);
             this.pnlEmision.TabIndex = 6;
             this.pnlEmision.Visible = false;
+            // 
+            // btnFirma
+            // 
+            this.btnFirma.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnFirma.FlatAppearance.BorderSize = 0;
+            this.btnFirma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFirma.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFirma.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnFirma.IconColor = System.Drawing.Color.Black;
+            this.btnFirma.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnFirma.Location = new System.Drawing.Point(0, 125);
+            this.btnFirma.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFirma.Name = "btnFirma";
+            this.btnFirma.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
+            this.btnFirma.Size = new System.Drawing.Size(135, 25);
+            this.btnFirma.TabIndex = 13;
+            this.btnFirma.Text = "Firma D.";
+            this.btnFirma.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFirma.UseVisualStyleBackColor = true;
             // 
             // btnJson
             // 
@@ -726,14 +747,14 @@ namespace Tools
             this.pnlForm.Location = new System.Drawing.Point(143, 45);
             this.pnlForm.Margin = new System.Windows.Forms.Padding(2);
             this.pnlForm.Name = "pnlForm";
-            this.pnlForm.Size = new System.Drawing.Size(992, 525);
+            this.pnlForm.Size = new System.Drawing.Size(992, 556);
             this.pnlForm.TabIndex = 7;
             // 
             // Index
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1143, 578);
+            this.ClientSize = new System.Drawing.Size(1143, 609);
             this.Controls.Add(this.pnlForm);
             this.Controls.Add(this.pnlTop2);
             this.Controls.Add(this.pnlMenu);
@@ -802,5 +823,6 @@ namespace Tools
         private FontAwesome.Sharp.IconButton btnZip;
         private FontAwesome.Sharp.IconButton btnServicio;
         private FontAwesome.Sharp.IconButton btnJson;
+        private FontAwesome.Sharp.IconButton btnFirma;
     }
 }

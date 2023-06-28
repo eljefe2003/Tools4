@@ -194,11 +194,20 @@ namespace Tools
 
         private void txt_RucPse_TextChanged(object sender, EventArgs e)
         {
-            txt_RazonS.Text = "";
             if (txt_RucPse.Text != "")
             {
-                dtCarga.DefaultView.RowFilter = $"RUC LIKE '%{txt_RucPse.Text}%'";
-            }
+                txt_RazonS.Text = "";
+                try
+                {
+                    float num = Convert.ToSingle(txt_RucPse.Text);
+                    dtCarga.DefaultView.RowFilter = $"RUC LIKE '%{txt_RucPse.Text}%'";
+                }
+                catch (Exception exx)
+                {
+                    MessageBox.Show("Asegurate de digitar números en el RUC");
+                }
+            }        
+
         }
 
         private void txt_RazonS_TextChanged(object sender, EventArgs e)
