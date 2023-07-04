@@ -183,6 +183,7 @@
     <Compile Include="Clases varias\EnviaXmlSunat.cs" />
     <Compile Include="Clases varias\EnviaXmlOse.cs" />
     <Compile Include="Clases varias\Firma.cs" />
+    <Compile Include="Clases varias\LecturaCdr.cs" />
     <Compile Include="Formularios\Comentario.cs" />
     <Compile Include="Connected Services\Faby4\Reference.cs">
       <AutoGen>True</AutoGen>

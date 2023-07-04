@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tools.Clases_varias;
 //using System.Windows.Media;
 
 namespace Tools
@@ -148,14 +149,14 @@ namespace Tools
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            Index frm_u = new Index(listClientesPSE, listClientesOSE);           
-            //btnNombreFormulario.Text = frm_u.Text;
-            //frm_u.Show();
+            Index frm_u = new Index(listClientesPSE, listClientesOSE);
             DialogResult res = frm_u.ShowDialog();
             if (res == DialogResult.OK)
             {
 
             }
+            //LecturaCdr cdr = new LecturaCdr();
+            //var uno = cdr.LeerCDR("C:\\Users\\guevarae\\Downloads\\R-20550728762-09-T001-75799041.xml");
         }
 
         private void InicializarColores(string Tema)

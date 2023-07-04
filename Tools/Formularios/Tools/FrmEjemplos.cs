@@ -1485,8 +1485,16 @@ namespace Tools
                         byte[] data = System.Convert.FromBase64String(respDescarga.ArhivoBase64);
                         File.WriteAllBytes(ConfigPerso.RutaEjemplosProcesados + numeracion + ".zip" , data);
                     }
-                    var cdrContenido = LeerCDR(DescomprimirArchivo(ConfigPerso.RutaEjemplosProcesados + numeracion + ".zip"));
-                    Log("Documento " + numeracion + " aceptado, " + cdrContenido.Split('|')[2] + ".", true, false);
+                    LecturaCdr cdr = new LecturaCdr();
+                    var cdrContenido = cdr.LeerCDR(DescomprimirArchivo(ConfigPerso.RutaEjemplosProcesados + numeracion + ".zip"));
+                    Log("Documento " + numeracion + " aceptado, " + cdrContenido[0].Split('|')[2] + ".", true, false);
+                    if(cdrContenido.Length > 1)
+                    {
+                        for (int i = 0; i < cdrContenido.Length-1; i++)
+                        {
+                            Log("OBS " + cdrContenido[i+1], true, false);
+                        }
+                    }
                 }
                 else if (resp.Codigo == 95 || resp.Codigo == 99)
                 {
