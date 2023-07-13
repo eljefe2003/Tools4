@@ -227,6 +227,7 @@ namespace Tools
                 gbCredenciales.Enabled = true;
                 lblLeyenda.Text = "** Para las bajas el contenido del TXT debe ser Tipo-Numeracion|Motivo + Salto de linea";
                 chckRequest.Enabled = true;
+                chckRequestPre.Enabled = true;
                 chckEdicion.Enabled = true;
                 btnProbarCredenciales.Enabled = true;
             }
@@ -235,14 +236,18 @@ namespace Tools
                 lblLeyenda.Text = "** Selecciona solo él/los XML/Zip";
                 gbCredenciales.Enabled = true;
                 btnProbarCredenciales.Enabled = false;
+                chckRequestPre.Enabled = false;
+                chckEdicion.Enabled = false;
             }
             else
             {
                 lblLeyenda.Text = "** Selecciona solo él/los XML";
                 gbCredenciales.Enabled = true;
                 btnProbarCredenciales.Enabled = false;
+                chckRequestPre.Enabled = false;
+                chckEdicion.Enabled = false;
             }
-            
+
             CargarParametros();
             lst_archivo.Items.Clear();
         }
@@ -458,8 +463,6 @@ namespace Tools
                                 {
                                     resp = DLL.EnviarGuiaRemision(txt_RucEmision.Text, txt_UsuarioEmision.Text, txt_ClaveEmision.Text, ArchivoAEnviar); 
                                 }
-
-
                                 //bool aceptado = false;
                                 if (resp.Codigo == 0)
                                 {
@@ -624,13 +627,30 @@ namespace Tools
                         byte[] data = System.Convert.FromBase64String(respDescarga.ArhivoBase64);
                         File.WriteAllBytes(ConfigPerso.RutaEjemplosProcesados + numeracion + ".zip", data);
                     }
-                    var cdrContenido = LeerCDR(DescomprimirArchivo(ConfigPerso.RutaEjemplosProcesados + numeracion + ".zip"));
-                    Log("Documento " + numeracion + " aceptado, " + cdrContenido.Split('|')[2] + ".", true, false);
+
+
+                    LecturaCdr cdr = new LecturaCdr();
+                    var cdrContenido = cdr.LeerCDR(DescomprimirArchivo(ConfigPerso.RutaEjemplosProcesados + numeracion + ".zip"));
+                    Log("Documento " + numeracion + " aceptado, " + cdrContenido[0].Split('|')[2] + ".", true, false);
+                    if (cdrContenido.Length > 1)
+                    {
+                        for (int i = 0; i < cdrContenido.Length - 1; i++)
+                        {
+                            Log("OBS " + cdrContenido[i + 1], true, false);
+                        }
+                    }
+                    //var cdrContenido = LeerCDR(DescomprimirArchivo(ConfigPerso.RutaEjemplosProcesados + numeracion + ".zip"));
+                    //Log("Documento " + numeracion + " aceptado, " + cdrContenido.Split('|')[2] + ".", true, false);
                 }
                 else if (resp.Codigo == 95 || resp.Codigo == 99)
                 {
                     Log("Documento " + numeracion + " aun no aceptado. En 30 segundos se realizara nuevamente la consulta para evitar error 99", true, false);
                     Thread.Sleep(30000);
+                    if (AmbienteGlobal == "PRD")
+                    {
+                        encendido = false;
+                        Log("Se detiene la consulta debido a que nunca obtendra aceptación en PRD", true, false);
+                    }
                 }
                 else
                 {
@@ -1358,6 +1378,102 @@ namespace Tools
                 {
                     arrayRequestLines[i] = "";
                 }
+
+                //string variable6 = "<";
+                //if ((LineaActual.IndexOf(variable5) > 1))
+                //{
+                //    string valorAnterior = arrayRequestLines[i];
+                //    arrayRequestLines[i] = valorAnterior.Replace(variable6, "<per:");
+                //}
+
+
+            }
+
+            string line, requestModificado = "";
+            for (int i = 0; i < arrayRequestLines.Length; i++)
+            {
+                if (arrayRequestLines[i] != "")
+                {
+                    requestModificado += arrayRequestLines[i] + Environment.NewLine;
+                }
+            }
+
+            //string requestOriginal = LeerRequestString(ruta);
+            //string requestModificado = requestOriginal.Replace("<?xml version=\"1.0\"?>", "Test uno sdsdsd");
+            //requestModificado = requestModificado.Replace("DocumentoElectronico", "documentoElectronico");
+            ////requestModificado = requestModificado.Replace("d2p1:nil=\"true\" xmlns:d2p1=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.datacontract.org/2004/07/PeruService.Classes\"", "");
+            //requestModificado = requestModificado.Replace("d2p1:nil=\"true\"", "");
+            //requestModificado = requestModificado.Replace("xmlns=\"http://schemas.datacontract.org/2004/07/PeruService.Classes\"", "");
+            //requestModificado = requestModificado.Replace("d4p1:nil=\"true\" xmlns:d4p1=\"http://www.w3.org/2001/XMLSchema-instance\"", "");
+            //requestModificado = requestModificado.Replace("d3p1:nil=\"true\" xmlns:d3p1=\"http://www.w3.org/2001/XMLSchema-instance\"", "");
+            string Request = requestModificado;
+            requestModificado = Request.Replace("<per:?xml version=\"1.0\"?>", "");
+            requestModificado = requestModificado.Replace("per:DocumentoElectronico", "tem:documentoElectronico");
+            System.IO.File.WriteAllText(rutaSave, cabecera + requestModificado + final);
+            File.Delete(ruta);
+        }
+
+        public void ObtenerRequest2(string ruta, string rutaSave)
+        {
+            string cabecera = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\" xmlns:per=\"http://schemas.datacontract.org/2004/07/PeruService.Classes\">" + Environment.NewLine +
+               "<soapenv:Header />" + Environment.NewLine +
+                "<soapenv:Body >" + Environment.NewLine +
+                "<tem:Enviar >" + Environment.NewLine +
+                "<tem:ruc >?</tem:ruc >" + Environment.NewLine +
+                "<tem:usuario >?</tem:usuario >" + Environment.NewLine +
+                "<tem:clave >?</tem:clave >" + Environment.NewLine;
+
+            string final = "</tem:Enviar>" + Environment.NewLine +
+                "</soapenv:Body >" + Environment.NewLine +
+                "</soapenv:Envelope >";
+
+
+            var arrayRequestLines = LeerRequest(ruta);
+            for (int i = 0; i < arrayRequestLines.Length; i++)
+            {
+                string LineaActual = arrayRequestLines[i].ToString();
+
+                string variable1 = "d2p1:nil=\"true\" xmlns:d2p1=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.datacontract.org/2004/07/PeruService.Classes\"";
+                if ((LineaActual.IndexOf(variable1) > 0))
+                {
+                    string valorAnterior = arrayRequestLines[i];
+                    arrayRequestLines[i] = valorAnterior.Replace(variable1, "");
+                }
+
+                string variable2 = "xmlns=\"http://schemas.datacontract.org/2004/07/PeruService.Classes\"";
+                if ((LineaActual.IndexOf(variable2) > 0))
+                {
+                    string valorAnterior = arrayRequestLines[i];
+                    arrayRequestLines[i] = valorAnterior.Replace(variable2, "");
+                }
+
+                string variable3 = "d4p1:nil=\"true\" xmlns:d4p1=\"http://www.w3.org/2001/XMLSchema-instance\"";
+                if ((LineaActual.IndexOf(variable3) > 0))
+                {
+                    string valorAnterior = arrayRequestLines[i];
+                    arrayRequestLines[i] = valorAnterior.Replace(variable3, "");
+                }
+
+                string variable4 = "d3p1:nil=\"true\" xmlns:d3p1=\"http://www.w3.org/2001/XMLSchema-instance\"";
+                if ((LineaActual.IndexOf(variable4) > 0))
+                {
+                    string valorAnterior = arrayRequestLines[i];
+                    arrayRequestLines[i] = valorAnterior.Replace(variable4, "");
+                }
+                //string valorAnterior2 = arrayRequestLines[i];
+                //arrayRequestLines[i] = valorAnterior2.Replace("</", "##");
+
+                //string valorAnterior1 = arrayRequestLines[i];
+                //arrayRequestLines[i] = valorAnterior1.Replace("<", "<per:");
+
+                //string valorAnterior3 = arrayRequestLines[i];
+                //arrayRequestLines[i] = valorAnterior3.Replace("##", "</per:");
+
+                //string variable5 = "/>";
+                //if ((LineaActual.IndexOf(variable5) > 0))
+                //{
+                //    arrayRequestLines[i] = "";
+                //}
 
                 //string variable6 = "<";
                 //if ((LineaActual.IndexOf(variable5) > 1))

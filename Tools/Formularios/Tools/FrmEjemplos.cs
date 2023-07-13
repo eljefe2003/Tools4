@@ -1290,80 +1290,103 @@ namespace Tools
             Log("--------- Fin Envio a PSE ---------", true, false);
             Log("--------- Consulta estatus Sunat/Ose ---------", true, false);
             (string nombreTxt, string documentoInterno, string status)[] arrayDocs = lstDocs.ToArray();
-            for (int i = 0; i < arrayDocs.Length; i++)
+            if (AmbienteGlobal == "PRD")
             {
-                bool encendido = true;
-                (int Codigo, string Mensaje, string Documento) resp2;
-                resp2.Codigo = 911;
-                resp2.Mensaje = "911";
-                while (encendido)
+                Log("Se detiene la consulta debido a que nunca obtendra aceptación en PRD", true, false);
+            }
+            else
+            {
+                for (int i = 0; i < arrayDocs.Length; i++)
                 {
-                    if (arrayDocs[i].documentoInterno.Split('-')[0] == "20550728762")
+                    bool encendido = true;
+                    (int Codigo, string Mensaje, string Documento) resp2;
+                    resp2.Codigo = 911;
+                    resp2.Mensaje = "911";
+                    while (encendido)
                     {
-                        resp2 = DllG1.EstatusDocumento(ConfigGlobal.Ruc2, ConfigGlobal.UserRuc2, ConfigGlobal.PassRuc2, arrayDocs[i].documentoInterno);
-                    }
-                    else
-                    {
-                        resp2 = DllG1.EstatusDocumento(ConfigGlobal.Ruc, ConfigGlobal.UserRuc, ConfigGlobal.PassRuc, arrayDocs[i].documentoInterno);
-                    }
-
-                    if (resp2.Codigo == 0)
-                    {
-                        encendido = false;
-                        arrayDocs[i].status = resp2.ToString();
-                    }
-                    else if (resp2.Codigo != 95)
-                    {
-                        encendido = false;
-                        arrayDocs[i].status = resp2.ToString();
-                    }
-                    else
-                    {
-                        Log("Se esperan 25 segundos para consultar el status de los documentos", true, false);
-                        Thread.Sleep(25000);
-                    }
-                }
-                bool msj = false;
-                string cdrContenido = "";
-                if (resp2.Codigo == 0)
-                {
-                    msj = true;
-                    (int Codigo, string Mensaje, string Docmumento, string ArhivoBase64) respDescarga;
-
-                    if (arrayDocs[i].documentoInterno.Split('-')[0] == "20550728762")
-                    {
-                        respDescarga = DllG1.DescargaArchivos(ConfigGlobal.Ruc2, ConfigGlobal.UserRuc2, ConfigGlobal.PassRuc2, arrayDocs[i].documentoInterno, "CDR");
-                    }
-                    else
-                    {
-                        respDescarga = DllG1.DescargaArchivos(ConfigGlobal.Ruc, ConfigGlobal.UserRuc, ConfigGlobal.PassRuc, arrayDocs[i].documentoInterno, "CDR");
-                    }
-
-                    if (respDescarga.ArhivoBase64 != null)
-                    {
-                        byte[] data = System.Convert.FromBase64String(respDescarga.ArhivoBase64);
-                        File.WriteAllBytes(ConfigPerso.RutaEjemplosProcesados + arrayDocs[i].documentoInterno + ".zip", data);
-                    }
-                    cdrContenido = LeerCDR(DescomprimirArchivo(ConfigPerso.RutaEjemplosProcesados + arrayDocs[i].documentoInterno + ".zip"));
-                    //Log("Documento " + numeracion + " aceptado, " + cdrContenido.Split('|')[2] + ".", true, false);
-
-                }
-                Log("Status del doc " + arrayDocs[i].nombreTxt + " (" + arrayDocs[i].documentoInterno + ") --> " + cdrContenido, true, false);
-                //dtgEjemplos.Rows[i].Cells[2].Value = resp2.Codigo;
-                dtgEjemplos.Rows[i].Cells[2].Value = resp2.Codigo + "|" + resp2.Mensaje;
-                foreach (DataGridViewRow dgvr in dtgEjemplos.Rows)
-                {
-                    if (dgvr.Cells[2].Value != null)
-                    {
-                        if (dgvr.Cells[2].Value.ToString().Split('|')[0] != "0")
+                        if (arrayDocs[i].documentoInterno.Split('-')[0] == "20550728762")
                         {
-                            dgvr.DefaultCellStyle.ForeColor = Color.Red;
+                            resp2 = DllG1.EstatusDocumento(ConfigGlobal.Ruc2, ConfigGlobal.UserRuc2, ConfigGlobal.PassRuc2, arrayDocs[i].documentoInterno);
                         }
                         else
                         {
-                            dgvr.DefaultCellStyle.ForeColor = colorAceptados;
+                            resp2 = DllG1.EstatusDocumento(ConfigGlobal.Ruc, ConfigGlobal.UserRuc, ConfigGlobal.PassRuc, arrayDocs[i].documentoInterno);
+                        }
+
+                        if (resp2.Codigo == 0)
+                        {
+                            encendido = false;
+                            arrayDocs[i].status = resp2.ToString();
+                        }
+                        else if (resp2.Codigo != 95)
+                        {
+                            encendido = false;
+                            arrayDocs[i].status = resp2.ToString();
+                        }
+                        else
+                        {
+                            Log("Se esperan 25 segundos para consultar el status de los documentos", true, false);
+                            Thread.Sleep(25000);
                         }
                     }
+                    bool msj = false;
+                    string cdrContenido = "";
+                    if (resp2.Codigo == 0)
+                    {
+                        msj = true;
+                        (int Codigo, string Mensaje, string Docmumento, string ArhivoBase64) respDescarga;
+
+                        if (arrayDocs[i].documentoInterno.Split('-')[0] == "20550728762")
+                        {
+                            respDescarga = DllG1.DescargaArchivos(ConfigGlobal.Ruc2, ConfigGlobal.UserRuc2, ConfigGlobal.PassRuc2, arrayDocs[i].documentoInterno, "CDR");
+                        }
+                        else
+                        {
+                            respDescarga = DllG1.DescargaArchivos(ConfigGlobal.Ruc, ConfigGlobal.UserRuc, ConfigGlobal.PassRuc, arrayDocs[i].documentoInterno, "CDR");
+                        }
+
+                        if (respDescarga.ArhivoBase64 != null)
+                        {
+                            byte[] data = System.Convert.FromBase64String(respDescarga.ArhivoBase64);
+                            File.WriteAllBytes(ConfigPerso.RutaEjemplosProcesados + arrayDocs[i].documentoInterno + ".zip", data);
+                        }
+
+                        LecturaCdr cdr = new LecturaCdr();
+                        var cdrContenido2 = cdr.LeerCDR(DescomprimirArchivo(ConfigPerso.RutaEjemplosProcesados + arrayDocs[i].documentoInterno + ".zip"));
+                        Log("Status del doc " + arrayDocs[i].nombreTxt + " (" + arrayDocs[i].documentoInterno + ") --> " + cdrContenido2[0].Split('|')[2], true, false);
+                        //Log("Documento " + numeracion + " aceptado, " + cdrContenido[0].Split('|')[2] + ".", true, false);
+                        if (cdrContenido2.Length > 1)
+                        {
+                            for (int k = 0; k < cdrContenido2.Length - 1; k++)
+                            {
+                                Log("OBS " + cdrContenido2[k + 1], true, false);
+                            }
+                        }
+
+
+
+                        //cdrContenido = LeerCDR(DescomprimirArchivo(ConfigPerso.RutaEjemplosProcesados + arrayDocs[i].documentoInterno + ".zip"));
+                        //Log("Documento " + numeracion + " aceptado, " + cdrContenido.Split('|')[2] + ".", true, false);
+
+                    }
+                    //Log("Status del doc " + arrayDocs[i].nombreTxt + " (" + arrayDocs[i].documentoInterno + ") --> " + cdrContenido, true, false);
+                    //dtgEjemplos.Rows[i].Cells[2].Value = resp2.Codigo;
+                    dtgEjemplos.Rows[i].Cells[2].Value = resp2.Codigo + "|" + resp2.Mensaje;
+                    foreach (DataGridViewRow dgvr in dtgEjemplos.Rows)
+                    {
+                        if (dgvr.Cells[2].Value != null)
+                        {
+                            if (dgvr.Cells[2].Value.ToString().Split('|')[0] != "0")
+                            {
+                                dgvr.DefaultCellStyle.ForeColor = Color.Red;
+                            }
+                            else
+                            {
+                                dgvr.DefaultCellStyle.ForeColor = colorAceptados;
+                            }
+                        }
+                    }
+
                 }
 
             }
@@ -1500,6 +1523,11 @@ namespace Tools
                 {
                     Log("Documento "+ numeracion +" aun no aceptado. En 30 segundos se realizara nuevamente la consulta para evitar error 99", true, false);
                     Thread.Sleep(30000);
+                    if(AmbienteGlobal == "PRD")
+                    {
+                        encendido = false;
+                        Log("Se detiene la consulta debido a que nunca obtendra aceptación en PRD", true, false);
+                    }
                 }
                 else
                 {

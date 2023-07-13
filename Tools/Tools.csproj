@@ -81,7 +81,7 @@
     <Reference Include="AltoControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\AltoControls.1.0.1\lib\AltoControls.dll</HintPath>
     </Reference>
-    <Reference Include="DLL_Online, Version=4.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="DLL_Online, Version=4.9.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\DLL_Online.dll</HintPath>
     </Reference>

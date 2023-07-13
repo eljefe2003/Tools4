@@ -652,6 +652,27 @@ namespace Tools
             lblSeccion.Text = childForm.Text;
         }
 
+        private void btnFirma_Click(object sender, EventArgs e)
+        {
+
+            ActivateButton2(sender);
+            FrmFirmaXml childForm = new FrmFirmaXml(Color1, Color2, Color3, Color4);
+            if (FormHijoActual != null)
+            {
+                FormHijoActual.Close();
+            }
+            FormHijoActual = childForm;
+            //End
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            pnlForm.Controls.Add(childForm);
+            pnlForm.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            lblSeccion.Text = childForm.Text;
+        }
+
         private void DisableButton()
         {
             if (currentBtn != null)

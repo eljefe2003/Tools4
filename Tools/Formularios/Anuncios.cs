@@ -45,6 +45,7 @@ namespace Tools
             metroTabControl1.SelectTab(0);
             CargaDtgVersionPublica();
             CargaDtgVersion();
+            cmbVersion.SelectedIndex = 0;
             btnCerrar.DialogResult = DialogResult.OK;
         }
 
@@ -325,7 +326,7 @@ namespace Tools
                     Comentario com = new Comentario();
                     Version existeVer = conex.getVersion(cmbVersion.Text);
 
-                    com.Mensaje = rtbComentario.Text.ToUpper();
+                    com.Mensaje = rtbComentario.Text;
                     com.VersionClase = existeVer;
                     com.Tipo = cmbTipo.Text;
                     com.Status = 1;
