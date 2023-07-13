@@ -198,6 +198,8 @@ namespace Tools
                     Task.Factory.StartNew(() => DescargaPDF(linea, rutaAsignada));
                     Task.Factory.StartNew(() => DescargaXML(linea, rutaAsignada));
                     Task.Factory.StartNew(() => DescargaCDR(linea, rutaAsignada));
+                    Task.Factory.StartNew(() => DescargaJson(linea, rutaAsignada));
+
                 }
                 else
                 {
@@ -213,6 +215,10 @@ namespace Tools
                     {
                         Task.Factory.StartNew(() => DescargaCDR(linea, rutaAsignada));
                     }
+                    else if (cmbTipo.Text == "JSON")
+                    {
+                        Task.Factory.StartNew(() => DescargaJson(linea, rutaAsignada));
+                    }
                 }              
                 
             }
@@ -225,7 +231,7 @@ namespace Tools
             {
                 DLL = new DLL_Online.Metodos.TheFactoryHKA();
                 var resp = DLL.DescargaArchivo(txtRuc.Text, txtUsuario.Text, txtClave.Text, txtRuc.Text + "-" + linea, "PDF");
-                string extension = ".pdf";              
+                string extension = "pdf";              
                 string ruta = rutaAsignada + linea + "." + extension;
                 if (resp.ArhivoBase64 != null)
                 {
@@ -250,7 +256,7 @@ namespace Tools
             {
                 DLL = new DLL_Online.Metodos.TheFactoryHKA();
                 var resp = DLL.DescargaArchivo(txtRuc.Text, txtUsuario.Text, txtClave.Text, txtRuc.Text + "-" + linea, "XML");
-                string extension = ".xml";               
+                string extension = "xml";               
                 string ruta = rutaAsignada + linea + "." + extension;
                 if (resp.ArhivoBase64 != null)
                 {
@@ -269,13 +275,38 @@ namespace Tools
             }
         }
 
+        private void DescargaJson(string linea, string rutaAsignada)
+        {
+            try
+            {
+                DLL = new DLL_Online.Metodos.TheFactoryHKA();
+                var resp = DLL.DescargaArchivo(txtRuc.Text, txtUsuario.Text, txtClave.Text, txtRuc.Text + "-" + linea, "JSON");
+                string extension = "json";
+                string ruta = rutaAsignada + linea + "." + extension;
+                if (resp.ArhivoBase64 != null)
+                {
+                    byte[] data = System.Convert.FromBase64String(resp.ArhivoBase64);
+                    File.WriteAllBytes(ruta, data);
+                    rtb_Log.AppendText(linea + " Descargado exitosamente su JSON" + Environment.NewLine);
+                }
+                else
+                {
+                    rtb_Log.AppendText(linea + " No se encuentra su JSON" + Environment.NewLine);
+                }
+            }
+            catch (Exception e)
+            {
+                rtb_Log.AppendText(e.Message + " " + linea);
+            }
+        }
+
         private void DescargaCDR(string linea, string rutaAsignada)
         {
             try
             {
                 DLL = new DLL_Online.Metodos.TheFactoryHKA();
                 var resp = DLL.DescargaArchivo(txtRuc.Text, txtUsuario.Text, txtClave.Text, txtRuc.Text + "-" + linea, "CDR");
-                string extension = ".zip";
+                string extension = "zip";
                 string ruta = rutaAsignada + linea + "." + extension;
                 if (resp.ArhivoBase64 != null)
                 {

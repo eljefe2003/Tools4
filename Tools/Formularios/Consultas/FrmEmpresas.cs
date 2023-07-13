@@ -65,7 +65,6 @@ namespace Tools
             else
                 Task.Factory.StartNew(() => method2());
 
-
             //var arraytotal = Calculo(recorrer);
             //for (int i = 0; i < arraytotal.Length; i++)
             //{

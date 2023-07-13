@@ -362,7 +362,8 @@ namespace Tools
             "Todos",
             "PDF",
             "XML",
-            "CDR"});
+            "CDR",
+            "JSON"});
             this.cmbTipo.Location = new System.Drawing.Point(135, 3);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(279, 29);

@@ -297,6 +297,8 @@
             this.dtpHasta.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Bold);
             this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpHasta.Location = new System.Drawing.Point(52, 3);
+            this.dtpHasta.MaxDate = new System.DateTime(2025, 12, 31, 0, 0, 0, 0);
+            this.dtpHasta.MinDate = new System.DateTime(2015, 12, 1, 0, 0, 0, 0);
             this.dtpHasta.Name = "dtpHasta";
             this.dtpHasta.Size = new System.Drawing.Size(188, 21);
             this.dtpHasta.TabIndex = 7;
@@ -333,12 +335,12 @@
             this.dtpDesde.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Bold);
             this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDesde.Location = new System.Drawing.Point(63, 3);
-            this.dtpDesde.MaxDate = new System.DateTime(2029, 12, 31, 0, 0, 0, 0);
+            this.dtpDesde.MaxDate = new System.DateTime(2025, 12, 31, 0, 0, 0, 0);
             this.dtpDesde.MinDate = new System.DateTime(2015, 12, 1, 0, 0, 0, 0);
             this.dtpDesde.Name = "dtpDesde";
             this.dtpDesde.Size = new System.Drawing.Size(176, 21);
             this.dtpDesde.TabIndex = 6;
-            this.dtpDesde.Value = new System.DateTime(2021, 1, 1, 12, 56, 0, 0);
+            this.dtpDesde.Value = new System.DateTime(2023, 7, 13, 0, 0, 0, 0);
             // 
             // tableLayoutPanel11
             // 

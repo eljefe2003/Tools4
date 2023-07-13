@@ -63,6 +63,7 @@ namespace Tools
             this.label2 = new System.Windows.Forms.Label();
             this.cmbTipoDoc = new MetroFramework.Controls.MetroComboBox();
             this.txtBusquedaEjemplo = new MetroFramework.Controls.MetroTextBox();
+            this.chckJsonEjemplos = new System.Windows.Forms.CheckBox();
             this.tlpGeneral.SuspendLayout();
             this.tlpLog.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -197,9 +198,9 @@ namespace Tools
             this.tableLayoutPanel56.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel56.Name = "tableLayoutPanel56";
             this.tableLayoutPanel56.RowCount = 3;
-            this.tableLayoutPanel56.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.38356F));
-            this.tableLayoutPanel56.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.61644F));
-            this.tableLayoutPanel56.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 273F));
+            this.tableLayoutPanel56.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.51852F));
+            this.tableLayoutPanel56.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 81.48148F));
+            this.tableLayoutPanel56.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 299F));
             this.tableLayoutPanel56.Size = new System.Drawing.Size(549, 489);
             this.tableLayoutPanel56.TabIndex = 1;
             // 
@@ -217,7 +218,7 @@ namespace Tools
             this.dtgEjemplos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgEjemplos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgEjemplos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgEjemplos.Location = new System.Drawing.Point(2, 33);
+            this.dtgEjemplos.Location = new System.Drawing.Point(2, 37);
             this.dtgEjemplos.Margin = new System.Windows.Forms.Padding(2);
             this.dtgEjemplos.MultiSelect = false;
             this.dtgEjemplos.Name = "dtgEjemplos";
@@ -233,7 +234,7 @@ namespace Tools
             this.dtgEjemplos.RowHeadersVisible = false;
             this.dtgEjemplos.RowHeadersWidth = 51;
             this.dtgEjemplos.RowTemplate.Height = 24;
-            this.dtgEjemplos.Size = new System.Drawing.Size(545, 180);
+            this.dtgEjemplos.Size = new System.Drawing.Size(545, 150);
             this.dtgEjemplos.TabIndex = 5;
             this.dtgEjemplos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgEjemplos_CellContentClick);
             // 
@@ -244,12 +245,12 @@ namespace Tools
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.24138F));
             this.tableLayoutPanel14.Controls.Add(this.panel3, 0, 0);
             this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel14.Location = new System.Drawing.Point(2, 217);
+            this.tableLayoutPanel14.Location = new System.Drawing.Point(2, 191);
             this.tableLayoutPanel14.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
             this.tableLayoutPanel14.RowCount = 1;
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(545, 270);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(545, 296);
             this.tableLayoutPanel14.TabIndex = 7;
             // 
             // panel3
@@ -260,16 +261,16 @@ namespace Tools
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(270, 264);
+            this.panel3.Size = new System.Drawing.Size(270, 290);
             this.panel3.TabIndex = 3;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnProbarTodos);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 231);
+            this.panel1.Location = new System.Drawing.Point(0, 263);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(270, 29);
+            this.panel1.Size = new System.Drawing.Size(270, 28);
             this.panel1.TabIndex = 2;
             // 
             // btnProbarTodos
@@ -289,7 +290,7 @@ namespace Tools
             this.btnProbarTodos.Location = new System.Drawing.Point(0, 0);
             this.btnProbarTodos.Margin = new System.Windows.Forms.Padding(2);
             this.btnProbarTodos.Name = "btnProbarTodos";
-            this.btnProbarTodos.Size = new System.Drawing.Size(270, 29);
+            this.btnProbarTodos.Size = new System.Drawing.Size(270, 28);
             this.btnProbarTodos.TabIndex = 4;
             this.btnProbarTodos.Text = "Probar todos los Archivos";
             this.btnProbarTodos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -303,37 +304,38 @@ namespace Tools
             this.pnlDescargas.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlDescargas.Location = new System.Drawing.Point(0, 24);
             this.pnlDescargas.Name = "pnlDescargas";
-            this.pnlDescargas.Size = new System.Drawing.Size(270, 207);
+            this.pnlDescargas.Size = new System.Drawing.Size(270, 239);
             this.pnlDescargas.TabIndex = 1;
             // 
             // tlp_archivos
             // 
             this.tlp_archivos.ColumnCount = 1;
             this.tlp_archivos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlp_archivos.Controls.Add(this.chckSpeech, 0, 6);
             this.tlp_archivos.Controls.Add(this.chckTodo, 0, 0);
             this.tlp_archivos.Controls.Add(this.chckTxtEjemplos, 0, 5);
             this.tlp_archivos.Controls.Add(this.chckRequestEjemplos, 0, 4);
             this.tlp_archivos.Controls.Add(this.chckCdrEjemplos, 0, 3);
             this.tlp_archivos.Controls.Add(this.chckXmlEjemplos, 0, 2);
             this.tlp_archivos.Controls.Add(this.chckPdfEjemplos, 0, 1);
-            this.tlp_archivos.Controls.Add(this.btnDescargaEjemplos, 0, 7);
+            this.tlp_archivos.Controls.Add(this.btnDescargaEjemplos, 0, 8);
+            this.tlp_archivos.Controls.Add(this.chckSpeech, 0, 7);
+            this.tlp_archivos.Controls.Add(this.chckJsonEjemplos, 0, 6);
             this.tlp_archivos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlp_archivos.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlp_archivos.Location = new System.Drawing.Point(0, 0);
             this.tlp_archivos.Margin = new System.Windows.Forms.Padding(2);
             this.tlp_archivos.Name = "tlp_archivos";
-            this.tlp_archivos.RowCount = 8;
-            this.tlp_archivos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
-            this.tlp_archivos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tlp_archivos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tlp_archivos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tlp_archivos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tlp_archivos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tlp_archivos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
-            this.tlp_archivos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tlp_archivos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.tlp_archivos.Size = new System.Drawing.Size(270, 207);
+            this.tlp_archivos.RowCount = 9;
+            this.tlp_archivos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tlp_archivos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tlp_archivos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tlp_archivos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tlp_archivos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tlp_archivos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tlp_archivos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tlp_archivos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tlp_archivos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tlp_archivos.Size = new System.Drawing.Size(270, 239);
             this.tlp_archivos.TabIndex = 6;
             // 
             // chckSpeech
@@ -342,10 +344,10 @@ namespace Tools
             this.chckSpeech.Checked = true;
             this.chckSpeech.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chckSpeech.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chckSpeech.Location = new System.Drawing.Point(2, 158);
+            this.chckSpeech.Location = new System.Drawing.Point(2, 184);
             this.chckSpeech.Margin = new System.Windows.Forms.Padding(2);
             this.chckSpeech.Name = "chckSpeech";
-            this.chckSpeech.Size = new System.Drawing.Size(117, 17);
+            this.chckSpeech.Size = new System.Drawing.Size(117, 22);
             this.chckSpeech.TabIndex = 9;
             this.chckSpeech.Text = "Speech Correo";
             this.chckSpeech.UseVisualStyleBackColor = true;
@@ -448,10 +450,10 @@ namespace Tools
             this.btnDescargaEjemplos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDescargaEjemplos.IconSize = 25;
             this.btnDescargaEjemplos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDescargaEjemplos.Location = new System.Drawing.Point(0, 177);
+            this.btnDescargaEjemplos.Location = new System.Drawing.Point(0, 208);
             this.btnDescargaEjemplos.Margin = new System.Windows.Forms.Padding(0);
             this.btnDescargaEjemplos.Name = "btnDescargaEjemplos";
-            this.btnDescargaEjemplos.Size = new System.Drawing.Size(270, 30);
+            this.btnDescargaEjemplos.Size = new System.Drawing.Size(270, 31);
             this.btnDescargaEjemplos.TabIndex = 2;
             this.btnDescargaEjemplos.Text = "Descargar archivos";
             this.btnDescargaEjemplos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -516,7 +518,7 @@ namespace Tools
             this.tableLayoutPanel57.Name = "tableLayoutPanel57";
             this.tableLayoutPanel57.RowCount = 1;
             this.tableLayoutPanel57.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel57.Size = new System.Drawing.Size(545, 27);
+            this.tableLayoutPanel57.Size = new System.Drawing.Size(545, 31);
             this.tableLayoutPanel57.TabIndex = 8;
             // 
             // tableLayoutPanel2
@@ -526,11 +528,12 @@ namespace Tools
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.68085F));
             this.tableLayoutPanel2.Controls.Add(this.chckDemo, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(365, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(176, 21);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(177, 25);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
             // chckDemo
@@ -541,7 +544,7 @@ namespace Tools
             this.chckDemo.IsOn = true;
             this.chckDemo.Location = new System.Drawing.Point(100, 3);
             this.chckDemo.Name = "chckDemo";
-            this.chckDemo.Size = new System.Drawing.Size(26, 15);
+            this.chckDemo.Size = new System.Drawing.Size(34, 19);
             this.chckDemo.TabIndex = 0;
             this.chckDemo.Text = "slideButton1";
             this.chckDemo.TextEnabled = false;
@@ -555,7 +558,7 @@ namespace Tools
             this.label2.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 21);
+            this.label2.Size = new System.Drawing.Size(91, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "Demo";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -579,10 +582,10 @@ namespace Tools
             // 
             // 
             this.txtBusquedaEjemplo.CustomButton.Image = null;
-            this.txtBusquedaEjemplo.CustomButton.Location = new System.Drawing.Point(155, 1);
+            this.txtBusquedaEjemplo.CustomButton.Location = new System.Drawing.Point(151, 1);
             this.txtBusquedaEjemplo.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.txtBusquedaEjemplo.CustomButton.Name = "";
-            this.txtBusquedaEjemplo.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtBusquedaEjemplo.CustomButton.Size = new System.Drawing.Size(25, 25);
             this.txtBusquedaEjemplo.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtBusquedaEjemplo.CustomButton.TabIndex = 1;
             this.txtBusquedaEjemplo.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -602,13 +605,27 @@ namespace Tools
             this.txtBusquedaEjemplo.SelectionLength = 0;
             this.txtBusquedaEjemplo.SelectionStart = 0;
             this.txtBusquedaEjemplo.ShortcutsEnabled = true;
-            this.txtBusquedaEjemplo.Size = new System.Drawing.Size(177, 23);
+            this.txtBusquedaEjemplo.Size = new System.Drawing.Size(177, 27);
             this.txtBusquedaEjemplo.TabIndex = 2;
             this.txtBusquedaEjemplo.UseSelectable = true;
             this.txtBusquedaEjemplo.WaterMark = "Digite aca un texto para filtrar";
             this.txtBusquedaEjemplo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtBusquedaEjemplo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Italic);
             this.txtBusquedaEjemplo.TextChanged += new System.EventHandler(this.txtBusquedaEjemplo_TextChanged);
+            // 
+            // chckJsonEjemplos
+            // 
+            this.chckJsonEjemplos.AutoSize = true;
+            this.chckJsonEjemplos.Checked = true;
+            this.chckJsonEjemplos.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chckJsonEjemplos.Font = new System.Drawing.Font("Calibri", 10.8F);
+            this.chckJsonEjemplos.Location = new System.Drawing.Point(2, 158);
+            this.chckJsonEjemplos.Margin = new System.Windows.Forms.Padding(2);
+            this.chckJsonEjemplos.Name = "chckJsonEjemplos";
+            this.chckJsonEjemplos.Size = new System.Drawing.Size(59, 22);
+            this.chckJsonEjemplos.TabIndex = 10;
+            this.chckJsonEjemplos.Text = "JSON";
+            this.chckJsonEjemplos.UseVisualStyleBackColor = true;
             // 
             // FrmEjemplos
             // 
@@ -675,5 +692,6 @@ namespace Tools
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label lbl_Log;
         private FontAwesome.Sharp.IconButton btnBorrarLog;
+        private System.Windows.Forms.CheckBox chckJsonEjemplos;
     }
 }

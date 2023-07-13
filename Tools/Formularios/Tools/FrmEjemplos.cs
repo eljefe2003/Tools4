@@ -482,6 +482,8 @@ namespace Tools
                 chckRequestEjemplos.Checked = true;
                 chckTxtEjemplos.Checked = true;
                 chckSpeech.Checked = true;
+                chckJsonEjemplos.Checked = true;
+
             }
             else
             {
@@ -491,6 +493,7 @@ namespace Tools
                 chckRequestEjemplos.Checked = false;
                 chckTxtEjemplos.Checked = false;
                 chckSpeech.Checked = false;
+                chckJsonEjemplos.Checked = false;
 
             }
 
@@ -1066,10 +1069,39 @@ namespace Tools
                     }
                 }
 
+                if (chckJsonEjemplos.Checked)
+                {
+                    string rutaPdf = rutaDestino + "\\" + nombreEjemplosGlobal + ".json";
+                    string respPdf = "";
+
+                    if (nombreRealEjemplosGlobal.Split('-')[0] == "20550728762")
+                    {
+                        respPdf = DllG1.DescargaArchivos(ConfigGlobal.Ruc2, ConfigGlobal.UserRuc2, ConfigGlobal.PassRuc2, nombreRealEjemplosGlobal, "JSON").ArhivoBase64;
+                    }
+                    else
+                    {
+                        respPdf = DllG1.DescargaArchivos(ConfigGlobal.Ruc, ConfigGlobal.UserRuc, ConfigGlobal.PassRuc, nombreRealEjemplosGlobal, "JSON").ArhivoBase64;
+                    }
+
+                    if (respPdf != null)
+                    {
+                        byte[] data = System.Convert.FromBase64String(respPdf);
+                        File.WriteAllBytes(rutaPdf, data);
+                        Log("Se descarga " + rutaPdf, true, false);
+                        MensajeTipos += Environment.NewLine + "- JSON";
+                    }
+                    else
+                    {
+                        Log("No se puede descargar JSON del doc " + nombreEjemplosGlobal, false, false);
+                    }
+
+                }
+
                 if (chckSpeech.Checked)
                 {
                     SpeechBaja();
                 }
+                
 
                 if (Directory.Exists(rutaDestino + "\\"))
                 {
