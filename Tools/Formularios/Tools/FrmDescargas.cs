@@ -228,21 +228,31 @@ namespace Tools
         private void DescargaPDF(string linea, string rutaAsignada)
         {
             try
-            {
-                DLL = new DLL_Online.Metodos.TheFactoryHKA();
-                var resp = DLL.DescargaArchivo(txtRuc.Text, txtUsuario.Text, txtClave.Text, txtRuc.Text + "-" + linea, "PDF");
-                string extension = "pdf";              
-                string ruta = rutaAsignada + linea + "." + extension;
-                if (resp.ArhivoBase64 != null)
+            {               
+
+                DLL_Online.Metodos.Facturacion DLL2 = new DLL_Online.Metodos.Facturacion();
+                if (DLL2.ValidaAcceso(txtRuc.Text, txtUsuario.Text, txtClave.Text))
                 {
-                    byte[] data = System.Convert.FromBase64String(resp.ArhivoBase64);
-                    File.WriteAllBytes(ruta, data);
-                    rtb_Log.AppendText(linea + " Descargado exitosamente su PDF" + Environment.NewLine);
+                    DLL = new DLL_Online.Metodos.TheFactoryHKA();
+                    var resp = DLL.DescargaArchivo(txtRuc.Text, txtUsuario.Text, txtClave.Text, txtRuc.Text + "-" + linea, "PDF");
+                    string extension = "pdf";
+                    string ruta = rutaAsignada + linea + "." + extension;
+                    if (resp.ArhivoBase64 != null)
+                    {
+                        byte[] data = System.Convert.FromBase64String(resp.ArhivoBase64);
+                        File.WriteAllBytes(ruta, data);
+                        rtb_Log.AppendText(linea + " Descargado exitosamente su PDF" + Environment.NewLine + Environment.NewLine);
+                    }
+                    else
+                    {
+                        rtb_Log.AppendText(linea + " No se encuentra su PDF" + Environment.NewLine + Environment.NewLine);
+                    }
                 }
                 else
                 {
-                    rtb_Log.AppendText(linea + " No se encuentra su PDF" + Environment.NewLine);
+                    rtb_Log.AppendText("Credenciales Incorrectas: " + Environment.NewLine + Environment.NewLine);
                 }
+              
             }
             catch (Exception e)
             {
@@ -254,19 +264,27 @@ namespace Tools
         {
             try
             {
-                DLL = new DLL_Online.Metodos.TheFactoryHKA();
-                var resp = DLL.DescargaArchivo(txtRuc.Text, txtUsuario.Text, txtClave.Text, txtRuc.Text + "-" + linea, "XML");
-                string extension = "xml";               
-                string ruta = rutaAsignada + linea + "." + extension;
-                if (resp.ArhivoBase64 != null)
+                DLL_Online.Metodos.Facturacion DLL2 = new DLL_Online.Metodos.Facturacion();
+                if (DLL2.ValidaAcceso(txtRuc.Text, txtUsuario.Text, txtClave.Text))
                 {
-                    byte[] data = System.Convert.FromBase64String(resp.ArhivoBase64);
-                    File.WriteAllBytes(ruta, data);
-                    rtb_Log.AppendText(linea + " Descargado exitosamente su XML" + Environment.NewLine);
+                    DLL = new DLL_Online.Metodos.TheFactoryHKA();
+                    var resp = DLL.DescargaArchivo(txtRuc.Text, txtUsuario.Text, txtClave.Text, txtRuc.Text + "-" + linea, "XML");
+                    string extension = "xml";
+                    string ruta = rutaAsignada + linea + "." + extension;
+                    if (resp.ArhivoBase64 != null)
+                    {
+                        byte[] data = System.Convert.FromBase64String(resp.ArhivoBase64);
+                        File.WriteAllBytes(ruta, data);
+                        rtb_Log.AppendText(linea + " Descargado exitosamente su XML" + Environment.NewLine + Environment.NewLine);
+                    }
+                    else
+                    {
+                        rtb_Log.AppendText(linea + " No se encuentra su XML" + Environment.NewLine + Environment.NewLine);
+                    }
                 }
                 else
                 {
-                    rtb_Log.AppendText(linea + " No se encuentra su XML" + Environment.NewLine);
+                    rtb_Log.AppendText("Credenciales Incorrectas: " + Environment.NewLine + Environment.NewLine);
                 }
             }
             catch (Exception e)
@@ -279,19 +297,27 @@ namespace Tools
         {
             try
             {
-                DLL = new DLL_Online.Metodos.TheFactoryHKA();
-                var resp = DLL.DescargaArchivo(txtRuc.Text, txtUsuario.Text, txtClave.Text, txtRuc.Text + "-" + linea, "JSON");
-                string extension = "json";
-                string ruta = rutaAsignada + linea + "." + extension;
-                if (resp.ArhivoBase64 != null)
+                DLL_Online.Metodos.Facturacion DLL2 = new DLL_Online.Metodos.Facturacion();
+                if (DLL2.ValidaAcceso(txtRuc.Text, txtUsuario.Text, txtClave.Text))
                 {
-                    byte[] data = System.Convert.FromBase64String(resp.ArhivoBase64);
-                    File.WriteAllBytes(ruta, data);
-                    rtb_Log.AppendText(linea + " Descargado exitosamente su JSON" + Environment.NewLine);
+                    DLL = new DLL_Online.Metodos.TheFactoryHKA();
+                    var resp = DLL.DescargaArchivo(txtRuc.Text, txtUsuario.Text, txtClave.Text, txtRuc.Text + "-" + linea, "JSON");
+                    string extension = "json";
+                    string ruta = rutaAsignada + linea + "." + extension;
+                    if (resp.ArhivoBase64 != null)
+                    {
+                        byte[] data = System.Convert.FromBase64String(resp.ArhivoBase64);
+                        File.WriteAllBytes(ruta, data);
+                        rtb_Log.AppendText(linea + " Descargado exitosamente su JSON" + Environment.NewLine + Environment.NewLine);
+                    }
+                    else
+                    {
+                        rtb_Log.AppendText(linea + " No se encuentra su JSON" + Environment.NewLine + Environment.NewLine);
+                    }
                 }
                 else
                 {
-                    rtb_Log.AppendText(linea + " No se encuentra su JSON" + Environment.NewLine);
+                    rtb_Log.AppendText("Credenciales Incorrectas: " + Environment.NewLine + Environment.NewLine);
                 }
             }
             catch (Exception e)
@@ -304,19 +330,27 @@ namespace Tools
         {
             try
             {
-                DLL = new DLL_Online.Metodos.TheFactoryHKA();
-                var resp = DLL.DescargaArchivo(txtRuc.Text, txtUsuario.Text, txtClave.Text, txtRuc.Text + "-" + linea, "CDR");
-                string extension = "zip";
-                string ruta = rutaAsignada + linea + "." + extension;
-                if (resp.ArhivoBase64 != null)
+                DLL_Online.Metodos.Facturacion DLL2 = new DLL_Online.Metodos.Facturacion();
+                if (DLL2.ValidaAcceso(txtRuc.Text, txtUsuario.Text, txtClave.Text))
                 {
-                    byte[] data = System.Convert.FromBase64String(resp.ArhivoBase64);
-                    File.WriteAllBytes(ruta, data);
-                    rtb_Log.AppendText(linea + " Descargado exitosamente su CDR" + Environment.NewLine);
+                    DLL = new DLL_Online.Metodos.TheFactoryHKA();
+                    var resp = DLL.DescargaArchivo(txtRuc.Text, txtUsuario.Text, txtClave.Text, txtRuc.Text + "-" + linea, "CDR");
+                    string extension = "zip";
+                    string ruta = rutaAsignada + linea + "." + extension;
+                    if (resp.ArhivoBase64 != null)
+                    {
+                        byte[] data = System.Convert.FromBase64String(resp.ArhivoBase64);
+                        File.WriteAllBytes(ruta, data);
+                        rtb_Log.AppendText(linea + " Descargado exitosamente su CDR" + Environment.NewLine + Environment.NewLine);
+                    }
+                    else
+                    {
+                        rtb_Log.AppendText(linea + " No se encuentra su CDR" + Environment.NewLine + Environment.NewLine);
+                    }
                 }
                 else
                 {
-                    rtb_Log.AppendText(linea + " No se encuentra su CDR" + Environment.NewLine);
+                    rtb_Log.AppendText("Credenciales Incorrectas: " + Environment.NewLine + Environment.NewLine);
                 }
             }
             catch (Exception e)

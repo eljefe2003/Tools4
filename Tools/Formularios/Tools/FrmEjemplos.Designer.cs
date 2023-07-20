@@ -46,7 +46,6 @@ namespace Tools
             this.btnProbarTodos = new FontAwesome.Sharp.IconButton();
             this.pnlDescargas = new System.Windows.Forms.Panel();
             this.tlp_archivos = new System.Windows.Forms.TableLayoutPanel();
-            this.chckSpeech = new System.Windows.Forms.CheckBox();
             this.chckTodo = new System.Windows.Forms.CheckBox();
             this.chckTxtEjemplos = new System.Windows.Forms.CheckBox();
             this.chckRequestEjemplos = new System.Windows.Forms.CheckBox();
@@ -54,6 +53,8 @@ namespace Tools
             this.chckXmlEjemplos = new System.Windows.Forms.CheckBox();
             this.chckPdfEjemplos = new System.Windows.Forms.CheckBox();
             this.btnDescargaEjemplos = new FontAwesome.Sharp.IconButton();
+            this.chckSpeech = new System.Windows.Forms.CheckBox();
+            this.chckJsonEjemplos = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btnDescargas = new AltoControls.SlideButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -63,7 +64,6 @@ namespace Tools
             this.label2 = new System.Windows.Forms.Label();
             this.cmbTipoDoc = new MetroFramework.Controls.MetroComboBox();
             this.txtBusquedaEjemplo = new MetroFramework.Controls.MetroTextBox();
-            this.chckJsonEjemplos = new System.Windows.Forms.CheckBox();
             this.tlpGeneral.SuspendLayout();
             this.tlpLog.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -338,20 +338,6 @@ namespace Tools
             this.tlp_archivos.Size = new System.Drawing.Size(270, 239);
             this.tlp_archivos.TabIndex = 6;
             // 
-            // chckSpeech
-            // 
-            this.chckSpeech.AutoSize = true;
-            this.chckSpeech.Checked = true;
-            this.chckSpeech.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chckSpeech.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chckSpeech.Location = new System.Drawing.Point(2, 184);
-            this.chckSpeech.Margin = new System.Windows.Forms.Padding(2);
-            this.chckSpeech.Name = "chckSpeech";
-            this.chckSpeech.Size = new System.Drawing.Size(117, 22);
-            this.chckSpeech.TabIndex = 9;
-            this.chckSpeech.Text = "Speech Correo";
-            this.chckSpeech.UseVisualStyleBackColor = true;
-            // 
             // chckTodo
             // 
             this.chckTodo.AutoSize = true;
@@ -460,6 +446,34 @@ namespace Tools
             this.btnDescargaEjemplos.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnDescargaEjemplos.UseVisualStyleBackColor = false;
             this.btnDescargaEjemplos.Click += new System.EventHandler(this.btnDescargaEjemplos_Click);
+            // 
+            // chckSpeech
+            // 
+            this.chckSpeech.AutoSize = true;
+            this.chckSpeech.Checked = true;
+            this.chckSpeech.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chckSpeech.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chckSpeech.Location = new System.Drawing.Point(2, 184);
+            this.chckSpeech.Margin = new System.Windows.Forms.Padding(2);
+            this.chckSpeech.Name = "chckSpeech";
+            this.chckSpeech.Size = new System.Drawing.Size(117, 22);
+            this.chckSpeech.TabIndex = 9;
+            this.chckSpeech.Text = "Speech Correo";
+            this.chckSpeech.UseVisualStyleBackColor = true;
+            // 
+            // chckJsonEjemplos
+            // 
+            this.chckJsonEjemplos.AutoSize = true;
+            this.chckJsonEjemplos.Checked = true;
+            this.chckJsonEjemplos.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chckJsonEjemplos.Font = new System.Drawing.Font("Calibri", 10.8F);
+            this.chckJsonEjemplos.Location = new System.Drawing.Point(2, 158);
+            this.chckJsonEjemplos.Margin = new System.Windows.Forms.Padding(2);
+            this.chckJsonEjemplos.Name = "chckJsonEjemplos";
+            this.chckJsonEjemplos.Size = new System.Drawing.Size(59, 22);
+            this.chckJsonEjemplos.TabIndex = 10;
+            this.chckJsonEjemplos.Text = "JSON";
+            this.chckJsonEjemplos.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel3
             // 
@@ -612,20 +626,6 @@ namespace Tools
             this.txtBusquedaEjemplo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtBusquedaEjemplo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Italic);
             this.txtBusquedaEjemplo.TextChanged += new System.EventHandler(this.txtBusquedaEjemplo_TextChanged);
-            // 
-            // chckJsonEjemplos
-            // 
-            this.chckJsonEjemplos.AutoSize = true;
-            this.chckJsonEjemplos.Checked = true;
-            this.chckJsonEjemplos.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chckJsonEjemplos.Font = new System.Drawing.Font("Calibri", 10.8F);
-            this.chckJsonEjemplos.Location = new System.Drawing.Point(2, 158);
-            this.chckJsonEjemplos.Margin = new System.Windows.Forms.Padding(2);
-            this.chckJsonEjemplos.Name = "chckJsonEjemplos";
-            this.chckJsonEjemplos.Size = new System.Drawing.Size(59, 22);
-            this.chckJsonEjemplos.TabIndex = 10;
-            this.chckJsonEjemplos.Text = "JSON";
-            this.chckJsonEjemplos.UseVisualStyleBackColor = true;
             // 
             // FrmEjemplos
             // 

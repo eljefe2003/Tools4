@@ -342,7 +342,7 @@ namespace Tools
                             resp2.Mensaje = request.GenerarRequest(txt_RucEmision.Text, txt_UsuarioEmision.Text, txt_ClaveEmision.Text, lst_archivo.Items[i].ToString(), ruta);
                             string rutaNueva = rutaDestino + "\\" + nombreXml + "_Request" + ".xml";
 
-                            ObtenerRequest(ruta, rutaNueva);
+                            ObtenerRequest2(ruta, rutaNueva);
                             if (File.Exists(ruta))
                             {
                                 File.Delete(ruta);
@@ -1433,33 +1433,33 @@ namespace Tools
             {
                 string LineaActual = arrayRequestLines[i].ToString();
 
-                string variable1 = "d2p1:nil=\"true\" xmlns:d2p1=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.datacontract.org/2004/07/PeruService.Classes\"";
-                if ((LineaActual.IndexOf(variable1) > 0))
-                {
-                    string valorAnterior = arrayRequestLines[i];
-                    arrayRequestLines[i] = valorAnterior.Replace(variable1, "");
-                }
+                //string variable1 = "d2p1:nil=\"true\" xmlns:d2p1=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.datacontract.org/2004/07/PeruService.Classes\"";
+                //if ((LineaActual.IndexOf(variable1) > 0))
+                //{
+                //    string valorAnterior = arrayRequestLines[i];
+                //    arrayRequestLines[i] = valorAnterior.Replace(variable1, "");
+                //}
 
-                string variable2 = "xmlns=\"http://schemas.datacontract.org/2004/07/PeruService.Classes\"";
-                if ((LineaActual.IndexOf(variable2) > 0))
-                {
-                    string valorAnterior = arrayRequestLines[i];
-                    arrayRequestLines[i] = valorAnterior.Replace(variable2, "");
-                }
+                //string variable2 = "xmlns=\"http://schemas.datacontract.org/2004/07/PeruService.Classes\"";
+                //if ((LineaActual.IndexOf(variable2) > 0))
+                //{
+                //    string valorAnterior = arrayRequestLines[i];
+                //    arrayRequestLines[i] = valorAnterior.Replace(variable2, "");
+                //}
 
-                string variable3 = "d4p1:nil=\"true\" xmlns:d4p1=\"http://www.w3.org/2001/XMLSchema-instance\"";
-                if ((LineaActual.IndexOf(variable3) > 0))
-                {
-                    string valorAnterior = arrayRequestLines[i];
-                    arrayRequestLines[i] = valorAnterior.Replace(variable3, "");
-                }
+                //string variable3 = "d4p1:nil=\"true\" xmlns:d4p1=\"http://www.w3.org/2001/XMLSchema-instance\"";
+                //if ((LineaActual.IndexOf(variable3) > 0))
+                //{
+                //    string valorAnterior = arrayRequestLines[i];
+                //    arrayRequestLines[i] = valorAnterior.Replace(variable3, "");
+                //}
 
-                string variable4 = "d3p1:nil=\"true\" xmlns:d3p1=\"http://www.w3.org/2001/XMLSchema-instance\"";
-                if ((LineaActual.IndexOf(variable4) > 0))
-                {
-                    string valorAnterior = arrayRequestLines[i];
-                    arrayRequestLines[i] = valorAnterior.Replace(variable4, "");
-                }
+                //string variable4 = "d3p1:nil=\"true\" xmlns:d3p1=\"http://www.w3.org/2001/XMLSchema-instance\"";
+                //if ((LineaActual.IndexOf(variable4) > 0))
+                //{
+                //    string valorAnterior = arrayRequestLines[i];
+                //    arrayRequestLines[i] = valorAnterior.Replace(variable4, "");
+                //}
                 //string valorAnterior2 = arrayRequestLines[i];
                 //arrayRequestLines[i] = valorAnterior2.Replace("</", "##");
 
