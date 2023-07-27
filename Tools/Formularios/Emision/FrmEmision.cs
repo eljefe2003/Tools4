@@ -45,10 +45,11 @@ namespace Tools
         {
             InitializeComponent();
 
-            tlpLog.BackColor = color1;
-            rtb_Log.BackColor = color1;
-            rtb_Log.ForeColor = color2;
-            lbl_Log.ForeColor = color2;
+            //tlpLog.BackColor = color1;
+            //rtb_Log.BackColor = color1;
+            //rtb_Log.ForeColor = color2;
+            //lbl_Log.ForeColor = color2;
+
             btnProbarCredenciales.BackColor = color1;
             btnProcesar.BackColor = color1;
             btnDescargar.BackColor = color1;
@@ -60,14 +61,6 @@ namespace Tools
             gb_Archivos.ForeColor = color1;
             gb_PostAceptacion.ForeColor = color1;
 
-            //tlpForm.BackColor = Color.White;
-            //rtbDaily.BackColor = color2;
-            //gbFiltros.ForeColor = color1;
-            //lblFormato.ForeColor = color1;
-            //rtb_Log.ForeColor = color2;
-            //lbl_Log.ForeColor = color2;
-            //tlpLog.BackColor = color1;
-            //rtb_Log.BackColor = color1;
         }
 
         private void FrmEmision_Load(object sender, EventArgs e)
@@ -165,6 +158,7 @@ namespace Tools
 
         private void btnProbarCredenciales_Click(object sender, EventArgs e)
         {
+            Log("------------------------------------", true, false);
             if (DLL.ValidaAcceso(txt_RucEmision.Text, txt_UsuarioEmision.Text, txt_ClaveEmision.Text))
             {
                 Log("Credenciales Válidas " + LeerDll() + ":" + Environment.NewLine + "Ruc: " + txt_RucEmision.Text + Environment.NewLine + "User: " + txt_UsuarioEmision.Text + Environment.NewLine + "Pass: " + txt_ClaveEmision.Text, true, false);
@@ -173,6 +167,8 @@ namespace Tools
             {
                 Log("Credenciales Incorrectas" + LeerDll() + ":" + Environment.NewLine + "Ruc: " + txt_RucEmision.Text + Environment.NewLine + "User: " + txt_UsuarioEmision.Text + Environment.NewLine + "Pass: " + txt_ClaveEmision.Text, false, false);
             }
+            Log("------------------------------------" + Environment.NewLine, true, false);
+
         }
 
         public void Log(string msg, bool msj, bool fecha)
@@ -2071,6 +2067,11 @@ namespace Tools
         private void btnBorrarLog_Click(object sender, EventArgs e)
         {
             rtb_Log.Clear();
+        }
+
+        private void tableLayoutPanel9_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         public string DescomprimirArchivo(string RutaComprimido)

@@ -31,10 +31,10 @@ namespace Tools
         {
             this.tlpGeneral = new System.Windows.Forms.TableLayoutPanel();
             this.tlpLog = new System.Windows.Forms.TableLayoutPanel();
-            this.rtb_Log = new System.Windows.Forms.RichTextBox();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lbl_Log = new System.Windows.Forms.Label();
             this.btnBorrarLog = new FontAwesome.Sharp.IconButton();
+            this.rtb_Log = new System.Windows.Forms.RichTextBox();
             this.tlpForm = new System.Windows.Forms.TableLayoutPanel();
             this.ProgressBar = new MetroFramework.Controls.MetroProgressBar();
             this.btnProcesar = new FontAwesome.Sharp.IconButton();
@@ -58,7 +58,7 @@ namespace Tools
             this.rtbDaily = new System.Windows.Forms.RichTextBox();
             this.tlpGeneral.SuspendLayout();
             this.tlpLog.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.tlpForm.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.gbAmbiente.SuspendLayout();
@@ -71,62 +71,50 @@ namespace Tools
             // 
             this.tlpGeneral.BackColor = System.Drawing.Color.White;
             this.tlpGeneral.ColumnCount = 2;
-            this.tlpGeneral.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.31512F));
-            this.tlpGeneral.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.68488F));
-            this.tlpGeneral.Controls.Add(this.tlpLog, 1, 0);
+            this.tlpGeneral.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpGeneral.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpGeneral.Controls.Add(this.tlpLog, 0, 0);
             this.tlpGeneral.Controls.Add(this.tlpForm, 0, 0);
             this.tlpGeneral.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpGeneral.Location = new System.Drawing.Point(0, 0);
             this.tlpGeneral.Name = "tlpGeneral";
             this.tlpGeneral.RowCount = 1;
-            this.tlpGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpGeneral.Size = new System.Drawing.Size(878, 505);
+            this.tlpGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpGeneral.Size = new System.Drawing.Size(1158, 608);
             this.tlpGeneral.TabIndex = 26;
             // 
             // tlpLog
             // 
             this.tlpLog.BackColor = System.Drawing.Color.Transparent;
+            this.tlpLog.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tlpLog.ColumnCount = 1;
             this.tlpLog.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpLog.Controls.Add(this.tableLayoutPanel3, 0, 0);
             this.tlpLog.Controls.Add(this.rtb_Log, 0, 1);
-            this.tlpLog.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tlpLog.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpLog.Location = new System.Drawing.Point(540, 2);
+            this.tlpLog.Location = new System.Drawing.Point(581, 2);
             this.tlpLog.Margin = new System.Windows.Forms.Padding(2);
             this.tlpLog.Name = "tlpLog";
             this.tlpLog.RowCount = 2;
-            this.tlpLog.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.986028F));
-            this.tlpLog.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93.01397F));
-            this.tlpLog.Size = new System.Drawing.Size(336, 501);
-            this.tlpLog.TabIndex = 23;
+            this.tlpLog.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.13245F));
+            this.tlpLog.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 94.86755F));
+            this.tlpLog.Size = new System.Drawing.Size(575, 604);
+            this.tlpLog.TabIndex = 25;
             // 
-            // rtb_Log
+            // tableLayoutPanel3
             // 
-            this.rtb_Log.BackColor = System.Drawing.SystemColors.Window;
-            this.rtb_Log.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtb_Log.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtb_Log.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtb_Log.ForeColor = System.Drawing.Color.White;
-            this.rtb_Log.Location = new System.Drawing.Point(3, 38);
-            this.rtb_Log.Name = "rtb_Log";
-            this.rtb_Log.Size = new System.Drawing.Size(330, 460);
-            this.rtb_Log.TabIndex = 4;
-            this.rtb_Log.Text = "";
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.45454F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.54545F));
-            this.tableLayoutPanel2.Controls.Add(this.lbl_Log, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnBorrarLog, 1, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(330, 29);
-            this.tableLayoutPanel2.TabIndex = 6;
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.45454F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.54545F));
+            this.tableLayoutPanel3.Controls.Add(this.lbl_Log, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnBorrarLog, 1, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 4);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(567, 24);
+            this.tableLayoutPanel3.TabIndex = 6;
             // 
             // lbl_Log
             // 
@@ -134,10 +122,10 @@ namespace Tools
             this.lbl_Log.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Log.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_Log.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Log.ForeColor = System.Drawing.Color.White;
+            this.lbl_Log.ForeColor = System.Drawing.Color.Black;
             this.lbl_Log.Location = new System.Drawing.Point(3, 0);
             this.lbl_Log.Name = "lbl_Log";
-            this.lbl_Log.Size = new System.Drawing.Size(276, 29);
+            this.lbl_Log.Size = new System.Drawing.Size(478, 24);
             this.lbl_Log.TabIndex = 3;
             this.lbl_Log.Text = "Log";
             this.lbl_Log.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -151,13 +139,26 @@ namespace Tools
             this.btnBorrarLog.IconChar = FontAwesome.Sharp.IconChar.Eraser;
             this.btnBorrarLog.IconColor = System.Drawing.Color.Black;
             this.btnBorrarLog.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBorrarLog.IconSize = 20;
-            this.btnBorrarLog.Location = new System.Drawing.Point(285, 3);
+            this.btnBorrarLog.IconSize = 25;
+            this.btnBorrarLog.Location = new System.Drawing.Point(487, 3);
             this.btnBorrarLog.Name = "btnBorrarLog";
-            this.btnBorrarLog.Size = new System.Drawing.Size(42, 23);
+            this.btnBorrarLog.Size = new System.Drawing.Size(77, 18);
             this.btnBorrarLog.TabIndex = 0;
             this.btnBorrarLog.UseVisualStyleBackColor = false;
-            this.btnBorrarLog.Click += new System.EventHandler(this.btnBorrarLog_Click);
+            this.btnBorrarLog.Click += new System.EventHandler(this.btnBorrarLog_Click_1);
+            // 
+            // rtb_Log
+            // 
+            this.rtb_Log.BackColor = System.Drawing.SystemColors.Window;
+            this.rtb_Log.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtb_Log.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtb_Log.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtb_Log.ForeColor = System.Drawing.Color.Black;
+            this.rtb_Log.Location = new System.Drawing.Point(4, 35);
+            this.rtb_Log.Name = "rtb_Log";
+            this.rtb_Log.Size = new System.Drawing.Size(567, 565);
+            this.rtb_Log.TabIndex = 4;
+            this.rtb_Log.Text = "";
             // 
             // tlpForm
             // 
@@ -170,20 +171,20 @@ namespace Tools
             this.tlpForm.Location = new System.Drawing.Point(3, 3);
             this.tlpForm.Name = "tlpForm";
             this.tlpForm.RowCount = 3;
-            this.tlpForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.98196F));
-            this.tlpForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.018036F));
+            this.tlpForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 95.42373F));
+            this.tlpForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.576271F));
             this.tlpForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 11F));
             this.tlpForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpForm.Size = new System.Drawing.Size(532, 499);
+            this.tlpForm.Size = new System.Drawing.Size(573, 602);
             this.tlpForm.TabIndex = 24;
             // 
             // ProgressBar
             // 
             this.ProgressBar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProgressBar.Location = new System.Drawing.Point(2, 489);
+            this.ProgressBar.Location = new System.Drawing.Point(2, 592);
             this.ProgressBar.Margin = new System.Windows.Forms.Padding(2);
             this.ProgressBar.Name = "ProgressBar";
-            this.ProgressBar.Size = new System.Drawing.Size(528, 8);
+            this.ProgressBar.Size = new System.Drawing.Size(569, 8);
             this.ProgressBar.TabIndex = 27;
             // 
             // btnProcesar
@@ -191,14 +192,14 @@ namespace Tools
             this.btnProcesar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnProcesar.FlatAppearance.BorderSize = 0;
             this.btnProcesar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProcesar.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold);
+            this.btnProcesar.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
             this.btnProcesar.ForeColor = System.Drawing.Color.White;
             this.btnProcesar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnProcesar.IconColor = System.Drawing.Color.Black;
             this.btnProcesar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnProcesar.Location = new System.Drawing.Point(3, 446);
+            this.btnProcesar.Location = new System.Drawing.Point(3, 566);
             this.btnProcesar.Name = "btnProcesar";
-            this.btnProcesar.Size = new System.Drawing.Size(526, 38);
+            this.btnProcesar.Size = new System.Drawing.Size(567, 21);
             this.btnProcesar.TabIndex = 26;
             this.btnProcesar.Text = "Procesar";
             this.btnProcesar.UseVisualStyleBackColor = true;
@@ -215,20 +216,21 @@ namespace Tools
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.46224F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.90847F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.85812F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.23827F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.52347F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.23827F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(526, 437);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(567, 557);
             this.tableLayoutPanel1.TabIndex = 25;
             // 
             // gbAmbiente
             // 
+            this.gbAmbiente.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gbAmbiente.Controls.Add(this.tableLayoutPanel52);
             this.gbAmbiente.Font = new System.Drawing.Font("Calibri", 9.5F, System.Drawing.FontStyle.Bold);
-            this.gbAmbiente.Location = new System.Drawing.Point(3, 240);
+            this.gbAmbiente.Location = new System.Drawing.Point(10, 238);
             this.gbAmbiente.Name = "gbAmbiente";
-            this.gbAmbiente.Size = new System.Drawing.Size(520, 80);
+            this.gbAmbiente.Size = new System.Drawing.Size(546, 80);
             this.gbAmbiente.TabIndex = 5;
             this.gbAmbiente.TabStop = false;
             this.gbAmbiente.Text = "Formato";
@@ -246,7 +248,7 @@ namespace Tools
             this.tableLayoutPanel52.Name = "tableLayoutPanel52";
             this.tableLayoutPanel52.RowCount = 1;
             this.tableLayoutPanel52.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel52.Size = new System.Drawing.Size(514, 58);
+            this.tableLayoutPanel52.Size = new System.Drawing.Size(540, 58);
             this.tableLayoutPanel52.TabIndex = 6;
             // 
             // label6
@@ -254,7 +256,7 @@ namespace Tools
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 8.5F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(52, 8);
+            this.label6.Location = new System.Drawing.Point(63, 8);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(358, 42);
             this.label6.TabIndex = 5;
@@ -273,10 +275,10 @@ namespace Tools
             this.btnQueryDescargas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnQueryDescargas.IconSize = 40;
             this.btnQueryDescargas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnQueryDescargas.Location = new System.Drawing.Point(464, 2);
+            this.btnQueryDescargas.Location = new System.Drawing.Point(487, 2);
             this.btnQueryDescargas.Margin = new System.Windows.Forms.Padding(2);
             this.btnQueryDescargas.Name = "btnQueryDescargas";
-            this.btnQueryDescargas.Size = new System.Drawing.Size(48, 54);
+            this.btnQueryDescargas.Size = new System.Drawing.Size(51, 54);
             this.btnQueryDescargas.TabIndex = 6;
             this.btnQueryDescargas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnQueryDescargas.UseVisualStyleBackColor = false;
@@ -287,9 +289,9 @@ namespace Tools
             this.gbFiltros.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gbFiltros.Controls.Add(this.tlpFiltros);
             this.gbFiltros.Font = new System.Drawing.Font("Calibri", 9.5F, System.Drawing.FontStyle.Bold);
-            this.gbFiltros.Location = new System.Drawing.Point(51, 3);
+            this.gbFiltros.Location = new System.Drawing.Point(72, 3);
             this.gbFiltros.Name = "gbFiltros";
-            this.gbFiltros.Size = new System.Drawing.Size(423, 230);
+            this.gbFiltros.Size = new System.Drawing.Size(423, 229);
             this.gbFiltros.TabIndex = 3;
             this.gbFiltros.TabStop = false;
             this.gbFiltros.Text = "Filtros";
@@ -314,12 +316,12 @@ namespace Tools
             this.tlpFiltros.Name = "tlpFiltros";
             this.tlpFiltros.RowCount = 6;
             this.tlpFiltros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tlpFiltros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.8744F));
+            this.tlpFiltros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.97585F));
             this.tlpFiltros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tlpFiltros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tlpFiltros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tlpFiltros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tlpFiltros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tlpFiltros.Size = new System.Drawing.Size(417, 208);
+            this.tlpFiltros.Size = new System.Drawing.Size(417, 207);
             this.tlpFiltros.TabIndex = 29;
             // 
             // txtRuc
@@ -387,7 +389,7 @@ namespace Tools
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Location = new System.Drawing.Point(3, 34);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(126, 34);
+            this.label4.Size = new System.Drawing.Size(126, 37);
             this.label4.TabIndex = 32;
             this.label4.Text = "Demo:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -400,7 +402,7 @@ namespace Tools
             this.chckDemo.IsOn = false;
             this.chckDemo.Location = new System.Drawing.Point(135, 37);
             this.chckDemo.Name = "chckDemo";
-            this.chckDemo.Size = new System.Drawing.Size(52, 28);
+            this.chckDemo.Size = new System.Drawing.Size(58, 31);
             this.chckDemo.TabIndex = 35;
             this.chckDemo.Text = "slideButton1";
             this.chckDemo.TextEnabled = false;
@@ -424,7 +426,7 @@ namespace Tools
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Location = new System.Drawing.Point(3, 170);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(126, 38);
+            this.label5.Size = new System.Drawing.Size(126, 37);
             this.label5.TabIndex = 6;
             this.label5.Text = "Clave:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -435,9 +437,9 @@ namespace Tools
             // 
             // 
             this.txtClave.CustomButton.Image = null;
-            this.txtClave.CustomButton.Location = new System.Drawing.Point(249, 2);
+            this.txtClave.CustomButton.Location = new System.Drawing.Point(249, 1);
             this.txtClave.CustomButton.Name = "";
-            this.txtClave.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.txtClave.CustomButton.Size = new System.Drawing.Size(29, 29);
             this.txtClave.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtClave.CustomButton.TabIndex = 1;
             this.txtClave.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -454,7 +456,7 @@ namespace Tools
             this.txtClave.SelectionLength = 0;
             this.txtClave.SelectionStart = 0;
             this.txtClave.ShortcutsEnabled = true;
-            this.txtClave.Size = new System.Drawing.Size(279, 32);
+            this.txtClave.Size = new System.Drawing.Size(279, 31);
             this.txtClave.TabIndex = 29;
             this.txtClave.UseSelectable = true;
             this.txtClave.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -505,9 +507,9 @@ namespace Tools
             // rtbDaily
             // 
             this.rtbDaily.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbDaily.Location = new System.Drawing.Point(3, 326);
+            this.rtbDaily.Location = new System.Drawing.Point(3, 324);
             this.rtbDaily.Name = "rtbDaily";
-            this.rtbDaily.Size = new System.Drawing.Size(520, 108);
+            this.rtbDaily.Size = new System.Drawing.Size(561, 230);
             this.rtbDaily.TabIndex = 4;
             this.rtbDaily.Text = "";
             // 
@@ -515,15 +517,15 @@ namespace Tools
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(878, 505);
+            this.ClientSize = new System.Drawing.Size(1158, 608);
             this.Controls.Add(this.tlpGeneral);
             this.Name = "FrmDescargas";
             this.Text = "Tool - Descargas";
             this.Load += new System.EventHandler(this.FrmDescargas_Load);
             this.tlpGeneral.ResumeLayout(false);
             this.tlpLog.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.tlpForm.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.gbAmbiente.ResumeLayout(false);
@@ -539,8 +541,6 @@ namespace Tools
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tlpGeneral;
-        private System.Windows.Forms.TableLayoutPanel tlpLog;
-        public System.Windows.Forms.RichTextBox rtb_Log;
         private System.Windows.Forms.TableLayoutPanel tlpForm;
         private MetroFramework.Controls.MetroProgressBar ProgressBar;
         private FontAwesome.Sharp.IconButton btnProcesar;
@@ -562,8 +562,10 @@ namespace Tools
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel52;
         private System.Windows.Forms.Label label6;
         private FontAwesome.Sharp.IconButton btnQueryDescargas;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tlpLog;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label lbl_Log;
         private FontAwesome.Sharp.IconButton btnBorrarLog;
+        public System.Windows.Forms.RichTextBox rtb_Log;
     }
 }

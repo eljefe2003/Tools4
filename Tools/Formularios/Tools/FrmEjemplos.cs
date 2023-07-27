@@ -37,14 +37,16 @@ namespace Tools
         public FrmEjemplos(Color color1, Color color2, Color color3, Color color4)
         {
             InitializeComponent();
-            tlpLog.BackColor = color1;
-            rtb_Log.BackColor = color1;
-            rtb_Log.ForeColor = color2;
-            lbl_Log.ForeColor = color2;
+            //tlpLog.BackColor = color1;
+            //rtb_Log.BackColor = color1;
+            //rtb_Log.ForeColor = color2;
+            //lbl_Log.ForeColor = color2;
             btnDescargaEjemplos.BackColor = color1;
             btnProbarTodos.BackColor = color1;
             colorAceptados = color1;
-
+            this.dtgEjemplos.DefaultCellStyle.SelectionForeColor = Color.Black;
+            this.dtgEjemplos.DefaultCellStyle.SelectionBackColor = color2;
+            this.dtgEjemplos.ColumnHeadersDefaultCellStyle.SelectionBackColor = color2;
             //tlpForm.BackColor = Color.White;
 
             //rtbDaily.BackColor = color2;
@@ -1269,6 +1271,12 @@ namespace Tools
         private void btnBorrarLog_Click(object sender, EventArgs e)
         {
             rtb_Log.Clear();
+        }
+
+        private void btnBorrarLog_Click_1(object sender, EventArgs e)
+        {
+            rtb_Log.Clear();
+
         }
 
         public void EnvioPSE()

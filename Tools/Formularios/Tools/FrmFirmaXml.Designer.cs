@@ -30,12 +30,10 @@
         {
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tlpLog = new System.Windows.Forms.TableLayoutPanel();
-            this.rtbJson = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnGuardarLog = new FontAwesome.Sharp.IconButton();
             this.lbl_Log = new System.Windows.Forms.Label();
-            this.btnCopiarLog = new FontAwesome.Sharp.IconButton();
             this.btnBorrarLog = new FontAwesome.Sharp.IconButton();
+            this.rtb_Log = new System.Windows.Forms.RichTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnBuscarXml = new FontAwesome.Sharp.IconButton();
@@ -58,75 +56,43 @@
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.3164F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.6836F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.31871F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.68129F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(896, 433);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
             // tlpLog
             // 
             this.tlpLog.BackColor = System.Drawing.Color.Transparent;
+            this.tlpLog.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tlpLog.ColumnCount = 1;
             this.tlpLog.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpLog.Controls.Add(this.rtbJson, 0, 1);
             this.tlpLog.Controls.Add(this.tableLayoutPanel3, 0, 0);
+            this.tlpLog.Controls.Add(this.rtb_Log, 0, 1);
             this.tlpLog.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpLog.Location = new System.Drawing.Point(2, 51);
+            this.tlpLog.Location = new System.Drawing.Point(2, 64);
             this.tlpLog.Margin = new System.Windows.Forms.Padding(2);
             this.tlpLog.Name = "tlpLog";
             this.tlpLog.RowCount = 2;
-            this.tlpLog.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.266666F));
-            this.tlpLog.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91.73333F));
-            this.tlpLog.Size = new System.Drawing.Size(892, 380);
-            this.tlpLog.TabIndex = 24;
-            // 
-            // rtbJson
-            // 
-            this.rtbJson.BackColor = System.Drawing.SystemColors.Window;
-            this.rtbJson.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbJson.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbJson.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbJson.ForeColor = System.Drawing.Color.White;
-            this.rtbJson.Location = new System.Drawing.Point(3, 34);
-            this.rtbJson.Name = "rtbJson";
-            this.rtbJson.Size = new System.Drawing.Size(886, 343);
-            this.rtbJson.TabIndex = 4;
-            this.rtbJson.Text = "";
+            this.tlpLog.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.387863F));
+            this.tlpLog.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.61214F));
+            this.tlpLog.Size = new System.Drawing.Size(892, 367);
+            this.tlpLog.TabIndex = 26;
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.ColumnCount = 4;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.77878F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.740407F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.740407F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.62754F));
-            this.tableLayoutPanel3.Controls.Add(this.btnGuardarLog, 1, 0);
+            this.tableLayoutPanel3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 93.09955F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.900453F));
             this.tableLayoutPanel3.Controls.Add(this.lbl_Log, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnCopiarLog, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnBorrarLog, 3, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel3.Controls.Add(this.btnBorrarLog, 1, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(886, 25);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(884, 20);
             this.tableLayoutPanel3.TabIndex = 6;
-            // 
-            // btnGuardarLog
-            // 
-            this.btnGuardarLog.BackColor = System.Drawing.Color.Transparent;
-            this.btnGuardarLog.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnGuardarLog.FlatAppearance.BorderSize = 0;
-            this.btnGuardarLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarLog.IconChar = FontAwesome.Sharp.IconChar.Download;
-            this.btnGuardarLog.IconColor = System.Drawing.Color.White;
-            this.btnGuardarLog.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnGuardarLog.IconSize = 20;
-            this.btnGuardarLog.Location = new System.Drawing.Point(763, 3);
-            this.btnGuardarLog.Name = "btnGuardarLog";
-            this.btnGuardarLog.Size = new System.Drawing.Size(36, 19);
-            this.btnGuardarLog.TabIndex = 4;
-            this.btnGuardarLog.UseVisualStyleBackColor = false;
             // 
             // lbl_Log
             // 
@@ -134,29 +100,13 @@
             this.lbl_Log.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Log.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_Log.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Log.ForeColor = System.Drawing.Color.White;
+            this.lbl_Log.ForeColor = System.Drawing.Color.Black;
             this.lbl_Log.Location = new System.Drawing.Point(3, 0);
             this.lbl_Log.Name = "lbl_Log";
-            this.lbl_Log.Size = new System.Drawing.Size(754, 25);
+            this.lbl_Log.Size = new System.Drawing.Size(817, 20);
             this.lbl_Log.TabIndex = 3;
             this.lbl_Log.Text = "Log";
             this.lbl_Log.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnCopiarLog
-            // 
-            this.btnCopiarLog.BackColor = System.Drawing.Color.Transparent;
-            this.btnCopiarLog.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCopiarLog.FlatAppearance.BorderSize = 0;
-            this.btnCopiarLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCopiarLog.IconChar = FontAwesome.Sharp.IconChar.Copy;
-            this.btnCopiarLog.IconColor = System.Drawing.Color.White;
-            this.btnCopiarLog.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCopiarLog.IconSize = 20;
-            this.btnCopiarLog.Location = new System.Drawing.Point(805, 3);
-            this.btnCopiarLog.Name = "btnCopiarLog";
-            this.btnCopiarLog.Size = new System.Drawing.Size(36, 19);
-            this.btnCopiarLog.TabIndex = 5;
-            this.btnCopiarLog.UseVisualStyleBackColor = false;
             // 
             // btnBorrarLog
             // 
@@ -165,22 +115,37 @@
             this.btnBorrarLog.FlatAppearance.BorderSize = 0;
             this.btnBorrarLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrarLog.IconChar = FontAwesome.Sharp.IconChar.Eraser;
-            this.btnBorrarLog.IconColor = System.Drawing.Color.White;
+            this.btnBorrarLog.IconColor = System.Drawing.Color.Black;
             this.btnBorrarLog.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBorrarLog.IconSize = 20;
-            this.btnBorrarLog.Location = new System.Drawing.Point(847, 3);
+            this.btnBorrarLog.IconSize = 25;
+            this.btnBorrarLog.Location = new System.Drawing.Point(826, 3);
             this.btnBorrarLog.Name = "btnBorrarLog";
-            this.btnBorrarLog.Size = new System.Drawing.Size(36, 19);
+            this.btnBorrarLog.Size = new System.Drawing.Size(55, 14);
             this.btnBorrarLog.TabIndex = 0;
             this.btnBorrarLog.UseVisualStyleBackColor = false;
+            this.btnBorrarLog.Click += new System.EventHandler(this.btnBorrarLog_Click);
+            // 
+            // rtb_Log
+            // 
+            this.rtb_Log.BackColor = System.Drawing.SystemColors.Window;
+            this.rtb_Log.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtb_Log.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtb_Log.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtb_Log.ForeColor = System.Drawing.Color.Black;
+            this.rtb_Log.Location = new System.Drawing.Point(4, 31);
+            this.rtb_Log.Name = "rtb_Log";
+            this.rtb_Log.Size = new System.Drawing.Size(884, 332);
+            this.rtb_Log.TabIndex = 4;
+            this.rtb_Log.Text = "";
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.tableLayoutPanel1);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(95, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(890, 43);
+            this.groupBox1.Size = new System.Drawing.Size(706, 55);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Archivo";
@@ -188,18 +153,18 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90.95023F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.524887F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.524887F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 87.42857F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.714286F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6F));
             this.tableLayoutPanel1.Controls.Add(this.btnBuscarXml, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtRutaXml, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnPlay, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 18);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(884, 24);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(700, 34);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // btnBuscarXml
@@ -211,20 +176,20 @@
             this.btnBuscarXml.IconColor = System.Drawing.Color.White;
             this.btnBuscarXml.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscarXml.IconSize = 17;
-            this.btnBuscarXml.Location = new System.Drawing.Point(807, 3);
+            this.btnBuscarXml.Location = new System.Drawing.Point(614, 3);
             this.btnBuscarXml.Name = "btnBuscarXml";
-            this.btnBuscarXml.Size = new System.Drawing.Size(34, 18);
+            this.btnBuscarXml.Size = new System.Drawing.Size(40, 28);
             this.btnBuscarXml.TabIndex = 3;
             this.btnBuscarXml.UseVisualStyleBackColor = true;
             this.btnBuscarXml.Click += new System.EventHandler(this.btnBuscarXml_Click);
             // 
             // txtRutaXml
             // 
-            this.txtRutaXml.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtRutaXml.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtRutaXml.Enabled = false;
-            this.txtRutaXml.Location = new System.Drawing.Point(3, 3);
+            this.txtRutaXml.Location = new System.Drawing.Point(3, 6);
             this.txtRutaXml.Name = "txtRutaXml";
-            this.txtRutaXml.Size = new System.Drawing.Size(798, 20);
+            this.txtRutaXml.Size = new System.Drawing.Size(605, 22);
             this.txtRutaXml.TabIndex = 1;
             // 
             // btnPlay
@@ -236,9 +201,9 @@
             this.btnPlay.IconColor = System.Drawing.Color.White;
             this.btnPlay.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnPlay.IconSize = 15;
-            this.btnPlay.Location = new System.Drawing.Point(847, 3);
+            this.btnPlay.Location = new System.Drawing.Point(660, 3);
             this.btnPlay.Name = "btnPlay";
-            this.btnPlay.Size = new System.Drawing.Size(34, 18);
+            this.btnPlay.Size = new System.Drawing.Size(37, 28);
             this.btnPlay.TabIndex = 4;
             this.btnPlay.UseVisualStyleBackColor = true;
             this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
@@ -267,17 +232,15 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TableLayoutPanel tlpLog;
-        public System.Windows.Forms.RichTextBox rtbJson;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private FontAwesome.Sharp.IconButton btnGuardarLog;
-        private System.Windows.Forms.Label lbl_Log;
-        private FontAwesome.Sharp.IconButton btnCopiarLog;
-        private FontAwesome.Sharp.IconButton btnBorrarLog;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private FontAwesome.Sharp.IconButton btnBuscarXml;
         private System.Windows.Forms.TextBox txtRutaXml;
         private FontAwesome.Sharp.IconButton btnPlay;
+        private System.Windows.Forms.TableLayoutPanel tlpLog;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Label lbl_Log;
+        private FontAwesome.Sharp.IconButton btnBorrarLog;
+        public System.Windows.Forms.RichTextBox rtb_Log;
     }
 }

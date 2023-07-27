@@ -24,12 +24,12 @@ namespace Tools
             InitializeComponent();
             tlpForm.BackColor = Color.White;
             btnProcesar.BackColor = color1;
-            tlpLog.BackColor = color1;
-            rtb_Log.BackColor = color1;
+            //tlpLog.BackColor = color1;
+            //rtb_Log.BackColor = color1;
             gbAmbiente.ForeColor = color1;
             gbFiltros.ForeColor = color1;
-            rtb_Log.ForeColor = color2;
-            lbl_Log.ForeColor = color2;
+            //rtb_Log.ForeColor = color2;
+            //lbl_Log.ForeColor = color2;
             listClientesPSE = lisCliPSE;
             listClientesOSE = listCliOSE;
         }

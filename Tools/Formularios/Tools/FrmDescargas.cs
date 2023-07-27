@@ -26,13 +26,13 @@ namespace Tools
             tlpForm.BackColor = Color.White;
             btnProcesar.BackColor = color1;
             btnQueryDescargas.BackColor = color1;
-            tlpLog.BackColor = color1;
-            rtb_Log.BackColor = color1;
+            //tlpLog.BackColor = color1;
+            //rtb_Log.BackColor = color1;
             gbFiltros.ForeColor = color1;
             gbAmbiente.ForeColor = color1;
             //lblFormato.ForeColor = color1;
-            rtb_Log.ForeColor = color2;
-            lbl_Log.ForeColor = color2;         
+            //rtb_Log.ForeColor = color2;
+            //lbl_Log.ForeColor = color2;         
             rtbDaily.BackColor = color2;
         }
        
@@ -187,8 +187,9 @@ namespace Tools
             ProgressBar.Value = 0;
             ProgressBar.Step = 1;
             string rutaAsignada = AsignaRuta() + "\\";
-            rtb_Log.AppendText(" Ruta a descargar en caso de éxito: " + rutaAsignada + Environment.NewLine);
+            Log(Environment.NewLine + rutaAsignada, true, false);
 
+            Log("Ruta a descargar en caso de éxito: " + rutaAsignada, true, false);
             for (int i = 0; i < recorrer.Length; i++)
             {
                 string linea = recorrer[i];
@@ -225,6 +226,49 @@ namespace Tools
             MessageBox.Show("Peticion completada! Revisa el Log");
         }
 
+        public void Log(string msg, bool msj, bool fecha)
+        {
+            if (fecha)
+            {
+                if (msj)
+                {
+                    this.rtb_Log.SelectionStart = this.rtb_Log.Text.Length;
+                    //rtb_Log.SelectionColor = Color.Black;
+                    rtb_Log.AppendText("[" + DateTime.Now.Day.ToString("d2") + "-" + DateTime.Now.Month.ToString("d2") + "-" + DateTime.Now.Year + " " +
+                    DateTime.Now.Hour.ToString("d2") + ":" + DateTime.Now.Minute.ToString("d2") + ":" + DateTime.Now.Second.ToString("d2") + "] " + msg + Environment.NewLine);
+                }
+                else
+                {
+                    this.rtb_Log.SelectionStart = this.rtb_Log.Text.Length;
+                    //rtb_Log.SelectionColor = Color.FromArgb(204, 0, 56);
+                    rtb_Log.SelectionColor = Color.Red;
+                    rtb_Log.AppendText("[" + DateTime.Now.Day.ToString("d2") + "-" + DateTime.Now.Month.ToString("d2") + "-" + DateTime.Now.Year + " " +
+                    DateTime.Now.Hour.ToString("d2") + ":" + DateTime.Now.Minute.ToString("d2") + ":" + DateTime.Now.Second.ToString("d2") + "] " + msg + Environment.NewLine);
+                    //msj = true;
+                }
+                this.rtb_Log.ScrollToCaret();
+            }
+            else
+            {
+                if (msj)
+                {
+                    this.rtb_Log.SelectionStart = this.rtb_Log.Text.Length;
+                    //rtb_Log.SelectionColor = Color.Black;
+                    rtb_Log.AppendText(msg + Environment.NewLine);
+                }
+                else
+                {
+                    this.rtb_Log.SelectionStart = this.rtb_Log.Text.Length;
+                    //rtb_Log.SelectionColor = Color.FromArgb(204, 0, 56);
+                    rtb_Log.SelectionColor = Color.Red;
+                    rtb_Log.AppendText(msg + Environment.NewLine);
+                    //msj = true;
+                }
+                this.rtb_Log.ScrollToCaret();
+            }
+
+        }
+
         private void DescargaPDF(string linea, string rutaAsignada)
         {
             try
@@ -241,16 +285,19 @@ namespace Tools
                     {
                         byte[] data = System.Convert.FromBase64String(resp.ArhivoBase64);
                         File.WriteAllBytes(ruta, data);
-                        rtb_Log.AppendText(linea + " Descargado exitosamente su PDF" + Environment.NewLine + Environment.NewLine);
+                        Log(linea + " Descargado exitosamente su PDF", true, false);
+                        //rtb_Log.AppendText(linea + " Descargado exitosamente su PDF" + Environment.NewLine + Environment.NewLine);
                     }
                     else
                     {
-                        rtb_Log.AppendText(linea + " No se encuentra su PDF" + Environment.NewLine + Environment.NewLine);
+                        Log(linea + " No se encuentra su PDF", false, false);
+                        //rtb_Log.AppendText(linea + " No se encuentra su PDF" + Environment.NewLine + Environment.NewLine);
                     }
                 }
                 else
                 {
-                    rtb_Log.AppendText("Credenciales Incorrectas: " + Environment.NewLine + Environment.NewLine);
+                    Log("Credenciales Incorrectas", false, false);
+                    //rtb_Log.AppendText("Credenciales Incorrectas: " + Environment.NewLine + Environment.NewLine);
                 }
               
             }
@@ -275,16 +322,18 @@ namespace Tools
                     {
                         byte[] data = System.Convert.FromBase64String(resp.ArhivoBase64);
                         File.WriteAllBytes(ruta, data);
-                        rtb_Log.AppendText(linea + " Descargado exitosamente su XML" + Environment.NewLine + Environment.NewLine);
+                        Log(linea + " Descargado exitosamente su XML", true, false);
+                        //rtb_Log.AppendText(linea + " Descargado exitosamente su XML" + Environment.NewLine + Environment.NewLine);
                     }
                     else
                     {
-                        rtb_Log.AppendText(linea + " No se encuentra su XML" + Environment.NewLine + Environment.NewLine);
+                        Log(linea + " No se encuentra su XML", false, false);
+                        //rtb_Log.AppendText(linea + " No se encuentra su XML" + Environment.NewLine + Environment.NewLine);
                     }
                 }
                 else
                 {
-                    rtb_Log.AppendText("Credenciales Incorrectas: " + Environment.NewLine + Environment.NewLine);
+                    Log("Credenciales Incorrectas", false, false);
                 }
             }
             catch (Exception e)
@@ -308,16 +357,16 @@ namespace Tools
                     {
                         byte[] data = System.Convert.FromBase64String(resp.ArhivoBase64);
                         File.WriteAllBytes(ruta, data);
-                        rtb_Log.AppendText(linea + " Descargado exitosamente su JSON" + Environment.NewLine + Environment.NewLine);
+                        Log(linea + " Descargado exitosamente su JSON", true, false);
                     }
                     else
                     {
-                        rtb_Log.AppendText(linea + " No se encuentra su JSON" + Environment.NewLine + Environment.NewLine);
+                        Log(linea + " No se encuentra su JSON", false, false);
                     }
                 }
                 else
                 {
-                    rtb_Log.AppendText("Credenciales Incorrectas: " + Environment.NewLine + Environment.NewLine);
+                    Log("Credenciales Incorrectas", false, false);
                 }
             }
             catch (Exception e)
@@ -341,16 +390,16 @@ namespace Tools
                     {
                         byte[] data = System.Convert.FromBase64String(resp.ArhivoBase64);
                         File.WriteAllBytes(ruta, data);
-                        rtb_Log.AppendText(linea + " Descargado exitosamente su CDR" + Environment.NewLine + Environment.NewLine);
+                        Log(linea + " Descargado exitosamente su CDR", true, false);
                     }
                     else
                     {
-                        rtb_Log.AppendText(linea + " No se encuentra su CDR" + Environment.NewLine + Environment.NewLine);
+                        Log(linea + " No se encuentra su CDR", false, false);
                     }
                 }
                 else
                 {
-                    rtb_Log.AppendText("Credenciales Incorrectas: " + Environment.NewLine + Environment.NewLine);
+                    Log("Credenciales Incorrectas", false, false);
                 }
             }
             catch (Exception e)
@@ -480,6 +529,11 @@ namespace Tools
         }
 
         private void btnBorrarLog_Click(object sender, EventArgs e)
+        {
+            rtb_Log.Clear();
+        }
+
+        private void btnBorrarLog_Click_1(object sender, EventArgs e)
         {
             rtb_Log.Clear();
         }

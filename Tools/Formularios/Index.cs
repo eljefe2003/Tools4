@@ -9,9 +9,15 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Media;
+using Application = System.Windows.Forms.Application;
 using Color = System.Drawing.Color;
+using FontStyle = System.Drawing.FontStyle;
+using MessageBox = System.Windows.Forms.MessageBox;
+using Point = System.Drawing.Point;
+using Size = System.Drawing.Size;
 
 namespace Tools
 {
@@ -566,7 +572,14 @@ namespace Tools
 
         private void iconButton18_Click(object sender, EventArgs e)
         {
-
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
         }
 
         private void btnEmpresas_Click(object sender, EventArgs e)

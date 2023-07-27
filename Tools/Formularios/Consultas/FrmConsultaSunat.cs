@@ -31,12 +31,12 @@ namespace Tools
             btnProcesar.BackColor = color1;
             btnConsultaSunatOSE.IconColor = color1;
             btnConsultaSunatPSE.IconColor = color1;
-            tlpLog.BackColor = color1;
-            rtb_Log.BackColor = color1;
+            //tlpLog.BackColor = color1;
+            //rtb_Log.BackColor = color1;
             gbAmbiente.ForeColor = color1;
             gbFiltros.ForeColor = color1;
-            rtb_Log.ForeColor = color2;
-            lbl_Log.ForeColor = color2;
+            //rtb_Log.ForeColor = color2;
+            //lbl_Log.ForeColor = color2;
         }
 
         private void FrmConsultaSunat_Load(object sender, EventArgs e)
@@ -130,23 +130,68 @@ namespace Tools
                         var resp = ServicioSunat.validaCDPcriterios(campo[0], campo[1], campo[2], campo[3], campo[4], campo[5], campo[6], Convert.ToDouble(campo[7]), " ");
                         contador++;
                         //Log(resp.statusMessage, true, LogFechaHora);
-                        rtb_Log.AppendText(resp.statusMessage + " |" + contador + "| " + Environment.NewLine);
+                        Log(resp.statusMessage + " |" + contador + "| ", true, false);
+                        //rtb_Log.AppendText(resp.statusMessage + " |" + contador + "| " + Environment.NewLine);
                         ProgressBar.PerformStep();
                         //Log("Hilo1", true, LogFechaHora);
                     }
                     else
                     {
-                        //Log("Por favor valida la estructura de la cadena: " + campo, false, LogFechaHora);
+                        Log("Por favor valida la estructura de la cadena de caracteres", false, false);
                     }
                 }
                 catch (Exception e)
                 {
-                    rtb_Log.AppendText("Error: " + e.Message + Environment.NewLine);
-                    //Log(e.Message, false, LogFechaHora);
+                    //rtb_Log.AppendText("Error: " + e.Message + Environment.NewLine);
+                   Log(e.Message, false, false);
                 }
             }
         }
-        
+
+        public void Log(string msg, bool msj, bool fecha)
+        {
+            if (fecha)
+            {
+                if (msj)
+                {
+                    this.rtb_Log.SelectionStart = this.rtb_Log.Text.Length;
+                    //rtb_Log.SelectionColor = Color.Black;
+                    rtb_Log.AppendText("[" + DateTime.Now.Day.ToString("d2") + "-" + DateTime.Now.Month.ToString("d2") + "-" + DateTime.Now.Year + " " +
+                    DateTime.Now.Hour.ToString("d2") + ":" + DateTime.Now.Minute.ToString("d2") + ":" + DateTime.Now.Second.ToString("d2") + "] " + msg + Environment.NewLine);
+                }
+                else
+                {
+                    this.rtb_Log.SelectionStart = this.rtb_Log.Text.Length;
+                    //rtb_Log.SelectionColor = Color.FromArgb(204, 0, 56);
+                    rtb_Log.SelectionColor = Color.Red;
+                    rtb_Log.AppendText("[" + DateTime.Now.Day.ToString("d2") + "-" + DateTime.Now.Month.ToString("d2") + "-" + DateTime.Now.Year + " " +
+                    DateTime.Now.Hour.ToString("d2") + ":" + DateTime.Now.Minute.ToString("d2") + ":" + DateTime.Now.Second.ToString("d2") + "] " + msg + Environment.NewLine);
+                    //msj = true;
+                }
+                this.rtb_Log.ScrollToCaret();
+            }
+            else
+            {
+                if (msj)
+                {
+                    this.rtb_Log.SelectionStart = this.rtb_Log.Text.Length;
+                    //rtb_Log.SelectionColor = Color.Black;
+                    rtb_Log.AppendText(msg + Environment.NewLine);
+                }
+                else
+                {
+                    this.rtb_Log.SelectionStart = this.rtb_Log.Text.Length;
+                    //rtb_Log.SelectionColor = Color.FromArgb(204, 0, 56);
+                    rtb_Log.SelectionColor = Color.Red;
+                    rtb_Log.AppendText(msg + Environment.NewLine);
+                    //msj = true;
+                }
+                this.rtb_Log.ScrollToCaret();
+            }
+
+        }
+
+
         private String[][] Calculo(string[] array)
         {
             List<String[]> listaGeneral = new List<string[]>();

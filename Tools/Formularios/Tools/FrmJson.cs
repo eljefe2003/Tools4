@@ -19,14 +19,14 @@ namespace Tools
         public FrmJson(Color color1, Color color2, Color color3, Color color4)
         {
             InitializeComponent();
-            tlpLog.BackColor = color1;
-            rtbJson.BackColor = color1;
-            rtbJson.ForeColor = color2;
-            lbl_Log.ForeColor = color2;
-            btnBorrarLog.BackColor = color1;
+            //tlpLog.BackColor = color1;
+            //rtbJson.BackColor = color1;
+            //rtbJson.ForeColor = color2;
+            //lbl_Log.ForeColor = color2;
+            //btnBorrarLog.BackColor = color1;
             btnBuscarJson2.BackColor = color1;
-            btnGuardarLog.BackColor = color1;
-            btnCopiarLog.BackColor = color1;
+            //btnGuardarLog.BackColor = color1;
+            //btnCopiarLog.BackColor = color1;
             btnPlay.BackColor = color1;
 
         }
@@ -58,13 +58,13 @@ namespace Tools
             string formattedJson = JsonConvert.SerializeObject(jsonObject, Newtonsoft.Json.Formatting.Indented);
 
             // Imprimir el JSON formateado
-            rtbJson.Text = formattedJson;
+            rtb_Log.Text = formattedJson;
 
         }
 
         private void btnBuscarJson2_Click(object sender, EventArgs e)
         {
-            rtbJson.Clear();
+            rtb_Log.Clear();
             OpenFileDialog fichero = new OpenFileDialog();
             fichero.Multiselect = false;
             //fichero.Filter = "Text (*.txt)|*.TXT|XML (*.xml)|*.XML|ZIP (*.zip)|*.ZIP";
@@ -81,14 +81,14 @@ namespace Tools
 
         private void btnCopiarLog_Click(object sender, EventArgs e)
         {
-            Clipboard.SetDataObject(rtbJson.Text, true);
+            Clipboard.SetDataObject(rtb_Log.Text, true);
             MessageBox.Show("Se ha copiado en el portapales el Log");
         }
 
         private void btnGuardarLog_Click(object sender, EventArgs e)
         {
             var ruta = AsignaRuta();
-            System.IO.File.WriteAllText(ruta + "/JsonOrdenado.txt", rtbJson.Text.Replace("\n", Environment.NewLine));
+            System.IO.File.WriteAllText(ruta + "/JsonOrdenado.txt", rtb_Log.Text.Replace("\n", Environment.NewLine));
             MessageBox.Show("Exportacion Exitosa! revisa tu ruta: " + ruta + "/Log.txt");
         }
         private string AsignaRuta()
@@ -126,7 +126,7 @@ namespace Tools
             }
             else
             {
-                ContenidoJson = rtbJson.Text;
+                ContenidoJson = rtb_Log.Text;
             }
           
 
@@ -136,7 +136,7 @@ namespace Tools
                 // Serializar el objeto dinámico con formato indentado
                 string formattedJson = JsonConvert.SerializeObject(jsonObject, Newtonsoft.Json.Formatting.Indented);
                 // Imprimir el JSON formateado
-                rtbJson.Text = formattedJson;
+                rtb_Log.Text = formattedJson;
             }
             catch
             {
@@ -146,7 +146,13 @@ namespace Tools
 
         private void btnBorrarLog_Click(object sender, EventArgs e)
         {
-            rtbJson.Clear();
+            rtb_Log.Clear();
+        }
+
+        private void btnBorrarLog_Click_1(object sender, EventArgs e)
+        {
+            rtb_Log.Clear();
+
         }
     }
 }

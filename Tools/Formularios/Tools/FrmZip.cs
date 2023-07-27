@@ -23,10 +23,10 @@ namespace Tools
         {
             InitializeComponent();
 
-            tlpLog.BackColor = color1;
-            rtb_Log.BackColor = color1;
-            rtb_Log.ForeColor = color2;
-            lbl_Log.ForeColor = color2;
+            //tlpLog.BackColor = color1;
+            //rtb_Log.BackColor = color1;
+            //rtb_Log.ForeColor = color2;
+            //lbl_Log.ForeColor = color2;
             btnProcesar.BackColor = color1;
             btnBuscar.BackColor = color1;
             //colorAceptados = color1;
@@ -242,6 +242,16 @@ namespace Tools
         }
 
         private void btnBorrarLog_Click(object sender, EventArgs e)
+        {
+            rtb_Log.Clear();
+        }
+
+        private void FrmZip_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBorrarLog_Click_1(object sender, EventArgs e)
         {
             rtb_Log.Clear();
         }

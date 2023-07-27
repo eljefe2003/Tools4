@@ -35,14 +35,18 @@ namespace Tools
             tlpForm.BackColor = Color.White;
             btnProcesar.BackColor = color1;
             btnConsumoFolios.BackColor = color1;
-            tlpLog.BackColor = color1;
-            rtb_Log.BackColor = color1;
+            //tlpLog.BackColor = color1;
+            //rtb_Log.BackColor = color1;
             gbFiltros.ForeColor = color1;
             gbFiltroConsumo.ForeColor = color1;
-            rtb_Log.ForeColor = color2;
-            lbl_Log.ForeColor = color2;
+            //rtb_Log.ForeColor = color2;
+            //lbl_Log.ForeColor = color2;
             listClientes = lisCli1;
             listClientes2 = listCli2;
+            this.dtgEmpresas.DefaultCellStyle.SelectionForeColor = Color.Black;
+            this.dtgEmpresas.DefaultCellStyle.SelectionBackColor = color2;
+            this.dtgEmpresas.ColumnHeadersDefaultCellStyle.SelectionBackColor = color2;
+
         }
 
         private void FrmEmpresas_Load(object sender, EventArgs e)
@@ -361,6 +365,11 @@ namespace Tools
                 Log("Resultados cargados con Exito!", true, false);
                 Log(QueryLog, true, false);
             }
+        }
+
+        private void btnBorrarLog_Click_1(object sender, EventArgs e)
+        {
+            rtb_Log.Clear();
         }
 
         private void cargaEmpresasPSE21()

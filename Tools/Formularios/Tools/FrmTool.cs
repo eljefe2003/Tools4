@@ -22,12 +22,12 @@ namespace Tools
             tlpForm.BackColor = Color.White;
             btnProcesar.BackColor = color1;
             btnDetalle.IconColor = color1;
-            tlpLog.BackColor = color1;
-            rtb_Log.BackColor = color1;
+            //tlpLog.BackColor = color1;
+            //rtb_Log.BackColor = color1;
             gbFiltros.ForeColor = color1;
             lblFormato.ForeColor = color1;
-            rtb_Log.ForeColor = color2;
-            lbl_Log.ForeColor = color2;
+            //rtb_Log.ForeColor = color2;
+            //lbl_Log.ForeColor = color2;
             tlpDetalle.ForeColor = color1;
             txtDetalle.ForeColor = color1;
             rtbDaily.BackColor = color2;
@@ -456,6 +456,11 @@ namespace Tools
         }
 
         private void btnBorrarLog_Click(object sender, EventArgs e)
+        {
+            rtb_Log.Clear();
+        }
+
+        private void btnBorrarLog_Click_1(object sender, EventArgs e)
         {
             rtb_Log.Clear();
         }

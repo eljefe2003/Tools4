@@ -22,14 +22,14 @@ namespace Tools
         public FrmFirmaXml(Color color1, Color color2, Color color3, Color color4)
         {
             InitializeComponent();
-            tlpLog.BackColor = color1;
-            rtbJson.BackColor = color1;
-            rtbJson.ForeColor = color2;
-            lbl_Log.ForeColor = color2;
-            btnBorrarLog.BackColor = color1;
+            //tlpLog.BackColor = color1;
+            //rtb_Log.BackColor = color1;
+            //rtb_Log.ForeColor = color2;
+            //lbl_Log.ForeColor = color2;
+            //btnBorrarLog.BackColor = color1;
             btnBuscarXml.BackColor = color1;
-            btnGuardarLog.BackColor = color1;
-            btnCopiarLog.BackColor = color1;
+            //rtb_Log.BackColor = color1;
+            //rtb_Log.BackColor = color1;
             btnPlay.BackColor = color1;
 
         }
@@ -41,7 +41,7 @@ namespace Tools
 
         private void btnBuscarXml_Click(object sender, EventArgs e)
         {
-            rtbJson.Clear();
+            rtb_Log.Clear();
             OpenFileDialog fichero = new OpenFileDialog();
             fichero.Multiselect = false;
             //fichero.Filter = "Text (*.txt)|*.TXT|XML (*.xml)|*.XML|ZIP (*.zip)|*.ZIP";
@@ -90,11 +90,11 @@ namespace Tools
                     //Console.WriteLine("Fecha de finalización: " + endDate.ToString());
 
                     // Imprimir los datos del certificado
-                    rtbJson.AppendText("Documento: " + Path.GetFileName(filePath) + Environment.NewLine);
-                    rtbJson.AppendText("Datos varios firma: " + cert.SubjectName.Name.ToString() + Environment.NewLine);
-                    rtbJson.AppendText("Firma válida desde: " + startDate.ToString() + Environment.NewLine);
-                    rtbJson.AppendText("Firma válida hasta: " + endDate.ToString() + Environment.NewLine);
-                    rtbJson.AppendText("Serial del cert. usado: " + cert.SerialNumber.ToString() + Environment.NewLine);
+                    rtb_Log.AppendText("Documento: " + Path.GetFileName(filePath) + Environment.NewLine);
+                    rtb_Log.AppendText("Datos varios firma: " + cert.SubjectName.Name.ToString() + Environment.NewLine);
+                    rtb_Log.AppendText("Firma válida desde: " + startDate.ToString() + Environment.NewLine);
+                    rtb_Log.AppendText("Firma válida hasta: " + endDate.ToString() + Environment.NewLine);
+                    rtb_Log.AppendText("Serial del cert. usado: " + cert.SerialNumber.ToString() + Environment.NewLine);
 
                 }
                 else
@@ -106,6 +106,12 @@ namespace Tools
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+
+        }
+
+        private void btnBorrarLog_Click(object sender, EventArgs e)
+        {
+            rtb_Log.Clear();
 
         }
     }
