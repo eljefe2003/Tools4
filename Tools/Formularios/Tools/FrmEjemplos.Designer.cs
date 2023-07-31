@@ -42,7 +42,7 @@ namespace Tools
             this.tableLayoutPanel56 = new System.Windows.Forms.TableLayoutPanel();
             this.dtgEjemplos = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gbAcciones = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnProbarTodos = new FontAwesome.Sharp.IconButton();
@@ -60,7 +60,7 @@ namespace Tools
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btnDescargas = new AltoControls.SlideButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbFiltros = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel57 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.chckDemo = new AltoControls.SlideButton();
@@ -74,13 +74,13 @@ namespace Tools
             this.tableLayoutPanel56.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgEjemplos)).BeginInit();
             this.tableLayoutPanel14.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.gbAcciones.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlDescargas.SuspendLayout();
             this.tlp_archivos.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gbFiltros.SuspendLayout();
             this.tableLayoutPanel57.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -174,6 +174,7 @@ namespace Tools
             this.rtb_Log.ForeColor = System.Drawing.Color.Black;
             this.rtb_Log.Location = new System.Drawing.Point(4, 35);
             this.rtb_Log.Name = "rtb_Log";
+            this.rtb_Log.ReadOnly = true;
             this.rtb_Log.Size = new System.Drawing.Size(567, 565);
             this.rtb_Log.TabIndex = 4;
             this.rtb_Log.Text = "";
@@ -198,7 +199,7 @@ namespace Tools
             this.tableLayoutPanel56.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel56.Controls.Add(this.dtgEjemplos, 0, 1);
             this.tableLayoutPanel56.Controls.Add(this.tableLayoutPanel14, 0, 2);
-            this.tableLayoutPanel56.Controls.Add(this.groupBox1, 0, 0);
+            this.tableLayoutPanel56.Controls.Add(this.gbFiltros, 0, 0);
             this.tableLayoutPanel56.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel56.Location = new System.Drawing.Point(2, 2);
             this.tableLayoutPanel56.Margin = new System.Windows.Forms.Padding(2);
@@ -256,7 +257,7 @@ namespace Tools
             // 
             this.tableLayoutPanel14.ColumnCount = 1;
             this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.75862F));
-            this.tableLayoutPanel14.Controls.Add(this.groupBox2, 0, 0);
+            this.tableLayoutPanel14.Controls.Add(this.gbAcciones, 0, 0);
             this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel14.Location = new System.Drawing.Point(2, 285);
             this.tableLayoutPanel14.Margin = new System.Windows.Forms.Padding(2);
@@ -266,17 +267,17 @@ namespace Tools
             this.tableLayoutPanel14.Size = new System.Drawing.Size(565, 311);
             this.tableLayoutPanel14.TabIndex = 7;
             // 
-            // groupBox2
+            // gbAcciones
             // 
-            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox2.Controls.Add(this.panel3);
-            this.groupBox2.Font = new System.Drawing.Font("Calibri", 9F);
-            this.groupBox2.Location = new System.Drawing.Point(3, 3);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(559, 305);
-            this.groupBox2.TabIndex = 9;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Acciones";
+            this.gbAcciones.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gbAcciones.Controls.Add(this.panel3);
+            this.gbAcciones.Font = new System.Drawing.Font("Calibri", 9F);
+            this.gbAcciones.Location = new System.Drawing.Point(3, 3);
+            this.gbAcciones.Name = "gbAcciones";
+            this.gbAcciones.Size = new System.Drawing.Size(559, 305);
+            this.gbAcciones.TabIndex = 9;
+            this.gbAcciones.TabStop = false;
+            this.gbAcciones.Text = "Acciones";
             // 
             // panel3
             // 
@@ -541,17 +542,17 @@ namespace Tools
             this.label1.TabIndex = 1;
             this.label1.Text = "Descargas";
             // 
-            // groupBox1
+            // gbFiltros
             // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox1.Controls.Add(this.tableLayoutPanel57);
-            this.groupBox1.Font = new System.Drawing.Font("Calibri", 9F);
-            this.groupBox1.Location = new System.Drawing.Point(3, 6);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(562, 54);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filtros";
+            this.gbFiltros.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gbFiltros.Controls.Add(this.tableLayoutPanel57);
+            this.gbFiltros.Font = new System.Drawing.Font("Calibri", 9F);
+            this.gbFiltros.Location = new System.Drawing.Point(3, 6);
+            this.gbFiltros.Name = "gbFiltros";
+            this.gbFiltros.Size = new System.Drawing.Size(562, 54);
+            this.gbFiltros.TabIndex = 8;
+            this.gbFiltros.TabStop = false;
+            this.gbFiltros.Text = "Filtros";
             // 
             // tableLayoutPanel57
             // 
@@ -680,7 +681,7 @@ namespace Tools
             this.tableLayoutPanel56.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgEjemplos)).EndInit();
             this.tableLayoutPanel14.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
+            this.gbAcciones.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.pnlDescargas.ResumeLayout(false);
@@ -688,7 +689,7 @@ namespace Tools
             this.tlp_archivos.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
+            this.gbFiltros.ResumeLayout(false);
             this.tableLayoutPanel57.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
@@ -731,7 +732,7 @@ namespace Tools
         private System.Windows.Forms.Label lbl_Log;
         private FontAwesome.Sharp.IconButton btnBorrarLog;
         public System.Windows.Forms.RichTextBox rtb_Log;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gbFiltros;
+        private System.Windows.Forms.GroupBox gbAcciones;
     }
 }

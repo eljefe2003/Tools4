@@ -58,6 +58,13 @@ namespace Tools
             //lbl_Log.ForeColor = color2;
             //tlpLog.BackColor = color1;
             //rtb_Log.BackColor = color1;
+            lbl_Log.ForeColor = color1;
+            btnBorrarLog.IconColor = color1;
+            rtb_Log.ForeColor = color1;
+            rtb_Log.ReadOnly = true;
+            gbAcciones.ForeColor = color1;
+            gbFiltros.ForeColor = color1;
+
         }
 
         public void cargaDrive()

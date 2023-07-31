@@ -47,6 +47,11 @@ namespace Tools
             this.dtgEmpresas.DefaultCellStyle.SelectionBackColor = color2;
             this.dtgEmpresas.ColumnHeadersDefaultCellStyle.SelectionBackColor = color2;
 
+            lbl_Log.ForeColor = color1;
+            btnBorrarLog.IconColor = color1;
+            rtb_Log.ForeColor = color1;
+            rtb_Log.ReadOnly = true;
+
         }
 
         private void FrmEmpresas_Load(object sender, EventArgs e)

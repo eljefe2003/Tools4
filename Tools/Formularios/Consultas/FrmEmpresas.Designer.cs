@@ -183,6 +183,7 @@
             this.rtb_Log.ForeColor = System.Drawing.Color.Black;
             this.rtb_Log.Location = new System.Drawing.Point(4, 35);
             this.rtb_Log.Name = "rtb_Log";
+            this.rtb_Log.ReadOnly = true;
             this.rtb_Log.Size = new System.Drawing.Size(567, 565);
             this.rtb_Log.TabIndex = 4;
             this.rtb_Log.Text = "";

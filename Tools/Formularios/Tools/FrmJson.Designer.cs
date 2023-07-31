@@ -38,20 +38,20 @@
             this.lbl_Log = new System.Windows.Forms.Label();
             this.btnBorrarLog = new FontAwesome.Sharp.IconButton();
             this.rtb_Log = new System.Windows.Forms.RichTextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbArchivo = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tlpLog.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gbArchivo.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90.95023F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.524887F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.524887F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.8418F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.367232F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.649717F));
             this.tableLayoutPanel1.Controls.Add(this.btnBuscarJson2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtRutaJson, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnPlay, 2, 0);
@@ -72,9 +72,9 @@
             this.btnBuscarJson2.IconColor = System.Drawing.Color.White;
             this.btnBuscarJson2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscarJson2.IconSize = 17;
-            this.btnBuscarJson2.Location = new System.Drawing.Point(646, 3);
+            this.btnBuscarJson2.Location = new System.Drawing.Point(632, 3);
             this.btnBuscarJson2.Name = "btnBuscarJson2";
-            this.btnBuscarJson2.Size = new System.Drawing.Size(26, 25);
+            this.btnBuscarJson2.Size = new System.Drawing.Size(32, 25);
             this.btnBuscarJson2.TabIndex = 3;
             this.btnBuscarJson2.UseVisualStyleBackColor = true;
             this.btnBuscarJson2.Click += new System.EventHandler(this.btnBuscarJson2_Click);
@@ -85,7 +85,7 @@
             this.txtRutaJson.Enabled = false;
             this.txtRutaJson.Location = new System.Drawing.Point(3, 3);
             this.txtRutaJson.Name = "txtRutaJson";
-            this.txtRutaJson.Size = new System.Drawing.Size(637, 22);
+            this.txtRutaJson.Size = new System.Drawing.Size(623, 22);
             this.txtRutaJson.TabIndex = 1;
             // 
             // btnPlay
@@ -97,9 +97,9 @@
             this.btnPlay.IconColor = System.Drawing.Color.White;
             this.btnPlay.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnPlay.IconSize = 15;
-            this.btnPlay.Location = new System.Drawing.Point(678, 3);
+            this.btnPlay.Location = new System.Drawing.Point(670, 3);
             this.btnPlay.Name = "btnPlay";
-            this.btnPlay.Size = new System.Drawing.Size(27, 25);
+            this.btnPlay.Size = new System.Drawing.Size(35, 25);
             this.btnPlay.TabIndex = 4;
             this.btnPlay.UseVisualStyleBackColor = true;
             this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
@@ -109,7 +109,7 @@
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.tlpLog, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.groupBox1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.gbArchivo, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -192,21 +192,22 @@
             this.rtb_Log.ForeColor = System.Drawing.Color.Black;
             this.rtb_Log.Location = new System.Drawing.Point(4, 43);
             this.rtb_Log.Name = "rtb_Log";
+            this.rtb_Log.ReadOnly = true;
             this.rtb_Log.Size = new System.Drawing.Size(884, 324);
             this.rtb_Log.TabIndex = 4;
             this.rtb_Log.Text = "";
             // 
-            // groupBox1
+            // gbArchivo
             // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox1.Controls.Add(this.tableLayoutPanel1);
-            this.groupBox1.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(91, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(714, 52);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Archivo";
+            this.gbArchivo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gbArchivo.Controls.Add(this.tableLayoutPanel1);
+            this.gbArchivo.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbArchivo.Location = new System.Drawing.Point(91, 3);
+            this.gbArchivo.Name = "gbArchivo";
+            this.gbArchivo.Size = new System.Drawing.Size(714, 52);
+            this.gbArchivo.TabIndex = 0;
+            this.gbArchivo.TabStop = false;
+            this.gbArchivo.Text = "Archivo";
             // 
             // FrmJson
             // 
@@ -224,7 +225,7 @@
             this.tlpLog.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
+            this.gbArchivo.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -234,7 +235,7 @@
         private System.Windows.Forms.TextBox txtRutaJson;
         private FontAwesome.Sharp.IconButton btnBuscarJson2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbArchivo;
         private FontAwesome.Sharp.IconButton btnPlay;
         private System.Windows.Forms.TableLayoutPanel tlpLog;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;

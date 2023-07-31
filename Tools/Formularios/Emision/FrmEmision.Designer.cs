@@ -159,7 +159,7 @@
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.09693F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.1513F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.75177F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 116F));
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel2, 3, 0);
             this.tableLayoutPanel9.Controls.Add(this.cmb_TipoEmision, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.chckEdicion, 2, 0);
@@ -182,11 +182,11 @@
             this.tableLayoutPanel2.Controls.Add(this.chckDemo, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(475, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(469, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(105, 23);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(111, 23);
             this.tableLayoutPanel2.TabIndex = 15;
             // 
             // chckDemo
@@ -195,7 +195,7 @@
             this.chckDemo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chckDemo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chckDemo.IsOn = true;
-            this.chckDemo.Location = new System.Drawing.Point(66, 3);
+            this.chckDemo.Location = new System.Drawing.Point(69, 3);
             this.chckDemo.Name = "chckDemo";
             this.chckDemo.Size = new System.Drawing.Size(30, 17);
             this.chckDemo.TabIndex = 0;
@@ -211,7 +211,7 @@
             this.label2.Font = new System.Drawing.Font("Calibri", 8F);
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 23);
+            this.label2.Size = new System.Drawing.Size(60, 23);
             this.label2.TabIndex = 1;
             this.label2.Text = "Demo";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -232,7 +232,7 @@
             this.cmb_TipoEmision.Location = new System.Drawing.Point(2, 3);
             this.cmb_TipoEmision.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_TipoEmision.Name = "cmb_TipoEmision";
-            this.cmb_TipoEmision.Size = new System.Drawing.Size(152, 22);
+            this.cmb_TipoEmision.Size = new System.Drawing.Size(150, 22);
             this.cmb_TipoEmision.TabIndex = 14;
             this.cmb_TipoEmision.SelectedIndexChanged += new System.EventHandler(this.cmb_TipoEmision_SelectedIndexChanged);
             // 
@@ -242,7 +242,7 @@
             this.chckEdicion.AutoSize = true;
             this.chckEdicion.Enabled = false;
             this.chckEdicion.Font = new System.Drawing.Font("Calibri", 8F);
-            this.chckEdicion.Location = new System.Drawing.Point(332, 6);
+            this.chckEdicion.Location = new System.Drawing.Point(327, 6);
             this.chckEdicion.Margin = new System.Windows.Forms.Padding(2);
             this.chckEdicion.Name = "chckEdicion";
             this.chckEdicion.Size = new System.Drawing.Size(116, 17);
@@ -256,7 +256,7 @@
             this.chckRequestPre.AutoSize = true;
             this.chckRequestPre.Enabled = false;
             this.chckRequestPre.Font = new System.Drawing.Font("Calibri", 8F);
-            this.chckRequestPre.Location = new System.Drawing.Point(179, 6);
+            this.chckRequestPre.Location = new System.Drawing.Point(176, 6);
             this.chckRequestPre.Name = "chckRequestPre";
             this.chckRequestPre.Size = new System.Drawing.Size(106, 17);
             this.chckRequestPre.TabIndex = 13;
@@ -855,6 +855,7 @@
             this.rtb_Log.ForeColor = System.Drawing.Color.Black;
             this.rtb_Log.Location = new System.Drawing.Point(4, 35);
             this.rtb_Log.Name = "rtb_Log";
+            this.rtb_Log.ReadOnly = true;
             this.rtb_Log.Size = new System.Drawing.Size(548, 563);
             this.rtb_Log.TabIndex = 4;
             this.rtb_Log.Text = "";

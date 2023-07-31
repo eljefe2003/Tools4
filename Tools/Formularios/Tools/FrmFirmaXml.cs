@@ -31,6 +31,12 @@ namespace Tools
             //rtb_Log.BackColor = color1;
             //rtb_Log.BackColor = color1;
             btnPlay.BackColor = color1;
+            lbl_Log.ForeColor = color1;
+            btnBorrarLog.IconColor = color1;
+            rtb_Log.ForeColor = color1;
+            rtb_Log.ReadOnly = true;
+            gbArchivo.ForeColor = color1;
+
 
         }
 
@@ -113,6 +119,11 @@ namespace Tools
         {
             rtb_Log.Clear();
 
+        }
+
+        private void btnBorrarLog_Click_1(object sender, EventArgs e)
+        {
+            rtb_Log.Clear();
         }
     }
 }

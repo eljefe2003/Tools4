@@ -42,6 +42,11 @@ namespace Tools
             //lbl_Log.ForeColor = color2;
             //tlpLog.BackColor = color1;
             //rtb_Log.BackColor = color1;
+            lbl_Log.ForeColor = color1;
+            btnBorrarLog.IconColor = color1;
+            rtb_Log.ForeColor = color1;
+            rtb_Log.ReadOnly = true;
+            gb_Archivos.ForeColor = color1;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

@@ -17,6 +17,12 @@ namespace Tools
         ThreadStart threadPrimario, threadSecundario;
         List<string> lista1, lista2, lista3, lista4, lista5, lista6, lista7, lista8, lista9, lista10, lista11, lista12, lista13, lista14, lista15, lista16;
 
+        private void btnBorrarLog_Click_1(object sender, EventArgs e)
+        {
+            rtb_Log.Clear();
+
+        }
+
         private void btnBorrarLog_Click(object sender, EventArgs e)
         {
             rtb_Log.Clear();
@@ -37,6 +43,10 @@ namespace Tools
             gbFiltros.ForeColor = color1;
             //rtb_Log.ForeColor = color2;
             //lbl_Log.ForeColor = color2;
+            lbl_Log.ForeColor = color1;
+            btnBorrarLog.IconColor = color1;
+            rtb_Log.ForeColor = color1;
+            rtb_Log.ReadOnly = true;
         }
 
         private void FrmConsultaSunat_Load(object sender, EventArgs e)

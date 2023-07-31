@@ -31,6 +31,11 @@ namespace Tools
             gbFiltros.ForeColor = color1;
             gbAcciones.ForeColor = color1;
 
+            lbl_Log.ForeColor = color1;
+            btnBorrarLog.IconColor = color1;
+            rtb_Log.ForeColor = color1;
+            rtb_Log.ReadOnly = true;
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -297,5 +302,9 @@ namespace Tools
 
         }
 
+        private void btnBorrarLog_Click(object sender, EventArgs e)
+        {
+            rtb_Log.Clear();
+        }
     }
 }

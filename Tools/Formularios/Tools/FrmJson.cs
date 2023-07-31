@@ -28,6 +28,11 @@ namespace Tools
             //btnGuardarLog.BackColor = color1;
             //btnCopiarLog.BackColor = color1;
             btnPlay.BackColor = color1;
+            lbl_Log.ForeColor = color1;
+            btnBorrarLog.IconColor = color1;
+            rtb_Log.ForeColor = color1;
+            rtb_Log.ReadOnly = true;
+            gbArchivo.ForeColor = color1;
 
         }
 

@@ -31,6 +31,10 @@ namespace Tools
             tlpDetalle.ForeColor = color1;
             txtDetalle.ForeColor = color1;
             rtbDaily.BackColor = color2;
+            lbl_Log.ForeColor = color1;
+            btnBorrarLog.IconColor = color1;
+            rtb_Log.ForeColor = color1;
+            rtb_Log.ReadOnly = true;
         }
 
         private bool validaCampos()

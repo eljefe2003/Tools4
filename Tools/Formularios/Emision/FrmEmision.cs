@@ -47,9 +47,10 @@ namespace Tools
 
             //tlpLog.BackColor = color1;
             //rtb_Log.BackColor = color1;
-            //rtb_Log.ForeColor = color2;
-            //lbl_Log.ForeColor = color2;
-
+            rtb_Log.ForeColor = color1;
+            rtb_Log.ReadOnly = true;
+            lbl_Log.ForeColor = color1;
+            btnBorrarLog.IconColor = color1;
             btnProbarCredenciales.BackColor = color1;
             btnProcesar.BackColor = color1;
             btnDescargar.BackColor = color1;
