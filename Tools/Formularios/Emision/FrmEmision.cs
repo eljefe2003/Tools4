@@ -322,6 +322,7 @@ namespace Tools
                     {
                         if (chckRequestPre.Checked)
                         {
+                            ReconstruirRequest req = new ReconstruirRequest();
                             FolderBrowserDialog dlCarpeta = new FolderBrowserDialog();
                             dlCarpeta.RootFolder = System.Environment.SpecialFolder.Desktop;
                             dlCarpeta.ShowNewFolderButton = false;
@@ -338,8 +339,7 @@ namespace Tools
                             string ruta = rutaDestino + "\\" + nombreXml + "_Old" + ".xml";
                             resp2.Mensaje = request.GenerarRequest(txt_RucEmision.Text, txt_UsuarioEmision.Text, txt_ClaveEmision.Text, lst_archivo.Items[i].ToString(), ruta);
                             string rutaNueva = rutaDestino + "\\" + nombreXml + "_Request" + ".xml";
-
-                            ObtenerRequest2(ruta, rutaNueva);
+                            req.ObtenerRequest(ruta, rutaNueva);
                             if (File.Exists(ruta))
                             {
                                 File.Delete(ruta);
@@ -1992,13 +1992,30 @@ namespace Tools
                             {
                                 try
                                 {
+                                    ReconstruirRequest req = new ReconstruirRequest();
                                     string rutaReq1 = Ruta + "\\" + nombreXml + "_requestSinEditar.xml";
                                     string rutaReq2 = Ruta + "\\" + nombreXml + "_request.xml";
-                                    string rutaOriginal = Path.GetDirectoryName(lst_archivo.Items[0].ToString() + "\\" + lblDocEdicion);
-                                    request.GenerarRequest(txt_RucEmision.Text, txt_UsuarioEmision.Text, txt_ClaveEmision.Text, rutaOriginal, rutaReq1);
-                                    ObtenerRequest(rutaReq1, rutaReq2);
+                                    string rutaOriginal = Path.GetDirectoryName(lst_archivo.Items[0].ToString() + "\\" + lblDocEdicion.Text);
+                                    //request.GenerarRequest(txt_RucEmision.Text, txt_UsuarioEmision.Text, txt_ClaveEmision.Text, rutaOriginal, rutaReq1);
+                                    //req.ObtenerRequest(rutaReq1, rutaReq2);
                                     Log("Se descarga " + rutaReq2, true, false);
-                                }catch(Exception ex)
+
+
+                                    string respPdf = "";
+                                    if (nombreXml.Split('-')[0] == "20550728762")
+                                    {
+                                        request.GenerarRequest(ConfigGlobal.Ruc2, ConfigGlobal.UserRuc2, ConfigGlobal.PassRuc2, rutaOriginal, rutaReq1);
+                                        req.ObtenerRequestGR(rutaReq1, rutaReq2);
+                                    }
+                                    else
+                                    {
+                                        request.GenerarRequest(txt_RucEmision.Text, txt_UsuarioEmision.Text, txt_ClaveEmision.Text, rutaOriginal, rutaReq1);
+                                        req.ObtenerRequest(rutaReq1, rutaReq2);
+                                    }
+                                    Log("Se descarga " + rutaReq2, true, false);
+
+                                }
+                                catch (Exception ex)
                                 {
                                     Log("No se puede descargar Request del doc " + nombreXml, false, false);
                                 }

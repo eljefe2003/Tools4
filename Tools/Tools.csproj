@@ -330,6 +330,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Clases varias\Validaciones.cs" />
+    <Compile Include="ReconstruirRequest.cs" />
     <Compile Include="TestColor.cs">
       <SubType>Form</SubType>
     </Compile>
