@@ -113,7 +113,7 @@
             this.tlpGeneral.Controls.Add(this.tlpLog, 1, 0);
             this.tlpGeneral.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpGeneral.Location = new System.Drawing.Point(0, 0);
-            this.tlpGeneral.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpGeneral.Margin = new System.Windows.Forms.Padding(4);
             this.tlpGeneral.Name = "tlpGeneral";
             this.tlpGeneral.RowCount = 1;
             this.tlpGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -160,7 +160,7 @@
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.09693F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.1513F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.75177F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 157F));
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel2, 3, 0);
             this.tableLayoutPanel9.Controls.Add(this.cmb_TipoEmision, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.chckEdicion, 2, 0);
@@ -183,12 +183,12 @@
             this.tableLayoutPanel2.Controls.Add(this.chckDemo, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(623, 4);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(622, 4);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(149, 28);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(150, 28);
             this.tableLayoutPanel2.TabIndex = 15;
             // 
             // chckDemo
@@ -197,8 +197,8 @@
             this.chckDemo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chckDemo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chckDemo.IsOn = true;
-            this.chckDemo.Location = new System.Drawing.Point(93, 4);
-            this.chckDemo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chckDemo.Location = new System.Drawing.Point(94, 4);
+            this.chckDemo.Margin = new System.Windows.Forms.Padding(4);
             this.chckDemo.Name = "chckDemo";
             this.chckDemo.Size = new System.Drawing.Size(36, 20);
             this.chckDemo.TabIndex = 0;
@@ -215,7 +215,7 @@
             this.label2.Location = new System.Drawing.Point(4, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 28);
+            this.label2.Size = new System.Drawing.Size(82, 28);
             this.label2.TabIndex = 1;
             this.label2.Text = "Demo";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -233,10 +233,10 @@
             "OSE",
             "SUNAT",
             "SUNAT (PARA FIRMAR)"});
-            this.cmb_TipoEmision.Location = new System.Drawing.Point(3, 5);
+            this.cmb_TipoEmision.Location = new System.Drawing.Point(3, 6);
             this.cmb_TipoEmision.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmb_TipoEmision.Name = "cmb_TipoEmision";
-            this.cmb_TipoEmision.Size = new System.Drawing.Size(199, 26);
+            this.cmb_TipoEmision.Size = new System.Drawing.Size(198, 26);
             this.cmb_TipoEmision.TabIndex = 14;
             this.cmb_TipoEmision.SelectedIndexChanged += new System.EventHandler(this.cmb_TipoEmision_SelectedIndexChanged);
             // 
@@ -246,7 +246,7 @@
             this.chckEdicion.AutoSize = true;
             this.chckEdicion.Enabled = false;
             this.chckEdicion.Font = new System.Drawing.Font("Calibri", 8F);
-            this.chckEdicion.Location = new System.Drawing.Point(442, 7);
+            this.chckEdicion.Location = new System.Drawing.Point(441, 7);
             this.chckEdicion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chckEdicion.Name = "chckEdicion";
             this.chckEdicion.Size = new System.Drawing.Size(139, 21);
@@ -260,8 +260,8 @@
             this.chckRequestPre.AutoSize = true;
             this.chckRequestPre.Enabled = false;
             this.chckRequestPre.Font = new System.Drawing.Font("Calibri", 8F);
-            this.chckRequestPre.Location = new System.Drawing.Point(241, 7);
-            this.chckRequestPre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chckRequestPre.Location = new System.Drawing.Point(240, 7);
+            this.chckRequestPre.Margin = new System.Windows.Forms.Padding(4);
             this.chckRequestPre.Name = "chckRequestPre";
             this.chckRequestPre.Size = new System.Drawing.Size(126, 21);
             this.chckRequestPre.TabIndex = 13;
@@ -473,7 +473,7 @@
             this.tableLayoutPanel10.Controls.Add(this.ts_ProgressBar1, 1, 1);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 21);
-            this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 2;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -582,7 +582,7 @@
             // 
             this.ts_ProgressBar1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ts_ProgressBar1.Location = new System.Drawing.Point(54, 447);
-            this.ts_ProgressBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ts_ProgressBar1.Margin = new System.Windows.Forms.Padding(4);
             this.ts_ProgressBar1.Name = "ts_ProgressBar1";
             this.ts_ProgressBar1.Size = new System.Drawing.Size(718, 9);
             this.ts_ProgressBar1.TabIndex = 4;
@@ -679,7 +679,7 @@
             this.chckXML.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chckXML.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chckXML.Location = new System.Drawing.Point(4, 34);
-            this.chckXML.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chckXML.Margin = new System.Windows.Forms.Padding(4);
             this.chckXML.Name = "chckXML";
             this.chckXML.Size = new System.Drawing.Size(165, 22);
             this.chckXML.TabIndex = 19;
@@ -693,7 +693,7 @@
             this.chckPDF.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chckPDF.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chckPDF.Location = new System.Drawing.Point(4, 4);
-            this.chckPDF.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chckPDF.Margin = new System.Windows.Forms.Padding(4);
             this.chckPDF.Name = "chckPDF";
             this.chckPDF.Size = new System.Drawing.Size(165, 22);
             this.chckPDF.TabIndex = 19;
@@ -707,7 +707,7 @@
             this.chckRequest.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chckRequest.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chckRequest.Location = new System.Drawing.Point(177, 34);
-            this.chckRequest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chckRequest.Margin = new System.Windows.Forms.Padding(4);
             this.chckRequest.Name = "chckRequest";
             this.chckRequest.Size = new System.Drawing.Size(137, 22);
             this.chckRequest.TabIndex = 20;
@@ -721,7 +721,7 @@
             this.chckCDR.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chckCDR.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chckCDR.Location = new System.Drawing.Point(4, 64);
-            this.chckCDR.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chckCDR.Margin = new System.Windows.Forms.Padding(4);
             this.chckCDR.Name = "chckCDR";
             this.chckCDR.Size = new System.Drawing.Size(165, 23);
             this.chckCDR.TabIndex = 14;
@@ -735,7 +735,7 @@
             this.chckTXT.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chckTXT.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chckTXT.Location = new System.Drawing.Point(177, 4);
-            this.chckTXT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chckTXT.Margin = new System.Windows.Forms.Padding(4);
             this.chckTXT.Name = "chckTXT";
             this.chckTXT.Size = new System.Drawing.Size(137, 22);
             this.chckTXT.TabIndex = 21;
@@ -823,7 +823,7 @@
             this.tableLayoutPanel3.Controls.Add(this.btnBorrarLog, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(5, 5);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -856,7 +856,7 @@
             this.btnBorrarLog.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBorrarLog.IconSize = 25;
             this.btnBorrarLog.Location = new System.Drawing.Point(628, 4);
-            this.btnBorrarLog.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBorrarLog.Margin = new System.Windows.Forms.Padding(4);
             this.btnBorrarLog.Name = "btnBorrarLog";
             this.btnBorrarLog.Size = new System.Drawing.Size(99, 21);
             this.btnBorrarLog.TabIndex = 0;
@@ -871,7 +871,7 @@
             this.rtb_Log.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtb_Log.ForeColor = System.Drawing.Color.Black;
             this.rtb_Log.Location = new System.Drawing.Point(5, 43);
-            this.rtb_Log.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rtb_Log.Margin = new System.Windows.Forms.Padding(4);
             this.rtb_Log.Name = "rtb_Log";
             this.rtb_Log.ReadOnly = true;
             this.rtb_Log.Size = new System.Drawing.Size(731, 694);
