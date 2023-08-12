@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
+using Tools.Clases_varias;
 
 namespace Tools
 {
@@ -1487,6 +1489,62 @@ namespace Tools
             {
                 closeCon();
                 return 0;
+            }
+        }
+
+        #endregion
+
+        #region Consulta Integridad
+
+        public List<RC> ConsultaIntegridad(string desde, string hasta, string tipo, string codigoError)
+        {
+            LeerConfigPersonal config = new LeerConfigPersonal();
+            List<RC> listDoc = new List<RC>();
+            string Query = "";
+            if(tipo=="RC")
+                Query= "select id, identificator, ruc, supplier_ruc, created_at, send_sunat_date, error_message from peproduccionose.summary_documents WHERE active = 1 and SUBSTRING(created_at, 1,10) BETWEEN '" + desde + "' AND '" + hasta + "' AND status_sunat = " + codigoError;
+            string connectionString =
+               "datasource=" + config.HostOSE +
+               ";port=" + config.PortOSE +
+               ";username=" + config.UserOSE +
+               ";password=" + config.ClaveOSE;
+
+            conection(connectionString);
+            MySqlCommand commandDatabase = new MySqlCommand(Query, databaseConnection);
+            commandDatabase.CommandTimeout = 60000;
+
+            MySqlDataReader reader;
+            try
+            {
+                //databaseConnection.Open();
+                reader = commandDatabase.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        RC resumen = new RC();
+
+                        resumen.Id = reader.GetString(0);
+                        resumen.Identificador = reader.GetString(1);
+                        resumen.Ruc = reader.GetString(2);
+                        resumen.Supplier = reader.GetString(3);
+                        resumen.HoraCreacionOse = reader.GetString(4);
+                        resumen.HoraEnvioSunat = reader.GetString(5);
+                        resumen.MsjSunat = reader.GetString(6);
+                        listDoc.Add(resumen);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("No se encontraron datos.");
+                }
+                closeCon();
+                return listDoc;
+            }
+            catch (Exception ex)
+            {
+                closeCon();
+                return null;
             }
         }
 
