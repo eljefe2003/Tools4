@@ -34,6 +34,8 @@ namespace Tools
 
         private void btnProcesar_Click(object sender, EventArgs e)
         {
+            Log("----------- Inicia proceso de búsqueda --------------", true, false);
+
             HiloPrincipal();
 
         }
@@ -100,11 +102,22 @@ namespace Tools
                     Log("Hora creación OSE: " + uno[i].HoraCreacionOse, true, false);
                     Log("Hora envio Sunat: " + uno[i].HoraEnvioSunat, true, false);
                     Log("Respuesta Sunat: " + uno[i].MsjSunat, true, false);
+                    string cant = uno[i].DocsInformados.Split('|')[0];
+                    Log("Total Docs informados en el RC" + "(" + cant + "): " + uno[i].DocsInformados.Split('|')[1], true, false);
+
+                    string Rechazados = ObtenerRechazados(uno[i].MsjSunat);
+                    string cant2 = Rechazados.Split('|')[0];
+                    string docsRechazados = Rechazados.Split('|')[1];
+
+                    Log("Total Docs rechazados en el RC" + "(" + cant2 + "): " + docsRechazados, true, false);
+                    Log("Revisión Docs rechazados en el RC, Informados de manera individual: " + Environment.NewLine + conex.ConsultaDocsRechazadosIndiv(uno[i].Ruc, uno[i].Supplier, docsRechazados), true, false);
+
+
                     Log("----------------------------" + Environment.NewLine, true, false);
-
-
                 }
             }
+            Log("----------- Finaliza proceso de búsqueda --------------", true, false);
+
             //QueryLog += "Ruc(s): " + ruc + Environment.NewLine;
             //QueryLog += "Razon social: " + txt_RazonS.Text + Environment.NewLine;
             //if (Ambiente.Equals("PSE"))
@@ -211,8 +224,19 @@ namespace Tools
 
         }
 
+        private string ObtenerRechazados(string cadena) {
+            string uno = cadena.Replace("[[", "$");
+            string inicio = uno.Split('$')[1];
+            string inicio2 = uno.Split('[')[0];
 
+            string final;
+            string dos = "";
+            final = inicio.Replace("]", "");
+            final = final.Replace("[", "");
 
+            int cant = final.Split(',').Length;
+            return cant.ToString() + "|" + final;
+        }
 
     }
 }

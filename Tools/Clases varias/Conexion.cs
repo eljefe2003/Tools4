@@ -1523,7 +1523,6 @@ namespace Tools
                     while (reader.Read())
                     {
                         RC resumen = new RC();
-
                         resumen.Id = reader.GetString(0);
                         resumen.Identificador = reader.GetString(1);
                         resumen.Ruc = reader.GetString(2);
@@ -1531,6 +1530,7 @@ namespace Tools
                         resumen.HoraCreacionOse = reader.GetString(4);
                         resumen.HoraEnvioSunat = reader.GetString(5);
                         resumen.MsjSunat = reader.GetString(6);
+                        resumen.DocsInformados = ConsultaDocsInformados(reader.GetString(0), tipo);
                         listDoc.Add(resumen);
                     }
                 }
@@ -1548,6 +1548,105 @@ namespace Tools
             }
         }
 
+        public string ConsultaDocsInformados(string id, string tipo)
+        {
+            LeerConfigPersonal config = new LeerConfigPersonal();
+            int cant = 0;
+            string listDoc = "";
+            string Query = "";
+            if (tipo == "RC")
+                Query = " select CONCAT(invoice_type, '-', numeration) from peproduccionose.summary_lines where summary_id = " + id;
+            string connectionString =
+               "datasource=" + config.HostOSE +
+               ";port=" + config.PortOSE +
+               ";username=" + config.UserOSE +
+               ";password=" + config.ClaveOSE;
+
+            conection(connectionString);
+            MySqlCommand commandDatabase = new MySqlCommand(Query, databaseConnection);
+            commandDatabase.CommandTimeout = 60000;
+
+            MySqlDataReader reader;
+            try
+            {
+                //databaseConnection.Open();
+                reader = commandDatabase.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        listDoc += reader.GetString(0) + ", ";
+                        cant++;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("No se encontraron datos.");
+                }
+                closeCon();
+                return cant.ToString() + "|" + listDoc;
+            }
+            catch (Exception ex)
+            {
+                closeCon();
+                return null;
+            }
+        }
+
+        public string ConsultaDocsRechazadosIndiv(string ruc, string supplier, string docs)
+        {
+            LeerConfigPersonal config = new LeerConfigPersonal();
+            string Query = "", respuesta = "";
+            string Doc = "";
+            string[] arrayOfdocs = docs.Split(',');
+            for (int i = 0; i < arrayOfdocs.Length; i++) {
+                Doc = arrayOfdocs[i];
+                string tipo = Doc.Split('-')[0];
+                string numeracion = Doc.Split('-')[1] + "-" + Doc.Split('-')[2];
+                string serie = numeracion.Split('-')[0];
+                string correla = numeracion.Split('-')[1];
+
+                if (tipo == "03" || tipo == " 03")
+                {
+                    Query = "select reception_date, send_sunat_date, error_message from peproduccionose.invoice_salebills  WHERE ruc = '" + ruc + "' and supplier_ruc = '" + supplier + "' and serie = '" + serie + "' and correlative = " + correla;
+
+                }
+                string connectionString =
+             "datasource=" + config.HostOSE +
+             ";port=" + config.PortOSE +
+             ";username=" + config.UserOSE +
+             ";password=" + config.ClaveOSE;
+
+                conection(connectionString);
+                MySqlCommand commandDatabase = new MySqlCommand(Query, databaseConnection);
+                commandDatabase.CommandTimeout = 60000;
+
+                MySqlDataReader reader;
+                try
+                {
+                    //databaseConnection.Open();
+                    reader = commandDatabase.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            respuesta += Doc + ", Hora creada OSE: " + reader.GetString(0) + ", Hora enviada Sunat: " + reader.GetString(1) + ", Msj Sunat: " + reader.GetString(2) + Environment.NewLine;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("No se encontraron datos.");
+                    }
+                    closeCon();
+                }
+                catch (Exception ex)
+                {
+                    closeCon();
+                    return null;
+                }
+            }
+            return respuesta;
+        }
         #endregion
 
     }

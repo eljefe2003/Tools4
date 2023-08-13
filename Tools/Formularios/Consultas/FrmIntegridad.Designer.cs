@@ -145,6 +145,7 @@
             this.txtCodError.Name = "txtCodError";
             this.txtCodError.Size = new System.Drawing.Size(227, 22);
             this.txtCodError.TabIndex = 16;
+            this.txtCodError.Text = "2663";
             // 
             // label3
             // 
@@ -169,7 +170,7 @@
             this.dtpDesde.Name = "dtpDesde";
             this.dtpDesde.Size = new System.Drawing.Size(227, 21);
             this.dtpDesde.TabIndex = 18;
-            this.dtpDesde.Value = new System.DateTime(2023, 8, 12, 0, 0, 0, 0);
+            this.dtpDesde.Value = new System.DateTime(2023, 8, 10, 0, 0, 0, 0);
             this.dtpDesde.ValueChanged += new System.EventHandler(this.dtpDesde_ValueChanged);
             // 
             // label4
