@@ -39,13 +39,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
             this.btnProcesar = new FontAwesome.Sharp.IconButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbTipoDoc = new System.Windows.Forms.ComboBox();
             this.tlpLog = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lbl_Log = new System.Windows.Forms.Label();
             this.btnBorrarLog = new FontAwesome.Sharp.IconButton();
             this.rtb_Log = new System.Windows.Forms.RichTextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cmbTipoDoc = new System.Windows.Forms.ComboBox();
             this.tlpGeneral.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
             this.gbAcciones.SuspendLayout();
@@ -215,6 +215,31 @@
             this.btnProcesar.UseVisualStyleBackColor = true;
             this.btnProcesar.Click += new System.EventHandler(this.btnProcesar_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Calibri", 8F);
+            this.label2.Location = new System.Drawing.Point(3, 96);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(110, 32);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Tipo Doc:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cmbTipoDoc
+            // 
+            this.cmbTipoDoc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbTipoDoc.FormattingEnabled = true;
+            this.cmbTipoDoc.Items.AddRange(new object[] {
+            "RC",
+            "RA"});
+            this.cmbTipoDoc.Location = new System.Drawing.Point(119, 99);
+            this.cmbTipoDoc.Name = "cmbTipoDoc";
+            this.cmbTipoDoc.Size = new System.Drawing.Size(227, 22);
+            this.cmbTipoDoc.TabIndex = 25;
+            this.cmbTipoDoc.Text = "RC";
+            // 
             // tlpLog
             // 
             this.tlpLog.BackColor = System.Drawing.Color.Transparent;
@@ -291,31 +316,6 @@
             this.rtb_Log.Size = new System.Drawing.Size(767, 563);
             this.rtb_Log.TabIndex = 4;
             this.rtb_Log.Text = "";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Calibri", 8F);
-            this.label2.Location = new System.Drawing.Point(3, 96);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 32);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "Tipo Doc:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cmbTipoDoc
-            // 
-            this.cmbTipoDoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbTipoDoc.FormattingEnabled = true;
-            this.cmbTipoDoc.Items.AddRange(new object[] {
-            "RC",
-            "RA"});
-            this.cmbTipoDoc.Location = new System.Drawing.Point(119, 99);
-            this.cmbTipoDoc.Name = "cmbTipoDoc";
-            this.cmbTipoDoc.Size = new System.Drawing.Size(227, 22);
-            this.cmbTipoDoc.TabIndex = 25;
-            this.cmbTipoDoc.Text = "RC";
             // 
             // FrmIntegridad
             // 

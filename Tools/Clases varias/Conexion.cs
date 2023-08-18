@@ -1596,7 +1596,7 @@ namespace Tools
         public string ConsultaDocsRechazadosIndiv(string ruc, string supplier, string docs)
         {
             LeerConfigPersonal config = new LeerConfigPersonal();
-            string Query = "", respuesta = "";
+            string Query = "", respuesta = "No existe información.";
             string Doc = "";
             string[] arrayOfdocs = docs.Split(',');
             for (int i = 0; i < arrayOfdocs.Length; i++) {
@@ -1647,6 +1647,71 @@ namespace Tools
             }
             return respuesta;
         }
+
+        public string ConsultaDocsRechazadosMasiv(string ruc, string supplier, string docs)
+        {
+            LeerConfigPersonal config = new LeerConfigPersonal();
+            string Query = "", respuesta = "No existe información.";
+            string Doc = "";
+            string[] arrayOfdocs = docs.Split(',');
+            for (int i = 0; i < arrayOfdocs.Length; i++)
+            {
+                Doc = arrayOfdocs[i];
+                string tipo = Doc.Split('-')[0];
+                string numeracion = Doc.Split('-')[1] + "-" + Doc.Split('-')[2];
+                string serie = numeracion.Split('-')[0];
+                string correla = numeracion.Split('-')[1];
+
+                if (tipo == "03" || tipo == " 03")
+                {
+                    Query = "select vd.identificator, vl.numeration, vd.created_at, vd.send_sunat_date, vd.error_message" +
+                        " from peproduccionose.summary_lines as vl,peproduccionose.summary_documents as vd " +
+                        "where vd.id = vl.summary_id " +
+                        "and vd.ruc = " + ruc + " " +
+                        "and vd.supplier_ruc = " + supplier + " "+
+                        "and serie = '" + serie + "' " +
+                        "and correlative = '" + correla + "' " +
+                        "and vd.status_sunat not in ('2663')";
+                }
+                string connectionString =
+             "datasource=" + config.HostOSE +
+             ";port=" + config.PortOSE +
+             ";username=" + config.UserOSE +
+             ";password=" + config.ClaveOSE;
+
+                conection(connectionString);
+                MySqlCommand commandDatabase = new MySqlCommand(Query, databaseConnection);
+                commandDatabase.CommandTimeout = 1800000;
+
+                MySqlDataReader reader;
+                try
+                {
+                    //databaseConnection.Open();
+                    reader = commandDatabase.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        //respuesta = "";
+                        while (reader.Read())
+                        {
+                            respuesta += Doc + ", Id del RC: " + reader.GetString(0) + ", Hora creada OSE: " + reader.GetString(2) + ", Hora enviada Sunat: " + reader.GetString(3) + ", Msj Sunat: " + reader.GetString(4) + Environment.NewLine;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("No se encontraron datos.");
+                    }
+                    closeCon();
+                }
+                catch (Exception ex)
+                {
+                    closeCon();
+                    return null;
+                }
+            }
+            return respuesta;
+        }
+
+
         #endregion
 
     }

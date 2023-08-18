@@ -100,7 +100,7 @@ namespace Tools
                     Log("RUC: " + uno[i].Ruc, true, false);
                     Log("Supplier: " + uno[i].Supplier, true, false);
                     Log("Hora creación OSE: " + uno[i].HoraCreacionOse, true, false);
-                    Log("Hora envio Sunat: " + uno[i].HoraEnvioSunat, true, false);
+                    Log("Hora envío Sunat: " + uno[i].HoraEnvioSunat, true, false);
                     Log("Respuesta Sunat: " + uno[i].MsjSunat, true, false);
                     string cant = uno[i].DocsInformados.Split('|')[0];
                     Log("Total Docs informados en el RC" + "(" + cant + "): " + uno[i].DocsInformados.Split('|')[1], true, false);
@@ -110,8 +110,14 @@ namespace Tools
                     string docsRechazados = Rechazados.Split('|')[1];
 
                     Log("Total Docs rechazados en el RC" + "(" + cant2 + "): " + docsRechazados, true, false);
-                    Log("Revisión Docs rechazados en el RC, Informados de manera individual: " + Environment.NewLine + conex.ConsultaDocsRechazadosIndiv(uno[i].Ruc, uno[i].Supplier, docsRechazados), true, false);
+                    string respuesta1 = conex.ConsultaDocsRechazadosIndiv(uno[i].Ruc, uno[i].Supplier, docsRechazados);
+                    Log("Revisión Docs rechazados en el RC, Informados de manera individual: " + Environment.NewLine + respuesta1, true, false);
 
+                    if(respuesta1 == "No existe información.")
+                    {
+                        string respuesta2 = conex.ConsultaDocsRechazadosMasiv(uno[i].Ruc, uno[i].Supplier, docsRechazados);
+                        Log("Revisión Docs rechazados en el RC, Informados de manera Masiva (RC): " + Environment.NewLine + respuesta2, true, false);
+                    }                   
 
                     Log("----------------------------" + Environment.NewLine, true, false);
                 }
