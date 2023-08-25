@@ -1596,7 +1596,7 @@ namespace Tools
         public string ConsultaDocsRechazadosIndiv(string ruc, string supplier, string docs)
         {
             LeerConfigPersonal config = new LeerConfigPersonal();
-            string Query = "", respuesta = "No existe información.";
+            string Query = "", respuesta = "";
             string Doc = "";
             string[] arrayOfdocs = docs.Split(',');
             for (int i = 0; i < arrayOfdocs.Length; i++) {
@@ -1635,8 +1635,9 @@ namespace Tools
                     }
                     else
                     {
-                        Console.WriteLine("No se encontraron datos.");
-                    }
+                        respuesta = "No existe información.";
+
+                     }
                     closeCon();
                 }
                 catch (Exception ex)
@@ -1651,7 +1652,7 @@ namespace Tools
         public string ConsultaDocsRechazadosMasiv(string ruc, string supplier, string docs)
         {
             LeerConfigPersonal config = new LeerConfigPersonal();
-            string Query = "", respuesta = "No existe información.";
+            string Query = "", respuesta = "";
             string Doc = "";
             string[] arrayOfdocs = docs.Split(',');
             for (int i = 0; i < arrayOfdocs.Length; i++)
@@ -1698,7 +1699,7 @@ namespace Tools
                     }
                     else
                     {
-                        Console.WriteLine("No se encontraron datos.");
+                        respuesta = "No existe información.";
                     }
                     closeCon();
                 }

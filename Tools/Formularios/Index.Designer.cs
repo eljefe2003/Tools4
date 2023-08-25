@@ -35,31 +35,20 @@ namespace Tools
             this.pnlRight = new System.Windows.Forms.Panel();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.cmbTema = new MetroFramework.Controls.MetroComboBox();
-            this.pnlConfiguracion = new System.Windows.Forms.Panel();
-            this.pnlConsultas = new System.Windows.Forms.Panel();
-            this.pnlEmision = new System.Windows.Forms.Panel();
-            this.pnlIcono = new System.Windows.Forms.Panel();
-            this.pnlTop2 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblSeccion = new System.Windows.Forms.Label();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblAnuncio = new AltoControls.AltoSlidingLabel();
-            this.pnlForm = new System.Windows.Forms.Panel();
-            this.btnCerrar = new FontAwesome.Sharp.IconButton();
-            this.btnMaximizar = new FontAwesome.Sharp.IconButton();
-            this.btnMinimizar = new FontAwesome.Sharp.IconButton();
             this.iconButton16 = new FontAwesome.Sharp.IconButton();
             this.btnAyuda = new FontAwesome.Sharp.IconButton();
+            this.pnlConfiguracion = new System.Windows.Forms.Panel();
             this.btnConfigOtros = new FontAwesome.Sharp.IconButton();
             this.btnPSE = new FontAwesome.Sharp.IconButton();
             this.btnConfigBD = new FontAwesome.Sharp.IconButton();
             this.btnConfiguracion = new FontAwesome.Sharp.IconButton();
+            this.pnlConsultas = new System.Windows.Forms.Panel();
             this.btnIntegridad = new FontAwesome.Sharp.IconButton();
             this.btnServicio = new FontAwesome.Sharp.IconButton();
             this.btnEmpresas = new FontAwesome.Sharp.IconButton();
             this.btnSunat = new FontAwesome.Sharp.IconButton();
             this.btnConsultas = new FontAwesome.Sharp.IconButton();
+            this.pnlEmision = new System.Windows.Forms.Panel();
             this.btnFirma = new FontAwesome.Sharp.IconButton();
             this.btnJson = new FontAwesome.Sharp.IconButton();
             this.btnZip = new FontAwesome.Sharp.IconButton();
@@ -68,17 +57,28 @@ namespace Tools
             this.btnDailyTask = new FontAwesome.Sharp.IconButton();
             this.btnTool = new FontAwesome.Sharp.IconButton();
             this.btnEmision = new FontAwesome.Sharp.IconButton();
+            this.pnlIcono = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pnlTop2 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblSeccion = new System.Windows.Forms.Label();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnCerrar = new FontAwesome.Sharp.IconButton();
+            this.btnMaximizar = new FontAwesome.Sharp.IconButton();
+            this.btnMinimizar = new FontAwesome.Sharp.IconButton();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblAnuncio = new AltoControls.AltoSlidingLabel();
+            this.pnlForm = new System.Windows.Forms.Panel();
             this.pnlMenu.SuspendLayout();
             this.pnlConfiguracion.SuspendLayout();
             this.pnlConsultas.SuspendLayout();
             this.pnlEmision.SuspendLayout();
             this.pnlIcono.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlTop2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTop
@@ -163,220 +163,6 @@ namespace Tools
             this.cmbTema.UseSelectable = true;
             this.cmbTema.SelectedIndexChanged += new System.EventHandler(this.cmbTema_SelectedIndexChanged);
             // 
-            // pnlConfiguracion
-            // 
-            this.pnlConfiguracion.Controls.Add(this.btnConfigOtros);
-            this.pnlConfiguracion.Controls.Add(this.btnPSE);
-            this.pnlConfiguracion.Controls.Add(this.btnConfigBD);
-            this.pnlConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlConfiguracion.Location = new System.Drawing.Point(0, 510);
-            this.pnlConfiguracion.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlConfiguracion.Name = "pnlConfiguracion";
-            this.pnlConfiguracion.Size = new System.Drawing.Size(160, 91);
-            this.pnlConfiguracion.TabIndex = 11;
-            this.pnlConfiguracion.Visible = false;
-            // 
-            // pnlConsultas
-            // 
-            this.pnlConsultas.Controls.Add(this.btnIntegridad);
-            this.pnlConsultas.Controls.Add(this.btnServicio);
-            this.pnlConsultas.Controls.Add(this.btnEmpresas);
-            this.pnlConsultas.Controls.Add(this.btnSunat);
-            this.pnlConsultas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlConsultas.Location = new System.Drawing.Point(0, 356);
-            this.pnlConsultas.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlConsultas.Name = "pnlConsultas";
-            this.pnlConsultas.Size = new System.Drawing.Size(160, 124);
-            this.pnlConsultas.TabIndex = 9;
-            this.pnlConsultas.Visible = false;
-            // 
-            // pnlEmision
-            // 
-            this.pnlEmision.Controls.Add(this.btnFirma);
-            this.pnlEmision.Controls.Add(this.btnJson);
-            this.pnlEmision.Controls.Add(this.btnZip);
-            this.pnlEmision.Controls.Add(this.btnEjemplos);
-            this.pnlEmision.Controls.Add(this.btnDescargas);
-            this.pnlEmision.Controls.Add(this.btnDailyTask);
-            this.pnlEmision.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlEmision.Location = new System.Drawing.Point(0, 151);
-            this.pnlEmision.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlEmision.Name = "pnlEmision";
-            this.pnlEmision.Size = new System.Drawing.Size(160, 175);
-            this.pnlEmision.TabIndex = 6;
-            this.pnlEmision.Visible = false;
-            // 
-            // pnlIcono
-            // 
-            this.pnlIcono.Controls.Add(this.pictureBox1);
-            this.pnlIcono.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlIcono.Location = new System.Drawing.Point(0, 0);
-            this.pnlIcono.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlIcono.Name = "pnlIcono";
-            this.pnlIcono.Size = new System.Drawing.Size(160, 91);
-            this.pnlIcono.TabIndex = 6;
-            // 
-            // pnlTop2
-            // 
-            this.pnlTop2.BackColor = System.Drawing.Color.White;
-            this.pnlTop2.Controls.Add(this.tableLayoutPanel2);
-            this.pnlTop2.Controls.Add(this.tableLayoutPanel5);
-            this.pnlTop2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTop2.Location = new System.Drawing.Point(168, 8);
-            this.pnlTop2.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlTop2.Name = "pnlTop2";
-            this.pnlTop2.Size = new System.Drawing.Size(1174, 37);
-            this.pnlTop2.TabIndex = 5;
-            this.pnlTop2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTop2_MouseDown);
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.23729F));
-            this.tableLayoutPanel2.Controls.Add(this.lblSeccion, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(826, 37);
-            this.tableLayoutPanel2.TabIndex = 2;
-            // 
-            // lblSeccion
-            // 
-            this.lblSeccion.AutoSize = true;
-            this.lblSeccion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSeccion.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSeccion.Location = new System.Drawing.Point(3, 0);
-            this.lblSeccion.Name = "lblSeccion";
-            this.lblSeccion.Size = new System.Drawing.Size(820, 37);
-            this.lblSeccion.TabIndex = 4;
-            this.lblSeccion.Text = "Sección";
-            this.lblSeccion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblSeccion.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblSeccion_MouseDown);
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel5.ColumnCount = 4;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.23342F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.11936F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.58886F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.7931F));
-            this.tableLayoutPanel5.Controls.Add(this.btnCerrar, 3, 0);
-            this.tableLayoutPanel5.Controls.Add(this.btnMaximizar, 2, 0);
-            this.tableLayoutPanel5.Controls.Add(this.btnMinimizar, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel1, 0, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(826, 0);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(2);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(348, 37);
-            this.tableLayoutPanel5.TabIndex = 1;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.11111F));
-            this.tableLayoutPanel1.Controls.Add(this.lblAnuncio, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(190, 31);
-            this.tableLayoutPanel1.TabIndex = 7;
-            // 
-            // lblAnuncio
-            // 
-            this.lblAnuncio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblAnuncio.Location = new System.Drawing.Point(3, 3);
-            this.lblAnuncio.Name = "lblAnuncio";
-            this.lblAnuncio.Size = new System.Drawing.Size(184, 25);
-            this.lblAnuncio.Slide = false;
-            this.lblAnuncio.TabIndex = 1;
-            this.lblAnuncio.Text = "Nuevas Mejoras, Click aca para leerlas!";
-            this.lblAnuncio.Click += new System.EventHandler(this.lblAnuncio_Click);
-            // 
-            // pnlForm
-            // 
-            this.pnlForm.BackColor = System.Drawing.Color.White;
-            this.pnlForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlForm.Location = new System.Drawing.Point(168, 45);
-            this.pnlForm.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlForm.Name = "pnlForm";
-            this.pnlForm.Size = new System.Drawing.Size(1174, 647);
-            this.pnlForm.TabIndex = 7;
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCerrar.FlatAppearance.BorderSize = 0;
-            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(105)))), ((int)(((byte)(189)))));
-            this.btnCerrar.IconChar = FontAwesome.Sharp.IconChar.XmarkCircle;
-            this.btnCerrar.IconColor = System.Drawing.Color.Black;
-            this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCerrar.IconSize = 25;
-            this.btnCerrar.Location = new System.Drawing.Point(300, 2);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(46, 33);
-            this.btnCerrar.TabIndex = 6;
-            this.btnCerrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCerrar.UseVisualStyleBackColor = false;
-            this.btnCerrar.Visible = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // btnMaximizar
-            // 
-            this.btnMaximizar.BackColor = System.Drawing.Color.Transparent;
-            this.btnMaximizar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnMaximizar.FlatAppearance.BorderSize = 0;
-            this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximizar.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMaximizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(105)))), ((int)(((byte)(189)))));
-            this.btnMaximizar.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
-            this.btnMaximizar.IconColor = System.Drawing.Color.Black;
-            this.btnMaximizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMaximizar.IconSize = 25;
-            this.btnMaximizar.Location = new System.Drawing.Point(250, 2);
-            this.btnMaximizar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnMaximizar.Name = "btnMaximizar";
-            this.btnMaximizar.Size = new System.Drawing.Size(46, 33);
-            this.btnMaximizar.TabIndex = 5;
-            this.btnMaximizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMaximizar.UseVisualStyleBackColor = false;
-            this.btnMaximizar.Visible = false;
-            this.btnMaximizar.Click += new System.EventHandler(this.iconButton18_Click);
-            // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.BackColor = System.Drawing.Color.Transparent;
-            this.btnMinimizar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnMinimizar.FlatAppearance.BorderSize = 0;
-            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizar.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMinimizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(105)))), ((int)(((byte)(189)))));
-            this.btnMinimizar.IconChar = FontAwesome.Sharp.IconChar.CircleMinus;
-            this.btnMinimizar.IconColor = System.Drawing.Color.Black;
-            this.btnMinimizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMinimizar.IconSize = 25;
-            this.btnMinimizar.Location = new System.Drawing.Point(198, 2);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(48, 33);
-            this.btnMinimizar.TabIndex = 4;
-            this.btnMinimizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMinimizar.UseVisualStyleBackColor = false;
-            this.btnMinimizar.Visible = false;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
-            // 
             // iconButton16
             // 
             this.iconButton16.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -391,7 +177,7 @@ namespace Tools
             this.iconButton16.Name = "iconButton16";
             this.iconButton16.Size = new System.Drawing.Size(160, 33);
             this.iconButton16.TabIndex = 13;
-            this.iconButton16.Text = "Versión: 3.8";
+            this.iconButton16.Text = "Versión: 3.9";
             this.iconButton16.UseVisualStyleBackColor = true;
             // 
             // btnAyuda
@@ -415,6 +201,19 @@ namespace Tools
             this.btnAyuda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAyuda.UseVisualStyleBackColor = true;
             this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
+            // 
+            // pnlConfiguracion
+            // 
+            this.pnlConfiguracion.Controls.Add(this.btnConfigOtros);
+            this.pnlConfiguracion.Controls.Add(this.btnPSE);
+            this.pnlConfiguracion.Controls.Add(this.btnConfigBD);
+            this.pnlConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlConfiguracion.Location = new System.Drawing.Point(0, 510);
+            this.pnlConfiguracion.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlConfiguracion.Name = "pnlConfiguracion";
+            this.pnlConfiguracion.Size = new System.Drawing.Size(160, 91);
+            this.pnlConfiguracion.TabIndex = 11;
+            this.pnlConfiguracion.Visible = false;
             // 
             // btnConfigOtros
             // 
@@ -497,6 +296,20 @@ namespace Tools
             this.btnConfiguracion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnConfiguracion.UseVisualStyleBackColor = true;
             this.btnConfiguracion.Click += new System.EventHandler(this.btnConfiguracion_Click);
+            // 
+            // pnlConsultas
+            // 
+            this.pnlConsultas.Controls.Add(this.btnIntegridad);
+            this.pnlConsultas.Controls.Add(this.btnServicio);
+            this.pnlConsultas.Controls.Add(this.btnEmpresas);
+            this.pnlConsultas.Controls.Add(this.btnSunat);
+            this.pnlConsultas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlConsultas.Location = new System.Drawing.Point(0, 356);
+            this.pnlConsultas.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlConsultas.Name = "pnlConsultas";
+            this.pnlConsultas.Size = new System.Drawing.Size(160, 124);
+            this.pnlConsultas.TabIndex = 9;
+            this.pnlConsultas.Visible = false;
             // 
             // btnIntegridad
             // 
@@ -599,6 +412,22 @@ namespace Tools
             this.btnConsultas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnConsultas.UseVisualStyleBackColor = true;
             this.btnConsultas.Click += new System.EventHandler(this.btnConsultas_Click);
+            // 
+            // pnlEmision
+            // 
+            this.pnlEmision.Controls.Add(this.btnFirma);
+            this.pnlEmision.Controls.Add(this.btnJson);
+            this.pnlEmision.Controls.Add(this.btnZip);
+            this.pnlEmision.Controls.Add(this.btnEjemplos);
+            this.pnlEmision.Controls.Add(this.btnDescargas);
+            this.pnlEmision.Controls.Add(this.btnDailyTask);
+            this.pnlEmision.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlEmision.Location = new System.Drawing.Point(0, 151);
+            this.pnlEmision.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlEmision.Name = "pnlEmision";
+            this.pnlEmision.Size = new System.Drawing.Size(160, 175);
+            this.pnlEmision.TabIndex = 6;
+            this.pnlEmision.Visible = false;
             // 
             // btnFirma
             // 
@@ -764,6 +593,16 @@ namespace Tools
             this.btnEmision.UseVisualStyleBackColor = true;
             this.btnEmision.Click += new System.EventHandler(this.iconButton1_Click);
             // 
+            // pnlIcono
+            // 
+            this.pnlIcono.Controls.Add(this.pictureBox1);
+            this.pnlIcono.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlIcono.Location = new System.Drawing.Point(0, 0);
+            this.pnlIcono.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlIcono.Name = "pnlIcono";
+            this.pnlIcono.Size = new System.Drawing.Size(160, 91);
+            this.pnlIcono.TabIndex = 6;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -775,6 +614,167 @@ namespace Tools
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // pnlTop2
+            // 
+            this.pnlTop2.BackColor = System.Drawing.Color.White;
+            this.pnlTop2.Controls.Add(this.tableLayoutPanel2);
+            this.pnlTop2.Controls.Add(this.tableLayoutPanel5);
+            this.pnlTop2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTop2.Location = new System.Drawing.Point(168, 8);
+            this.pnlTop2.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlTop2.Name = "pnlTop2";
+            this.pnlTop2.Size = new System.Drawing.Size(1174, 37);
+            this.pnlTop2.TabIndex = 5;
+            this.pnlTop2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTop2_MouseDown);
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.23729F));
+            this.tableLayoutPanel2.Controls.Add(this.lblSeccion, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(826, 37);
+            this.tableLayoutPanel2.TabIndex = 2;
+            // 
+            // lblSeccion
+            // 
+            this.lblSeccion.AutoSize = true;
+            this.lblSeccion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblSeccion.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSeccion.Location = new System.Drawing.Point(3, 0);
+            this.lblSeccion.Name = "lblSeccion";
+            this.lblSeccion.Size = new System.Drawing.Size(820, 37);
+            this.lblSeccion.TabIndex = 4;
+            this.lblSeccion.Text = "Sección";
+            this.lblSeccion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSeccion.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblSeccion_MouseDown);
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel5.ColumnCount = 4;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.23342F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.11936F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.58886F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.7931F));
+            this.tableLayoutPanel5.Controls.Add(this.btnCerrar, 3, 0);
+            this.tableLayoutPanel5.Controls.Add(this.btnMaximizar, 2, 0);
+            this.tableLayoutPanel5.Controls.Add(this.btnMinimizar, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel1, 0, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(826, 0);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(348, 37);
+            this.tableLayoutPanel5.TabIndex = 1;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(105)))), ((int)(((byte)(189)))));
+            this.btnCerrar.IconChar = FontAwesome.Sharp.IconChar.XmarkCircle;
+            this.btnCerrar.IconColor = System.Drawing.Color.Black;
+            this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCerrar.IconSize = 25;
+            this.btnCerrar.Location = new System.Drawing.Point(300, 2);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(46, 33);
+            this.btnCerrar.TabIndex = 6;
+            this.btnCerrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Visible = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // btnMaximizar
+            // 
+            this.btnMaximizar.BackColor = System.Drawing.Color.Transparent;
+            this.btnMaximizar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnMaximizar.FlatAppearance.BorderSize = 0;
+            this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximizar.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaximizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(105)))), ((int)(((byte)(189)))));
+            this.btnMaximizar.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
+            this.btnMaximizar.IconColor = System.Drawing.Color.Black;
+            this.btnMaximizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMaximizar.IconSize = 25;
+            this.btnMaximizar.Location = new System.Drawing.Point(250, 2);
+            this.btnMaximizar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMaximizar.Name = "btnMaximizar";
+            this.btnMaximizar.Size = new System.Drawing.Size(46, 33);
+            this.btnMaximizar.TabIndex = 5;
+            this.btnMaximizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMaximizar.UseVisualStyleBackColor = false;
+            this.btnMaximizar.Visible = false;
+            this.btnMaximizar.Click += new System.EventHandler(this.iconButton18_Click);
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinimizar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnMinimizar.FlatAppearance.BorderSize = 0;
+            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizar.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMinimizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(105)))), ((int)(((byte)(189)))));
+            this.btnMinimizar.IconChar = FontAwesome.Sharp.IconChar.CircleMinus;
+            this.btnMinimizar.IconColor = System.Drawing.Color.Black;
+            this.btnMinimizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMinimizar.IconSize = 25;
+            this.btnMinimizar.Location = new System.Drawing.Point(198, 2);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(48, 33);
+            this.btnMinimizar.TabIndex = 4;
+            this.btnMinimizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMinimizar.UseVisualStyleBackColor = false;
+            this.btnMinimizar.Visible = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.11111F));
+            this.tableLayoutPanel1.Controls.Add(this.lblAnuncio, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(190, 31);
+            this.tableLayoutPanel1.TabIndex = 7;
+            // 
+            // lblAnuncio
+            // 
+            this.lblAnuncio.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblAnuncio.Location = new System.Drawing.Point(3, 3);
+            this.lblAnuncio.Name = "lblAnuncio";
+            this.lblAnuncio.Size = new System.Drawing.Size(184, 25);
+            this.lblAnuncio.Slide = false;
+            this.lblAnuncio.TabIndex = 1;
+            this.lblAnuncio.Text = "Nuevas Mejoras, Click aca para leerlas!";
+            this.lblAnuncio.Click += new System.EventHandler(this.lblAnuncio_Click);
+            // 
+            // pnlForm
+            // 
+            this.pnlForm.BackColor = System.Drawing.Color.White;
+            this.pnlForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlForm.Location = new System.Drawing.Point(168, 45);
+            this.pnlForm.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlForm.Name = "pnlForm";
+            this.pnlForm.Size = new System.Drawing.Size(1174, 647);
+            this.pnlForm.TabIndex = 7;
             // 
             // Index
             // 
@@ -799,12 +799,12 @@ namespace Tools
             this.pnlConsultas.ResumeLayout(false);
             this.pnlEmision.ResumeLayout(false);
             this.pnlIcono.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlTop2.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -88,7 +88,7 @@ namespace Tools
 
         private void ProcesaBD()
         {
-            string desde = ObtieneDesde(), hasta = ObtieneHasta(), codigoError = txtCodError.Text, TipoDoc = cmbTipoDoc.Text;
+            string desde = ObtieneDesde(), hasta = ObtieneHasta(), codigoError = cmbCodError.Text, TipoDoc = cmbTipoDoc.Text;
             Conexion conex = new Conexion();
             var uno = conex.ConsultaIntegridad(desde, hasta,TipoDoc, codigoError).ToArray();
             if(uno != null){

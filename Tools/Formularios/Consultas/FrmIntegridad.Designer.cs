@@ -33,7 +33,6 @@
             this.gbAcciones = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtCodError = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dtpDesde = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,6 +45,7 @@
             this.lbl_Log = new System.Windows.Forms.Label();
             this.btnBorrarLog = new FontAwesome.Sharp.IconButton();
             this.rtb_Log = new System.Windows.Forms.RichTextBox();
+            this.cmbCodError = new System.Windows.Forms.ComboBox();
             this.tlpGeneral.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
             this.gbAcciones.SuspendLayout();
@@ -104,15 +104,15 @@
             this.tableLayoutPanel9.ColumnCount = 2;
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.47937F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.52063F));
-            this.tableLayoutPanel9.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel9.Controls.Add(this.txtCodError, 1, 0);
-            this.tableLayoutPanel9.Controls.Add(this.label3, 0, 1);
-            this.tableLayoutPanel9.Controls.Add(this.dtpDesde, 1, 1);
-            this.tableLayoutPanel9.Controls.Add(this.label4, 0, 2);
-            this.tableLayoutPanel9.Controls.Add(this.dtpHasta, 1, 2);
+            this.tableLayoutPanel9.Controls.Add(this.label1, 0, 1);
+            this.tableLayoutPanel9.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel9.Controls.Add(this.cmbTipoDoc, 1, 0);
+            this.tableLayoutPanel9.Controls.Add(this.label3, 0, 2);
+            this.tableLayoutPanel9.Controls.Add(this.dtpDesde, 1, 2);
+            this.tableLayoutPanel9.Controls.Add(this.label4, 0, 3);
+            this.tableLayoutPanel9.Controls.Add(this.dtpHasta, 1, 3);
             this.tableLayoutPanel9.Controls.Add(this.btnProcesar, 1, 4);
-            this.tableLayoutPanel9.Controls.Add(this.label2, 0, 3);
-            this.tableLayoutPanel9.Controls.Add(this.cmbTipoDoc, 1, 3);
+            this.tableLayoutPanel9.Controls.Add(this.cmbCodError, 1, 1);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel9.Location = new System.Drawing.Point(2, 17);
             this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(2);
@@ -129,32 +129,21 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Calibri", 8F);
-            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Location = new System.Drawing.Point(3, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 32);
+            this.label1.Size = new System.Drawing.Size(85, 13);
             this.label1.TabIndex = 17;
             this.label1.Text = "Cod. Error Sunat:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtCodError
-            // 
-            this.txtCodError.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtCodError.Location = new System.Drawing.Point(119, 3);
-            this.txtCodError.Name = "txtCodError";
-            this.txtCodError.Size = new System.Drawing.Size(227, 22);
-            this.txtCodError.TabIndex = 16;
-            this.txtCodError.Text = "2663";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Calibri", 8F);
-            this.label3.Location = new System.Drawing.Point(3, 32);
+            this.label3.Location = new System.Drawing.Point(3, 64);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 32);
+            this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 20;
             this.label3.Text = "Desde:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -162,9 +151,8 @@
             // 
             // dtpDesde
             // 
-            this.dtpDesde.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpDesde.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Bold);
-            this.dtpDesde.Location = new System.Drawing.Point(119, 35);
+            this.dtpDesde.Location = new System.Drawing.Point(119, 67);
             this.dtpDesde.MaxDate = new System.DateTime(2029, 12, 31, 0, 0, 0, 0);
             this.dtpDesde.MinDate = new System.DateTime(2015, 12, 1, 0, 0, 0, 0);
             this.dtpDesde.Name = "dtpDesde";
@@ -176,20 +164,18 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Calibri", 8F);
-            this.label4.Location = new System.Drawing.Point(3, 64);
+            this.label4.Location = new System.Drawing.Point(3, 96);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 32);
+            this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 21;
             this.label4.Text = "Hasta:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dtpHasta
             // 
-            this.dtpHasta.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpHasta.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Bold);
-            this.dtpHasta.Location = new System.Drawing.Point(119, 67);
+            this.dtpHasta.Location = new System.Drawing.Point(119, 99);
             this.dtpHasta.MaxDate = new System.DateTime(2029, 12, 31, 0, 0, 0, 0);
             this.dtpHasta.MinDate = new System.DateTime(2015, 12, 1, 0, 0, 0, 0);
             this.dtpHasta.Name = "dtpHasta";
@@ -199,7 +185,6 @@
             // 
             // btnProcesar
             // 
-            this.btnProcesar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnProcesar.FlatAppearance.BorderSize = 0;
             this.btnProcesar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProcesar.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold);
@@ -218,23 +203,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Calibri", 8F);
-            this.label2.Location = new System.Drawing.Point(3, 96);
+            this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 32);
+            this.label2.Size = new System.Drawing.Size(50, 13);
             this.label2.TabIndex = 24;
             this.label2.Text = "Tipo Doc:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cmbTipoDoc
             // 
-            this.cmbTipoDoc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbTipoDoc.FormattingEnabled = true;
             this.cmbTipoDoc.Items.AddRange(new object[] {
-            "RC",
-            "RA"});
-            this.cmbTipoDoc.Location = new System.Drawing.Point(119, 99);
+            "RC"});
+            this.cmbTipoDoc.Location = new System.Drawing.Point(119, 3);
             this.cmbTipoDoc.Name = "cmbTipoDoc";
             this.cmbTipoDoc.Size = new System.Drawing.Size(227, 22);
             this.cmbTipoDoc.TabIndex = 25;
@@ -317,6 +299,17 @@
             this.rtb_Log.TabIndex = 4;
             this.rtb_Log.Text = "";
             // 
+            // cmbCodError
+            // 
+            this.cmbCodError.FormattingEnabled = true;
+            this.cmbCodError.Items.AddRange(new object[] {
+            "RC",
+            "RA"});
+            this.cmbCodError.Location = new System.Drawing.Point(119, 35);
+            this.cmbCodError.Name = "cmbCodError";
+            this.cmbCodError.Size = new System.Drawing.Size(227, 22);
+            this.cmbCodError.TabIndex = 26;
+            // 
             // FrmIntegridad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -349,7 +342,6 @@
         private FontAwesome.Sharp.IconButton btnBorrarLog;
         public System.Windows.Forms.RichTextBox rtb_Log;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtCodError;
         private System.Windows.Forms.DateTimePicker dtpDesde;
         private System.Windows.Forms.DateTimePicker dtpHasta;
         private System.Windows.Forms.Label label3;
@@ -357,5 +349,6 @@
         private FontAwesome.Sharp.IconButton btnProcesar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbTipoDoc;
+        private System.Windows.Forms.ComboBox cmbCodError;
     }
 }
