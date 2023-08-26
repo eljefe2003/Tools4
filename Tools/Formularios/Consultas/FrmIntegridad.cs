@@ -188,6 +188,15 @@ namespace Tools
             //}
         }
 
+        private void FrmIntegridad_Load(object sender, EventArgs e)
+        {
+            cmbTipoDoc.SelectedIndex = 0;
+            cmbCodError.SelectedIndex = 0;
+            dtpDesde.Value = DateTime.Now;
+            dtpHasta.Value = DateTime.Now;
+
+        }
+
         public void Log(string msg, bool msj, bool fecha)
         {
             if (fecha)

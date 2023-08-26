@@ -213,6 +213,7 @@
             // 
             // cmbTipoDoc
             // 
+            this.cmbTipoDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoDoc.FormattingEnabled = true;
             this.cmbTipoDoc.Items.AddRange(new object[] {
             "RC"});
@@ -220,7 +221,6 @@
             this.cmbTipoDoc.Name = "cmbTipoDoc";
             this.cmbTipoDoc.Size = new System.Drawing.Size(227, 22);
             this.cmbTipoDoc.TabIndex = 25;
-            this.cmbTipoDoc.Text = "RC";
             // 
             // tlpLog
             // 
@@ -301,10 +301,10 @@
             // 
             // cmbCodError
             // 
+            this.cmbCodError.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCodError.FormattingEnabled = true;
             this.cmbCodError.Items.AddRange(new object[] {
-            "RC",
-            "RA"});
+            "2663"});
             this.cmbCodError.Location = new System.Drawing.Point(119, 35);
             this.cmbCodError.Name = "cmbCodError";
             this.cmbCodError.Size = new System.Drawing.Size(227, 22);
@@ -317,7 +317,8 @@
             this.ClientSize = new System.Drawing.Size(1158, 608);
             this.Controls.Add(this.tlpGeneral);
             this.Name = "FrmIntegridad";
-            this.Text = "FrmIntegridad";
+            this.Text = "Integridad OSE";
+            this.Load += new System.EventHandler(this.FrmIntegridad_Load);
             this.tlpGeneral.ResumeLayout(false);
             this.tableLayoutPanel15.ResumeLayout(false);
             this.gbAcciones.ResumeLayout(false);
