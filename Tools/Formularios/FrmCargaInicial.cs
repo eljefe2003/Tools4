@@ -32,8 +32,8 @@ namespace Tools
             LeerConfigPersonal configPersonal = new LeerConfigPersonal();
             InicializarColores(configPersonal.Color);
             CheckForIllegalCrossThreadCalls = false;
-            //HiloCargaEmpresas();
-            btnAceptar.Enabled = true;
+            HiloCargaEmpresas();
+            //btnAceptar.Enabled = true;
         }
 
         public void HiloCargaEmpresas()

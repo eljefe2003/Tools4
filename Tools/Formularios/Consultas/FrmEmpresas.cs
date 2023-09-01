@@ -445,7 +445,7 @@ namespace Tools
             }
             catch (Exception ez)
             {
-                MessageBox.Show("Error en la carga de empresas PSE 21: " + ez.Message);
+                MessageBox.Show("Error en la carga de empresas, revisa tu conexion a la VPN y/o credenciales de BD");
             }
         }
 
