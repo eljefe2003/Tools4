@@ -122,58 +122,7 @@ namespace Tools
             //System.Diagnostics.Process.Start(@"C:\xampp\xampp_start.exe");
             Thread.Sleep(5000);           
         }
-
-        //private void LeerConfig()
-        //{
-        //    try
-        //    {        
-        //        ruc = ConfigurationManager.AppSettings["Ruc"];
-        //        userRuc = ConfigurationManager.AppSettings["Usuario"];
-        //        string ambiente = LeerDll();
-        //        if (ambiente == "DEMO")
-        //        {
-        //            serieFact = ConfigurationManager.AppSettings["FactDemo"];
-        //            serieBol = ConfigurationManager.AppSettings["BolDemo"];
-        //            serieNC = ConfigurationManager.AppSettings["NCDemo"];
-        //            serieND = ConfigurationManager.AppSettings["NDDemo"];
-        //            serieGuia = ConfigurationManager.AppSettings["GuiaDemo"];
-        //            serieDae = ConfigurationManager.AppSettings["DaeDemo"];
-        //            serieRet = ConfigurationManager.AppSettings["RetDemo"]; 
-        //            seriePer = ConfigurationManager.AppSettings["PercDemo"];
-        //            ruc = ConfigurationManager.AppSettings["Ruc"];
-        //            userRuc = ConfigurationManager.AppSettings["Usuario"];
-        //            passRuc = ConfigurationManager.AppSettings["Clave"];
-        //            ambienteDemo = true;
-        //        }
-        //        else
-        //        {
-        //            serieFact = ConfigurationManager.AppSettings["FactPRD"];
-        //            serieBol = ConfigurationManager.AppSettings["BolPRD"];
-        //            serieNC = ConfigurationManager.AppSettings["NCPRD"];
-        //            serieND = ConfigurationManager.AppSettings["NDPRD"];
-        //            serieGuia = ConfigurationManager.AppSettings["GuiaPRD"];
-        //            serieDae = ConfigurationManager.AppSettings["DaePRD"];
-        //            serieRet = ConfigurationManager.AppSettings["RetPRD"];
-        //            seriePer = ConfigurationManager.AppSettings["PercPRD"];
-        //            passRuc = ConfigurationManager.AppSettings["Clave"];
-        //            ruc = ConfigurationManager.AppSettings["RucPRD"];
-        //            userRuc = ConfigurationManager.AppSettings["UsuarioPRD"];
-        //            passRuc = ConfigurationManager.AppSettings["ClavePRD"];
-        //            ambienteDemo = false;
-        //        }
-        //        //string rutaEjemplosProcesados = ConfigurationManager.AppSettings["RutaEjemplosProcesados"];
-        //        //txtRutaProcesados.Text = rutaEjemplosProcesados;
-        //        //if (!Directory.Exists(rutaEjemplosProcesados))
-        //        //{
-        //        //    Directory.CreateDirectory(rutaEjemplosProcesados);
-        //        //}
-        //    }
-        //    catch (Exception e)
-        //    {
-
-        //    }
-        //}
-
+        
         private void btnDescargas_Click(object sender, EventArgs e)
         {
             //if(pnlDescargas.Visible == true)
@@ -213,17 +162,21 @@ namespace Tools
             {
                 if (!pruebaDocEjemploActivo && e.RowIndex >= 0 && e.RowIndex + 1 < dtgEjemplos.RowCount)
                 {
-                    if (dtgEjemplos.Columns[e.ColumnIndex].Name == "ACCION") // Eliminar
+                    string columna = dtgEjemplos.Columns[e.ColumnIndex].Name;
+
+                    if (columna == "ACCION") // Eliminar
                     {
                         string AmbienteGlobal = LeerDll();                       
                         Log("--------- Envío a PSE " + AmbienteGlobal + "---------", true, false);
                         btnProbarTodos.Enabled = false;
                         btnDescargas.Enabled = false;
-                        //btnDescargaEjemplos.Enabled = false;
                         tlp_archivos.Enabled = false;
                         pruebaDocEjemploActivo = true;
                         nombreEjemplosGlobal = "";
                         nombreRealEjemplosGlobal = "";
+
+
+
                         List<string> strFiles = Directory.GetFiles(ConfigPerso.RutaEjemplosProcesados, "*", SearchOption.AllDirectories).ToList();
                         foreach (string fichero in strFiles)
                         {
@@ -435,50 +388,7 @@ namespace Tools
             btn.UseColumnTextForButtonValue = true;
 
         }
-
-
-        //private void leerConfigPersonal()
-        //{
-        //    try
-        //    {
-        //        string FileToRead = @"C:\ConfigTool\Config.txt";
-        //        if (System.IO.File.Exists(FileToRead))
-        //        {
-        //            string[] lines = System.IO.File.ReadAllLines(FileToRead);
-        //            for (int i = 0; i < lines.Length; i++)
-        //            {
-        //                if (!lines[i].StartsWith("<") && !lines[i].Equals(""))
-        //                {
-        //                    string lineaYa = lines[i];
-        //                    string clave = lines[i].Split('=')[0];
-        //                    string valor = lines[i].Split('=')[1];
-        //                    if (clave == "RutaEjemplos")
-        //                    {
-        //                        rutaEjemplos = valor;
-        //                    }
-        //                    else if (clave == "RutaProcesados")
-        //                    {
-        //                        rutaEjemplosProcesados = valor;
-        //                    }
-        //                    else if (clave == "RutaDrive")
-        //                    {
-        //                        rutaDrive = valor;
-        //                    }
-        //                }
-        //            }
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("Por favor crea tu archivo de configuracion en: " + FileToRead);
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Error: " + ex.Message);
-        //    }
-
-        //}
-
+               
         private void cmbTipoDoc_SelectedIndexChanged(object sender, EventArgs e)
         {
             CargaDtgUsuario();
@@ -520,23 +430,7 @@ namespace Tools
             else
             {
                 pnlDescargas.Visible = true;
-            }
-            //if (chckTodo.Checked)
-            //{
-            //    chckCdrEjemplos.Checked = true;
-            //    chckPdfEjemplos.Checked = true;
-            //    chckXmlEjemplos.Checked = true;
-            //    chckRequestEjemplos.Checked = true;
-            //    chckTxtEjemplos.Checked = true;
-            //}
-            //else
-            //{
-            //    chckCdrEjemplos.Checked = false;
-            //    chckPdfEjemplos.Checked = false;
-            //    chckXmlEjemplos.Checked = false;
-            //    chckRequestEjemplos.Checked = false;
-            //    chckTxtEjemplos.Checked = false;
-            //}           
+            }          
         }
 
         private void txtBusquedaEjemplo_TextChanged(object sender, EventArgs e)
@@ -1317,7 +1211,7 @@ namespace Tools
         public void EnvioPSE()
         {
             string AmbienteGlobal = LeerDll();
-            bool LogFechaHora = false;
+            //bool LogFechaHora = false;
             if (AmbienteGlobal == "DEMO")
             {
                 Log("--------- Envío a PSE DEMO ---------", true, false);
@@ -1413,7 +1307,7 @@ namespace Tools
                             }
                         }
                         bool msj = false;
-                        string cdrContenido = "";
+                        //string cdrContenido = "";
                         if (resp2.Codigo == 0)
                         {
                             msj = true;
@@ -1480,7 +1374,7 @@ namespace Tools
             btnDescargas.Enabled = true;
 
         }
-
+               
         public string DescomprimirArchivo(string RutaComprimido)
         {
             string RutaDescomprimido = Path.GetDirectoryName(RutaComprimido) + "\\unZip\\";

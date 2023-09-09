@@ -111,7 +111,7 @@ namespace Tools
             this.tlpLog.Controls.Add(this.rtb_Log, 0, 1);
             this.tlpLog.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpLog.Location = new System.Drawing.Point(581, 2);
-            this.tlpLog.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpLog.Margin = new System.Windows.Forms.Padding(2);
             this.tlpLog.Name = "tlpLog";
             this.tlpLog.RowCount = 2;
             this.tlpLog.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.13245F));
@@ -202,7 +202,7 @@ namespace Tools
             this.tableLayoutPanel56.Controls.Add(this.gbFiltros, 0, 0);
             this.tableLayoutPanel56.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel56.Location = new System.Drawing.Point(2, 2);
-            this.tableLayoutPanel56.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel56.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel56.Name = "tableLayoutPanel56";
             this.tableLayoutPanel56.RowCount = 3;
             this.tableLayoutPanel56.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.32155F));
@@ -234,7 +234,7 @@ namespace Tools
             this.dtgEjemplos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtgEjemplos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgEjemplos.Location = new System.Drawing.Point(2, 68);
-            this.dtgEjemplos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgEjemplos.Margin = new System.Windows.Forms.Padding(2);
             this.dtgEjemplos.MultiSelect = false;
             this.dtgEjemplos.Name = "dtgEjemplos";
             this.dtgEjemplos.ReadOnly = true;
@@ -260,7 +260,7 @@ namespace Tools
             this.tableLayoutPanel14.Controls.Add(this.gbAcciones, 0, 0);
             this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel14.Location = new System.Drawing.Point(2, 285);
-            this.tableLayoutPanel14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel14.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
             this.tableLayoutPanel14.RowCount = 1;
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -313,7 +313,7 @@ namespace Tools
             this.btnProbarTodos.IconSize = 25;
             this.btnProbarTodos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProbarTodos.Location = new System.Drawing.Point(0, 0);
-            this.btnProbarTodos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnProbarTodos.Margin = new System.Windows.Forms.Padding(2);
             this.btnProbarTodos.Name = "btnProbarTodos";
             this.btnProbarTodos.Size = new System.Drawing.Size(280, 28);
             this.btnProbarTodos.TabIndex = 4;
@@ -348,7 +348,7 @@ namespace Tools
             this.tlp_archivos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlp_archivos.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlp_archivos.Location = new System.Drawing.Point(0, 0);
-            this.tlp_archivos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlp_archivos.Margin = new System.Windows.Forms.Padding(2);
             this.tlp_archivos.Name = "tlp_archivos";
             this.tlp_archivos.RowCount = 9;
             this.tlp_archivos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
@@ -370,7 +370,7 @@ namespace Tools
             this.chckTodo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chckTodo.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chckTodo.Location = new System.Drawing.Point(2, 2);
-            this.chckTodo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chckTodo.Margin = new System.Windows.Forms.Padding(2);
             this.chckTodo.Name = "chckTodo";
             this.chckTodo.Size = new System.Drawing.Size(57, 17);
             this.chckTodo.TabIndex = 8;
@@ -385,7 +385,7 @@ namespace Tools
             this.chckTxtEjemplos.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chckTxtEjemplos.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chckTxtEjemplos.Location = new System.Drawing.Point(2, 132);
-            this.chckTxtEjemplos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chckTxtEjemplos.Margin = new System.Windows.Forms.Padding(2);
             this.chckTxtEjemplos.Name = "chckTxtEjemplos";
             this.chckTxtEjemplos.Size = new System.Drawing.Size(42, 17);
             this.chckTxtEjemplos.TabIndex = 8;
@@ -399,7 +399,7 @@ namespace Tools
             this.chckRequestEjemplos.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chckRequestEjemplos.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chckRequestEjemplos.Location = new System.Drawing.Point(2, 106);
-            this.chckRequestEjemplos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chckRequestEjemplos.Margin = new System.Windows.Forms.Padding(2);
             this.chckRequestEjemplos.Name = "chckRequestEjemplos";
             this.chckRequestEjemplos.Size = new System.Drawing.Size(66, 17);
             this.chckRequestEjemplos.TabIndex = 8;
@@ -413,7 +413,7 @@ namespace Tools
             this.chckCdrEjemplos.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chckCdrEjemplos.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chckCdrEjemplos.Location = new System.Drawing.Point(2, 80);
-            this.chckCdrEjemplos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chckCdrEjemplos.Margin = new System.Windows.Forms.Padding(2);
             this.chckCdrEjemplos.Name = "chckCdrEjemplos";
             this.chckCdrEjemplos.Size = new System.Drawing.Size(45, 17);
             this.chckCdrEjemplos.TabIndex = 8;
@@ -427,7 +427,7 @@ namespace Tools
             this.chckXmlEjemplos.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chckXmlEjemplos.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chckXmlEjemplos.Location = new System.Drawing.Point(2, 54);
-            this.chckXmlEjemplos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chckXmlEjemplos.Margin = new System.Windows.Forms.Padding(2);
             this.chckXmlEjemplos.Name = "chckXmlEjemplos";
             this.chckXmlEjemplos.Size = new System.Drawing.Size(46, 17);
             this.chckXmlEjemplos.TabIndex = 8;
@@ -441,7 +441,7 @@ namespace Tools
             this.chckPdfEjemplos.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chckPdfEjemplos.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chckPdfEjemplos.Location = new System.Drawing.Point(2, 28);
-            this.chckPdfEjemplos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chckPdfEjemplos.Margin = new System.Windows.Forms.Padding(2);
             this.chckPdfEjemplos.Name = "chckPdfEjemplos";
             this.chckPdfEjemplos.Size = new System.Drawing.Size(44, 17);
             this.chckPdfEjemplos.TabIndex = 7;
@@ -479,7 +479,7 @@ namespace Tools
             this.chckSpeech.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chckSpeech.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chckSpeech.Location = new System.Drawing.Point(2, 184);
-            this.chckSpeech.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chckSpeech.Margin = new System.Windows.Forms.Padding(2);
             this.chckSpeech.Name = "chckSpeech";
             this.chckSpeech.Size = new System.Drawing.Size(94, 17);
             this.chckSpeech.TabIndex = 9;
@@ -493,7 +493,7 @@ namespace Tools
             this.chckJsonEjemplos.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chckJsonEjemplos.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chckJsonEjemplos.Location = new System.Drawing.Point(2, 158);
-            this.chckJsonEjemplos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chckJsonEjemplos.Margin = new System.Windows.Forms.Padding(2);
             this.chckJsonEjemplos.Name = "chckJsonEjemplos";
             this.chckJsonEjemplos.Size = new System.Drawing.Size(49, 17);
             this.chckJsonEjemplos.TabIndex = 10;
@@ -565,7 +565,7 @@ namespace Tools
             this.tableLayoutPanel57.Controls.Add(this.txtBusquedaEjemplo, 1, 0);
             this.tableLayoutPanel57.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel57.Location = new System.Drawing.Point(3, 18);
-            this.tableLayoutPanel57.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel57.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel57.Name = "tableLayoutPanel57";
             this.tableLayoutPanel57.RowCount = 1;
             this.tableLayoutPanel57.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -619,10 +619,10 @@ namespace Tools
             this.cmbTipoDoc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbTipoDoc.FontSize = MetroFramework.MetroComboBoxSize.Small;
             this.cmbTipoDoc.FormattingEnabled = true;
-            this.cmbTipoDoc.ItemHeight = 21;
+            this.cmbTipoDoc.ItemHeight = 19;
             this.cmbTipoDoc.Location = new System.Drawing.Point(3, 3);
             this.cmbTipoDoc.Name = "cmbTipoDoc";
-            this.cmbTipoDoc.Size = new System.Drawing.Size(190, 27);
+            this.cmbTipoDoc.Size = new System.Drawing.Size(190, 25);
             this.cmbTipoDoc.TabIndex = 3;
             this.cmbTipoDoc.UseSelectable = true;
             this.cmbTipoDoc.SelectedIndexChanged += new System.EventHandler(this.cmbTipoDoc_SelectedIndexChanged);
@@ -634,7 +634,7 @@ namespace Tools
             // 
             this.txtBusquedaEjemplo.CustomButton.Image = null;
             this.txtBusquedaEjemplo.CustomButton.Location = new System.Drawing.Point(170, 1);
-            this.txtBusquedaEjemplo.CustomButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBusquedaEjemplo.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.txtBusquedaEjemplo.CustomButton.Name = "";
             this.txtBusquedaEjemplo.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.txtBusquedaEjemplo.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -646,7 +646,7 @@ namespace Tools
             this.txtBusquedaEjemplo.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtBusquedaEjemplo.Lines = new string[0];
             this.txtBusquedaEjemplo.Location = new System.Drawing.Point(198, 2);
-            this.txtBusquedaEjemplo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBusquedaEjemplo.Margin = new System.Windows.Forms.Padding(2);
             this.txtBusquedaEjemplo.MaxLength = 32767;
             this.txtBusquedaEjemplo.Name = "txtBusquedaEjemplo";
             this.txtBusquedaEjemplo.PasswordChar = '\0';
