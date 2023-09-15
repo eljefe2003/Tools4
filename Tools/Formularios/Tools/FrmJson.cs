@@ -19,19 +19,13 @@ namespace Tools
         public FrmJson(Color color1, Color color2, Color color3, Color color4)
         {
             InitializeComponent();
-            //tlpLog.BackColor = color1;
-            //rtbJson.BackColor = color1;
-            //rtbJson.ForeColor = color2;
-            //lbl_Log.ForeColor = color2;
-            //btnBorrarLog.BackColor = color1;
+          
             btnBuscarJson2.BackColor = color1;
-            //btnGuardarLog.BackColor = color1;
-            //btnCopiarLog.BackColor = color1;
             btnPlay.BackColor = color1;
             lbl_Log.ForeColor = color1;
             btnBorrarLog.IconColor = color1;
             rtb_Log.ForeColor = color1;
-            rtb_Log.ReadOnly = true;
+            //rtb_Log.ReadOnly = true;
             gbArchivo.ForeColor = color1;
 
         }

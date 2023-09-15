@@ -188,11 +188,12 @@
             this.rtb_Log.BackColor = System.Drawing.SystemColors.Window;
             this.rtb_Log.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtb_Log.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtb_Log.EnableAutoDragDrop = true;
             this.rtb_Log.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtb_Log.ForeColor = System.Drawing.Color.Black;
+            this.rtb_Log.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.rtb_Log.Location = new System.Drawing.Point(4, 43);
             this.rtb_Log.Name = "rtb_Log";
-            this.rtb_Log.ReadOnly = true;
             this.rtb_Log.Size = new System.Drawing.Size(884, 324);
             this.rtb_Log.TabIndex = 4;
             this.rtb_Log.Text = "";
