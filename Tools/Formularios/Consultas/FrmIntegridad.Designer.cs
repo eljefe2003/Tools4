@@ -33,19 +33,19 @@
             this.gbAcciones = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbTipoDoc = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dtpDesde = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
             this.btnProcesar = new FontAwesome.Sharp.IconButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cmbTipoDoc = new System.Windows.Forms.ComboBox();
+            this.cmbCodError = new System.Windows.Forms.ComboBox();
             this.tlpLog = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lbl_Log = new System.Windows.Forms.Label();
             this.btnBorrarLog = new FontAwesome.Sharp.IconButton();
             this.rtb_Log = new System.Windows.Forms.RichTextBox();
-            this.cmbCodError = new System.Windows.Forms.ComboBox();
             this.tlpGeneral.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
             this.gbAcciones.SuspendLayout();
@@ -137,6 +137,28 @@
             this.label1.Text = "Cod. Error Sunat:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 8F);
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 13);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Tipo Doc:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cmbTipoDoc
+            // 
+            this.cmbTipoDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipoDoc.FormattingEnabled = true;
+            this.cmbTipoDoc.Items.AddRange(new object[] {
+            "RC"});
+            this.cmbTipoDoc.Location = new System.Drawing.Point(119, 3);
+            this.cmbTipoDoc.Name = "cmbTipoDoc";
+            this.cmbTipoDoc.Size = new System.Drawing.Size(227, 22);
+            this.cmbTipoDoc.TabIndex = 25;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -200,27 +222,17 @@
             this.btnProcesar.UseVisualStyleBackColor = true;
             this.btnProcesar.Click += new System.EventHandler(this.btnProcesar_Click);
             // 
-            // label2
+            // cmbCodError
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 8F);
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 13);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "Tipo Doc:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cmbTipoDoc
-            // 
-            this.cmbTipoDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTipoDoc.FormattingEnabled = true;
-            this.cmbTipoDoc.Items.AddRange(new object[] {
-            "RC"});
-            this.cmbTipoDoc.Location = new System.Drawing.Point(119, 3);
-            this.cmbTipoDoc.Name = "cmbTipoDoc";
-            this.cmbTipoDoc.Size = new System.Drawing.Size(227, 22);
-            this.cmbTipoDoc.TabIndex = 25;
+            this.cmbCodError.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCodError.FormattingEnabled = true;
+            this.cmbCodError.Items.AddRange(new object[] {
+            "2663",
+            "2119"});
+            this.cmbCodError.Location = new System.Drawing.Point(119, 35);
+            this.cmbCodError.Name = "cmbCodError";
+            this.cmbCodError.Size = new System.Drawing.Size(227, 22);
+            this.cmbCodError.TabIndex = 26;
             // 
             // tlpLog
             // 
@@ -298,17 +310,6 @@
             this.rtb_Log.Size = new System.Drawing.Size(767, 563);
             this.rtb_Log.TabIndex = 4;
             this.rtb_Log.Text = "";
-            // 
-            // cmbCodError
-            // 
-            this.cmbCodError.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCodError.FormattingEnabled = true;
-            this.cmbCodError.Items.AddRange(new object[] {
-            "2663"});
-            this.cmbCodError.Location = new System.Drawing.Point(119, 35);
-            this.cmbCodError.Name = "cmbCodError";
-            this.cmbCodError.Size = new System.Drawing.Size(227, 22);
-            this.cmbCodError.TabIndex = 26;
             // 
             // FrmIntegridad
             // 
