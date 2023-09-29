@@ -177,7 +177,7 @@ namespace Tools
             this.iconButton16.Name = "iconButton16";
             this.iconButton16.Size = new System.Drawing.Size(160, 33);
             this.iconButton16.TabIndex = 13;
-            this.iconButton16.Text = "Versión: 3.9";
+            this.iconButton16.Text = "Versión: 4.0";
             this.iconButton16.UseVisualStyleBackColor = true;
             // 
             // btnAyuda

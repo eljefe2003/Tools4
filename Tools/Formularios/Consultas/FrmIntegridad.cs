@@ -91,7 +91,10 @@ namespace Tools
             string desde = ObtieneDesde(), hasta = ObtieneHasta(), codigoError = cmbCodError.Text, TipoDoc = cmbTipoDoc.Text;
             Conexion conex = new Conexion();
             var uno = conex.ConsultaIntegridad(desde, hasta,TipoDoc, codigoError).ToArray();
-            if(uno != null){
+            string resumenLog = "";
+            Log("Son: " + uno.Length + " casos a revisar.", true, false);
+
+            if (uno != null){
                 for (int i = 0; i < uno.Length; i++)
                 {
                     Log("----------------------------", true, false);
@@ -104,7 +107,7 @@ namespace Tools
                     Log("Respuesta Sunat: " + uno[i].MsjSunat, true, false);
                     string cant = uno[i].DocsInformados.Split('|')[0];
                     Log("Total Docs informados en el RC" + "(" + cant + "): " + uno[i].DocsInformados.Split('|')[1], true, false);
-
+                    resumenLog += uno[i].Supplier + "-" + uno[i].Identificador + Environment.NewLine;
                     string Rechazados = ObtenerRechazados(uno[i].MsjSunat);
                     string cant2 = Rechazados.Split('|')[0];
                     string docsRechazados = Rechazados.Split('|')[1];
@@ -122,7 +125,10 @@ namespace Tools
                     Log("----------------------------" + Environment.NewLine, true, false);
                 }
             }
+
             Log("----------- Finaliza proceso de búsqueda --------------", true, false);
+            Log(Environment.NewLine + resumenLog, true, false);
+
 
             //QueryLog += "Ruc(s): " + ruc + Environment.NewLine;
             //QueryLog += "Razon social: " + txt_RazonS.Text + Environment.NewLine;
