@@ -1837,7 +1837,6 @@ namespace Tools
             return año + "-" + mes + "-" + dia;
         }
 
-
         private string obtieneFecha()
         {
             string año = DateTime.Now.Year.ToString();

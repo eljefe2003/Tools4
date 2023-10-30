@@ -1598,6 +1598,7 @@ namespace Tools
             LeerConfigPersonal config = new LeerConfigPersonal();
             string Query = "", respuesta = "";
             string Doc = "";
+            DateTime maxHoraEnviadoSunat = DateTime.Now.AddYears(-15);
             string[] arrayOfdocs = docs.Split(',');
             for (int i = 0; i < arrayOfdocs.Length; i++) {
                 Doc = arrayOfdocs[i];
@@ -1630,28 +1631,35 @@ namespace Tools
                     {
                         while (reader.Read())
                         {
+                            var convertidoDate = Convert.ToDateTime(reader.GetString(1));
+                            if (maxHoraEnviadoSunat < convertidoDate)
+                                maxHoraEnviadoSunat = convertidoDate;
                             respuesta += Doc + ", Hora creada OSE: " + reader.GetString(0) + ", Hora enviada Sunat: " + reader.GetString(1) + ", Msj Sunat: " + reader.GetString(2) + Environment.NewLine;
                         }
                     }
                     else
                     {
-                        respuesta = "No existe información.";
+                        respuesta = "No existe información.|";
 
-                     }
+                    }
                     closeCon();
                 }
                 catch (Exception ex)
                 {
                     closeCon();
-                    return null;
+                    return "|";
                 }
             }
+            if(respuesta != "No existe información.|")
+                respuesta += "|" + maxHoraEnviadoSunat.ToString();
+
             return respuesta;
         }
 
         public string ConsultaDocsRechazadosMasiv(string ruc, string supplier, string docs)
         {
             LeerConfigPersonal config = new LeerConfigPersonal();
+            DateTime maxHoraEnviadoSunat = DateTime.Now.AddYears(-15);
             string Query = "", respuesta = "";
             string Doc = "";
             string[] arrayOfdocs = docs.Split(',');
@@ -1694,12 +1702,15 @@ namespace Tools
                         //respuesta = "";
                         while (reader.Read())
                         {
+                            var convertidoDate = Convert.ToDateTime(reader.GetString(3));
+                            if (maxHoraEnviadoSunat < convertidoDate)
+                                maxHoraEnviadoSunat = convertidoDate;
                             respuesta += Doc + ", Id del RC: " + reader.GetString(0) + ", Hora creada OSE: " + reader.GetString(2) + ", Hora enviada Sunat: " + reader.GetString(3) + ", Msj Sunat: " + reader.GetString(4) + Environment.NewLine;
                         }
                     }
                     else
                     {
-                        respuesta = "No existe información.";
+                        respuesta = "No existe información.|";
                     }
                     closeCon();
                 }
@@ -1709,6 +1720,8 @@ namespace Tools
                     return null;
                 }
             }
+            if (respuesta != "No existe información.|")
+                respuesta += "|" + maxHoraEnviadoSunat.ToString();
             return respuesta;
         }
 

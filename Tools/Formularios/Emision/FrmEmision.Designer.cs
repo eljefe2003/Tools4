@@ -129,7 +129,7 @@
             this.tableLayoutPanel15.Controls.Add(this.gb_PostAceptacion, 0, 3);
             this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel15.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel15.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 4;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.774835F));
@@ -145,9 +145,9 @@
             this.gbAcciones.Controls.Add(this.tableLayoutPanel9);
             this.gbAcciones.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbAcciones.Location = new System.Drawing.Point(2, 2);
-            this.gbAcciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbAcciones.Margin = new System.Windows.Forms.Padding(2);
             this.gbAcciones.Name = "gbAcciones";
-            this.gbAcciones.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbAcciones.Padding = new System.Windows.Forms.Padding(2);
             this.gbAcciones.Size = new System.Drawing.Size(586, 48);
             this.gbAcciones.TabIndex = 2;
             this.gbAcciones.TabStop = false;
@@ -159,14 +159,14 @@
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.09693F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.1513F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.75177F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 118F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 119F));
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel2, 3, 0);
             this.tableLayoutPanel9.Controls.Add(this.cmb_TipoEmision, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.chckEdicion, 2, 0);
             this.tableLayoutPanel9.Controls.Add(this.chckRequestPre, 1, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel9.Location = new System.Drawing.Point(2, 17);
-            this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -182,11 +182,11 @@
             this.tableLayoutPanel2.Controls.Add(this.chckDemo, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(466, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(464, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(113, 23);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(115, 23);
             this.tableLayoutPanel2.TabIndex = 15;
             // 
             // chckDemo
@@ -195,7 +195,7 @@
             this.chckDemo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chckDemo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chckDemo.IsOn = true;
-            this.chckDemo.Location = new System.Drawing.Point(71, 3);
+            this.chckDemo.Location = new System.Drawing.Point(72, 3);
             this.chckDemo.Name = "chckDemo";
             this.chckDemo.Size = new System.Drawing.Size(30, 17);
             this.chckDemo.TabIndex = 0;
@@ -211,7 +211,7 @@
             this.label2.Font = new System.Drawing.Font("Calibri", 8F);
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 23);
+            this.label2.Size = new System.Drawing.Size(63, 23);
             this.label2.TabIndex = 1;
             this.label2.Text = "Demo";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -229,8 +229,8 @@
             "OSE",
             "SUNAT",
             "SUNAT (PARA FIRMAR)"});
-            this.cmb_TipoEmision.Location = new System.Drawing.Point(2, 3);
-            this.cmb_TipoEmision.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmb_TipoEmision.Location = new System.Drawing.Point(2, 4);
+            this.cmb_TipoEmision.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_TipoEmision.Name = "cmb_TipoEmision";
             this.cmb_TipoEmision.Size = new System.Drawing.Size(149, 22);
             this.cmb_TipoEmision.TabIndex = 14;
@@ -242,8 +242,8 @@
             this.chckEdicion.AutoSize = true;
             this.chckEdicion.Enabled = false;
             this.chckEdicion.Font = new System.Drawing.Font("Calibri", 8F);
-            this.chckEdicion.Location = new System.Drawing.Point(324, 6);
-            this.chckEdicion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chckEdicion.Location = new System.Drawing.Point(323, 6);
+            this.chckEdicion.Margin = new System.Windows.Forms.Padding(2);
             this.chckEdicion.Name = "chckEdicion";
             this.chckEdicion.Size = new System.Drawing.Size(116, 17);
             this.chckEdicion.TabIndex = 14;
@@ -271,9 +271,9 @@
             this.gbCredenciales.Enabled = false;
             this.gbCredenciales.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbCredenciales.Location = new System.Drawing.Point(2, 54);
-            this.gbCredenciales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbCredenciales.Margin = new System.Windows.Forms.Padding(2);
             this.gbCredenciales.Name = "gbCredenciales";
-            this.gbCredenciales.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbCredenciales.Padding = new System.Windows.Forms.Padding(2);
             this.gbCredenciales.Size = new System.Drawing.Size(586, 46);
             this.gbCredenciales.TabIndex = 3;
             this.gbCredenciales.TabStop = false;
@@ -292,7 +292,7 @@
             this.tableLayoutPanel16.Controls.Add(this.tableLayoutPanel17, 2, 0);
             this.tableLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel16.Location = new System.Drawing.Point(2, 17);
-            this.tableLayoutPanel16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel16.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel16.Name = "tableLayoutPanel16";
             this.tableLayoutPanel16.RowCount = 1;
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -313,7 +313,7 @@
             this.btnProbarCredenciales.IconSize = 20;
             this.btnProbarCredenciales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProbarCredenciales.Location = new System.Drawing.Point(437, 2);
-            this.btnProbarCredenciales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnProbarCredenciales.Margin = new System.Windows.Forms.Padding(2);
             this.btnProbarCredenciales.Name = "btnProbarCredenciales";
             this.btnProbarCredenciales.Size = new System.Drawing.Size(143, 23);
             this.btnProbarCredenciales.TabIndex = 2;
@@ -332,7 +332,7 @@
             this.tableLayoutPanel23.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel23.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel23.Location = new System.Drawing.Point(127, 2);
-            this.tableLayoutPanel23.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel23.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel23.Name = "tableLayoutPanel23";
             this.tableLayoutPanel23.RowCount = 1;
             this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -371,7 +371,7 @@
             this.tableLayoutPanel22.Controls.Add(this.label12, 0, 0);
             this.tableLayoutPanel22.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel22.Location = new System.Drawing.Point(2, 2);
-            this.tableLayoutPanel22.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel22.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel22.Name = "tableLayoutPanel22";
             this.tableLayoutPanel22.RowCount = 1;
             this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -410,7 +410,7 @@
             this.tableLayoutPanel17.Controls.Add(this.label11, 0, 0);
             this.tableLayoutPanel17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel17.Location = new System.Drawing.Point(300, 2);
-            this.tableLayoutPanel17.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel17.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel17.Name = "tableLayoutPanel17";
             this.tableLayoutPanel17.RowCount = 1;
             this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -447,9 +447,9 @@
             this.gb_Archivos.Enabled = false;
             this.gb_Archivos.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gb_Archivos.Location = new System.Drawing.Point(2, 104);
-            this.gb_Archivos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gb_Archivos.Margin = new System.Windows.Forms.Padding(2);
             this.gb_Archivos.Name = "gb_Archivos";
-            this.gb_Archivos.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gb_Archivos.Padding = new System.Windows.Forms.Padding(2);
             this.gb_Archivos.Size = new System.Drawing.Size(587, 391);
             this.gb_Archivos.TabIndex = 4;
             this.gb_Archivos.TabStop = false;
@@ -547,7 +547,7 @@
             this.btnProcesar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnProcesar.IconSize = 15;
             this.btnProcesar.Location = new System.Drawing.Point(448, 2);
-            this.btnProcesar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnProcesar.Margin = new System.Windows.Forms.Padding(2);
             this.btnProcesar.Name = "btnProcesar";
             this.btnProcesar.Size = new System.Drawing.Size(92, 28);
             this.btnProcesar.TabIndex = 8;
@@ -583,9 +583,9 @@
             this.gb_PostAceptacion.Enabled = false;
             this.gb_PostAceptacion.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gb_PostAceptacion.Location = new System.Drawing.Point(2, 500);
-            this.gb_PostAceptacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gb_PostAceptacion.Margin = new System.Windows.Forms.Padding(2);
             this.gb_PostAceptacion.Name = "gb_PostAceptacion";
-            this.gb_PostAceptacion.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gb_PostAceptacion.Padding = new System.Windows.Forms.Padding(2);
             this.gb_PostAceptacion.Size = new System.Drawing.Size(586, 99);
             this.gb_PostAceptacion.TabIndex = 2;
             this.gb_PostAceptacion.TabStop = false;
@@ -600,7 +600,7 @@
             this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel49, 0, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel8.Location = new System.Drawing.Point(2, 17);
-            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -615,7 +615,7 @@
             this.tlp_Descarga.Controls.Add(this.tableLayoutPanel51, 1, 0);
             this.tlp_Descarga.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlp_Descarga.Location = new System.Drawing.Point(291, 2);
-            this.tlp_Descarga.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlp_Descarga.Margin = new System.Windows.Forms.Padding(2);
             this.tlp_Descarga.Name = "tlp_Descarga";
             this.tlp_Descarga.RowCount = 1;
             this.tlp_Descarga.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -635,7 +635,7 @@
             this.tableLayoutPanel51.Controls.Add(this.chckTXT, 1, 0);
             this.tableLayoutPanel51.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel51.Location = new System.Drawing.Point(47, 2);
-            this.tableLayoutPanel51.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel51.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel51.Name = "tableLayoutPanel51";
             this.tableLayoutPanel51.RowCount = 3;
             this.tableLayoutPanel51.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -655,7 +655,7 @@
             this.btnDescargar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDescargar.IconSize = 15;
             this.btnDescargar.Location = new System.Drawing.Point(133, 48);
-            this.btnDescargar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDescargar.Margin = new System.Windows.Forms.Padding(2);
             this.btnDescargar.Name = "btnDescargar";
             this.btnDescargar.Size = new System.Drawing.Size(105, 22);
             this.btnDescargar.TabIndex = 2;
@@ -735,7 +735,7 @@
             this.tableLayoutPanel49.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel49.Enabled = false;
             this.tableLayoutPanel49.Location = new System.Drawing.Point(2, 2);
-            this.tableLayoutPanel49.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel49.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel49.Name = "tableLayoutPanel49";
             this.tableLayoutPanel49.RowCount = 1;
             this.tableLayoutPanel49.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -751,7 +751,7 @@
             this.tableLayoutPanel50.Controls.Add(this.label42, 0, 0);
             this.tableLayoutPanel50.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel50.Location = new System.Drawing.Point(2, 2);
-            this.tableLayoutPanel50.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel50.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel50.Name = "tableLayoutPanel50";
             this.tableLayoutPanel50.RowCount = 1;
             this.tableLayoutPanel50.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -792,7 +792,7 @@
             this.tlpLog.Controls.Add(this.rtb_Log, 0, 1);
             this.tlpLog.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpLog.Location = new System.Drawing.Point(599, 3);
-            this.tlpLog.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpLog.Margin = new System.Windows.Forms.Padding(2);
             this.tlpLog.Name = "tlpLog";
             this.tlpLog.RowCount = 2;
             this.tlpLog.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.13245F));
@@ -866,7 +866,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1158, 608);
             this.Controls.Add(this.tlpGeneral);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmEmision";
             this.Text = "Emisión";
             this.Load += new System.EventHandler(this.FrmEmision_Load);

@@ -40,28 +40,13 @@ namespace Tools
 
         public FrmEjemplos(Color color1, Color color2, Color color3, Color color4)
         {
-            InitializeComponent();
-            //tlpLog.BackColor = color1;
-            //rtb_Log.BackColor = color1;
-            //rtb_Log.ForeColor = color2;
-            //lbl_Log.ForeColor = color2;
+            InitializeComponent();          
             btnDescargaEjemplos.BackColor = color1;
             btnProbarTodos.BackColor = color1;
             colorAceptados = color1;
             this.dtgEjemplos.DefaultCellStyle.SelectionForeColor = Color.Black;
             this.dtgEjemplos.DefaultCellStyle.SelectionBackColor = color2;
-            this.dtgEjemplos.ColumnHeadersDefaultCellStyle.SelectionBackColor = color2;
-            //tlpForm.BackColor = Color.White;
-
-            //rtbDaily.BackColor = color2;
-            //gbFiltros.ForeColor = color1;
-            //lblFormato.ForeColor = color1;
-
-
-            //rtb_Log.ForeColor = color2;
-            //lbl_Log.ForeColor = color2;
-            //tlpLog.BackColor = color1;
-            //rtb_Log.BackColor = color1;
+            this.dtgEjemplos.ColumnHeadersDefaultCellStyle.SelectionBackColor = color2;         
             lbl_Log.ForeColor = color1;
             btnBorrarLog.IconColor = color1;
             rtb_Log.ForeColor = color1;
@@ -104,37 +89,11 @@ namespace Tools
         private void FrmEjemplos_Load(object sender, EventArgs e)
         {
             CheckForIllegalCrossThreadCalls = false;
-            pnlDescargas.Visible = false;
-            //leerConfigPersonal();
-            //cargaDrive();
-            //LeerConfig();
+            pnlDescargas.Visible = false;          
             cargaCmbDoc();
             LeerDll();
         }
-
-        public void IniciaDrive()
-        {
-            System.Diagnostics.ProcessStartInfo start = new System.Diagnostics.ProcessStartInfo();
-            start.FileName = @"C:\xampp\xampp_start.exe";
-            start.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden; //Hides GUI start.CreateNoWindow = true; //Hides console
-            System.Diagnostics.Process.Start(start);
-            //System.Diagnostics.ProcessWindowStyle.Hidden;
-
-            //System.Diagnostics.Process.Start(@"C:\xampp\xampp_start.exe");
-            Thread.Sleep(5000);           
-        }
-        
-        private void btnDescargas_Click(object sender, EventArgs e)
-        {
-            //if(pnlDescargas.Visible == true)
-            //{
-            //    pnlDescargas.Visible = false;
-            //}
-            //else
-            //{
-            //    pnlDescargas.Visible = true;
-            //}
-        }
+             
 
         public void cargaCmbDoc()
         {
@@ -150,7 +109,8 @@ namespace Tools
                     }
                     //MessageBox.Show(Path.GetFileName(file));
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -282,7 +242,9 @@ namespace Tools
             dt7.Columns.Add("NOMBRE");
             dt7.Columns.Add("ESTADO");
 
-            string[] entries = Directory.GetFileSystemEntries(ConfigPerso.RutaEjemplos + cmbTipoDoc.Text + "\\", "*", SearchOption.TopDirectoryOnly);
+            string[] entries = null;           
+            entries = Directory.GetFileSystemEntries(ConfigPerso.RutaEjemplos + cmbTipoDoc.Text + "\\", "*", SearchOption.TopDirectoryOnly);
+
 
             for (int i = 0; i < entries.Length; i++)
             {
@@ -589,224 +551,68 @@ namespace Tools
                        + "Estimado cliente, se adjunta: " + MensajeTipos + Environment.NewLine + "Documento que servirá de ejemplo y posee aceptación en Demo." + Environment.NewLine + Environment.NewLine + "Saludos Cordiales.";
            
             rtb_Log.AppendText(Cabecera);
-        }
-
-        public string[] LeerRequest(string ruta)
-        {
-            string line;
-            List<String> ret = new List<string>();
-            // Read the file and display it line by line.  
-            System.IO.StreamReader file = new System.IO.StreamReader(ruta);
-            while ((line = file.ReadLine()) != null)
-            {
-                //System.Console.WriteLine(line);
-                ret.Add(line);
-            }
-            file.Close();
-            return ret.ToArray();
-        }
-
-        //public void ObtenerRequest(string ruta, string rutaSave)
-        //{
-        //    string cabecera = "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\" xmlns:per=\"http://schemas.datacontract.org/2004/07/PeruService.Classes\">" + Environment.NewLine +
-        //       "<soapenv:Header />" + Environment.NewLine +
-        //        "<soapenv:Body >" + Environment.NewLine +
-        //        "<tem:Enviar >" + Environment.NewLine +
-        //        "<tem:ruc >?</tem:ruc >" + Environment.NewLine +
-        //        "<tem:usuario >?</tem:usuario >" + Environment.NewLine +
-        //        "<tem:clave >?</tem:clave >" + Environment.NewLine;
-
-        //    string final = "</tem:Enviar>" + Environment.NewLine +
-        //        "</soapenv:Body >" + Environment.NewLine +
-        //        "</soapenv:Envelope >";
-
-
-        //    var arrayRequestLines = LeerRequest(ruta);
-        //    for (int i = 0; i < arrayRequestLines.Length; i++)
-        //    {
-        //        string LineaActual = arrayRequestLines[i].ToString();
-
-        //        string variable1 = "d2p1:nil=\"true\" xmlns:d2p1=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.datacontract.org/2004/07/PeruService.Classes\"";
-        //        if ((LineaActual.IndexOf(variable1) > 0))
-        //        {
-        //            string valorAnterior = arrayRequestLines[i];
-        //            arrayRequestLines[i] = valorAnterior.Replace(variable1, "");
-        //        }
-
-        //        string variable2 = "xmlns=\"http://schemas.datacontract.org/2004/07/PeruService.Classes\"";
-        //        if ((LineaActual.IndexOf(variable2) > 0))
-        //        {
-        //            string valorAnterior = arrayRequestLines[i];
-        //            arrayRequestLines[i] = valorAnterior.Replace(variable2, "");
-        //        }
-
-        //        string variable3 = "d4p1:nil=\"true\" xmlns:d4p1=\"http://www.w3.org/2001/XMLSchema-instance\"";
-        //        if ((LineaActual.IndexOf(variable3) > 0))
-        //        {
-        //            string valorAnterior = arrayRequestLines[i];
-        //            arrayRequestLines[i] = valorAnterior.Replace(variable3, "");
-        //        }
-
-        //        string variable4 = "d3p1:nil=\"true\" xmlns:d3p1=\"http://www.w3.org/2001/XMLSchema-instance\"";
-        //        if ((LineaActual.IndexOf(variable4) > 0))
-        //        {
-        //            string valorAnterior = arrayRequestLines[i];
-        //            arrayRequestLines[i] = valorAnterior.Replace(variable4, "");
-        //        }
-        //        string valorAnterior2 = arrayRequestLines[i];
-        //        arrayRequestLines[i] = valorAnterior2.Replace("</", "##");
-
-        //        string valorAnterior1 = arrayRequestLines[i];
-        //        arrayRequestLines[i] = valorAnterior1.Replace("<", "<per:");
-
-        //        string valorAnterior3 = arrayRequestLines[i];
-        //        arrayRequestLines[i] = valorAnterior3.Replace("##", "</per:");
-
-
-        //        string variable5 = "/>";
-        //        if ((LineaActual.IndexOf(variable5) > 0))
-        //        {
-        //            arrayRequestLines[i] = "";
-        //        }
-
-        //        //string variable6 = "<";
-        //        //if ((LineaActual.IndexOf(variable5) > 1))
-        //        //{
-        //        //    string valorAnterior = arrayRequestLines[i];
-        //        //    arrayRequestLines[i] = valorAnterior.Replace(variable6, "<per:");
-        //        //}
-
-
-        //    }
-
-        //    string line, requestModificado = "";
-        //    for (int i = 0; i < arrayRequestLines.Length; i++)
-        //    {
-        //        if (arrayRequestLines[i] != "")
-        //        {
-        //            requestModificado += arrayRequestLines[i] + Environment.NewLine;
-        //        }
-        //    }
-
-        //    //string requestOriginal = LeerRequestString(ruta);
-        //    //string requestModificado = requestOriginal.Replace("<?xml version=\"1.0\"?>", "Test uno sdsdsd");
-        //    //requestModificado = requestModificado.Replace("DocumentoElectronico", "documentoElectronico");
-        //    ////requestModificado = requestModificado.Replace("d2p1:nil=\"true\" xmlns:d2p1=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.datacontract.org/2004/07/PeruService.Classes\"", "");
-        //    //requestModificado = requestModificado.Replace("d2p1:nil=\"true\"", "");
-        //    //requestModificado = requestModificado.Replace("xmlns=\"http://schemas.datacontract.org/2004/07/PeruService.Classes\"", "");
-        //    //requestModificado = requestModificado.Replace("d4p1:nil=\"true\" xmlns:d4p1=\"http://www.w3.org/2001/XMLSchema-instance\"", "");
-        //    //requestModificado = requestModificado.Replace("d3p1:nil=\"true\" xmlns:d3p1=\"http://www.w3.org/2001/XMLSchema-instance\"", "");
-        //    string Request = requestModificado;
-        //    requestModificado = Request.Replace("<per:?xml version=\"1.0\"?>", "");
-        //    requestModificado = requestModificado.Replace("per:DocumentoElectronico", "tem:documentoElectronico");
-        //    System.IO.File.WriteAllText(rutaSave, cabecera + requestModificado + final);
-
-        //}
-
-        private void chckDemo_SliderValueChanged(object sender, EventArgs e)
-        {
-            //string result = "";
-            //try
-            //{
-            //    XmlDocument xmlDoc = new XmlDocument();
-            //    string path = ".\\DLL_Online.dll.xml";
-            //    if (System.IO.File.Exists(path))
-            //    {
-            //        xmlDoc.Load(path);
-            //    }
-            //    XmlNamespaceManager nsManager = new XmlNamespaceManager(xmlDoc.NameTable);
-            //    //nsManager.AddNamespace(prefix, uri);
-            //    XmlNode nodo = xmlDoc.SelectSingleNode("Service", nsManager);
-            //    if (nodo != null)
-            //    {
-            //        XmlNode nodo2 = nodo.SelectSingleNode("Ambiente", nsManager);
-            //        if (nodo2 != null)
-            //        {
-            //            if (chckDemo.IsOn)
-            //            {
-            //                nodo2.Attributes[0].Value = "http://demoint.thefactoryhka.com.pe/Service.svc";
-            //            }
-            //            else
-            //            {
-            //                nodo2.Attributes[0].Value = "http://int.thefactoryhka.com.pe/Service.svc";
-            //            }
-            //            xmlDoc.Save(path);
-            //            LeerDll();
-            //        }
-            //    }
-            //}
-            //catch (Exception ex) { result = ex.ToString(); }
-            //ConfigGlobal = new LeerConfig();
-        }
-
-        private void btnBorrarLog_Click(object sender, EventArgs e)
-        {
-            rtb_Log.Clear();
-        }
+        }           
 
         private void btnBorrarLog_Click_1(object sender, EventArgs e)
         {
             rtb_Log.Clear();
-
         }
 
         public void EnvioPSE()
         {
-            //string AmbienteGlobal = LeerDll();
-            ////bool LogFechaHora = false;
-            //if (AmbienteGlobal == "DEMO")
-            //{
-            //    Log("--------- Envío a PSE DEMO ---------", true, false);
-            //}
-            //else
-            //{
-            //    Log("--------- Envío a PSE PRD ---------", true, false);
-            //}
-            //(string nombreTxt, string documentoInterno, string status) Doc;
-            //List<(string, string, string)> lstDocs = new List<(string, string, string)>();
-            //for (int i = 0; i < dtgEjemplos.RowCount - 1; i++)
-            //{
-            //    if (ejecutarTask)
-            //    {
-            //        string rutaRaiz = ConfigPerso.RutaEjemplos + cmbTipoDoc.Text + @"\";
-            //        string nombreArchivoOriginal = dtgEjemplos.Rows[i].Cells[1].Value.ToString();
-            //        string rutaArchivoTxtNueva = ConfigPerso.RutaEjemplosProcesados;
-            //        string rutaArchivoTxtVieja = rutaRaiz + nombreArchivoOriginal;
-            //        string ArchivoAEnviar = CambiaContenidoTxt(nombreArchivoOriginal, rutaArchivoTxtVieja, AmbienteGlobal, rutaArchivoTxtNueva);
-            //        string NombreArchivoaEnviar = Path.GetFileName(ArchivoAEnviar);
-            //        (int Codigo, string Mensaje, string Documento) resp;
-            //        if (ArchivoAEnviar.Split('-')[1] == "20" || ArchivoAEnviar.Split('-')[1] == "40")
-            //        {
-            //            resp = DllG1.EnviarPercepcionRetencion(ConfigGlobal.Ruc, ConfigGlobal.UserRuc, ConfigGlobal.PassRuc, ArchivoAEnviar);
-            //        }
-            //        else if (ArchivoAEnviar.Split('-')[1] == "30" || ArchivoAEnviar.Split('-')[1] == "09")
-            //        {
-            //            resp = DllG1.EnviarGuiaRemision(ConfigGlobal.Ruc2, ConfigGlobal.UserRuc2, ConfigGlobal.PassRuc2, ArchivoAEnviar);
-            //        }
-            //        else
-            //        {
-            //            resp = DllG1.Enviar(ConfigGlobal.Ruc, ConfigGlobal.UserRuc, ConfigGlobal.PassRuc, ArchivoAEnviar);
-            //        }
-            //        dtgEjemplos.Rows[i].Cells[2].Value = resp.Codigo + "|" + resp.Mensaje;
-            //        bool msj = false;
-            //        if (resp.Codigo == 0)
-            //        {
-            //            msj = true;
-            //            Doc.documentoInterno = resp.Documento;
-            //            Doc.nombreTxt = nombreArchivoOriginal;
-            //            Doc.status = resp.Codigo.ToString();
-            //            lstDocs.Add(Doc);
-            //        }
-            //        Log("Enviado: " + NombreArchivoaEnviar + " (" + resp.Documento + "): " + resp.Codigo + "|" + resp.Mensaje, true, false);
-            //    }
-                
-            //}
-            //Log("--------- Fin Envio a PSE ---------", true, false);
-            //if(!ejecutarTask)
+            string AmbienteGlobal = LeerDll();
+            PruebaEjemplo pruebaEjemplo = new PruebaEjemplo();
+            //bool LogFechaHora = false;
+            if (AmbienteGlobal == "DEMO")
+            {
+                Log("--------- Envío a PSE DEMO masivo ---------", true, false);
+            }
+            else
+            {
+                Log("--------- Envío a PSE PRD masivo ---------", true, false);
+            }
+            (string documentoInterno, int index) Doc;
+            List<(string doc, int index)> lstDocs = new List<(string, int)>();
+            for (int i = 0; i < dtgEjemplos.RowCount - 1; i++)
+            {
+                if (ejecutarTask)
+                {
+                    string rutaRaiz = ConfigPerso.RutaEjemplos + cmbTipoDoc.Text + @"\" + dtgEjemplos.Rows[i].Cells[1].Value.ToString();
+                    string nombreArchivoOriginal = dtgEjemplos.Rows[i].Cells[1].Value.ToString();
+                    string ArchivoAEnviar = pruebaEjemplo.CambiaContenidoTxt(nombreArchivoOriginal, rutaRaiz);
+                    string NombreArchivoaEnviar = Path.GetFileName(ArchivoAEnviar);
+                    (int Codigo, string Mensaje, string Documento) resp = pruebaEjemplo.Enviar(NombreArchivoaEnviar, ArchivoAEnviar);
+                    dtgEjemplos.Rows[i].Cells[2].Value = resp.Codigo + "|" + resp.Mensaje;
+                    bool msj = false;
+
+                    if (resp.Codigo == 0)
+                    {
+                        msj = true;
+                        Doc.documentoInterno = resp.Documento;
+                        Doc.index = i;
+                        lstDocs.Add(Doc);
+                    }
+                    Log("Enviado: " + NombreArchivoaEnviar + " (" + resp.Documento + "): " + resp.Codigo + "|" + resp.Mensaje, true, false);
+                }
+            }
+            Log("--------- Fin Envio a PSE masivo ---------", true, false);
+
+
+            var arrayAceptados = lstDocs.ToArray();
+            for (int i = 0; i < arrayAceptados.Length; i++)
+            {
+                ProcesaIndividual(arrayAceptados[i].doc, arrayAceptados[i].index);
+            }
+
+
+
+
+
+            //if (!ejecutarTask)
             //    Log("--------- Proceso DETENIDO ---------", true, false);
 
             //Log("--------- Consulta estatus Sunat/Ose ---------", true, false);
-            //(string nombreTxt, string documentoInterno, string status)[] arrayDocs = lstDocs.ToArray();
+            //(string nombreTxt, string documentoInterno, string status, int index)[] arrayDocs = lstDocs.ToArray();
             //if (AmbienteGlobal == "PRD")
             //{
             //    Log("Se detiene la consulta debido a que nunca obtendra aceptación en PRD", true, false);
@@ -903,7 +709,7 @@ namespace Tools
             //                    }
             //                }
             //            }
-            //        }                      
+            //        }
 
             //    }
 

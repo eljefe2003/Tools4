@@ -91,38 +91,56 @@ namespace Tools
             string desde = ObtieneDesde(), hasta = ObtieneHasta(), codigoError = cmbCodError.Text, TipoDoc = cmbTipoDoc.Text;
             Conexion conex = new Conexion();
             var uno = conex.ConsultaIntegridad(desde, hasta,TipoDoc, codigoError).ToArray();
-            string resumenLog = "";
+            string resumenLog = "Docs a reenviar desde OSE hacia SUNAT: " + Environment.NewLine, sugiereReenvio = "Se sugiere el reenvio de los documentos: NO";
+            DateTime horaEnviadoSunatRelacionado;
             Log("Son: " + uno.Length + " casos a revisar.", true, false);
 
             if (uno != null){
                 for (int i = 0; i < uno.Length; i++)
                 {
+                    string Rechazados = ObtenerRechazados(uno[i].MsjSunat);
+                    string cant2 = Rechazados.Split('|')[0];
+                    string docsRechazados = Rechazados.Split('|')[1];
+                    string cant = uno[i].DocsInformados.Split('|')[0];
+                    string respuesta1 = conex.ConsultaDocsRechazadosIndiv(uno[i].Ruc, uno[i].Supplier, docsRechazados);
                     Log("----------------------------", true, false);
-                    Log("ID: " + uno[i].Id, true, false);
+                    Log("ID del " + cmbTipoDoc.Text + ": " + uno[i].Id, true, false);
                     Log("Identificador: " + uno[i].Identificador, true, false);
                     Log("RUC: " + uno[i].Ruc, true, false);
                     Log("Supplier: " + uno[i].Supplier, true, false);
                     Log("Hora creación OSE: " + uno[i].HoraCreacionOse, true, false);
                     Log("Hora envío Sunat: " + uno[i].HoraEnvioSunat, true, false);
                     Log("Respuesta Sunat: " + uno[i].MsjSunat, true, false);
-                    string cant = uno[i].DocsInformados.Split('|')[0];
-                    Log("Total Docs informados en el RC" + "(" + cant + "): " + uno[i].DocsInformados.Split('|')[1], true, false);
-                    resumenLog += uno[i].Supplier + "-" + uno[i].Identificador + Environment.NewLine;
-                    string Rechazados = ObtenerRechazados(uno[i].MsjSunat);
-                    string cant2 = Rechazados.Split('|')[0];
-                    string docsRechazados = Rechazados.Split('|')[1];
-
+                    Log("Total Docs informados en el RC" + "(" + cant + "): " + uno[i].DocsInformados.Split('|')[1], true, false);     
                     Log("Total Docs rechazados en el RC" + "(" + cant2 + "): " + docsRechazados, true, false);
-                    string respuesta1 = conex.ConsultaDocsRechazadosIndiv(uno[i].Ruc, uno[i].Supplier, docsRechazados);
-                    Log("Revisión Docs rechazados en el RC, Informados de manera individual: " + Environment.NewLine + respuesta1, true, false);
+                    Log("Revisión Docs rechazados en el RC, Informados de manera individual: " + Environment.NewLine + respuesta1.Split('|')[0], true, false);                   
 
-                    if(respuesta1 == "No existe información.")
+                    if (respuesta1 == "No existe información.|")
                     {
                         string respuesta2 = conex.ConsultaDocsRechazadosMasiv(uno[i].Ruc, uno[i].Supplier, docsRechazados);
-                        Log("Revisión Docs rechazados en el RC, Informados de manera Masiva (RC): " + Environment.NewLine + respuesta2, true, false);
-                    }                   
+                        Log("Revisión Docs rechazados en el RC, Informados de manera masiva (RC): " + Environment.NewLine + respuesta2.Split('|')[0], true, false);
+                        if (respuesta2 != "No existe información.|")
+                            horaEnviadoSunatRelacionado = Convert.ToDateTime(respuesta2.Split('|')[1]);
+                        else
+                            horaEnviadoSunatRelacionado = DateTime.Now.AddYears(-20);
 
-                    Log("----------------------------" + Environment.NewLine, true, false);
+                    }
+                    else
+                    {
+                        if(respuesta1 != "|")
+                            horaEnviadoSunatRelacionado = Convert.ToDateTime(respuesta1.Split('|')[1]);
+                        else horaEnviadoSunatRelacionado = DateTime.Now.AddYears(-20);
+
+                    }
+
+                    DateTime horaEnviadoSunatRC = Convert.ToDateTime(uno[i].HoraEnvioSunat);
+                    if (horaEnviadoSunatRelacionado > horaEnviadoSunatRC)
+                    {
+                        sugiereReenvio = "Se sugiere el reenvio del documento: Si, debido a que la hora de envio Sunat de los docs relacionados es superior a la hora de envio Sunat del resumen rechazado. (se añade al listado final)" + Environment.NewLine;
+                        resumenLog += uno[i].Supplier + "-" + uno[i].Identificador + Environment.NewLine;
+                        Log(sugiereReenvio + Environment.NewLine, true, false);
+                    }
+                    Log("----------------------------" + Environment.NewLine, true, false);                   
                 }
             }
 
@@ -192,6 +210,15 @@ namespace Tools
             //    Log("Resultados cargados con Exito!", true, false);
             //    Log(QueryLog, true, false);
             //}
+        }
+
+        private bool SugiereReenvio(RC doc)
+        {
+            bool sugiere = false;
+
+
+
+            return sugiere;
         }
 
         private void FrmIntegridad_Load(object sender, EventArgs e)

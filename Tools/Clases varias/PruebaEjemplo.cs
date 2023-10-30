@@ -529,7 +529,6 @@ namespace Tools
             return RutaDescomprimido + NombreArchivo + "\\R-" + NombreArchivo + ".xml";
         }
 
-
         public (int Codigo, string Mensaje, string Docmumento, string Observacion) ProcesaIndividual(string numeracion, int index)
         {
             (int Codigo, string Mensaje, string Documento, string Observacion) resp = (0, "", "", "");
