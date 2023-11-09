@@ -1600,6 +1600,8 @@ namespace Tools
             string Doc = "";
             DateTime maxHoraEnviadoSunat = DateTime.Now.AddYears(-15);
             string[] arrayOfdocs = docs.Split(',');
+            int contadorRegistros = 0;
+
             for (int i = 0; i < arrayOfdocs.Length; i++) {
                 Doc = arrayOfdocs[i];
                 string tipo = Doc.Split('-')[0];
@@ -1621,7 +1623,6 @@ namespace Tools
                 conection(connectionString);
                 MySqlCommand commandDatabase = new MySqlCommand(Query, databaseConnection);
                 commandDatabase.CommandTimeout = 60000;
-
                 MySqlDataReader reader;
                 try
                 {
@@ -1631,16 +1632,19 @@ namespace Tools
                     {
                         while (reader.Read())
                         {
+                            contadorRegistros++;
                             var convertidoDate = Convert.ToDateTime(reader.GetString(1));
                             if (maxHoraEnviadoSunat < convertidoDate)
                                 maxHoraEnviadoSunat = convertidoDate;
-                            respuesta += Doc + ", Hora creada OSE: " + reader.GetString(0) + ", Hora enviada Sunat: " + reader.GetString(1) + ", Msj Sunat: " + reader.GetString(2) + Environment.NewLine;
+                            respuesta += Doc + ", Hora creada OSE: " + reader[0] + ", Hora enviada Sunat: " + reader[1] + ", Msj Sunat: " + reader[2] + Environment.NewLine;
                         }
                     }
                     else
                     {
-                        respuesta = "No existe información.|";
-
+                        if(contadorRegistros > 0)
+                            respuesta += "No existe información del doc ." + Doc + Environment.NewLine;
+                        else
+                            respuesta += "No existe información.|";
                     }
                     closeCon();
                 }
@@ -1702,7 +1706,12 @@ namespace Tools
                         //respuesta = "";
                         while (reader.Read())
                         {
-                            var convertidoDate = Convert.ToDateTime(reader.GetString(3));
+                            if (reader[3] is null)
+                            {
+
+                            }
+
+                                var convertidoDate = Convert.ToDateTime(reader.GetString(3));
                             if (maxHoraEnviadoSunat < convertidoDate)
                                 maxHoraEnviadoSunat = convertidoDate;
                             respuesta += Doc + ", Id del RC: " + reader.GetString(0) + ", Hora creada OSE: " + reader.GetString(2) + ", Hora enviada Sunat: " + reader.GetString(3) + ", Msj Sunat: " + reader.GetString(4) + Environment.NewLine;

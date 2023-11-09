@@ -159,7 +159,7 @@
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.09693F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.1513F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.75177F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 119F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 121F));
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel2, 3, 0);
             this.tableLayoutPanel9.Controls.Add(this.cmb_TipoEmision, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.chckEdicion, 2, 0);
@@ -182,11 +182,11 @@
             this.tableLayoutPanel2.Controls.Add(this.chckDemo, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(464, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(463, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(115, 23);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(116, 23);
             this.tableLayoutPanel2.TabIndex = 15;
             // 
             // chckDemo
@@ -229,10 +229,10 @@
             "OSE",
             "SUNAT",
             "SUNAT (PARA FIRMAR)"});
-            this.cmb_TipoEmision.Location = new System.Drawing.Point(2, 4);
+            this.cmb_TipoEmision.Location = new System.Drawing.Point(2, 3);
             this.cmb_TipoEmision.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_TipoEmision.Name = "cmb_TipoEmision";
-            this.cmb_TipoEmision.Size = new System.Drawing.Size(149, 22);
+            this.cmb_TipoEmision.Size = new System.Drawing.Size(148, 22);
             this.cmb_TipoEmision.TabIndex = 14;
             this.cmb_TipoEmision.SelectedIndexChanged += new System.EventHandler(this.cmb_TipoEmision_SelectedIndexChanged);
             // 
@@ -242,7 +242,7 @@
             this.chckEdicion.AutoSize = true;
             this.chckEdicion.Enabled = false;
             this.chckEdicion.Font = new System.Drawing.Font("Calibri", 8F);
-            this.chckEdicion.Location = new System.Drawing.Point(323, 6);
+            this.chckEdicion.Location = new System.Drawing.Point(322, 6);
             this.chckEdicion.Margin = new System.Windows.Forms.Padding(2);
             this.chckEdicion.Name = "chckEdicion";
             this.chckEdicion.Size = new System.Drawing.Size(116, 17);
@@ -256,7 +256,7 @@
             this.chckRequestPre.AutoSize = true;
             this.chckRequestPre.Enabled = false;
             this.chckRequestPre.Font = new System.Drawing.Font("Calibri", 8F);
-            this.chckRequestPre.Location = new System.Drawing.Point(174, 6);
+            this.chckRequestPre.Location = new System.Drawing.Point(173, 6);
             this.chckRequestPre.Name = "chckRequestPre";
             this.chckRequestPre.Size = new System.Drawing.Size(106, 17);
             this.chckRequestPre.TabIndex = 13;

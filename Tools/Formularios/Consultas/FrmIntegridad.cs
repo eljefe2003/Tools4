@@ -91,7 +91,7 @@ namespace Tools
             string desde = ObtieneDesde(), hasta = ObtieneHasta(), codigoError = cmbCodError.Text, TipoDoc = cmbTipoDoc.Text;
             Conexion conex = new Conexion();
             var uno = conex.ConsultaIntegridad(desde, hasta,TipoDoc, codigoError).ToArray();
-            string resumenLog = "Docs a reenviar desde OSE hacia SUNAT: " + Environment.NewLine, sugiereReenvio = "Se sugiere el reenvio de los documentos: NO";
+            string resumenLog = "Docs a revisar su envío desde OSE hacia SUNAT: " + Environment.NewLine, sugiereReenvio;
             DateTime horaEnviadoSunatRelacionado;
             Log("Son: " + uno.Length + " casos a revisar.", true, false);
 
@@ -138,6 +138,12 @@ namespace Tools
                     {
                         sugiereReenvio = "Se sugiere el reenvio del documento: Si, debido a que la hora de envio Sunat de los docs relacionados es superior a la hora de envio Sunat del resumen rechazado. (se añade al listado final)" + Environment.NewLine;
                         resumenLog += uno[i].Supplier + "-" + uno[i].Identificador + Environment.NewLine;
+                        Log(sugiereReenvio + Environment.NewLine, true, false);
+                    }
+                    else
+                    {
+                        sugiereReenvio = "Deben revisar el documento, ya que NO se cataloga como apto para el reproceso." + Environment.NewLine;
+                        resumenLog += uno[i].Supplier + "-" + uno[i].Identificador + " Revisar en BD, NO se sugiere reenvio" + Environment.NewLine;
                         Log(sugiereReenvio + Environment.NewLine, true, false);
                     }
                     Log("----------------------------" + Environment.NewLine, true, false);                   
