@@ -1614,6 +1614,11 @@ namespace Tools
                     Query = "select reception_date, send_sunat_date, error_message from peproduccionose.invoice_salebills  WHERE ruc = '" + ruc + "' and supplier_ruc = '" + supplier + "' and serie = '" + serie + "' and correlative = " + correla;
 
                 }
+                else 
+                {
+                    Query = "select reception_date, send_sunat_date, error_message from peproduccionose.invoice_notes  WHERE ruc = '" + ruc + "' and supplier_ruc = '" + supplier + "' and serie = '" + serie + "' and correlative = " + correla;
+
+                }
                 string connectionString =
              "datasource=" + config.HostOSE +
              ";port=" + config.PortOSE +
@@ -1675,17 +1680,14 @@ namespace Tools
                 string serie = numeracion.Split('-')[0];
                 string correla = numeracion.Split('-')[1];
 
-                if (tipo == "03" || tipo == " 03")
-                {
-                    Query = "select vd.identificator, vl.numeration, vd.created_at, vd.send_sunat_date, vd.error_message" +
+                Query = "select vd.identificator, vl.numeration, vd.created_at, vd.send_sunat_date, vd.error_message" +
                         " from peproduccionose.summary_lines as vl,peproduccionose.summary_documents as vd " +
                         "where vd.id = vl.summary_id " +
                         "and vd.ruc = " + ruc + " " +
-                        "and vd.supplier_ruc = " + supplier + " "+
+                        "and vd.supplier_ruc = " + supplier + " " +
                         "and serie = '" + serie + "' " +
                         "and correlative = '" + correla + "' " +
                         "and vd.status_sunat not in ('2663')";
-                }
                 string connectionString =
              "datasource=" + config.HostOSE +
              ";port=" + config.PortOSE +
