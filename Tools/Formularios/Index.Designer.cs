@@ -86,7 +86,7 @@ namespace Tools
             this.pnlTop.BackColor = System.Drawing.Color.White;
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
-            this.pnlTop.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlTop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Size = new System.Drawing.Size(1350, 8);
             this.pnlTop.TabIndex = 0;
@@ -96,7 +96,7 @@ namespace Tools
             this.pnlButton.BackColor = System.Drawing.Color.White;
             this.pnlButton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlButton.Location = new System.Drawing.Point(0, 692);
-            this.pnlButton.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlButton.Name = "pnlButton";
             this.pnlButton.Size = new System.Drawing.Size(1350, 8);
             this.pnlButton.TabIndex = 1;
@@ -106,7 +106,7 @@ namespace Tools
             this.pnlLeft.BackColor = System.Drawing.Color.White;
             this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlLeft.Location = new System.Drawing.Point(0, 8);
-            this.pnlLeft.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlLeft.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlLeft.Name = "pnlLeft";
             this.pnlLeft.Size = new System.Drawing.Size(8, 684);
             this.pnlLeft.TabIndex = 2;
@@ -116,7 +116,7 @@ namespace Tools
             this.pnlRight.BackColor = System.Drawing.Color.White;
             this.pnlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlRight.Location = new System.Drawing.Point(1342, 8);
-            this.pnlRight.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlRight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlRight.Name = "pnlRight";
             this.pnlRight.Size = new System.Drawing.Size(8, 684);
             this.pnlRight.TabIndex = 3;
@@ -137,7 +137,7 @@ namespace Tools
             this.pnlMenu.Controls.Add(this.pnlIcono);
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMenu.Location = new System.Drawing.Point(8, 8);
-            this.pnlMenu.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(160, 684);
             this.pnlMenu.TabIndex = 4;
@@ -155,7 +155,7 @@ namespace Tools
             "Verde",
             "Amarillo"});
             this.cmbTema.Location = new System.Drawing.Point(0, 622);
-            this.cmbTema.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbTema.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbTema.Name = "cmbTema";
             this.cmbTema.Size = new System.Drawing.Size(160, 29);
             this.cmbTema.TabIndex = 0;
@@ -173,11 +173,11 @@ namespace Tools
             this.iconButton16.IconColor = System.Drawing.Color.Black;
             this.iconButton16.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton16.Location = new System.Drawing.Point(0, 651);
-            this.iconButton16.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButton16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.iconButton16.Name = "iconButton16";
             this.iconButton16.Size = new System.Drawing.Size(160, 33);
             this.iconButton16.TabIndex = 13;
-            this.iconButton16.Text = "Versión: 4.0";
+            this.iconButton16.Text = "Versión: 4.1";
             this.iconButton16.UseVisualStyleBackColor = true;
             // 
             // btnAyuda
@@ -192,7 +192,7 @@ namespace Tools
             this.btnAyuda.IconSize = 12;
             this.btnAyuda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAyuda.Location = new System.Drawing.Point(0, 601);
-            this.btnAyuda.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAyuda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAyuda.Name = "btnAyuda";
             this.btnAyuda.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.btnAyuda.Size = new System.Drawing.Size(160, 30);
@@ -209,7 +209,7 @@ namespace Tools
             this.pnlConfiguracion.Controls.Add(this.btnConfigBD);
             this.pnlConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlConfiguracion.Location = new System.Drawing.Point(0, 510);
-            this.pnlConfiguracion.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlConfiguracion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlConfiguracion.Name = "pnlConfiguracion";
             this.pnlConfiguracion.Size = new System.Drawing.Size(160, 91);
             this.pnlConfiguracion.TabIndex = 11;
@@ -225,7 +225,7 @@ namespace Tools
             this.btnConfigOtros.IconColor = System.Drawing.Color.Black;
             this.btnConfigOtros.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnConfigOtros.Location = new System.Drawing.Point(0, 60);
-            this.btnConfigOtros.Margin = new System.Windows.Forms.Padding(2);
+            this.btnConfigOtros.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnConfigOtros.Name = "btnConfigOtros";
             this.btnConfigOtros.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
             this.btnConfigOtros.Size = new System.Drawing.Size(160, 30);
@@ -245,7 +245,7 @@ namespace Tools
             this.btnPSE.IconColor = System.Drawing.Color.Black;
             this.btnPSE.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnPSE.Location = new System.Drawing.Point(0, 30);
-            this.btnPSE.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPSE.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPSE.Name = "btnPSE";
             this.btnPSE.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
             this.btnPSE.Size = new System.Drawing.Size(160, 30);
@@ -265,7 +265,7 @@ namespace Tools
             this.btnConfigBD.IconColor = System.Drawing.Color.Black;
             this.btnConfigBD.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnConfigBD.Location = new System.Drawing.Point(0, 0);
-            this.btnConfigBD.Margin = new System.Windows.Forms.Padding(2);
+            this.btnConfigBD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnConfigBD.Name = "btnConfigBD";
             this.btnConfigBD.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
             this.btnConfigBD.Size = new System.Drawing.Size(160, 30);
@@ -287,7 +287,7 @@ namespace Tools
             this.btnConfiguracion.IconSize = 12;
             this.btnConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConfiguracion.Location = new System.Drawing.Point(0, 480);
-            this.btnConfiguracion.Margin = new System.Windows.Forms.Padding(2);
+            this.btnConfiguracion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnConfiguracion.Name = "btnConfiguracion";
             this.btnConfiguracion.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.btnConfiguracion.Size = new System.Drawing.Size(160, 30);
@@ -305,7 +305,7 @@ namespace Tools
             this.pnlConsultas.Controls.Add(this.btnSunat);
             this.pnlConsultas.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlConsultas.Location = new System.Drawing.Point(0, 356);
-            this.pnlConsultas.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlConsultas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlConsultas.Name = "pnlConsultas";
             this.pnlConsultas.Size = new System.Drawing.Size(160, 124);
             this.pnlConsultas.TabIndex = 9;
@@ -321,7 +321,7 @@ namespace Tools
             this.btnIntegridad.IconColor = System.Drawing.Color.Black;
             this.btnIntegridad.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnIntegridad.Location = new System.Drawing.Point(0, 90);
-            this.btnIntegridad.Margin = new System.Windows.Forms.Padding(2);
+            this.btnIntegridad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnIntegridad.Name = "btnIntegridad";
             this.btnIntegridad.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
             this.btnIntegridad.Size = new System.Drawing.Size(160, 30);
@@ -341,7 +341,7 @@ namespace Tools
             this.btnServicio.IconColor = System.Drawing.Color.Black;
             this.btnServicio.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnServicio.Location = new System.Drawing.Point(0, 60);
-            this.btnServicio.Margin = new System.Windows.Forms.Padding(2);
+            this.btnServicio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnServicio.Name = "btnServicio";
             this.btnServicio.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
             this.btnServicio.Size = new System.Drawing.Size(160, 30);
@@ -361,7 +361,7 @@ namespace Tools
             this.btnEmpresas.IconColor = System.Drawing.Color.Black;
             this.btnEmpresas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEmpresas.Location = new System.Drawing.Point(0, 30);
-            this.btnEmpresas.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEmpresas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEmpresas.Name = "btnEmpresas";
             this.btnEmpresas.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
             this.btnEmpresas.Size = new System.Drawing.Size(160, 30);
@@ -381,7 +381,7 @@ namespace Tools
             this.btnSunat.IconColor = System.Drawing.Color.Black;
             this.btnSunat.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSunat.Location = new System.Drawing.Point(0, 0);
-            this.btnSunat.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSunat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSunat.Name = "btnSunat";
             this.btnSunat.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
             this.btnSunat.Size = new System.Drawing.Size(160, 30);
@@ -403,7 +403,7 @@ namespace Tools
             this.btnConsultas.IconSize = 12;
             this.btnConsultas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConsultas.Location = new System.Drawing.Point(0, 326);
-            this.btnConsultas.Margin = new System.Windows.Forms.Padding(2);
+            this.btnConsultas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnConsultas.Name = "btnConsultas";
             this.btnConsultas.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.btnConsultas.Size = new System.Drawing.Size(160, 30);
@@ -423,7 +423,7 @@ namespace Tools
             this.pnlEmision.Controls.Add(this.btnDailyTask);
             this.pnlEmision.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlEmision.Location = new System.Drawing.Point(0, 151);
-            this.pnlEmision.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlEmision.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlEmision.Name = "pnlEmision";
             this.pnlEmision.Size = new System.Drawing.Size(160, 175);
             this.pnlEmision.TabIndex = 6;
@@ -439,7 +439,7 @@ namespace Tools
             this.btnFirma.IconColor = System.Drawing.Color.Black;
             this.btnFirma.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnFirma.Location = new System.Drawing.Point(0, 150);
-            this.btnFirma.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFirma.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnFirma.Name = "btnFirma";
             this.btnFirma.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
             this.btnFirma.Size = new System.Drawing.Size(160, 30);
@@ -459,7 +459,7 @@ namespace Tools
             this.btnJson.IconColor = System.Drawing.Color.Black;
             this.btnJson.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnJson.Location = new System.Drawing.Point(0, 120);
-            this.btnJson.Margin = new System.Windows.Forms.Padding(2);
+            this.btnJson.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnJson.Name = "btnJson";
             this.btnJson.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
             this.btnJson.Size = new System.Drawing.Size(160, 30);
@@ -479,7 +479,7 @@ namespace Tools
             this.btnZip.IconColor = System.Drawing.Color.Black;
             this.btnZip.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnZip.Location = new System.Drawing.Point(0, 90);
-            this.btnZip.Margin = new System.Windows.Forms.Padding(2);
+            this.btnZip.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnZip.Name = "btnZip";
             this.btnZip.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
             this.btnZip.Size = new System.Drawing.Size(160, 30);
@@ -499,7 +499,7 @@ namespace Tools
             this.btnEjemplos.IconColor = System.Drawing.Color.Black;
             this.btnEjemplos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEjemplos.Location = new System.Drawing.Point(0, 60);
-            this.btnEjemplos.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEjemplos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEjemplos.Name = "btnEjemplos";
             this.btnEjemplos.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
             this.btnEjemplos.Size = new System.Drawing.Size(160, 30);
@@ -519,7 +519,7 @@ namespace Tools
             this.btnDescargas.IconColor = System.Drawing.Color.Black;
             this.btnDescargas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDescargas.Location = new System.Drawing.Point(0, 30);
-            this.btnDescargas.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDescargas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDescargas.Name = "btnDescargas";
             this.btnDescargas.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
             this.btnDescargas.Size = new System.Drawing.Size(160, 30);
@@ -539,7 +539,7 @@ namespace Tools
             this.btnDailyTask.IconColor = System.Drawing.Color.Black;
             this.btnDailyTask.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDailyTask.Location = new System.Drawing.Point(0, 0);
-            this.btnDailyTask.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDailyTask.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDailyTask.Name = "btnDailyTask";
             this.btnDailyTask.Padding = new System.Windows.Forms.Padding(19, 0, 0, 0);
             this.btnDailyTask.Size = new System.Drawing.Size(160, 30);
@@ -561,7 +561,7 @@ namespace Tools
             this.btnTool.IconSize = 12;
             this.btnTool.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTool.Location = new System.Drawing.Point(0, 121);
-            this.btnTool.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTool.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnTool.Name = "btnTool";
             this.btnTool.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.btnTool.Size = new System.Drawing.Size(160, 30);
@@ -583,7 +583,7 @@ namespace Tools
             this.btnEmision.IconSize = 12;
             this.btnEmision.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEmision.Location = new System.Drawing.Point(0, 91);
-            this.btnEmision.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEmision.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEmision.Name = "btnEmision";
             this.btnEmision.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.btnEmision.Size = new System.Drawing.Size(160, 30);
@@ -598,7 +598,7 @@ namespace Tools
             this.pnlIcono.Controls.Add(this.pictureBox1);
             this.pnlIcono.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlIcono.Location = new System.Drawing.Point(0, 0);
-            this.pnlIcono.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlIcono.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlIcono.Name = "pnlIcono";
             this.pnlIcono.Size = new System.Drawing.Size(160, 91);
             this.pnlIcono.TabIndex = 6;
@@ -608,7 +608,7 @@ namespace Tools
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::Tools.Properties.Resources.soporte_tecnico;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(160, 91);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -622,7 +622,7 @@ namespace Tools
             this.pnlTop2.Controls.Add(this.tableLayoutPanel5);
             this.pnlTop2.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop2.Location = new System.Drawing.Point(168, 8);
-            this.pnlTop2.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlTop2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlTop2.Name = "pnlTop2";
             this.pnlTop2.Size = new System.Drawing.Size(1174, 37);
             this.pnlTop2.TabIndex = 5;
@@ -635,7 +635,7 @@ namespace Tools
             this.tableLayoutPanel2.Controls.Add(this.lblSeccion, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -669,7 +669,7 @@ namespace Tools
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel1, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Right;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(826, 0);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -689,7 +689,7 @@ namespace Tools
             this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrar.IconSize = 25;
             this.btnCerrar.Location = new System.Drawing.Point(300, 2);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(46, 33);
             this.btnCerrar.TabIndex = 6;
@@ -711,7 +711,7 @@ namespace Tools
             this.btnMaximizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMaximizar.IconSize = 25;
             this.btnMaximizar.Location = new System.Drawing.Point(250, 2);
-            this.btnMaximizar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMaximizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMaximizar.Name = "btnMaximizar";
             this.btnMaximizar.Size = new System.Drawing.Size(46, 33);
             this.btnMaximizar.TabIndex = 5;
@@ -733,7 +733,7 @@ namespace Tools
             this.btnMinimizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMinimizar.IconSize = 25;
             this.btnMinimizar.Location = new System.Drawing.Point(198, 2);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(48, 33);
             this.btnMinimizar.TabIndex = 4;
@@ -771,7 +771,7 @@ namespace Tools
             this.pnlForm.BackColor = System.Drawing.Color.White;
             this.pnlForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlForm.Location = new System.Drawing.Point(168, 45);
-            this.pnlForm.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlForm.Name = "pnlForm";
             this.pnlForm.Size = new System.Drawing.Size(1174, 647);
             this.pnlForm.TabIndex = 7;
@@ -789,7 +789,7 @@ namespace Tools
             this.Controls.Add(this.pnlButton);
             this.Controls.Add(this.pnlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Index";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tool Soporte HKA Perú";

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tools.PSE21;
 
 namespace Tools
 {
@@ -115,7 +116,7 @@ namespace Tools
                     Log("Total Docs rechazados en el RC" + "(" + cant2 + "): " + docsRechazados, true, false);
                     Log("Revisión Docs rechazados en el RC, Informados de manera individual: " + Environment.NewLine + respuesta1.Split('|')[0], true, false);                   
 
-                    if (respuesta1 == "No existe información.|")
+                    if (respuesta1.StartsWith("No existe información."))
                     {
                         string respuesta2 = conex.ConsultaDocsRechazadosMasiv(uno[i].Ruc, uno[i].Supplier, docsRechazados);
                         Log("Revisión Docs rechazados en el RC, Informados de manera masiva (RC): " + Environment.NewLine + respuesta2.Split('|')[0], true, false);
@@ -127,8 +128,9 @@ namespace Tools
                     }
                     else
                     {
-                        if(respuesta1 != "|")
-                            horaEnviadoSunatRelacionado = Convert.ToDateTime(respuesta1.Split('|')[1]);
+                        string[] partes = respuesta1.Split('|');
+                        if (respuesta1 != "|")
+                            horaEnviadoSunatRelacionado = Convert.ToDateTime(partes[partes.Length - 1]);
                         else horaEnviadoSunatRelacionado = DateTime.Now.AddYears(-20);
 
                     }
@@ -234,6 +236,11 @@ namespace Tools
             dtpDesde.Value = DateTime.Now;
             dtpHasta.Value = DateTime.Now;
 
+        }
+
+        private void btnBorrarLog_Click(object sender, EventArgs e)
+        {
+            rtb_Log.Clear();
         }
 
         public void Log(string msg, bool msj, bool fecha)
