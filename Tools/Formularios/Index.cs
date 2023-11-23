@@ -9,7 +9,6 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Media;
 using Application = System.Windows.Forms.Application;
@@ -19,11 +18,12 @@ using MessageBox = System.Windows.Forms.MessageBox;
 using Point = System.Drawing.Point;
 using Size = System.Drawing.Size;
 
+
 namespace Tools
 {
     public partial class Index : Form
     {
-
+        private NotifyIcon notifyIcon;
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -376,6 +376,13 @@ namespace Tools
             //childForm.BringToFront();
             //childForm.Show();
             //lblSeccion.Text = childForm.Text;
+
+            notifyIcon = new NotifyIcon();
+            notifyIcon.Visible = true;
+            notifyIcon.Icon = SystemIcons.Information;
+            notifyIcon.ShowBalloonTip(2000, "Proceso finalizado", "Tu mensaje aquí", ToolTipIcon.Info);
+
+
         }
 
         private void pnlTop2_MouseDown(object sender, MouseEventArgs e)

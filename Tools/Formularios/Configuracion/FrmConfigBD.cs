@@ -31,6 +31,7 @@ namespace Tools
             gbOSE.ForeColor = ColorLetras;
             gbPSE20.ForeColor = ColorLetras;
             gbPSE21.ForeColor = ColorLetras;
+            gbAdmin.ForeColor = ColorLetras;
 
             foreach (Control cComponente in tlpPSE21.Controls)
             {
@@ -151,6 +152,22 @@ namespace Tools
                             {
                                 //cmbt.Text = valor;
                             }
+                            else if (clave == "HostBdAdmin")
+                            {
+                                txt_HostAdmin.Text = valor;
+                            }
+                            else if (clave == "PuertoBdAdmin")
+                            {
+                                txt_PortAdmin.Text = valor;
+                            }
+                            else if (clave == "UsuarioBdAdmin")
+                            {
+                                txt_UserAdmin.Text = valor;
+                            }
+                            else if (clave == "ClaveBdAdmin")
+                            {
+                                txt_PassAdmin.Text = valor;
+                            }
                         }
                     }
                 }
@@ -170,37 +187,139 @@ namespace Tools
         {
             try
             {
-                Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-                //Base de datos
-                config.AppSettings.Settings["HostBdPse"].Value = txt_HostDPSE.Text;
-                config.AppSettings.Settings["PuertoBdPse"].Value = txt_PortDPSE.Text;
-                config.AppSettings.Settings["UsuarioBdPse"].Value = txt_UserDPSE.Text;
-                config.AppSettings.Settings["ClaveBdPse"].Value = txt_PassDPSE.Text;
-
-                config.AppSettings.Settings["HostBdPse20"].Value = txt_HostPse20.Text;
-                config.AppSettings.Settings["PuertoBdPse20"].Value = txt_PortPse20.Text;
-                config.AppSettings.Settings["UsuarioBdPse20"].Value = txt_UserPse20.Text;
-                config.AppSettings.Settings["ClaveBdPse20"].Value = txt_PassPse20.Text;
-
-                config.AppSettings.Settings["HostBdOse"].Value = txt_HostBdOse.Text;
-                config.AppSettings.Settings["PuertoBdOse"].Value = txt_PortBdOse.Text;
-                config.AppSettings.Settings["UsuarioBdOse"].Value = txt_UserBdOse.Text;
-                config.AppSettings.Settings["ClaveBdOse"].Value = txt_PassBdOse.Text;
-                //Base de datos
-
-                config.Save(ConfigurationSaveMode.Modified);
-                MessageBox.Show("Actualizacion Exitosa!");
-                leerConfigPersonal();
-            }
-            catch (Exception ex)
+                string line = null, comparacion = "";
+                List<String> listLineas = new List<string>();
+                string dataTxt = "";
+                using (StreamReader file = new StreamReader(@"C:\ConfigTool\Config.txt"))
+                {
+                    while ((line = file.ReadLine()) != null)
+                    {
+                        string line2 = line.Split('=')[0];
+                        if (line2.Equals("HostBdPse"))
+                        {
+                            comparacion = line;
+                            line = "HostBdPse=" + txt_HostDPSE.Text;
+                        }
+                        else if (line2.Equals("PuertoBdPse"))
+                        {
+                            comparacion = line;
+                            line = "PuertoBdPse=" + txt_PortDPSE.Text;
+                        }
+                        else if (line2.Equals("UsuarioBdPse"))
+                        {
+                            comparacion = line;
+                            line = "UsuarioBdPse=" + txt_UserDPSE.Text;
+                        }
+                        else if (line2.Equals("ClaveBdPse"))
+                        {
+                            comparacion = line;
+                            line = "ClaveBdPse=" + txt_PassDPSE.Text;
+                        }else if (line2.Equals("HostBdPse20"))
+                        {
+                            comparacion = line;
+                            line = "HostBdPse20=" + txt_HostPse20.Text;
+                        }
+                        else if (line2.Equals("PuertoBdPse20"))
+                        {
+                            comparacion = line;
+                            line = "PuertoBdPse20=" + txt_PortPse20.Text;
+                        }
+                        else if (line2.Equals("UsuarioBdPse20"))
+                        {
+                            comparacion = line;
+                            line = "UsuarioBdPse20=" + txt_UserPse20.Text;
+                        }
+                        else if (line2.Equals("ClaveBdPse20"))
+                        {
+                            comparacion = line;
+                            line = "ClaveBdPse20=" + txt_PassPse20.Text;
+                        }else if (line2.Equals("HostBdOse"))
+                        {
+                            comparacion = line;
+                            line = "HostBdOse=" + txt_HostBdOse.Text;
+                        }
+                        else if (line2.Equals("PuertoBdOse"))
+                        {
+                            comparacion = line;
+                            line = "PuertoBdOse=" + txt_PortBdOse.Text;
+                        }
+                        else if (line2.Equals("UsuarioBdOse"))
+                        {
+                            comparacion = line;
+                            line = "UsuarioBdOse=" + txt_UserBdOse.Text;
+                        }
+                        else if (line2.Equals("ClaveBdOse"))
+                        {
+                            comparacion = line;
+                            line = "ClaveBdOse=" + txt_PassBdOse.Text;
+                        }else if (line2.Equals("HostBdAdmin"))
+                        {
+                            comparacion = line;
+                            line = "HostBdAdmin=" + txt_HostAdmin.Text;
+                        }
+                        else if (line2.Equals("PuertoBdAdmin"))
+                        {
+                            comparacion = line;
+                            line = "PuertoBdAdmin=" + txt_PortAdmin.Text;
+                        }
+                        else if (line2.Equals("UsuarioBdAdmin"))
+                        {
+                            comparacion = line;
+                            line = "UsuarioBdAdmin=" + txt_UserAdmin.Text;
+                        }
+                        else if (line2.Equals("ClaveBdAdmin"))
+                        {
+                            comparacion = line;
+                            line = "ClaveBdAdmin=" + txt_PassAdmin.Text;
+                        }
+                        listLineas.Add(line);
+                    }
+                    for (int t = 0; t < listLineas.ToArray().Length; t++)//Envio 1x1 de documentos ubicados en ruta TXTUbicacion
+                    {
+                        dataTxt += listLineas.ToArray()[t] + Environment.NewLine;
+                    }
+                }
+                System.IO.File.WriteAllText(@"C:\ConfigTool\Config.txt", dataTxt);
+                MessageBox.Show("Actualización Exitosa!");
+            }catch(Exception ex)
             {
                 MessageBox.Show("Ocurrio un error: " + ex.ToString());
             }
-            leerConfigPersonal();
-            DialogResult result;
-            result = MessageBox.Show("Los cambios se harán notables al reiniciar el programa. ¿Desea reiniciarlo ahora?", Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-                Application.Restart();
+
+
+            //try
+            //{
+            //    Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            //    //Base de datos
+            //    config.AppSettings.Settings["HostBdPse"].Value = txt_HostDPSE.Text;
+            //    config.AppSettings.Settings["PuertoBdPse"].Value = txt_PortDPSE.Text;
+            //    config.AppSettings.Settings["UsuarioBdPse"].Value = txt_UserDPSE.Text;
+            //    config.AppSettings.Settings["ClaveBdPse"].Value = txt_PassDPSE.Text;
+
+            //    config.AppSettings.Settings["HostBdPse20"].Value = txt_HostPse20.Text;
+            //    config.AppSettings.Settings["PuertoBdPse20"].Value = txt_PortPse20.Text;
+            //    config.AppSettings.Settings["UsuarioBdPse20"].Value = txt_UserPse20.Text;
+            //    config.AppSettings.Settings["ClaveBdPse20"].Value = txt_PassPse20.Text;
+
+            //    config.AppSettings.Settings["HostBdOse"].Value = txt_HostBdOse.Text;
+            //    config.AppSettings.Settings["PuertoBdOse"].Value = txt_PortBdOse.Text;
+            //    config.AppSettings.Settings["UsuarioBdOse"].Value = txt_UserBdOse.Text;
+            //    config.AppSettings.Settings["ClaveBdOse"].Value = txt_PassBdOse.Text;
+            //    //Base de datos
+
+            //    config.Save(ConfigurationSaveMode.Modified);
+            //    MessageBox.Show("Actualizacion Exitosa!");
+            //    leerConfigPersonal();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Ocurrio un error: " + ex.ToString());
+            //}
+            //leerConfigPersonal();
+            //DialogResult result;
+            //result = MessageBox.Show("Los cambios se harán notables al reiniciar el programa. ¿Desea reiniciarlo ahora?", Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            //if (result == DialogResult.Yes)
+            //    Application.Restart();
         }
     }
 }
