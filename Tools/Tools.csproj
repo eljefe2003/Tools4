@@ -339,6 +339,9 @@
     <Compile Include="Clases varias\Validaciones.cs" />
     <Compile Include="Clases varias\PruebaEjemplo.cs" />
     <Compile Include="ReconstruirRequest.cs" />
+    <Compile Include="RJControls\RJToggleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="TestColor.cs">
       <SubType>Form</SubType>
     </Compile>
