@@ -104,14 +104,10 @@ namespace Tools
                             }
                             else if (clave == "LogHora")
                             {
-                                //if (valor == "SI")
-                                //{
-                                //    chk_LogHora.Checked = true;
-                                //}
-                                //else
-                                //{
-                                //    chk_LogHora.Checked = false;
-                                //}
+                                if (valor == "SI")
+                                    chckFechaHora.Checked = true;
+                                else                               
+                                    chckFechaHora.Checked = false;                               
                             }
                             else if (clave == "RutaEjemplos")
                             {
@@ -120,12 +116,27 @@ namespace Tools
                             else if (clave == "RutaProcesados")
                             {
                                 txtRutaProcesados.Text = valor;
-
                                 if (!Directory.Exists(valor))
                                 {
                                     Directory.CreateDirectory(valor);
                                 }
-                            }      
+                            }
+                            else if (clave == "RutaDrive")
+                            {
+                                txtRutaDrive.Text = valor;
+                                if (!Directory.Exists(valor))
+                                {
+                                    Directory.CreateDirectory(valor);
+                                }
+                            }
+                            else if (clave == "RutaZip")
+                            {
+                                txtRutaZip.Text = valor;
+                                if (!Directory.Exists(valor))
+                                {
+                                    Directory.CreateDirectory(valor);
+                                }
+                            }
                         }
                     }
                 }
@@ -149,21 +160,7 @@ namespace Tools
                 config.AppSettings.Settings["RutaCertificado"].Value = txtRutaCertificado.Text;
                 config.AppSettings.Settings["ClaveCertificado"].Value = txtClaveCertificado.Text;
                 config.Save(ConfigurationSaveMode.Modified);
-                MessageBox.Show("Actualizacion Exitosa!");
-                LeerConfig();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ocurrio un error: " + ex.ToString());
-            }
-            DialogResult result;
-            result = MessageBox.Show("Los cambios se harán notables al reiniciar el programa. ¿Desea reiniciarlo ahora?", Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-                Application.Restart();            //CargaParametros();
 
-
-            try
-            {
                 string line = null, comparacion = "";
                 List<String> listLineas = new List<string>();
                 string dataTxt = "";
@@ -174,34 +171,33 @@ namespace Tools
                         string line2 = line.Split('=')[0];
                         if (line2.Equals("Token"))
                         {
-                            comparacion = line;
                             line = "Token=" + txt_TokenConfig.Text;
                         }
                         else if (line2.Equals("LogHora"))
                         {
-                            comparacion = line;
-                            //line = "LogHora=" + chk_LogHora.Text;
+                            string valor;
+                            if (chckFechaHora.Checked)
+                                valor = "SI";
+                            else
+                                valor = "NO";
+                            line = "LogHora=" + valor;
                         }
                         else if (line2.Equals("RutaEjemplos"))
                         {
-                            comparacion = line;
                             line = "RutaEjemplos=" + txt_RutaEjemplos.Text;
                         }
                         else if (line2.Equals("RutaProcesados"))
                         {
-                            comparacion = line;
-                            //line = "RutaProcesados=" + procesa.Text;
+                            line = "RutaProcesados=" + txtRutaProcesados.Text;
                         }
                         else if (line2.Equals("RutaDrive"))
                         {
-                            comparacion = line;
-                            //line = "RutaDrive=" + drive.Text;
+                            line = "RutaDrive=" + txtRutaDrive.Text;
                         }
                         else if (line2.Equals("RutaZip"))
                         {
-                            comparacion = line;
-                            //line = "RutaZip=" + txt_PortPse20.Text;
-                        }                      
+                            line = "RutaZip=" + btnRutaZip.Text;
+                        }
                         listLineas.Add(line);
                     }
                     for (int t = 0; t < listLineas.ToArray().Length; t++)//Envio 1x1 de documentos ubicados en ruta TXTUbicacion
@@ -211,11 +207,18 @@ namespace Tools
                 }
                 System.IO.File.WriteAllText(@"C:\ConfigTool\Config.txt", dataTxt);
                 MessageBox.Show("Actualización Exitosa!");
+                LeerConfig();
+                leerConfigPersonal();
+                DialogResult result;
+                result = MessageBox.Show("Los cambios se harán notables al reiniciar el programa. ¿Desea reiniciarlo ahora?", Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                    Application.Restart();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Ocurrio un error: " + ex.ToString());
             }
+                 
 
         }
 
