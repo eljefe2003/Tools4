@@ -160,7 +160,7 @@
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.09693F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.1513F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.75177F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 165F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 167F));
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel2, 3, 0);
             this.tableLayoutPanel9.Controls.Add(this.cmb_TipoEmision, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.chckEdicion, 2, 0);
@@ -183,12 +183,12 @@
             this.tableLayoutPanel2.Controls.Add(this.chckDemo, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(612, 4);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(611, 4);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(159, 28);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(160, 28);
             this.tableLayoutPanel2.TabIndex = 15;
             // 
             // chckDemo
@@ -197,7 +197,7 @@
             this.chckDemo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chckDemo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chckDemo.IsOn = true;
-            this.chckDemo.Location = new System.Drawing.Point(99, 4);
+            this.chckDemo.Location = new System.Drawing.Point(100, 4);
             this.chckDemo.Margin = new System.Windows.Forms.Padding(4);
             this.chckDemo.Name = "chckDemo";
             this.chckDemo.Size = new System.Drawing.Size(36, 20);
@@ -215,7 +215,7 @@
             this.label2.Location = new System.Drawing.Point(4, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 28);
+            this.label2.Size = new System.Drawing.Size(88, 28);
             this.label2.TabIndex = 1;
             this.label2.Text = "Demo";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -233,7 +233,7 @@
             "OSE",
             "SUNAT",
             "SUNAT (PARA FIRMAR)"});
-            this.cmb_TipoEmision.Location = new System.Drawing.Point(3, 6);
+            this.cmb_TipoEmision.Location = new System.Drawing.Point(3, 5);
             this.cmb_TipoEmision.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmb_TipoEmision.Name = "cmb_TipoEmision";
             this.cmb_TipoEmision.Size = new System.Drawing.Size(195, 26);
@@ -246,7 +246,7 @@
             this.chckEdicion.AutoSize = true;
             this.chckEdicion.Enabled = false;
             this.chckEdicion.Font = new System.Drawing.Font("Calibri", 8F);
-            this.chckEdicion.Location = new System.Drawing.Point(433, 7);
+            this.chckEdicion.Location = new System.Drawing.Point(432, 7);
             this.chckEdicion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chckEdicion.Name = "chckEdicion";
             this.chckEdicion.Size = new System.Drawing.Size(139, 21);
@@ -260,7 +260,7 @@
             this.chckRequestPre.AutoSize = true;
             this.chckRequestPre.Enabled = false;
             this.chckRequestPre.Font = new System.Drawing.Font("Calibri", 8F);
-            this.chckRequestPre.Location = new System.Drawing.Point(236, 7);
+            this.chckRequestPre.Location = new System.Drawing.Point(235, 7);
             this.chckRequestPre.Margin = new System.Windows.Forms.Padding(4);
             this.chckRequestPre.Name = "chckRequestPre";
             this.chckRequestPre.Size = new System.Drawing.Size(126, 21);

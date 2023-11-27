@@ -124,10 +124,10 @@ namespace Tools
                             else if (clave == "RutaDrive")
                             {
                                 txtRutaDrive.Text = valor;
-                                if (!Directory.Exists(valor))
-                                {
-                                    Directory.CreateDirectory(valor);
-                                }
+                                //if (!Directory.Exists(valor))
+                                //{
+                                //    Directory.CreateDirectory(valor);
+                                //}
                             }
                             else if (clave == "RutaZip")
                             {
@@ -196,7 +196,7 @@ namespace Tools
                         }
                         else if (line2.Equals("RutaZip"))
                         {
-                            line = "RutaZip=" + btnRutaZip.Text;
+                            line = "RutaZip=" + txtRutaZip.Text;
                         }
                         listLineas.Add(line);
                     }
@@ -238,15 +238,14 @@ namespace Tools
 
         private void btnRutaCertificado_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog dlCarpeta = new FolderBrowserDialog();
-            dlCarpeta.RootFolder = System.Environment.SpecialFolder.Desktop;
-            dlCarpeta.ShowNewFolderButton = false;
-            dlCarpeta.Description = "Selecciona la carpeta";
-            string rutaDestino = "";
-            //(int Codigo, string Mensaje, string Documento) resp2;
-            if (dlCarpeta.ShowDialog() == DialogResult.OK)
+            OpenFileDialog fichero = new OpenFileDialog();
+            fichero.Multiselect = false;
+            //fichero.Filter = "Text (*.txt)|*.TXT|XML (*.xml)|*.XML|ZIP (*.zip)|*.ZIP";
+            fichero.Filter = "CERTIFICADO (*.pfx)|*.PFX";
+            //open.Filter = "ZIP files (*.zip)|*.zip";
+            if (fichero.ShowDialog() == DialogResult.OK)
             {
-                txtRutaCertificado.Text = dlCarpeta.SelectedPath + @"\";
+                txtClaveCertificado.Text = fichero.FileName;
             }
         }
 
@@ -261,6 +260,33 @@ namespace Tools
             if (dlCarpeta.ShowDialog() == DialogResult.OK)
             {
                 txt_RutaEjemplos.Text = dlCarpeta.SelectedPath + @"\";
+            }
+        }
+
+        private void btnRutaZip_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog dlCarpeta = new FolderBrowserDialog();
+            dlCarpeta.RootFolder = System.Environment.SpecialFolder.Desktop;
+            dlCarpeta.ShowNewFolderButton = false;
+            dlCarpeta.Description = "Selecciona la carpeta";
+            string rutaDestino = "";
+            //(int Codigo, string Mensaje, string Documento) resp2;
+            if (dlCarpeta.ShowDialog() == DialogResult.OK)
+            {
+                txtRutaZip.Text = dlCarpeta.SelectedPath + @"\";
+            }
+        }
+
+        private void btnRutaDrive_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fichero = new OpenFileDialog();
+            fichero.Multiselect = false;
+            //fichero.Filter = "Text (*.txt)|*.TXT|XML (*.xml)|*.XML|ZIP (*.zip)|*.ZIP";
+            fichero.Filter = "EXE (*.exe)|*.EXE";
+            //open.Filter = "ZIP files (*.zip)|*.zip";
+            if (fichero.ShowDialog() == DialogResult.OK)
+            {
+                txtRutaDrive.Text = fichero.FileName;
             }
         }
     }
